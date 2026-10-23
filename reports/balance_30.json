@@ -1,0 +1,49 @@
+{
+  "matches": 30,
+  "arena": "WILDERNESS",
+  "mode": "BALANCED",
+  "roster": [
+    "lebron-james",
+    "michael-jordan",
+    "kobe-bryant",
+    "tom-brady",
+    "tyreek-hill",
+    "lionel-messi",
+    "usain-bolt",
+    "mike-tyson",
+    "muhammad-ali",
+    "michael-phelps",
+    "serena-williams",
+    "simone-biles"
+  ],
+  "wins": {
+    "kobe-bryant": 4,
+    "muhammad-ali": 5,
+    "tom-brady": 1,
+    "mike-tyson": 7,
+    "lebron-james": 1,
+    "simone-biles": 2,
+    "usain-bolt": 4,
+    "michael-phelps": 1,
+    "tyreek-hill": 2,
+    "lionel-messi": 2,
+    "michael-jordan": 1
+  },
+  "win_rates": {
+    "lebron-james": 0.0333,
+    "michael-jordan": 0.0333,
+    "kobe-bryant": 0.1333,
+    "tom-brady": 0.0333,
+    "tyreek-hill": 0.0667,
+    "lionel-messi": 0.0667,
+    "usain-bolt": 0.1333,
+    "mike-tyson": 0.2333,
+    "muhammad-ali": 0.1667,
+    "michael-phelps": 0.0333,
+    "serena-williams": 0.0,
+    "simone-biles": 0.0667
+  },
+  "mean_ticks": 223.8,
+  "mean_events": 806.73,
+  "interpretation": "Empirical statistics for the PROTOTYPE GAME MODEL only; not real athletic probabilities."
+}
