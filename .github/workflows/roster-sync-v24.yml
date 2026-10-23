@@ -1,0 +1,72 @@
+name: Sync complete NBA NFL MLB NHL team rosters
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '19 11 * * *'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/sync_active_rosters_v24.py'
+      - 'ui/active-rosters-v24.js'
+      - '.github/workflows/roster-sync-v24.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/sync_active_rosters_v24.py'
+      - 'ui/active-rosters-v24.js'
+      - '.github/workflows/roster-sync-v24.yml'
+permissions:
+  contents: write
+concurrency:
+  group: last-legend-active-roster-sync
+  cancel-in-progress: false
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Capture all 124 team rosters from ESPN
+        run: python tools/sync_active_rosters_v24.py --output data/active_rosters_v24.json --delay 0.35
+      - name: Verify four leagues and every team
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('data/active_rosters_v24.json'))
+          counts={'NBA':30,'NFL':32,'MLB':30,'NHL':32}
+          minimums={'NBA':400,'NFL':1400,'MLB':700,'NHL':600}
+          for league,n in counts.items():
+              source=d['leagues'][league]
+              assert source['teamCount']==n
+              assert len(source['teams'])==n
+              assert source['playerCount']>=minimums[league]
+              print(league,source['playerCount'],'players on',n,'teams',flush=True)
+          print('V24 source snapshot verified:',d['generatedAt'])
+          PY
+      - name: Archive reproducible roster dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: big-four-roster-v24
+          path: data/active_rosters_v24.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Publish new roster snapshot to Pages
+        if: github.event_name != 'pull_request'
+        run: |
+          git fetch origin gh-pages
+          git worktree add _site origin/gh-pages
+          mkdir -p _site/data
+          cp data/active_rosters_v24.json _site/data/active_rosters_v24.json
+          cd _site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/active_rosters_v24.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(v24): refresh current big-four rosters with source audit"
+            git push origin HEAD:gh-pages
+          fi

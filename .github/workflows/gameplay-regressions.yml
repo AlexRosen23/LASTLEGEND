@@ -37,6 +37,7 @@ jobs:
           node tests/test_survival_ai_v21.cjs
           node tests/test_pathfinding_v22.cjs
           node tests/test_roster_v23.cjs
+          node tests/test_active_rosters_v24.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
