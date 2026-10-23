@@ -18,21 +18,12 @@ const archetype={
 'Motorsport':'Racecraft Edge','Cricket':'Crease Control','Snow Sports':'Mountain Reflex',
 'Other Sports':'Adaptability Edge'
 };
-const roleAliases={
-'Basketball':['guard','wing','forward'],
-'American Football':['receiver','quarterback','defensive_back','running_back'],
-'Association Football':['soccer_forward','soccer_midfielder','soccer_defender'],
-'Baseball':['baseball_power','baseball_pitcher','baseball_fielder'],
-'Boxing & MMA':['boxer','mma_striker','mma_grappler'],
-'Track & Field':['sprinter','distance_runner','track'],
-'Tennis':['other'],'Ice Hockey':['hockey_forward','hockey_defender','other']
-};
 function install(athletes,perks){
  if(!Array.isArray(athletes)||!perks||!Array.isArray(perks.signatures))throw Error('V23 requires the authoritative V4 roster and signatures');
  if(athletes.some(a=>a.collection_tags?.includes('EXPANSION_V23')))return {added:0,total:athletes.length,alreadyInstalled:true};
  const originalIds=new Set(athletes.map(a=>a.id)),existingNames=new Set(athletes.map(a=>norm(a.name))),signatureIds=new Set(perks.signatures.map(p=>p.id));
  let added=0;const bySport={};
- const seedTemplates=athletes.filter(a=>a.kind!=='mascot'&&a.render_type!=='mascot'&&!a.edition_of);
+ const seedTemplates=athletes.filter(a=>(a.kind==null||a.kind==='athlete')&&(!a.render_type||a.render_type==='human')&&!a.edition_of&&a.ratings&&a.behavior);
  for(const [name,sport,team] of candidates){
   const canonical=norm(name);
   if(existingNames.has(canonical))continue;
@@ -56,7 +47,7 @@ function install(athletes,perks){
    ...template,id,name,sport,role,ratings,behavior,perk,number:null,
    team:team||'',era:team?'Historical affiliation · appearance unverified':'Sport archive · appearance unverified',
    edition_short:null,edition_of:null,source_url:null,
-   collection_tags:['EXPANSION_V23','SPORT_LEGENDS_V23'].concat(template.collection_tags?.filter(k=>k==='BEARS_TOP_100'||k==='IU_2025_CHAMPIONS')&&false||[]),
+   collection_tags:['EXPANSION_V23','SPORT_LEGENDS_V23'],
    verification_status:'PENDING_INDEPENDENT_REVIEW',
    data_quality:{ratings_are_provisional:true,personality_is_fictional:true,appearance_number_verified:false,team_affiliation_needs_source_review:!!team,licensing_reviewed:false,candidate_source:'tools/expand_roster.py'},
    description:'Historical and cross-sport fantasy roster candidate. Unverified biography, fictional abilities and game-balanced traits.'
