@@ -111,7 +111,7 @@ function cameraBox(frame){
  if(!target.length)return null;
  var xs=target.map(function(x){return x.x*620/31;}),ys=target.map(function(x){return x.y*390/19;});
  var minX=Math.min.apply(null,xs),maxX=Math.max.apply(null,xs),minY=Math.min.apply(null,ys),maxY=Math.max.apply(null,ys);
- var w=Math.min(620,Math.max(190,maxX-minX+165)),h=Math.min(390,Math.max(120,maxY-minY+100));
+ var w=Math.min(620,Math.max(350,maxX-minX+205)),h=Math.min(390,Math.max(220,maxY-minY+128));
  // Preserve source map's 620:390 aspect ratio while tracking a selected subject.
  var aspect=620/390;
  if(w/h>aspect)h=w/aspect;else w=h*aspect;
