@@ -38,6 +38,7 @@ jobs:
           node tests/test_pathfinding_v22.cjs
           node tests/test_roster_v23.cjs
           node tests/test_active_rosters_v24.cjs
+          node tests/test_future_v30.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -57,6 +58,7 @@ jobs:
           python tests/test_browser_survival_v21.py
           python tests/test_browser_roster_v23.py
           python tests/test_browser_big_four_v25.py
+          python tests/test_browser_future_v30.py
       - name: Upload V18 visual QA screenshots
         if: always()
         uses: actions/upload-artifact@v4
