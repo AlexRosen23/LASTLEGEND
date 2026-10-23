@@ -35,6 +35,23 @@ def main():
     assert 'AFTERHOURS CITY' in page.locator('#encounter-visual').inner_text()
     assert 'TICK' in page.locator('.v20-slate').inner_text()
     assert page.locator('#encounter-visual .v20-players>span').count()>0
+    # Regression: the director title and action captions must paint in FRONT of athletes.
+    # A high child z-index is insufficient when its overlay parent is below the actor.
+    layers=page.evaluate("""() => {
+      const stage=document.querySelector('#encounter-visual .v20-cinema');
+      const z=selector=>Number(getComputedStyle(stage.querySelector(selector)).zIndex);
+      return {
+        actor:z('.scene-actor'),
+        overlay:z('.v20-director-overlay'),
+        title:z('.v20-slate'),
+        action:z('.scene-impact'),
+        status:z('.scene-status')
+      };
+    }""")
+    assert layers['overlay']>layers['actor'],f'Group Clash title behind player: {layers}'
+    assert layers['action']>layers['actor'],f'Action text behind player: {layers}'
+    assert layers['status']>layers['actor'],f'Status text behind player: {layers}'
+    assert layers['title']>0,f'Title not above its director overlay content: {layers}'
     page.locator('#encounter').screenshot(path=str(OUT/f'encounter_{width}.png'),animations='disabled')
     assert page.evaluate('document.documentElement.scrollWidth-innerWidth')<=2,'horizontal scroll'
     assert not errors,errors

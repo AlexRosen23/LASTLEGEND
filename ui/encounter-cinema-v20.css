@@ -11,9 +11,12 @@
 .v20-cinema .scene-actor{z-index:8;filter:drop-shadow(0 5px 12px #000)}
 .v20-cinema .scene-character{z-index:9;transform-origin:center 82%}
 .v20-cinema .scene-name{background:#071321ed;color:#f4ffff;border:1px solid #7b9aa9;border-radius:6px;font-size:10px;font-weight:900;letter-spacing:.06em;box-shadow:0 4px 9px #0008}
-.v20-cinema .scene-impact{z-index:10;color:#f6e8bf;text-shadow:0 0 30px var(--v20-glow)}
-.v20-cinema .scene-status{z-index:10;filter:drop-shadow(0 2px 8px #000);color:#e7ffab}
-.v20-director-overlay{position:absolute;z-index:3;inset:0;pointer-events:none;color:white;overflow:hidden}
+/* Action and status text must sit above every animated athlete. */
+.v20-cinema .scene-impact{z-index:22;color:#f6e8bf;text-shadow:0 0 30px var(--v20-glow)}
+.v20-cinema .scene-status{z-index:22;filter:drop-shadow(0 2px 8px #000);color:#e7ffab}
+/* The director HUD is a stacking context: its children cannot escape a lower parent z-index.
+   Keep the entire title/caption plane above z-index:8 athletes, on desktop and mobile. */
+.v20-director-overlay{position:absolute;z-index:16;inset:0;pointer-events:none;color:white;overflow:hidden}
 .v20-luma{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 30%,#040913aa 99%);box-shadow:inset 0 0 55px #0009}
 .v20-scene-rays{position:absolute;inset:0;background:linear-gradient(109deg,transparent 5%,#ffffff00 32%,var(--v20-glow) 47%,#ffffff00 57%,transparent 85%);opacity:.07;animation:v20-light-sweep 7s ease-in-out infinite}
 .v20-scanline{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 6px,#0008 7px);opacity:.08}
