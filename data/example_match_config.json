@@ -1,0 +1,30 @@
+{
+  "game": "LAST LEGEND",
+  "ruleset_version": "v0.1-preproduction",
+  "match_size": 12,
+  "seed": 20261022,
+  "randomness": "BALANCED",
+  "arena": "WILDERNESS",
+  "selected_athlete_ids": [
+    "lebron-james",
+    "michael-jordan",
+    "kobe-bryant",
+    "tom-brady",
+    "tyreek-hill",
+    "lionel-messi",
+    "usain-bolt",
+    "mike-tyson",
+    "muhammad-ali",
+    "michael-phelps",
+    "serena-williams",
+    "simone-biles"
+  ],
+  "max_ticks": 500,
+  "tick_world_minutes": 15,
+  "cosmetic_pref": {
+    "render": "2D_MAP_AND_SVG_STICK_FIGURES",
+    "encounter_scene_for_2_or_more": true,
+    "show_number_only_if_verified": true
+  },
+  "note": "Example setup, not a completed simulation run."
+}

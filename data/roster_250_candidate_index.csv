@@ -1,0 +1,251 @@
+id,display_name,sport,draft_uniform_context,uniform_type,jersey_number,number_type,appearance_verification,rating_verification,perks_verification,rights_review
+michael-jordan,Michael Jordan,Basketball,Bulls 1995-96,basketball_jersey,23,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lebron-james,LeBron James,Basketball,Cavaliers 2015-16,basketball_jersey,23,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kobe-bryant,Kobe Bryant,Basketball,Lakers 2007-08,basketball_jersey,24,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+shaquille-o-neal,Shaquille O'Neal,Basketball,Lakers 1999-00,basketball_jersey,34,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+stephen-curry,Stephen Curry,Basketball,Warriors 2015-16,basketball_jersey,30,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+magic-johnson,Magic Johnson,Basketball,Lakers 1986-87,basketball_jersey,32,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+larry-bird,Larry Bird,Basketball,Celtics 1985-86,basketball_jersey,33,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kareem-abdul-jabbar,Kareem Abdul-Jabbar,Basketball,Lakers 1979-80,basketball_jersey,33,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+wilt-chamberlain,Wilt Chamberlain,Basketball,76ers 1966-67,basketball_jersey,13,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+bill-russell,Bill Russell,Basketball,Celtics 1961-62,basketball_jersey,6,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+tim-duncan,Tim Duncan,Basketball,Spurs 2002-03,basketball_jersey,21,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kevin-durant,Kevin Durant,Basketball,Thunder 2013-14,basketball_jersey,35,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+hakeem-olajuwon,Hakeem Olajuwon,Basketball,Rockets 1993-94,basketball_jersey,34,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+giannis-antetokounmpo,Giannis Antetokounmpo,Basketball,Bucks 2019-20,basketball_jersey,34,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+nikola-joki,Nikola Jokić,Basketball,Nuggets 2022-23,basketball_jersey,15,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+dwyane-wade,Dwyane Wade,Basketball,Heat 2008-09,basketball_jersey,3,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+dirk-nowitzki,Dirk Nowitzki,Basketball,Mavericks 2010-11,basketball_jersey,41,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+allen-iverson,Allen Iverson,Basketball,76ers 2000-01,basketball_jersey,3,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+charles-barkley,Charles Barkley,Basketball,Suns 1992-93,basketball_jersey,34,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kevin-garnett,Kevin Garnett,Basketball,Celtics 2007-08,basketball_jersey,5,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+david-robinson,David Robinson,Basketball,Spurs 1994-95,basketball_jersey,50,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+oscar-robertson,Oscar Robertson,Basketball,Royals 1963-64,basketball_jersey,14,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jerry-west,Jerry West,Basketball,Lakers 1969-70,basketball_jersey,44,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+julius-erving,Julius Erving,Basketball,76ers 1980-81,basketball_jersey,6,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kawhi-leonard,Kawhi Leonard,Basketball,Raptors 2018-19,basketball_jersey,2,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+james-harden,James Harden,Basketball,Rockets 2017-18,basketball_jersey,13,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+russell-westbrook,Russell Westbrook,Basketball,Thunder 2016-17,basketball_jersey,0,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+luka-don-i,Luka Dončić,Basketball,Mavericks 2023-24,basketball_jersey,77,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+chris-paul,Chris Paul,Basketball,Hornets 2007-08,basketball_jersey,3,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+anthony-davis,Anthony Davis,Basketball,Pelicans 2017-18,basketball_jersey,23,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lisa-leslie,Lisa Leslie,Basketball,Sparks 2001,basketball_jersey,9,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+diana-taurasi,Diana Taurasi,Basketball,Mercury 2009,basketball_jersey,3,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+maya-moore,Maya Moore,Basketball,Lynx 2014,basketball_jersey,23,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+candace-parker,Candace Parker,Basketball,Sparks 2013,basketball_jersey,3,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+a-ja-wilson,A'ja Wilson,Basketball,Aces 2023,basketball_jersey,22,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+tom-brady,Tom Brady,American Football,Patriots 2007,football_pads_jersey,12,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+patrick-mahomes,Patrick Mahomes,American Football,Chiefs 2022,football_pads_jersey,15,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jerry-rice,Jerry Rice,American Football,49ers 1995,football_pads_jersey,80,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jim-brown,Jim Brown,American Football,Browns 1963,football_pads_jersey,32,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+walter-payton,Walter Payton,American Football,Bears 1977,football_pads_jersey,34,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+barry-sanders,Barry Sanders,American Football,Lions 1997,football_pads_jersey,20,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+peyton-manning,Peyton Manning,American Football,Colts 2004,football_pads_jersey,18,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+joe-montana,Joe Montana,American Football,49ers 1989,football_pads_jersey,16,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+aaron-rodgers,Aaron Rodgers,American Football,Packers 2011,football_pads_jersey,12,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+dan-marino,Dan Marino,American Football,Dolphins 1984,football_pads_jersey,13,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+brett-favre,Brett Favre,American Football,Packers 1996,football_pads_jersey,4,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+randy-moss,Randy Moss,American Football,Vikings 2003,football_pads_jersey,84,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+calvin-johnson,Calvin Johnson,American Football,Lions 2012,football_pads_jersey,81,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+terrell-owens,Terrell Owens,American Football,Eagles 2004,football_pads_jersey,81,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+rob-gronkowski,Rob Gronkowski,American Football,Patriots 2011,football_pads_jersey,87,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+travis-kelce,Travis Kelce,American Football,Chiefs 2022,football_pads_jersey,87,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+tyreek-hill,Tyreek Hill,American Football,Dolphins 2023,football_pads_jersey,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+deion-sanders,Deion Sanders,American Football,Falcons 1992,football_pads_jersey,21,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lawrence-taylor,Lawrence Taylor,American Football,Giants 1986,football_pads_jersey,56,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+reggie-white,Reggie White,American Football,Packers 1998,football_pads_jersey,92,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ray-lewis,Ray Lewis,American Football,Ravens 2000,football_pads_jersey,52,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ed-reed,Ed Reed,American Football,Ravens 2004,football_pads_jersey,20,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+troy-polamalu,Troy Polamalu,American Football,Steelers 2010,football_pads_jersey,43,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+j-j-watt,J.J. Watt,American Football,Texans 2014,football_pads_jersey,99,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+aaron-donald,Aaron Donald,American Football,Rams 2018,football_pads_jersey,99,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+derrick-henry,Derrick Henry,American Football,Titans 2020,football_pads_jersey,22,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+adrian-peterson,Adrian Peterson,American Football,Vikings 2012,football_pads_jersey,28,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lamar-jackson,Lamar Jackson,American Football,Ravens 2019,football_pads_jersey,8,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+michael-vick,Michael Vick,American Football,Falcons 2004,football_pads_jersey,7,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+bo-jackson,Bo Jackson,American Football,Raiders 1990,football_pads_jersey,34,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lionel-messi,Lionel Messi,Association Football,Barcelona 2011-12,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+cristiano-ronaldo,Cristiano Ronaldo,Association Football,Real Madrid 2013-14,soccer_kit,7,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+pel,Pelé,Association Football,Brazil 1970,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+diego-maradona,Diego Maradona,Association Football,Argentina 1986,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+zinedine-zidane,Zinedine Zidane,Association Football,France 1998,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ronaldo-naz-rio,Ronaldo Nazário,Association Football,Brazil 2002,soccer_kit,9,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ronaldinho,Ronaldinho,Association Football,Barcelona 2005-06,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kylian-mbapp,Kylian Mbappé,Association Football,France 2022,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+neymar,Neymar,Association Football,Brazil 2014,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+thierry-henry,Thierry Henry,Association Football,Arsenal 2003-04,soccer_kit,14,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+andr-s-iniesta,Andrés Iniesta,Association Football,Barcelona 2010-11,soccer_kit,8,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+xavi-hern-ndez,Xavi Hernández,Association Football,Barcelona 2010-11,soccer_kit,6,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+luka-modri,Luka Modrić,Association Football,Croatia 2018,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kevin-de-bruyne,Kevin De Bruyne,Association Football,Manchester City 2022-23,soccer_kit,17,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+erling-haaland,Erling Haaland,Association Football,Manchester City 2022-23,soccer_kit,9,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mohamed-salah,Mohamed Salah,Association Football,Liverpool 2017-18,soccer_kit,11,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+robert-lewandowski,Robert Lewandowski,Association Football,Bayern Munich 2019-20,soccer_kit,9,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+george-best,George Best,Association Football,Manchester United 1967-68,soccer_kit,7,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+johan-cruyff,Johan Cruyff,Association Football,Netherlands 1974,soccer_kit,14,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+franz-beckenbauer,Franz Beckenbauer,Association Football,West Germany 1974,soccer_kit,5,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+paolo-maldini,Paolo Maldini,Association Football,AC Milan 2002-03,soccer_kit,3,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+sergio-ramos,Sergio Ramos,Association Football,Real Madrid 2013-14,soccer_kit,4,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+virgil-van-dijk,Virgil van Dijk,Association Football,Liverpool 2018-19,soccer_kit,4,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+manuel-neuer,Manuel Neuer,Association Football,Germany 2014,soccer_kit,1,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+gianluigi-buffon,Gianluigi Buffon,Association Football,Italy 2006,soccer_kit,1,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+marta,Marta,Association Football,Brazil 2007,soccer_kit,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+alex-morgan,Alex Morgan,Association Football,USA 2019,soccer_kit,13,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mia-hamm,Mia Hamm,Association Football,USA 1999,soccer_kit,9,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+alexia-putellas,Alexia Putellas,Association Football,Barcelona 2021-22,soccer_kit,11,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+aitana-bonmat,Aitana Bonmatí,Association Football,Spain 2023,soccer_kit,14,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+babe-ruth,Babe Ruth,Baseball,Yankees 1927,baseball_jersey,3,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+willie-mays,Willie Mays,Baseball,Giants 1954,baseball_jersey,24,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+hank-aaron,Hank Aaron,Baseball,Braves 1957,baseball_jersey,44,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+barry-bonds,Barry Bonds,Baseball,Giants 2001,baseball_jersey,25,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ted-williams,Ted Williams,Baseball,Red Sox 1941,baseball_jersey,9,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jackie-robinson,Jackie Robinson,Baseball,Dodgers 1949,baseball_jersey,42,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mickey-mantle,Mickey Mantle,Baseball,Yankees 1956,baseball_jersey,7,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ken-griffey-jr,Ken Griffey Jr.,Baseball,Mariners 1997,baseball_jersey,24,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+derek-jeter,Derek Jeter,Baseball,Yankees 1999,baseball_jersey,2,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+alex-rodriguez,Alex Rodriguez,Baseball,Yankees 2007,baseball_jersey,13,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+shohei-ohtani,Shohei Ohtani,Baseball,Dodgers 2024,baseball_jersey,17,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mike-trout,Mike Trout,Baseball,Angels 2012,baseball_jersey,27,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+albert-pujols,Albert Pujols,Baseball,Cardinals 2009,baseball_jersey,5,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ichiro-suzuki,Ichiro Suzuki,Baseball,Mariners 2004,baseball_jersey,51,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+rickey-henderson,Rickey Henderson,Baseball,Athletics 1982,baseball_jersey,24,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+pedro-mart-nez,Pedro Martínez,Baseball,Red Sox 1999,baseball_jersey,45,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+randy-johnson,Randy Johnson,Baseball,Diamondbacks 2001,baseball_jersey,51,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+nolan-ryan,Nolan Ryan,Baseball,Rangers 1991,baseball_jersey,34,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+sandy-koufax,Sandy Koufax,Baseball,Dodgers 1965,baseball_jersey,32,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mariano-rivera,Mariano Rivera,Baseball,Yankees 2004,baseball_jersey,42,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+wayne-gretzky,Wayne Gretzky,Ice Hockey,Oilers 1983-84,hockey_jersey,99,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mario-lemieux,Mario Lemieux,Ice Hockey,Penguins 1988-89,hockey_jersey,66,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+sidney-crosby,Sidney Crosby,Ice Hockey,Penguins 2016-17,hockey_jersey,87,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+alex-ovechkin,Alex Ovechkin,Ice Hockey,Capitals 2007-08,hockey_jersey,8,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+connor-mcdavid,Connor McDavid,Ice Hockey,Oilers 2022-23,hockey_jersey,97,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+gordie-howe,Gordie Howe,Ice Hockey,Red Wings 1952-53,hockey_jersey,9,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+bobby-orr,Bobby Orr,Ice Hockey,Bruins 1969-70,hockey_jersey,4,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jarom-r-j-gr,Jaromír Jágr,Ice Hockey,Penguins 1998-99,hockey_jersey,68,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+patrick-kane,Patrick Kane,Ice Hockey,Blackhawks 2015-16,hockey_jersey,88,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jonathan-toews,Jonathan Toews,Ice Hockey,Blackhawks 2012-13,hockey_jersey,19,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+dominik-ha-ek,Dominik Hašek,Ice Hockey,Sabres 1997-98,hockey_jersey,39,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+martin-brodeur,Martin Brodeur,Ice Hockey,Devils 2002-03,hockey_jersey,30,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+nicklas-lidstr-m,Nicklas Lidström,Ice Hockey,Red Wings 2007-08,hockey_jersey,5,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+carey-price,Carey Price,Ice Hockey,Canadiens 2014-15,hockey_jersey,31,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+hilary-knight,Hilary Knight,Ice Hockey,USA 2018,hockey_jersey,21,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+muhammad-ali,Muhammad Ali,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mike-tyson,Mike Tyson,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+floyd-mayweather-jr,Floyd Mayweather Jr.,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+manny-pacquiao,Manny Pacquiao,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+sugar-ray-robinson,Sugar Ray Robinson,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+sugar-ray-leonard,Sugar Ray Leonard,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+joe-frazier,Joe Frazier,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+george-foreman,George Foreman,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+joe-louis,Joe Louis,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+rocky-marciano,Rocky Marciano,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+roberto-dur-n,Roberto Durán,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+canelo-lvarez,Canelo Álvarez,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+claressa-shields,Claressa Shields,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+katie-taylor,Katie Taylor,Boxing & MMA,Boxing trunks,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+conor-mcgregor,Conor McGregor,Boxing & MMA,MMA shorts,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+khabib-nurmagomedov,Khabib Nurmagomedov,Boxing & MMA,MMA shorts,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jon-jones,Jon Jones,Boxing & MMA,MMA shorts,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+georges-st-pierre,Georges St-Pierre,Boxing & MMA,MMA shorts,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+anderson-silva,Anderson Silva,Boxing & MMA,MMA shorts,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+amanda-nunes,Amanda Nunes,Boxing & MMA,MMA shorts,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ronda-rousey,Ronda Rousey,Boxing & MMA,MMA shorts,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+valentina-shevchenko,Valentina Shevchenko,Boxing & MMA,MMA shorts,combat_trunks,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+usain-bolt,Usain Bolt,Track & Field,Jamaica sprint singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+carl-lewis,Carl Lewis,Track & Field,USA track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+florence-griffith-joyner,Florence Griffith Joyner,Track & Field,USA track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+allyson-felix,Allyson Felix,Track & Field,USA track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+shelly-ann-fraser-pryce,Shelly-Ann Fraser-Pryce,Track & Field,Jamaica sprint singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+elaine-thompson-herah,Elaine Thompson-Herah,Track & Field,Jamaica sprint singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+noah-lyles,Noah Lyles,Track & Field,USA track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+michael-johnson,Michael Johnson,Track & Field,USA track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+wayde-van-niekerk,Wayde van Niekerk,Track & Field,South Africa track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jesse-owens,Jesse Owens,Track & Field,USA track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+eliud-kipchoge,Eliud Kipchoge,Track & Field,Kenya distance kit,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+haile-gebrselassie,Haile Gebrselassie,Track & Field,Ethiopia distance kit,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kenenisa-bekele,Kenenisa Bekele,Track & Field,Ethiopia distance kit,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mo-farah,Mo Farah,Track & Field,Great Britain distance kit,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+sydney-mclaughlin-levrone,Sydney McLaughlin-Levrone,Track & Field,USA track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+armand-duplantis,Armand Duplantis,Track & Field,Sweden pole vault kit,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+yulimar-rojas,Yulimar Rojas,Track & Field,Venezuela triple jump kit,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jackie-joyner-kersee,Jackie Joyner-Kersee,Track & Field,USA track singlet,track_singlet,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+michael-phelps,Michael Phelps,Swimming,USA swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+katie-ledecky,Katie Ledecky,Swimming,USA swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+caeleb-dressel,Caeleb Dressel,Swimming,USA swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mark-spitz,Mark Spitz,Swimming,USA swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ian-thorpe,Ian Thorpe,Swimming,Australia swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ryan-lochte,Ryan Lochte,Swimming,USA swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+adam-peaty,Adam Peaty,Swimming,Great Britain swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+sarah-sj-str-m,Sarah Sjöström,Swimming,Sweden swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+simone-manuel,Simone Manuel,Swimming,USA swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+missy-franklin,Missy Franklin,Swimming,USA swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kristin-otto,Kristin Otto,Swimming,East Germany swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+alexander-popov,Alexander Popov,Swimming,Russia swim kit,swim_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+serena-williams,Serena Williams,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+venus-williams,Venus Williams,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+roger-federer,Roger Federer,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+rafael-nadal,Rafael Nadal,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+novak-djokovic,Novak Djokovic,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+carlos-alcaraz,Carlos Alcaraz,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jannik-sinner,Jannik Sinner,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+steffi-graf,Steffi Graf,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+martina-navratilova,Martina Navratilova,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+chris-evert,Chris Evert,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+billie-jean-king,Billie Jean King,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+pete-sampras,Pete Sampras,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+andre-agassi,Andre Agassi,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+bj-rn-borg,Björn Borg,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+naomi-osaka,Naomi Osaka,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+iga-wi-tek,Iga Świątek,Tennis,Tennis kit,tennis_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+simone-biles,Simone Biles,Gymnastics,Gymnastics leotard,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+nadia-com-neci,Nadia Comăneci,Gymnastics,Gymnastics leotard,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+suni-lee,Suni Lee,Gymnastics,Gymnastics leotard,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+gabby-douglas,Gabby Douglas,Gymnastics,Gymnastics leotard,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+aly-raisman,Aly Raisman,Gymnastics,Gymnastics leotard,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kohei-uchimura,Kohei Uchimura,Gymnastics,Gymnastics singlet,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+daiki-hashimoto,Daiki Hashimoto,Gymnastics,Gymnastics singlet,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+rebeca-andrade,Rebeca Andrade,Gymnastics,Gymnastics leotard,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+olga-korbut,Olga Korbut,Gymnastics,Gymnastics leotard,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+larisa-latynina,Larisa Latynina,Gymnastics,Gymnastics leotard,gymnastics_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+tiger-woods,Tiger Woods,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jack-nicklaus,Jack Nicklaus,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+arnold-palmer,Arnold Palmer,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+rory-mcilroy,Rory McIlroy,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+scottie-scheffler,Scottie Scheffler,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+phil-mickelson,Phil Mickelson,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+brooks-koepka,Brooks Koepka,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+nelly-korda,Nelly Korda,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+annika-s-renstam,Annika Sörenstam,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lydia-ko,Lydia Ko,Golf,Golf polo,golf_polo,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+eddy-merckx,Eddy Merckx,Cycling,Cycling jersey,cycling_jersey,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lance-armstrong,Lance Armstrong,Cycling,Cycling jersey,cycling_jersey,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+tadej-poga-ar,Tadej Pogačar,Cycling,Cycling jersey,cycling_jersey,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jonas-vingegaard,Jonas Vingegaard,Cycling,Cycling jersey,cycling_jersey,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+marianne-vos,Marianne Vos,Cycling,Cycling jersey,cycling_jersey,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+chris-froome,Chris Froome,Cycling,Cycling jersey,cycling_jersey,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lewis-hamilton,Lewis Hamilton,Motorsport,Formula One racing suit,racing_suit,44,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+michael-schumacher,Michael Schumacher,Motorsport,Formula One racing suit,racing_suit,1,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ayrton-senna,Ayrton Senna,Motorsport,Formula One racing suit,racing_suit,12,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+max-verstappen,Max Verstappen,Motorsport,Formula One racing suit,racing_suit,1,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+fernando-alonso,Fernando Alonso,Motorsport,Formula One racing suit,racing_suit,14,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+dale-earnhardt,Dale Earnhardt,Motorsport,NASCAR racing suit,racing_suit,3,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+richard-petty,Richard Petty,Motorsport,NASCAR racing suit,racing_suit,43,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+lindsey-vonn,Lindsey Vonn,Snow Sports,Ski racing suit,winter_sport_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mikaela-shiffrin,Mikaela Shiffrin,Snow Sports,Ski racing suit,winter_sport_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+bode-miller,Bode Miller,Snow Sports,Ski racing suit,winter_sport_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ingemar-stenmark,Ingemar Stenmark,Snow Sports,Ski racing suit,winter_sport_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+shaun-white,Shaun White,Snow Sports,Snowboarding kit,winter_sport_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+chloe-kim,Chloe Kim,Snow Sports,Snowboarding kit,winter_sport_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+sachin-tendulkar,Sachin Tendulkar,Cricket,India cricket uniform,cricket_uniform,10,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+virat-kohli,Virat Kohli,Cricket,India cricket uniform,cricket_uniform,18,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ms-dhoni,MS Dhoni,Cricket,India cricket uniform,cricket_uniform,7,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+don-bradman,Don Bradman,Cricket,Australia cricket uniform,cricket_uniform,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+brian-lara,Brian Lara,Cricket,West Indies cricket uniform,cricket_uniform,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+shane-warne,Shane Warne,Cricket,Australia cricket uniform,cricket_uniform,23,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+ellyse-perry,Ellyse Perry,Cricket,Australia cricket uniform,cricket_uniform,8,jersey_or_race,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+aleksandr-karelin,Aleksandr Karelin,Other Sports,Wrestling singlet,specialty_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+jim-thorpe,Jim Thorpe,Other Sports,Multi-sport retro athletic kit,specialty_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+hakuho-sho,Hakuho Sho,Other Sports,Sumo mawashi,specialty_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+teddy-riner,Teddy Riner,Other Sports,Judo gi,specialty_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+mija-n-l-pez,Mijaín López,Other Sports,Wrestling singlet,specialty_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
+kelly-slater,Kelly Slater,Other Sports,Surfing wetsuit,specialty_kit,,none_or_event_specific,NEEDS_REVIEW,NOT_SCORED,NOT_ASSIGNED,PENDING
