@@ -20,3 +20,4 @@ jobs:
           node tests/test_v4.cjs
           node tests/test_v5.cjs
           node tests/test_v6.cjs
+          node tests/test_v7.cjs
