@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "verifiedAt": "2026-10-23",
+  "maxAgeDays": 30,
+  "definition": "Current-season jersey numbers explicitly listed on the named teams' official roster pages, double-keyed by ESPN league/player ID and current team ID. Only use when ESPN team roster omitted a number.",
+  "entries": [
+    {
+      "league": "NBA",
+      "playerId": "4703396",
+      "name": "Graham Ike",
+      "teamId": "9",
+      "team": "Golden State Warriors",
+      "jersey": "45",
+      "source": "https://www.nba.com/team/1610612744/roster"
+    },
+    {
+      "league": "NFL",
+      "playerId": "14012",
+      "name": "Andy Dalton",
+      "teamId": "1",
+      "team": "Atlanta Falcons",
+      "jersey": "13",
+      "source": "https://www.atlantafalcons.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4240849",
+      "name": "Charles Snowden",
+      "teamId": "1",
+      "team": "Atlanta Falcons",
+      "jersey": "47",
+      "source": "https://www.atlantafalcons.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4427716",
+      "name": "Jack Kiser",
+      "teamId": "4",
+      "team": "Cincinnati Bengals",
+      "jersey": "45",
+      "source": "https://www.bengals.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4430681",
+      "name": "Jared Wayne",
+      "teamId": "15",
+      "team": "Miami Dolphins",
+      "jersey": "86",
+      "source": "https://www.miamidolphins.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4361418",
+      "name": "Will Levis",
+      "teamId": "20",
+      "team": "New York Jets",
+      "jersey": "4",
+      "source": "https://www.newyorkjets.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4592837",
+      "name": "Terrion Arnold",
+      "teamId": "26",
+      "team": "Seattle Seahawks",
+      "jersey": "17",
+      "source": "https://www.seahawks.com/team/players-roster/"
+    }
+  ]
+}
