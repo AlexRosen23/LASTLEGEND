@@ -246,3 +246,30 @@ body:before {content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;op
 @media(max-width:600px){#app.app{padding-inline:14px}.site-header{margin-inline:-14px;padding-inline:14px;min-height:70px}.site-header .brand{font-size:23px}.logo-symbol{width:40px;height:40px;font-size:23px}.site-home-hero{margin-top:14px;min-height:unset;border-radius:12px}.site-hero-copy{padding:55px 20px 28px}.site-hero-copy:before{left:20px;top:20px;font-size:9px}.site-hero-copy>.site-eyebrow{margin-top:9px}.site-hero-copy h1{font-size:clamp(65px,14vw,95px);line-height:.89!important;overflow-wrap:normal}.site-hero-copy p{font-size:13px;line-height:1.65}.site-hero-side{min-height:330px}.rb-holo-ring{top:10%;width:65%;left:17%}.rb-holo-unit{width:23px;height:23px}.site-title-screen{width:55%;right:13px;bottom:14px}.site-home-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.site-sports{grid-template-columns:repeat(2,minmax(0,1fr))}.site-sport-chip{min-height:90px}.site-home-cards{grid-template-columns:1fr}.site-home-champion{grid-column:auto}.rb-arena-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.rb-arena-card{min-height:218px}.rb-arena-art{height:115px}.rb-arena-name{font-size:24px}.rb-arena-body{padding:11px}.rb-arena-sub{font-size:10px;padding-right:14px}.rb-arena-heading{align-items:start;flex-direction:column;gap:1px}.rb-arena-preview .rb-arena-art{flex-basis:93px;width:93px}.rb-preview-copy strong{font-size:18px}.site-legend-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.site-legend-card{padding:9px;min-height:282px}.site-legend-view{min-height:113px}.site-legend-view svg{max-height:105px!important}.site-legend-card h3{font-size:21px}.site-filterbar{grid-template-columns:1fr}.battle-metrics{gap:12px}.map-top,.map-foot{font-size:9px;padding:10px}.rb-broadcast-bar{letter-spacing:.07em}.site-page-head:after{font-size:100px;bottom:-20px}.scene-stage{height:183px}.encounter-visual{height:195px!important}.encounter{min-height:300px!important}.controls{flex-wrap:wrap}.controls #play{min-width:95px}}
 @media(max-width:380px){.site-hero-copy h1{font-size:60px}.rb-arena-grid{grid-template-columns:1fr}.rb-arena-card{min-height:210px}.rb-arena-art{height:115px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rb-holo *,.rb-holo:after,.rb-live:before,#map .rb-water,:where(.site-page,.hero,.battle):not(.hidden){animation:none!important}.site-primary,.site-secondary,.rb-arena-card,.site-legend-card,.site-sport-chip{transition:none!important}}
+
+/* REBIRTH / CHARACTER ATLAS — articulated silhouettes, distinctive uniform silhouettes and actions */
+.rb-character{overflow:visible;isolation:isolate;filter:drop-shadow(0 4px 3px #0009);transition:filter .2s ease,transform .2s ease}
+.site-legend-view .rb-character{width:clamp(95px,90%,144px)!important;height:138px!important;max-height:138px!important}
+.site-legend-view:hover .rb-character{filter:drop-shadow(0 9px 8px #000c) drop-shadow(0 0 12px #a8efff25)}
+.site-profile-art .rb-character{width:190px!important;height:235px!important;max-width:98%!important}
+.victory-stage .rb-character{width:min(200px,65vw)!important;height:185px!important}
+.scene-character .rb-character{width:96px!important;height:120px!important}
+.rb-character .rb-athlete-arm,.rb-character .rb-athlete-leg{transform-box:view-box}
+.rb-character .rb-arm-left{animation:rb-athlete-arm-left 1.9s ease-in-out infinite alternate}
+.rb-character .rb-arm-right{animation:rb-athlete-arm-right 1.9s ease-in-out infinite alternate}
+.rb-character .rb-leg-left{animation:rb-athlete-leg 1.9s ease-in-out infinite alternate}
+.rb-character .rb-leg-right{animation:rb-athlete-leg 1.9s ease-in-out infinite alternate-reverse}
+.rb-character .rb-athlete-head{transform-origin:center -16px;animation:rb-look 4.8s ease-in-out infinite alternate}
+.rb-character .rb-game-prop{transform-origin:26px 12px;animation:rb-prop 2.2s ease-in-out infinite alternate}
+.rb-character.rb-victor .rb-athlete-arm{animation:rb-arm-victory 1.2s ease-in-out infinite alternate}
+.rb-character.rb-victor .rb-figure-body{animation:rb-champion 1.1s ease-in-out infinite alternate}
+.rb-character.ll-dead .rb-athlete-arm,.rb-character.ll-dead .rb-athlete-leg,.rb-character.ll-dead .rb-athlete-head,.rb-character.ll-dead .rb-game-prop{animation:none}
+@keyframes rb-athlete-arm-left{from{transform:rotate(-4deg)}to{transform:rotate(7deg)}}
+@keyframes rb-athlete-arm-right{from{transform:rotate(5deg)}to{transform:rotate(-7deg)}}
+@keyframes rb-athlete-leg{from{transform:rotate(-2deg)}to{transform:rotate(3deg)}}
+@keyframes rb-look{from{transform:rotate(-2deg)}to{transform:rotate(3deg)}}
+@keyframes rb-prop{to{transform:rotate(5deg)}}
+@keyframes rb-arm-victory{to{transform:rotate(-15deg) translateY(-6px)}}
+@keyframes rb-champion{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+@media(max-width:600px){.scene-character .rb-character{width:74px!important;height:99px!important}.site-legend-view .rb-character{height:115px!important;max-height:115px!important}.site-profile-art .rb-character{height:175px!important}}
+@media(prefers-reduced-motion:reduce){.rb-character .rb-athlete-arm,.rb-character .rb-athlete-leg,.rb-character .rb-athlete-head,.rb-character .rb-game-prop,.rb-character.rb-victor .rb-figure-body{animation:none!important}}
