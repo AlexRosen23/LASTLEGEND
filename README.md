@@ -1,4 +1,17 @@
-# LAST LEGEND — V4 mechanics release
+# LAST LEGEND — V6 integrated character-art release
+
+## V6 — Integrated character rendering and match presentation
+
+- The production `index.html` now loads `ui/character-renderer.js` and `ui/character-polish.css`.
+- Match encounter scenes and champion presentations use new distinct animated SVG silhouettes for 258 mascots, 2 horses, 2 vehicles, one aquatic competitor, and one undead character. Human sprite art remains the V5 individualized stick-figure system, with subtle animation.
+- Mascot art gets bird, horned, bear, feline, canine, costume or general stylized variants based on existing names/affiliations; these are **provisional interpretations** rather than licensed, verified likenesses.
+- Map overlays distinguish surviving nonhuman entrants, without changing simulation math, hitboxes, abilities or results.
+- The champion presentation adds final HP and affiliation and uses type-specific celebration motion, preserving placements and replay controls.
+- Existing desktop and mobile live leaderboards remain tied to the displayed replay frame; their sticky visibility rules are retained and reinforced.
+- Open [Character Identity Lab](identity-lab.html) from the draft screen for separate roster inspection. Run `node tests/test_v6.cjs` alongside V5 regression tests.
+- All 1,203 entries passed in-memory SVG renderability checks; actual browser viewport testing remains an additional release check.
+
+
 
 ## V5 — Athlete identity + always-visible arena leaders
 

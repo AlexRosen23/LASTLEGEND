@@ -2,7 +2,7 @@ const fs=require('fs'),vm=require('vm'),assert=require('assert'),performance=req
 const html=fs.readFileSync(__dirname+'/../index.html','utf8');
 const roster=JSON.parse(html.match(/<script type="application\/json" id="INLINE_ATHLETES">([\s\S]*?)<\/script>/)[1]);
 const perks=JSON.parse(html.match(/<script type="application\/json" id="INLINE_PERKS">([\s\S]*?)<\/script>/)[1]);
-const script=html.match(/<script>([\s\S]*?)<\/script>\s*<\/body>/)[1].replace(/\ninit\(\);\s*$/,'');
+const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace(/\ninit\(\);\s*$/,'');
 const ctx=vm.createContext({console,Math,Date,crypto:{getRandomValues:a=>(a[0]=21234,a)},setTimeout,clearTimeout,window:{},document:{getElementById:()=>({})}});
 vm.runInContext(script,ctx);const Sim=vm.runInContext('Simulation',ctx);const generateMap=vm.runInContext('generateMap',ctx);const catalogue=vm.runInContext('getFiltered',ctx);const opts=vm.runInContext('opts',ctx);
 function match(ids,seed,arena='WILDERNESS'){const t=performance.now(),m=new Sim(ids,roster,perks,{seed,arena}).run();const sec=(performance.now()-t)/1000;assert.equal(m.roster.length,ids.length);assert.equal(m.placements.length,ids.length);assert.equal(new Set(m.placements).size,ids.length);assert.equal(m.events.filter(e=>e.type==='ELIMINATION').length,ids.length-1);assert.equal(m.frames.at(-1).alive.length,1);for(const e of m.events){if(e.type==='ALLIANCE'){let snap=m.frames.filter(f=>f.tick<=e.tick).at(-1);assert(snap.alive.length>=4,'Late alliance!')}}return{m,sec}}

@@ -133,12 +133,14 @@
 .battle-aside{overflow:visible}
 .arena-leaders-desktop{top:8px;border-radius:5px 5px 0 0}
 </style>
+<link rel="stylesheet" href="ui/character-polish.css">
 <title>LAST LEGEND — 1,203 Characters. One Champion.</title>
 </head><body>
 <div id="app" class="app">
 <header class="topbar"><div class="logo-box"><div class="logo-symbol">LL<span>●</span></div><div><div class="eyebrow">THE ULTIMATE ATHLETE SURVIVAL SIM · CINEMATIC ENCOUNTERS</div><div class="brand">LAST <em>LEGEND</em></div></div></div><button id="help-btn" class="icon-btn" title="About this game" aria-label="About game">?</button></header>
 <main>
 <section class="hero" id="draft-view"><div class="hero-meta"><span class="live-pill"><i></i> THE DRAFT</span><span>SEASON 001 · LEGENDS NEVER DIE</span></div>
+<a class="ll-lab-link" href="identity-lab.html" title="Review roster portraits, nonhuman animations, and appearance verification">✧ CHARACTER IDENTITY LAB ↗</a>
 <h1><span id="hero-count" style="color:var(--pale)">12 ENTER.</span><br><span>ONE REMAINS.</span></h1><p class="hero-desc">Choose 2–100 athletes from 1,203 crossover competitors. Watch them strategize, form alliances, fight for supplies, and survive. No guaranteed winner. Mascots, athletes, wildcards, and every battle tell a new story.</p>
 <div class="section-rule"><strong>01 / SELECT YOUR LEGENDS</strong><span id="draft-count" aria-live="polite">0 / 12 DRAFTED</span></div>
 <div class="match-size-bar"><label for="match-size">ATHLETES IN THIS BATTLE</label><div class="match-size-controls"><button type="button" class="size-step" id="decrease-size" aria-label="Remove one draft slot">−</button><select id="match-size" aria-label="Number of athletes in this battle"></select><button type="button" class="size-step" id="increase-size" aria-label="Add one draft slot">+</button></div><span id="size-status" class="match-size-hint" role="status" aria-live="polite">Choose any number from 2 to 100. One champion. One champion.</span></div>
@@ -755,4 +757,5 @@ async function init(){try{const [a,p]=await Promise.all([Promise.resolve(JSON.pa
  }catch(e){console.error(e);$('athlete-grid').textContent='Could not load athlete data. Serve this folder over HTTP(S) and reload: '+e.message}}
 init();
 </script>
+<script src="ui/character-renderer.js"></script>
 </body></html>
