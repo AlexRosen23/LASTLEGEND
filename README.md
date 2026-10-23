@@ -1,12 +1,20 @@
 # LAST LEGEND
 
-**Twelve legendary athletes enter. One remains.**
+**Choose 2–24 legendary athletes. One remains.**
 
 **[Play LAST LEGEND on your phone](https://alexrosen23.github.io/LASTLEGEND/)**
 
+## V2.1 — Adjustable Battle Size · October 23, 2026
+
+- **Choose 2–24 contestants per match**, while keeping the 500-athlete searchable database.
+- Draft-size selector and plus/minus buttons dynamically rebuild slots; default remains 12.
+- Reducing the draft size keeps the first N picks and removes excess selections; the quick-fill button respects the selected size.
+- Spawn distribution, dynamic survivor counts, eliminations, placement validation, and story text all honor the selected size.
+- Run `node test_sizes.cjs` for 70 seeded simulations covering 2, 3, 4, 8, 12, 18, and 24 contestants, plus input and draft-size assertions.
+
 ## V2 — Cinematic Encounters · October 23, 2026
 
-- Draft **12 athletes from 500** provisional profiles across 16 sports, including Tyrese Haliburton and Aaron Judge.
+- Draft **2–24 athletes from 500** provisional profiles across 16 sports, including Tyrese Haliburton and Aaron Judge.
 - Story-first playback is now slower: approximately 1.55 seconds per ordinary tick at 1×, with major encounters allotted approximately 2.85–3.55 seconds. Use ½× Cinematic, 1× Story, 2× or 4×.
 - Animated stick-figure interactions show approaches, dodges, impacts, escapes, alliances and eliminations. The encounter camera can stage 2–4 participants, with actual event-log outcomes driving the story.
 - Match results remain seeded and statistical rather than chosen by narration. A match ends with exactly one champion.
@@ -26,6 +34,8 @@ Open the live URL in **iPhone Safari → Share → Add to Home Screen** to insta
 The deployed website is served from the separate `gh-pages` branch. The source-of-truth remains `main`.
 
 ## Verification
+
+The V2.1 size validation suite passed 70 seeded simulations with correct single-winner results and size-dependent elimination counts. Browser UX verification is performed against the published site.
 
 The JavaScript test harness completed 81 seeded matches; 11 different champions appeared across 80 standard-roster runs, with group clashes involving three and four athletes. The 390px mobile browser test checked the 500-athlete roster, encounter animations, one winner, and no JavaScript errors or horizontal overflow.
 
