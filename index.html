@@ -909,12 +909,30 @@ function bindings(){
  $('help-btn').addEventListener('click',()=>$('about').showModal());$('close-about').addEventListener('click',()=>$('about').close());$('about-ok').addEventListener('click',()=>$('about').close());
 }
 async function init(){try{const [a,p]=await Promise.all([Promise.resolve(JSON.parse(document.getElementById('INLINE_ATHLETES').textContent)),Promise.resolve(JSON.parse(document.getElementById('INLINE_PERKS').textContent))]);if(a.length!==1203)throw Error(`Expected 1203 competitors, received ${a.length}`);
- const expansion=window.LastLegendRosterV23?.install(a,p);const leagueData=await window.LastLegendActiveRostersV24?.load();const leagueImport=leagueData?window.LastLegendActiveRostersV24.install(a,p,leagueData):null;opts.athletes=a;opts.perks=p;opts.profiles=new Map(a.map(x=>[x.id,x]));if(expansion)console.info('Last Legend V23 expanded roster',expansion.total,expansion.added);if(leagueImport){window.LastLegendActiveRostersV24.renderCoverage();console.info('Last Legend V24 active roster snapshot',leagueImport)}
+ const expansion=window.LastLegendRosterV23?.install(a,p);
+ // Expose the base/legend collection synchronously so V7 career-edition setup
+ // and website navigation cannot race the asynchronous external league snapshot.
+ opts.athletes=a;opts.perks=p;opts.profiles=new Map(a.map(x=>[x.id,x]));
+ if(expansion)console.info('Last Legend V23 expanded roster',expansion.total,expansion.added);
  $('ll-draft-catalog-count').textContent=a.length.toLocaleString('en-US');
  const sports=[...new Set(a.map(x=>x.sport))].sort();$('sport-filter').innerHTML='<option value="">All sports</option>'+sports.map(s=>`<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
-  $('match-size').innerHTML=Array.from({length:99},(_,i)=>`<option value="${i+2}" ${i+2===12?'selected':''}>${i+2} ATHLETES</option>`).join('');
-  bindings();chooseSize(12); // New users start with a genuinely empty lineup. Fill Rest is opt-in.
- 
+ $('match-size').innerHTML=Array.from({length:99},(_,i)=>`<option value="${i+2}" ${i+2===12?'selected':''}>${i+2} ATHLETES</option>`).join('');
+ bindings();chooseSize(12);
+ // Optional live snapshot hydration: the playable base never blocks on an
+ // upstream failure. A complete validated source updates every live catalog.
+ const leagueData=await window.LastLegendActiveRostersV24?.load();
+ if(leagueData){
+  const leagueImport=window.LastLegendActiveRostersV24.install(a,p,leagueData);
+  opts.profiles=new Map(a.map(x=>[x.id,x]));
+  window.LastLegendSpectator?.installCareerEditions();
+  window.LastLegendSpectator?.refreshTeamOptions();
+  $('ll-draft-catalog-count').textContent=a.length.toLocaleString('en-US');
+  window.renderGrid();
+  window.LastLegendWebsite?.renderLobby();
+  if(window.LastLegendWebsite?.shell.route==='legends')window.LastLegendWebsite.renderLegends();
+  window.LastLegendActiveRostersV24.renderCoverage();
+  console.info('Last Legend V24 full big-four roster snapshot',leagueImport);
+ }
  }catch(e){console.error(e);$('athlete-grid').textContent='Could not load athlete data. Serve this folder over HTTP(S) and reload: '+e.message}}
 init();
 </script>
