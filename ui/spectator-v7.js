@@ -54,7 +54,7 @@ window.renderLeaders=function(frame){
 var originalGrid=window.renderGrid;
 window.renderGrid=function(){
  if(!opts.profiles||!opts.athletes.length){originalGrid();return;}
- var list=getFiltered();updateSkins();
+ var list=getFiltered();
  byId('filtered-count').textContent=list.length+' available · '+opts.selected.length+' drafted';
  var visible=list.slice(0,state.draftLimit);
  byId('athlete-grid').innerHTML=visible.map(function(a){
