@@ -88,7 +88,7 @@ def run():
                 profile.wait_for(timeout=30000)
                 profile.locator(".v11-show-stats").click()
                 assert page.locator("#site-profile-dialog").evaluate("(element)=>element.open")
-                assert page.locator("#site-profile-body .v11-stat").count() == 20
+                assert page.locator("#site-profile-body .v11-stat-group .v11-stat").count() == 20
                 assert page.locator("#site-profile-body .v11-ability").count() >= 3
                 page.locator('#site-profile-body [data-site-draft="active-nba-1"]').click()
                 page.wait_for_function("opts.selected.includes('active-nba-1')", timeout=30000)
