@@ -2,7 +2,7 @@ const assert=require('assert'),fs=require('fs'),vm=require('vm');
 const html=fs.readFileSync(__dirname+'/../index.html','utf8');
 const athletes=JSON.parse(html.match(/<script type="application\/json" id="INLINE_ATHLETES">([\s\S]*?)<\/script>/)[1]);
 const perks=JSON.parse(html.match(/<script type="application\/json" id="INLINE_PERKS">([\s\S]*?)<\/script>/)[1]);
-const code=html.match(/<script>([\s\S]*?)<\/script>\s*<\/body>/)[1].replace(/\ninit\(\);\s*$/,'');
+const code=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace(/\ninit\(\);\s*$/,'');
 const ctx=vm.createContext({console,Math,Date,crypto:{getRandomValues:a=>(a[0]=2026,a)},setTimeout,clearTimeout,window:{},document:{getElementById:()=>({})}});
 vm.runInContext(code,ctx); const get=x=>vm.runInContext(x,ctx);
 const opts=get('opts'),Sim=get('Simulation'),look=get('appearanceFor'),figure=get('figureSVG'),leaders=get('leaderBoardMarkup');
