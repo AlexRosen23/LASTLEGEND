@@ -1,49 +1,32 @@
 # LAST LEGEND
 
-**12 enter. One remains.**
+**Twelve legendary athletes enter. One remains.**
 
-LAST LEGEND is a standalone, mobile-friendly, fictional sports-survival simulator. Pick **exactly 12** athletes from **252 playable profiles** (including Tyrese Haliburton and Aaron Judge). Watch them move around a 2D arena as sport-appropriate stick figures, form temporary alliances, compete for supplies, escape and survive. The story feed and champion are produced from the same seeded, stat-influenced simulation.
+**[Play LAST LEGEND on your phone](https://alexrosen23.github.io/LASTLEGEND/)**
 
-## Play the game
+## V2 — Cinematic Encounters · October 23, 2026
 
-**[`index.html`](index.html) is the complete self-contained browser prototype.** Download this file and open it in a current browser. It includes its own CSS, athlete data, perks, simulation logic, and encounter animations; you do not need to start a backend.
+- Draft **12 athletes from 500** provisional profiles across 16 sports, including Tyrese Haliburton and Aaron Judge.
+- Story-first playback is now slower: approximately 1.55 seconds per ordinary tick at 1×, with major encounters allotted approximately 2.85–3.55 seconds. Use ½× Cinematic, 1× Story, 2× or 4×.
+- Animated stick-figure interactions show approaches, dodges, impacts, escapes, alliances and eliminations. The encounter camera can stage 2–4 participants, with actual event-log outcomes driving the story.
+- Match results remain seeded and statistical rather than chosen by narration. A match ends with exactly one champion.
+- Reduced zone-attrition dominance, so encounters cause more eliminations.
 
-**GitHub Pages is NOT enabled.** This repository is public source code, not a launched website. Public web deployment and iPhone home-screen hosting remain separate actions.
+Open the live URL in **iPhone Safari → Share → Add to Home Screen** to install a Home Screen shortcut.
 
-## Reference simulation / tests
+## Project files
 
-Install Python 3.10+ and run from repository root:
+- `index.html`: fully self-contained playable mobile browser game (data, visuals and simulation bundled).
+- `data/athletes_500.json`, `data/signature_perks_500.json`: expanded game profiles and special abilities.
+- `data/athletes_500_summary.csv`: sortable summary of the 500 profiles.
+- `tools/expand_roster.py`: deterministic expansion generator, preserving the earlier 252-profile source for audit.
+- `engine/`, `tests/`, `examples/`, `reports/`, `docs/`, `source_v0_1/`: reference Python simulator, tests, recorded runs and production planning documents.
+- `prompts/CLAUDE_CODE_MASTER_PROMPT.md`: older full-scale implementation prompt; use the V2 files as the latest game source.
 
-```bash
-python -m unittest discover -s tests -v
-python -m engine.cli --seed 20261022 --out examples/my_match.json
-```
+The deployed website is served from the separate `gh-pages` branch. The source-of-truth remains `main`.
 
-The Python reference engine is separate from the standalone JavaScript browser prototype. It offers deterministic scenarios, comprehensive event logs and traceable outcomes. See `docs/VALIDATION_AND_LIMITS.md` for details and caveats.
+## Verification
 
-## Repository contents
+The JavaScript test harness completed 81 seeded matches; 11 different champions appeared across 80 standard-roster runs, with group clashes involving three and four athletes. The 390px mobile browser test checked the 500-athlete roster, encounter animations, one winner, and no JavaScript errors or horizontal overflow.
 
-- `index.html` — self-contained playable phone/desktop experience: 12-athlete draft, 4 arenas, 3 randomness modes, 2D map, stick-figure encounters, story feed, and champion.
-- `data/athletes_252.json` — all 252 provisional athlete profiles and 20 gameplay ratings per athlete.
-- `data/signature_perks_252.json` and `data/secondary_perks.json` — signature and contextual ability catalogues.
-- `data/ruleset_config.json` — probability-weight sets, scenarios and arena data.
-- `engine/` and `tests/` — Python reference engine and unit tests.
-- `examples/`, `reports/`, `preview/` — recorded simulations, validation outputs, and offline replay viewer.
-- `docs/`, `source_v0_1/` — requirements, ratings approach, appearance verification and original design.
-- `prompts/CLAUDE_CODE_MASTER_PROMPT.md` — production build / architecture / further QA instructions.
-- `docs/REFERENCE_README.md` — original complete design-kit README, preserved for provenance.
-- `PACKAGE_MANIFEST.json` — original complete build-kit manifest.
-
-## Important boundaries
-
-- **All sports-ability numbers and behavioral traits are provisional game ratings**, not factual evaluations of real people. In-game events are fictional.
-- Source-confirmed jersey numbers currently include Indiana #0 for Haliburton and Yankees #99 for Judge; no unverified athlete numbers should be represented as verified.
-- This is a **working prototype**, not a licensed or independently calibrated commercial game. Remaining QA includes mobile browser/device verification, historical uniform and athlete-rights review, broader statistical balancing, and production hardening.
-- Publishing to a website has **not** been configured.
-
-## Next steps
-
-1. Review the playable `index.html` build and the recorded-match examples.
-2. Run the Python test suite.
-3. Read `prompts/CLAUDE_CODE_MASTER_PROMPT.md` to guide the next development pass.
-4. Configure a website deployment only when explicitly approved.
+These are **gameplay ratings**, not verified measurements of real athletes, and fictional events are not claims about real behavior. Some historical jersey details and intellectual-property rights need further review before commercial release.
