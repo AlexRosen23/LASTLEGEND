@@ -54,6 +54,7 @@ jobs:
           python tests/test_browser_cinema_v20.py
           python tests/test_browser_survival_v21.py
           python tests/test_browser_roster_v23.py
+          python tests/test_browser_big_four_v25.py
       - name: Upload V18 visual QA screenshots
         if: always()
         uses: actions/upload-artifact@v4
