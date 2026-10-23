@@ -30,7 +30,7 @@ def main():
                 assert page.locator("#ll-match-history").count()==1
                 # Dynamic two-stage filter: only show teams within selected sport.
                 page.select_option("#sport-filter","Basketball")
-                page.locator("#ll-team-filter option").filter(has_text="Philadelphia 76ers").wait_for()
+                page.locator("#ll-team-filter option").filter(has_text="Philadelphia 76ers").wait_for(state="attached")
                 page.select_option("#ll-team-filter","Philadelphia 76ers")
                 assert page.locator('[data-athlete="lebron-james-sixers-2026"]').count()==1
                 page.select_option("#ll-team-filter","")
