@@ -23,7 +23,7 @@ def main():
                 page=browser.new_page(viewport={"width":width,"height":height},reduced_motion="reduce")
                 errors=[]
                 page.on("pageerror",lambda e:errors.append(str(e)))
-                page.goto(url,wait_until="domcontentloaded",timeout=60000)
+                page.goto(url+"#/play",wait_until="domcontentloaded",timeout=60000)
                 page.wait_for_function("typeof opts!=='undefined' && opts.athletes.length===1210 && document.querySelectorAll('.athlete-card').length===96",timeout=60000)
                 assert page.locator("#ll-home").count()==1
                 assert page.locator(".athlete-card").count()==96
@@ -38,6 +38,8 @@ def main():
                 assert page.locator("#ll-team-filter").is_disabled()
                 # Confirm different career editions are independently selectable.
                 assert page.locator("#skin-select").count()==0
+                page.locator("#demo").click()
+                assert page.evaluate("opts.selected.length")==12
                 page.locator("#clear-draft").click()
                 assert page.evaluate("opts.selected.length")==0
                 assert page.locator("#start").is_disabled()
@@ -75,8 +77,10 @@ def main():
                 assert page.evaluate("LastLegendSpectator.readHistory().length")>=1
                 page.locator("#ll-home").click()
                 page.locator("#ll-confirm-exit").click()
-                assert page.locator("#draft-view").is_visible()
+                assert page.locator("#site-home").is_visible()
                 assert not page.locator("#battle-view").is_visible()
+                page.goto(url+"#/champions",wait_until="domcontentloaded",timeout=60000)
+                page.wait_for_function("LastLegendWebsite.shell.route==='champions'",timeout=20000)
                 assert "CHAMPION HISTORY" in page.locator("#ll-match-history").inner_text()
                 overflow=page.evaluate("document.documentElement.scrollWidth-window.innerWidth")
                 assert overflow<=2,f"{width}px viewport horizontal overflow {overflow}px"
