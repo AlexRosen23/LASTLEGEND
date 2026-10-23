@@ -21,7 +21,7 @@ def run():
                 page.wait_for_function("typeof LastLegendWebsite==='object' && LastLegendWebsite.shell.ready && opts.athletes.length>=1222",timeout=60000)
                 assert page.locator("#site-home").is_visible()
                 assert page.locator("#draft-view").is_hidden()
-                assert page.locator("#site-total").inner_text()=="1,210"
+                assert page.locator("#site-total").inner_text()=="1,222"
                 assert page.evaluate("LastLegendEncounters.catalog.length") == 500
                 page.evaluate("LastLegendWebsite.goto('play')")
                 page.locator('#scene-intensity').select_option('graphic')
