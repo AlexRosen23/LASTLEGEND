@@ -117,7 +117,7 @@ function add(d){
 }
 for(const a of real)for(const p of places)add({
  category:'realistic',name:a[0]+' / '+p[1],action:a[0],actionText:a[1],arena:p[0],location:p[1],prop:p[2],
- cue:p[3],types:a[2],intensity:'standard',body:null,sport:null
+ cue:p[3],types:a[2],intensity:'standard',body:'human',sport:null
 });
 for(const a of comic)for(const p of props)add({
  category:'comic',name:a[0]+' / '+p[2],action:a[0],actionText:a[1],arena:p[0],location:p[2],prop:p[1],
@@ -136,12 +136,12 @@ for(const [body,moves] of Object.entries(nonhuman))for(const move of moves)add({
 for(const a of brutal)for(const p of hardPlaces)add({
  category:'brutal',name:a[0]+' / '+p[1],action:a[0],actionText:a[1],arena:p[0],location:p[1],prop:p[2],
  cue:p[3],types:['SKIRMISH','GROUP_SKIRMISH','FINALE_ENGAGEMENT','AMBUSH','TRAP','STORM'],
- intensity:'intense',body:null,sport:null
+ intensity:'intense',body:'human',sport:null
 });
 for(const a of mature)for(const p of maturePlaces)add({
  category:'mature',name:a[0]+' / '+p[1],action:a[0],actionText:a[1],arena:p[0],location:p[1],prop:p[2],
  cue:'graphic',types:['SKIRMISH','GROUP_SKIRMISH','FINALE_ENGAGEMENT','AMBUSH','TRAP','STORM','ELIMINATION'],
- intensity:'graphic',body:null,sport:null
+ intensity:'graphic',body:'human',sport:null
 });
 if(catalog.length!==500)throw Error('Expected exactly 500 authored scene specifications, found '+catalog.length);
 const byId=new Map(catalog.map(x=>[x.id,x]));
