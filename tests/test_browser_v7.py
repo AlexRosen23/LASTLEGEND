@@ -24,7 +24,7 @@ def main():
                 errors=[]
                 page.on("pageerror",lambda e:errors.append(str(e)))
                 page.goto(url+"#/play",wait_until="domcontentloaded",timeout=60000)
-                page.wait_for_function("typeof opts!=='undefined' && opts.athletes.length===1210 && document.querySelectorAll('.athlete-card').length===96",timeout=60000)
+                page.wait_for_function("typeof opts!=='undefined' && opts.athletes.length>=1222 && document.querySelectorAll('.athlete-card').length===96",timeout=60000)
                 assert page.locator("#ll-home").count()==1
                 assert page.locator(".athlete-card").count()==96
                 assert page.locator("#ll-match-history").count()==1
