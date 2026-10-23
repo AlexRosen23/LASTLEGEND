@@ -1,5 +1,0 @@
-Unzip LAST_LEGEND_Full_Build_Kit_v1.zip into an empty local project folder. In Claude Code, open that folder and send:
-
-"Implement the entire project described in prompts/CLAUDE_CODE_MASTER_PROMPT.md. Treat the bundled data and original product decisions as the source of truth. Do not just write plans; build and test a running app. Preserve all 252 athletes including Tyrese Haliburton and Aaron Judge, exactly 12 per match, and sport-correct 2D stick figures with only verified jersey numbers visible. Report which milestones and tests actually completed."
-
-The long master prompt is inside this package. Reading it is essential.
