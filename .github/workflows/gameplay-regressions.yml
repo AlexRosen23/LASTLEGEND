@@ -22,6 +22,7 @@ jobs:
           node tests/test_v6.cjs
           node tests/test_v7.cjs
           node tests/test_lineup_controls.cjs
+          node tests/test_zone_v9.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
