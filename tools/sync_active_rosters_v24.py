@@ -76,7 +76,7 @@ def enrich_missing_jersey(item:dict,sport:str,league:str,delay:float):
     An old-team athlete number is worse than an explicit blank.
     """
     if item["jersey"] is not None:return False
-    url=f"{API}/{sport}/{league}/athletes/{item['id']}"
+    url=f"https://site.web.api.espn.com/apis/common/v3/sports/{sport}/{league}/athletes/{item['id']}"
     try:
         source=get_json(url,tries=1,timeout=7)
     except (RuntimeError,ValueError) as exc:
