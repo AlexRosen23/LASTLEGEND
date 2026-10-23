@@ -345,7 +345,14 @@ class Simulation{
    const opts=[['APPROACH',.7+beh.aggression/65],['EVADE',.3+beh.caution/75],['OBSERVE',.4+beh.opportunism/150]];
    if(a.ally==null&&this.alive().length>=4)opts.push(['NEGOTIATE',.3+beh.alliance_drive/100]);
    return [weighted(this.seed,this.tick,a.id,'intent',opts),target]}
-  const caches=this.caches.filter(c=>c.supplies>0).sort((a1,b1)=>dist(a,a1)-dist(a,b1)||a1.id-b1.id);
+  // V13: avoid chasing resources destined to fall outside the moving safe circle.
+  // Re-score by travel cost, remaining safety margin and meaningful supplies.
+  const futureSafe=this.safeRadius(6),caches=this.caches
+   .filter(c=>c.supplies>0&&dist(c,{x:16,y:10})<futureSafe-.2)
+   .sort((left,right)=>{
+    const score=c=>dist(a,c)+Math.max(0,dist(c,{x:16,y:10})-futureSafe+2)*6-(Math.min(c.supplies,2)*.25);
+    return score(left)-score(right)||left.id-right.id;
+   });
   if(caches.length&&a.supplies<2){const c=caches[0];return dist(a,c)<1.35?['TAKE_CACHE',c.id]:['GO_CACHE',c.id]}
   if(this.tick/this.maxTicks>.4||dist(a,{x:16,y:10})>this.radius()-1)return ['GO_CENTER',null];
   return ['GO_CACHE',Math.floor(draw(this.seed,'landmark',a.id)*this.caches.length)];
