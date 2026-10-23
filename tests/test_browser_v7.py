@@ -28,6 +28,8 @@ def main():
                 assert page.locator("#ll-home").count()==1
                 assert page.locator(".athlete-card").count()==96
                 assert page.locator("#ll-match-history").count()==1
+                page.locator("[data-ll-page=play]").first.click()
+                assert page.locator("#draft-view").is_visible()
                 # Dynamic two-stage filter: only show teams within selected sport.
                 page.select_option("#sport-filter","Basketball")
                 page.locator("#ll-team-filter option").filter(has_text="Philadelphia 76ers").wait_for(state="attached")
@@ -75,7 +77,7 @@ def main():
                 assert page.evaluate("LastLegendSpectator.readHistory().length")>=1
                 page.locator("#ll-home").click()
                 page.locator("#ll-confirm-exit").click()
-                assert page.locator("#draft-view").is_visible()
+                assert page.locator("#ll-web-home").is_visible()
                 assert not page.locator("#battle-view").is_visible()
                 assert "CHAMPION HISTORY" in page.locator("#ll-match-history").inner_text()
                 overflow=page.evaluate("document.documentElement.scrollWidth-window.innerWidth")
