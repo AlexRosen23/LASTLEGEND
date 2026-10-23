@@ -1,141 +1,207 @@
-/* Last Legend site shell, accessible public-site navigation.
-   Does not alter combat mechanics or ranked simulation. */
+/* Last Legend Website Foundation (V8): a fully working, static multi-view
+   product shell. Hash routes support deep links on GitHub Pages without
+   pretending to offer accounts, multiplayer, or global results. */
 (function(){
 'use strict';
 const $=id=>document.getElementById(id);
-const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const pages=new Set(['home','play','legends','champions','how-to-play']);
-let view='play',pageSize=40,search='',sport='',team='',needsResume=false;
-function matchActive(){return !!(opts.match&&!$('battle-view').classList.contains('hidden'));}
-function askLeave(next){
- if(!matchActive()||next==='play')return true;
- const d=$('ll-exit-dialog');
- if(!d)return false;
- needsResume=opts.playing;
- stop();
- const ok=$('ll-confirm-exit'),cancel=$('ll-cancel-exit');
- // Existing handlers process confirmation/cancellation. Navigation follows
- // the legacy home action only if the user confirms the exit.
- const one=()=>{pending=null;setTimeout(()=>show(next,true),0);};
- ok.addEventListener('click',one,{once:true});
- const cleanup=()=>{ok.removeEventListener('click',one);pending=null;};
- const no=$('ll-cancel-exit');
- no.addEventListener('click',cleanup,{once:true});
- pending={ok,cancel:no,cleanup};
- d.showModal();return false;
-}
-let pending=null;
-function show(which,internal=false){
- if(!pages.has(which))which='home';
- if(!internal&&!askLeave(which))return;
- view=which;
- const home=$('ll-web-home'),roster=$('ll-web-legends'),guide=$('ll-web-guide');
- const isBattle=matchActive();
- const draft=$('draft-view'),battle=$('battle-view'),history=$('ll-match-history');
- home.hidden=which!=='home';
- roster.hidden=which!=='legends';
- guide.hidden=which!=='how-to-play';
- if(which==='play'){
-  draft.classList.toggle('hidden',isBattle);
-  battle.classList.toggle('hidden',!isBattle);
- }else{
-  draft.classList.add('hidden');
-  battle.classList.add('hidden');
+const esc=x=>String(x==null?'':x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pages=['home','play','legends','champions','how-to-play','about','updates'];
+const shell={route:'home',pending:null,search:'',sport:'',team:'',limit:36,ready:false};
+function dataReady(){return typeof opts!=='undefined'&&opts.athletes?.length>=1203&&typeof figureSVG==='function'}
+function normalize(hash){let path=String(hash||'').replace(/^#\/?/,'').split('?')[0].split('/')[0].trim().toLowerCase();return pages.includes(path)?path:'home';}
+function currentBattle(){return dataReady()&&!!opts.match&&!$('battle-view').classList.contains('hidden');}
+function setActivePage(page){
+ shell.route=page;
+ const map={home:'site-home',play:null,legends:'site-legends',champions:'site-champions','how-to-play':'site-how-to-play',about:'site-about',updates:'site-updates'};
+ for(const r of pages){
+  const id=map[r];if(id)$(id).classList.toggle('hidden',r!==page);
  }
- history.hidden=which!=='champions';
- for(const button of document.querySelectorAll('[data-ll-page]')){
-  const active=button.dataset.llPage===which;
-  button.classList.toggle('ll-site-active',active);
-  if(button.matches('nav button'))active?button.setAttribute('aria-current','page'):button.removeAttribute('aria-current');
- }
- $('ll-mobile-nav')?.classList.remove('ll-nav-open');
- $('ll-nav-toggle')?.setAttribute('aria-expanded','false');
- if(which==='legends')renderRoster();
- if(which==='champions'&&window.LastLegendSpectator?.readHistory){
-  // Existing history lives on the page and is updated when matches conclude.
-  const t=window.LastLegendSpectator.readHistory();$('ll-site-history-count').textContent=t.length+' FINISHED MATCHES SAVED ON THIS DEVICE';
- }
- history.removeAttribute('style');
- if(location.hash!=='#'+which&&internal!==null)historyReplace(which);
+ $('draft-view').classList.toggle('hidden',page!=='play'||currentBattle());
+ $('battle-view').classList.toggle('hidden',page!=='play'||!currentBattle());
+ document.querySelectorAll('[data-site-nav]').forEach(a=>{
+  const active=a.dataset.siteNav===page;
+  a.classList.toggle('site-active',active);
+  if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+ });
+ const labels={home:'The Lobby',play:'Play',legends:'The Legends',champions:'Hall of Legends','how-to-play':'How to Play',about:'About & FAQ',updates:'What’s New'};
+ document.title=labels[page]+' · Last Legend';
+ document.querySelector('meta[name="description"]')?.setAttribute('content',{
+  home:'Last Legend is a free cinematic athlete battle-royale simulator. Draft, spectate and crown a survivor.',
+  play:'Draft 2–100 athletes, mascots and fictional entrants into one animated Last Legend survival match.',
+  legends:'Search and compare Last Legend athletes, mascots and career editions across sports and teams.',
+  champions:'Browse your Last Legend champions and battle records saved on this device.',
+  'how-to-play':'Learn to draft athletes, select an arena, track your competitors and understand Last Legend results.',
+  about:'About Last Legend: gameplay rules, accessibility, fictional ratings, privacy and sources.',
+  updates:'Last Legend website release notes and known limitations.'
+ }[page]);
+ $('site-footer').classList.toggle('site-footer-hidden',page==='play'&&currentBattle());
+ closeMenu();
+ if(page==='home')renderLobby();
+ if(page==='legends')renderLegends();
+ if(page==='champions')renderChampions();
  window.scrollTo(0,0);
 }
-function historyReplace(which){try{history.replaceState({page:which},'',location.pathname+location.search+'#'+which)}catch(e){}}
-function sports(){return [...new Set(opts.athletes.map(a=>a.sport))].sort();}
-function teams(){return [...new Set(opts.athletes.filter(a=>!sport||a.sport===sport).map(a=>window.LastLegendSpectator?.teamFor(a)||a.team||a.era||'Other'))].sort();}
-function rebuildFilters(){
- const sp=$('ll-legend-sport'),tm=$('ll-legend-team');
- if(!sp||!tm)return;
- sp.innerHTML='<option value="">ALL SPORTS</option>'+sports().map(s=>'<option value="'+escape(s)+'">'+escape(s)+'</option>').join('');
- sp.value=sport;
- const available=teams();
- if(!available.includes(team))team='';
- tm.innerHTML='<option value="">ALL TEAMS / AFFILIATIONS</option>'+available.map(t=>'<option value="'+escape(t)+'">'+escape(t)+'</option>').join('');
- tm.value=team;tm.disabled=!sport;
+function routeTo(page){const route=pages.includes(page)?page:'home';const next='#/'+route;
+ if(location.hash!==next)location.hash=next;
+ else setActivePage(route);
 }
-function renderRoster(){
- if(!opts.athletes?.length){$('ll-web-legend-list').textContent='Loading the roster…';return;}
- rebuildFilters();
- const q=search.toLowerCase(),tf=window.LastLegendSpectator?.teamFor;
- const all=opts.athletes.filter(a=>(!sport||a.sport===sport)&&(!team||(tf?tf(a):a.team||a.era)===team)&&(!q||[a.name,a.team,a.era,a.sport].some(v=>String(v||'').toLowerCase().includes(q))));
- const showing=all.slice(0,pageSize);
- $('ll-legend-count').textContent=all.length.toLocaleString('en-US')+' RESULTS · '+showing.length+' DISPLAYED';
- $('ll-web-legend-list').innerHTML=showing.map(a=>{
-  const look=appearanceFor(a);
-  return '<article class="ll-site-legend"><div class="ll-site-figure">'+figureSVG(a)+'</div><div class="ll-site-legend-desc"><strong>'+escape(a.name)+'</strong><span>'+escape(a.sport)+'</span><small>'+escape(tf?tf(a):(a.team||a.era||'Independent'))+(look.number!=null?' · #'+escape(look.number):'')+'</small></div><button type="button" class="ll-site-add" data-ll-draft="'+escape(a.id)+'">DRAFT +</button></article>';
- }).join('')||'<p>No matching competitors. Change the filters or search.</p>';
- const btn=$('ll-legend-more');btn.hidden=showing.length===all.length;btn.textContent='SHOW MORE · '+showing.length+'/'+all.length;
+function tryExit(page){
+ if(!currentBattle()){routeTo(page);return;}
+ shell.pending=page;
+ if(typeof LastLegendSpectator!=='undefined')LastLegendSpectator.exitPrompt();
 }
-function draft(id){
- if(!opts.profiles.has(id))return;
- if(opts.selected.includes(id)){show('play');return;}
+function goto(page){
+ if(currentBattle()&&page!=='play'){tryExit(page);return;}
+ routeTo(page);
+}
+function navigateOnHash(){
+ const next=normalize(location.hash);
+ if(currentBattle()&&shell.route==='play'&&next!=='play'){
+  if(shell.pending!==next)shell.pending=next;
+  history.replaceState(null,'','#/play');
+  LastLegendSpectator.exitPrompt();return;
+ }
+ setActivePage(next);
+}
+function commitExit(){
+ const target=shell.pending||'home';shell.pending=null;
+ if(dataReady()&&!currentBattle()&&opts.match){
+  // V7 confirm handler calls home() synchronously before this handler.
+  opts.match=null;
+ }
+ routeTo(target);
+}
+function cancelExit(){shell.pending=null}
+function closeMenu(){const menu=$('site-navigation'),btn=$('site-menu-toggle');menu.classList.remove('site-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open site menu');}
+function toggleMenu(){const menu=$('site-navigation'),btn=$('site-menu-toggle');const opening=!menu.classList.contains('site-open');menu.classList.toggle('site-open',opening);btn.setAttribute('aria-expanded',String(opening));btn.setAttribute('aria-label',opening?'Close site menu':'Open site menu');}
+function topSports(){
+ const choice=['Basketball','American Football','Baseball','Ice Hockey','Association Football','College Mascot'];
+ const labels={'Basketball':'BASKETBALL','American Football':'FOOTBALL','Baseball':'BASEBALL','Ice Hockey':'HOCKEY','Association Football':'SOCCER','College Mascot':'MASCOTS'};
+ return choice.map((s,i)=>'<button type="button" class="site-sport-chip" data-site-sport="'+esc(s)+'"><span class="site-sport-index">0'+(i+1)+'</span><span>'+labels[s]+'</span><span aria-hidden="true">↗</span></button>').join('');
+}
+function renderLobby(){
+ if(!dataReady())return;
+ $('site-total').textContent=opts.athletes.length.toLocaleString('en-US');
+ $('site-sports').innerHTML=topSports();
+ let entries=[];try{entries=LastLegendSpectator.readHistory()}catch(e){}
+ const latest=entries[0],card=$('site-latest-champion');
+ if(latest&&opts.profiles.has(latest.winner)){
+  const a=opts.profiles.get(latest.winner);
+  card.innerHTML='<div class="site-card-topline">MOST RECENT CHAMPION <span>THIS DEVICE</span></div><div class="site-champion-portrait">'+figureSVG(a,{large:true})+'</div><strong>'+esc(latest.champion)+'</strong><small>'+esc(latest.arena)+' · '+latest.count+' COMPETITORS · '+latest.eliminations+' KOs</small><a href="#/champions" data-site-action="champions" class="site-inline-link">VIEW YOUR HALL OF LEGENDS ↗</a>';
+ }else{
+  card.innerHTML='<div class="site-card-topline">YOUR LEGACY <span>LOCAL RECORDS</span></div><div class="site-champion-blank">♛</div><strong>YOUR FIRST CHAMPION AWAITS.</strong><small>Finish a battle to fill your personal Hall of Legends.</small><a href="#/play" data-site-action="play" class="site-inline-link">ENTER THE ARENA ↗</a>';
+ }
+}
+function getTeam(a){
+ if(typeof LastLegendSpectator!=='undefined')return LastLegendSpectator.teamFor(a);
+ return a.team||a.era||'Independent / Other';
+}
+function visibleLegends(){
+ let list=opts.athletes.filter(a=>{
+  if(shell.sport&&a.sport!==shell.sport)return false;
+  if(shell.team&&getTeam(a)!==shell.team)return false;
+  const value=(a.name+' '+a.sport+' '+getTeam(a)+' '+(a.era||'')).toLowerCase();
+  return !shell.search||value.includes(shell.search);
+ });
+ return list;
+}
+function updateLegendTeams(){
+ if(!dataReady())return;
+ const el=$('site-legend-team'),teams=[...new Set(opts.athletes.filter(a=>!shell.sport||a.sport===shell.sport).map(getTeam))].sort();
+ el.innerHTML='<option value="">All teams & affiliations</option>'+teams.map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');
+ if(!teams.includes(shell.team))shell.team='';
+ el.value=shell.team;
+}
+function renderLegends(){
+ if(!dataReady())return;
+ const list=visibleLegends(),page=list.slice(0,shell.limit);
+ $('site-roster-total').textContent=opts.athletes.length.toLocaleString('en-US');
+ $('site-legend-count').textContent=list.length+' MATCHES · '+page.length+' SHOWN';
+ $('site-legend-grid').innerHTML=page.map(a=>{
+  const isSelected=opts.selected.includes(a.id),look=appearanceFor(a);
+  const tag=a.edition_of?'CAREER EDITION':a.render_type==='mascot'?'MASCOT':a.kind==='animal'?'WILDCARD':'COMPETITOR';
+  return '<article class="site-legend-card" data-site-profile="'+esc(a.id)+'"><div class="site-legend-head"><span>'+tag+'</span><span>'+esc(a.sport)+'</span></div><button class="site-legend-view" data-site-open="'+esc(a.id)+'" type="button" aria-label="View '+esc(a.name)+' profile">'+figureSVG(a,{large:true})+'</button><h3>'+esc(a.name)+'</h3><div class="site-legend-affiliation">'+esc(getTeam(a))+'</div><div class="site-legend-tail"><small>'+(look.number!=null?'#'+esc(look.number):'NUMBER NOT VERIFIED')+'</small><button type="button" class="site-add" data-site-draft="'+esc(a.id)+'" aria-label="Add '+esc(a.name)+' to lineup" '+(isSelected?'disabled':'')+'>'+(isSelected?'DRAFTED':'+ ADD TO DRAFT')+'</button></div></article>';
+ }).join('')||'<p class="site-no-results">No legends match. Try another sport, team, or search.</p>';
+ const more=$('site-legend-more');
+ more.hidden=page.length>=list.length;
+ more.textContent='SHOW MORE · '+page.length+' / '+list.length;
+}
+function playerDialog(id){
+ const a=opts.profiles.get(id);if(!a)return;
+ const look=appearanceFor(a),ratings=a.ratings||{},ranked=Object.entries(ratings).filter(([k,v])=>Number.isFinite(v)).sort((a,b)=>b[1]-a[1]).slice(0,5);
+ const isSelected=opts.selected.includes(id);
+ $('site-profile-body').innerHTML='<div class="site-profile-grid"><div class="site-profile-art">'+figureSVG(a,{victory:true})+'</div><div class="site-profile-copy"><div class="site-eyebrow">'+esc(a.sport)+(a.edition_of?' / CAREER EDITION':' / ORIGINAL PROFILE')+'</div><h2 id="site-profile-title">'+esc(a.name)+'</h2><p>'+esc(getTeam(a))+' · '+esc(a.era||'Original edition')+'</p><div class="site-profile-stats">'+ranked.map(([k,v])=>'<div><span>'+esc(k.replaceAll('_',' '))+'</span><strong>'+Number(v)+'</strong></div>').join('')+'</div><p class="site-fact-check">Fictional game ratings. Clothing/appearance may be stylized and provisional; athlete identity does not imply endorsement. '+(look.number!=null?'Displayed #'+look.number+' follows the available game profile.':'No verified jersey number in this edition.')+'</p><button class="site-primary" type="button" data-site-draft="'+esc(id)+'" '+(isSelected?'disabled':'')+'>'+(isSelected?'ALREADY IN YOUR LINEUP':'+ ADD TO LINEUP')+'</button></div></div>';
+ $('site-profile-dialog').showModal();
+}
+function addDraft(id){
+ if(!dataReady())return;
+ if(opts.selected.includes(id)){routeTo('play');$('site-profile-dialog').close();return;}
  if(opts.selected.length>=opts.matchSize){
-  const status=$('ll-site-legend-message');status.textContent='Lineup full. Clear a slot in Play before adding another competitor.';return;
+  $('site-live-region').textContent='Your lineup is full. Use Clear Lineup or increase the match size to add another competitor.';
+  return;
  }
  opts.selected.push(id);
  renderSlots();renderGrid();
- const status=$('ll-site-legend-message');status.textContent=opts.profiles.get(id).name+' added to your lineup.';
- show('play');
+ $('site-profile-dialog').close();
+ routeTo('play');
+ $('site-live-region').textContent=opts.profiles.get(id).name+' added to your lineup.';
 }
-function init(){
- const header=$('ll-site-navigation');if(!header)return;
- $('ll-nav-toggle').addEventListener('click',()=>{
-  const nav=$('ll-mobile-nav'),expanded=nav.classList.toggle('ll-nav-open');$('ll-nav-toggle').setAttribute('aria-expanded',String(expanded));
+function renderChampions(){
+ if(typeof LastLegendSpectator!=='undefined'&&typeof window.renderHistory==='function'){window.renderHistory();}
+ $('site-device-note').textContent='These records are stored in this browser only. Clearing browser data or switching devices will not transfer them.';
+}
+function setupFilters(){
+ const sport=$('site-legend-sport');
+ sport.innerHTML='<option value="">All sports and character types</option>'+[...new Set(opts.athletes.map(a=>a.sport))].sort().map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');
+ updateLegendTeams();
+ $('site-legend-search').addEventListener('input',e=>{shell.search=e.target.value.trim().toLowerCase();shell.limit=36;renderLegends();});
+ sport.addEventListener('change',e=>{shell.sport=e.target.value;shell.team='';shell.limit=36;updateLegendTeams();renderLegends();});
+ $('site-legend-team').addEventListener('change',e=>{shell.team=e.target.value;shell.limit=36;renderLegends();});
+ $('site-legend-more').addEventListener('click',()=>{shell.limit+=36;renderLegends();});
+ $('site-legend-grid').addEventListener('click',e=>{
+  const add=e.target.closest('[data-site-draft]'),view=e.target.closest('[data-site-open]');
+  if(add){addDraft(add.dataset.siteDraft);return;}
+  if(view)playerDialog(view.dataset.siteOpen);
+ });
+ $('site-profile-close').addEventListener('click',()=>$('site-profile-dialog').close());
+ $('site-profile-dialog').addEventListener('click',e=>{if(e.target===$('site-profile-dialog'))$('site-profile-dialog').close();});
+ $('site-profile-body').addEventListener('click',e=>{const btn=e.target.closest('[data-site-draft]');if(btn)addDraft(btn.dataset.siteDraft);});
+}
+function setup(){
+ if(shell.ready)return;
+ if(!dataReady()){window.setTimeout(setup,80);return;}
+ shell.ready=true;
+ setupFilters();
+ $('site-menu-toggle').addEventListener('click',toggleMenu);
+ $('site-navigation').addEventListener('click',e=>{
+  const a=e.target.closest('a[data-site-nav]');if(!a)return;
+  e.preventDefault();goto(a.dataset.siteNav);
  });
  document.addEventListener('click',e=>{
-  const page=e.target.closest('[data-ll-page]');
-  if(page){e.preventDefault();show(page.dataset.llPage);return;}
-  const draftBtn=e.target.closest('[data-ll-draft]');
-  if(draftBtn){draft(draftBtn.dataset.llDraft);return;}
- });
- // LL logo retains in-battle quit confirmation and returns to the new home from the lobby.
- $('ll-home')?.addEventListener('click',e=>{
-  if(matchActive()){
-   // Native V7 exit handler owns the confirmation. After successful exit its
-   // home() method is wrapped below to reveal the website homepage.
-   return;
+  const action=e.target.closest('[data-site-action]');
+  if(action){e.preventDefault();goto(action.dataset.siteAction);return;}
+  const sport=e.target.closest('[data-site-sport]');
+  if(sport){
+   e.preventDefault();
+   $('sport-filter').value=sport.dataset.siteSport;
+   opts.sport=sport.dataset.siteSport;
+   $('sport-filter').dispatchEvent(new Event('change',{bubbles:true}));
+   goto('play');return;
   }
-  e.preventDefault();e.stopImmediatePropagation();show('home');
- },true);
- const spectator=window.LastLegendSpectator;
- if(spectator){
-  const oldHome=spectator.home;
-  spectator.home=function(){oldHome();show('home',true);};
-  // V7's logo confirmation callbacks use the lexical home() instead, so
-  // after a confirmed exit observe via the same button instead of rewriting
-  // the simulation. This handler runs after its existing handler.
-  $('ll-confirm-exit')?.addEventListener('click',()=>{
-   if(!pending)setTimeout(()=>show('home',true),0);
-  });
- }
- $('ll-legend-search').addEventListener('input',e=>{search=e.target.value.trim();pageSize=40;renderRoster();});
- $('ll-legend-sport').addEventListener('change',e=>{sport=e.target.value;team='';pageSize=40;renderRoster();});
- $('ll-legend-team').addEventListener('change',e=>{team=e.target.value;pageSize=40;renderRoster();});
- $('ll-legend-more').addEventListener('click',()=>{pageSize+=40;renderRoster();});
- window.addEventListener('hashchange',()=>show(location.hash.slice(1)||'home',null));
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('ll-mobile-nav').classList.remove('ll-nav-open');$('ll-nav-toggle').setAttribute('aria-expanded','false');}});
- const initial=pages.has(location.hash.slice(1))?location.hash.slice(1):'home';
- show(initial,null);
+ });
+ $('ll-home').addEventListener('click',()=>{shell.pending='home';if(!currentBattle())routeTo('home');});
+ $('ll-confirm-exit').addEventListener('click',commitExit);
+ $('ll-cancel-exit').addEventListener('click',cancelExit);
+ $('ll-exit-dialog').addEventListener('cancel',cancelExit);
+ window.addEventListener('hashchange',navigateOnHash);
+ window.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+ $('site-first-battle').addEventListener('click',()=>goto('play'));
+ $('site-champions-link').addEventListener('click',()=>goto('champions'));
+ const old=$('help-btn');
+ old.addEventListener('click',()=>{if(!currentBattle()){ /* Existing About dialog also remains available. */}});
+ const initial=normalize(location.hash);setActivePage(initial);
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-window.LastLegendWebsite={show,renderRoster,askLeave,getPage:()=>view};
+window.LastLegendWebsite={shell,normalize,goto,setActivePage,renderLegends,renderLobby,addDraft,visibleLegends,getTeam};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup);
+else setup();
 })();
