@@ -182,7 +182,7 @@
 <div id="draft-slots" class="draft-slots" aria-label="Selected athletes"></div>
 <div class="mode-controls"><label>BATTLE MODE<select id="battle-mode" aria-label="Battle roster mode"><option value="ALL">Open Battle Royale · All</option><option value="MASCOT">Mascot Mode · Pro + College</option><option value="ATHLETE">Athletes Only</option><option value="WILDCARD">Wildcards & Fictional</option></select></label><label>COLLECTION<select id="collection-filter" aria-label="Browse character collections"><option value="ALL">All collections</option><option value="FRIENDS_REQUESTS">Friends' requests</option><option value="BEARS_TOP_100">Bears Top 100</option><option value="IU_2025_CHAMPIONS">Indiana Champions</option><option value="PRO_MASCOTS">All pro mascots</option><option value="NFL_MASCOTS">NFL Mascots</option><option value="NBA_MASCOTS">NBA Mascots</option><option value="NHL_MASCOTS">NHL Mascots</option><option value="MLB_MASCOTS">MLB Mascots</option><option value="COLLEGE_MASCOTS">100 College Mascots</option></select></label><span id="filtered-count" aria-live="polite">Loading library…</span></div><div class="browse-tools"><input id="search" class="search-input" type="search" placeholder="Search athletes, career editions, and teams…" aria-label="Search athletes" autocomplete="off"><select id="sport-filter" aria-label="Filter sport"><option value="">All sports</option></select><select id="ll-team-filter" aria-label="Filter by team or affiliation" disabled><option value="">CHOOSE A SPORT FIRST</option></select></div><div class="ll-edition-note" id="ll-edition-count" aria-live="polite">1,203 ORIGINAL PROFILES</div>
 <div id="athlete-grid" class="athlete-grid"></div><button type="button" class="btn btn-secondary" id="ll-more-athletes" hidden>SHOW MORE LEGENDS</button>
-<div class="draft-footer"><div class="rules"><label>ARENA<select id="arena"><option value="WILDERNESS">The Wilderness</option><option value="CITY">Neon City</option><option value="RUINS">The Gauntlet</option><option value="FROZEN">Frozen Frontier</option></select></label><label>RANDOMNESS<select id="mode"><option value="BALANCED">Balanced</option><option value="REALISTIC">Realistic</option><option value="CHAOS">Chaos</option></select></label><label>SEED<input id="seed" type="number" inputmode="numeric" value="20261022" min="0" max="2147483647"></label><label class="random-map-toggle"><span>MAP VARIETY</span><span class="toggle-line"><input type="checkbox" id="random-map" checked>New map every battle</span></label></div><div class="draft-actions"><button id="clear-draft" type="button" class="btn btn-secondary" aria-label="Clear entire lineup">CLEAR LINEUP</button><button id="demo" type="button" class="btn btn-secondary" aria-label="Fill remaining empty lineup slots">FILL REST</button><button id="start" class="btn btn-primary" disabled>START THE BATTLE <span>→</span></button></div></div>
+<div class="draft-footer"><div class="rules"><label>ARENA<select id="arena"><option value="WILDERNESS">The Wilderness</option><option value="CITY">Neon City</option><option value="RUINS">The Gauntlet</option><option value="FROZEN">Frozen Frontier</option></select></label><label>RANDOMNESS<select id="mode"><option value="BALANCED">Balanced</option><option value="REALISTIC">Realistic</option><option value="CHAOS">Chaos</option></select></label><label>SCENE INTENSITY<select id="scene-intensity" aria-label="Encounter narrative violence intensity"><option value="standard">Standard · Non-graphic</option><option value="intense">Intense · Heavy impacts</option><option value="graphic">Graphic · 18+ opt-in</option></select></label><label>SEED<input id="seed" type="number" inputmode="numeric" value="20261022" min="0" max="2147483647"></label><label class="random-map-toggle"><span>MAP VARIETY</span><span class="toggle-line"><input type="checkbox" id="random-map" checked>New map every battle</span></label></div><div class="draft-actions"><button id="clear-draft" type="button" class="btn btn-secondary" aria-label="Clear entire lineup">CLEAR LINEUP</button><button id="demo" type="button" class="btn btn-secondary" aria-label="Fill remaining empty lineup slots">FILL REST</button><button id="start" class="btn btn-primary" disabled>START THE BATTLE <span>→</span></button></div></div>
 </section>
 
 <section id="site-legends" class="site-page hidden" aria-labelledby="site-legends-heading">
@@ -301,6 +301,12 @@ class Simulation{
  }
  emit(type,ids,detail={},importance='normal'){
   ids=[...new Set(ids)].sort();const e={id:++this.serial,tick:this.tick,type,participants:ids,detail,importance,positions:Object.fromEntries(ids.map(id=>{const a=this.actors.get(id);return[id,[round(a.x),round(a.y)] ]}))};
+  // Scenario tags describe this exact recorded event; combat outcomes remain untouched.
+  const scenarios=window.LastLegendEncounters;
+  if(scenarios&&typeof scenarios.select==='function'){
+   const selection=scenarios.select(e,this);
+   if(selection)e.encounterId=selection.id;
+  }
   this.events.push(e);return e;
  }
  snapshot(){this.frames.push({tick:this.tick,alive:this.alive(),phase:this.phase(),radius:this.radius(),mapId:this.map.mapId,actors:Object.fromEntries(this.roster.map(id=>{const a=this.actors.get(id);return[id,{x:round(a.x),y:round(a.y),hp:round(a.hp),stamina:round(a.stamina),alive:a.alive,ally:a.ally,supplies:a.supplies,eliminations:a.eliminations}]})),caches:this.caches.map(c=>c.supplies),eventCursor:this.events.length})}
@@ -470,7 +476,7 @@ class Simulation{
   for(const e of this.events){if(e.participants.some(id=>!this.db.has(id)))throw Error('Invalid event participant')}
  }
 }
-function narrate(e,profile){const n=id=>profile.get(id)?.name||String(id||'arena'),d=e.detail;
+function narrateBase(e,profile){const n=id=>profile.get(id)?.name||String(id||'arena'),d=e.detail;
  switch(e.type){
  case 'MATCH_START':return `${e.participants.length} competitors enter ${ARENAS[d.arena].label.toLowerCase()}. Every choice matters. Only one will survive.`;
  case 'SUPPLY':return `${n(e.participants[0])} picks up supplies at cache ${d.cache+1}.`;
@@ -501,7 +507,11 @@ function narrate(e,profile){const n=id=>profile.get(id)?.name||String(id||'arena
  default:return e.type.replaceAll('_',' ').toLowerCase();
  }
 }
-
+function narrate(e,profile){
+ const factual=narrateBase(e,profile);
+ const scene=window.LastLegendEncounters&&window.LastLegendEncounters.describe(e,profile);
+ return scene?scene+' '+factual:factual;
+}
 
 const $=id=>document.getElementById(id);
 const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -758,7 +768,8 @@ function renderEncounter(e){if(!e)return;
  let ids=[...e.participants].filter(id=>opts.profiles.has(id));const d=e.detail||{};
  if(e.type==='ELIMINATION'&&ids.length===1){ids=[ids[0]];}
  const label={GROUP_SKIRMISH:'MULTI-ATHLETE CLASH',SKIRMISH:'THE CLASH',CHASE:'HIGH-SPEED PURSUIT',ALLIANCE:'ALLIANCE FORMED',CONTACT:'PATHS CROSS',CONTEST_RESOURCE:'SUPPLY CONTEST',FINALE_ENGAGEMENT:'THE FINAL STRIKE',NEGOTIATION:'NEGOTIATION',ALLY_TRAVEL:'TEAM MOVEMENT',ELIMINATION:'ELIMINATED',AMBUSH:'SURPRISE ATTACK',STORM:'STORM WARNING',TRAP:'ARENA TRAP',LUCKY_FIND:'LUCKY SUPPLIES',SHELTER:'SAFE SHELTER',FINAL_BETRAYAL:'EVERYONE FOR THEMSELVES',SUPPLY:'SUPPLY FOUND',HEAL:'RECOVERY',ZONE_EXPOSURE:'DANGER ZONE',ZONE_RETREAT:'RUN FOR SAFETY',REST:'RESTING'}[e.type]||'ENCOUNTER';
- $('encounter-tag').textContent=`${label} · ${ids.length} ATHLETE${ids.length===1?'':'S'}`;
+ const variant=window.LastLegendEncounters&&window.LastLegendEncounters.byId(e.encounterId);
+ $('encounter-tag').textContent=`${variant?variant.name:label} · ${ids.length} ATHLETE${ids.length===1?'':'S'}`;
  const active=['SKIRMISH','GROUP_SKIRMISH','FINALE_ENGAGEMENT','AMBUSH'].includes(e.type);
  const winner=d.winner||d.hunter||null,target=d.target||d.runner||null;
  const sequence=e.type==='CHASE'?'chase':e.type==='ALLIANCE'?'alliance':['CONTEST_RESOURCE','SUPPLY','LUCKY_FIND'].includes(e.type)?'supply':['ELIMINATION','STORM','ZONE_EXPOSURE','TRAP'].includes(e.type)?'hazard':['SHELTER','REST','HEAL'].includes(e.type)?'recovery':e.type==='FINAL_BETRAYAL'?'betrayal':e.type==='NEGOTIATION'?'talk':active?'clash':'contact';
@@ -863,4 +874,5 @@ init();
 <script src="ui/character-renderer.js"></script>
 <script src="ui/spectator-v7.js"></script>
 <script src="ui/website-v8.js"></script>
+<script src="ui/encounters-v10.js"></script>
 </body></html>
