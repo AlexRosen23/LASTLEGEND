@@ -1,0 +1,22 @@
+name: Last Legend gameplay regressions
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  gameplay-art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate deterministic gameplay and character art
+        run: |
+          node tests/test_v4.cjs
+          node tests/test_v5.cjs
+          node tests/test_v6.cjs
