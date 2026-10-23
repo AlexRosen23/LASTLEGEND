@@ -84,7 +84,7 @@ async function load(){
   const result=await fetch('data/active_rosters_v24.json',{cache:'no-store',signal:controller?.signal});
   if(!result.ok)throw Error('Roster feed HTTP '+result.status);
   const data=await result.json();validate(data);status.snapshot=data;status.lastError=null;return data;
- }catch(e){status.snapshot=null;status.lastError=String(e?.message||e);console.warn('V24 active league team roster snapshot unavailable; retaining existing playable library:',status.lastError);return null}
+ }catch(e){status.snapshot=null;status.lastError=String(e?.message||e);console.warn('V24 active league team roster snapshot unavailable; retaining existing playable library:',status.lastError);if(typeof document!=='undefined')renderCoverage();return null}
  finally{if(limit!==null)clearTimeout(limit)}
 }
 function install(athletes,perks,data){
