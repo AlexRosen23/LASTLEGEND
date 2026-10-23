@@ -1,0 +1,17 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const code=fs.readFileSync(path.join(root,'ui/challenges-v15.js'),'utf8');
+const doc={getElementById:()=>null,querySelector:()=>null,addEventListener:()=>{}};
+const fakeWindow={addEventListener:()=>{},isSecureContext:false},ctx={window:fakeWindow,document:doc,location:{href:'https://example.org/#/play',hash:'#/play'},opts:{selected:[],profiles:new Map(),matchSize:12},URL,Set,Event:function(){}};
+vm.runInNewContext(code,ctx);const api=fakeWindow.LastLegendChallenges;
+assert(api);
+assert(html.includes('id="v15-share-finished"'));
+const payload={v:1,s:1900,a:'CITY',m:'CHAOS',r:['a','b']};
+ctx.opts.profiles=new Map([['a',{}],['b',{}]]);
+assert.equal(api.decode(api.encode(payload)).s,1900);
+assert.equal(api.decode(api.encode({...payload,s:-1})),null);
+assert.equal(api.decode(api.encode({...payload,r:['a','a']})),null);
+assert.equal(api.decode(api.encode({...payload,r:['a','unknown']})),null);
+assert.match(api.challengeURL(payload),/#\/play\?llchallenge=/);
+console.log('V15: safely encoded/validated public challenge links and actions passed');
