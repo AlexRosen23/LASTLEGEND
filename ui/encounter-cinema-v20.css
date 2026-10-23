@@ -1,0 +1,55 @@
+/* V20 CINEMATIC EVENT DIRECTOR — real match event visual language */
+#encounter.v20-active{position:relative;background:#0d1521;border:1px solid #4b6278}
+.v20-cinema{position:relative!important;isolation:isolate;overflow:hidden;background:#0d1b2b!important;box-shadow:inset 0 0 80px #0009,0 12px 35px #0006;perspective:640px}
+.v20-cinema:before{content:"";position:absolute;inset:-12% -20% 0;z-index:0;background:var(--v20-scene-background);opacity:.93;filter:contrast(1.08)}
+.v20-cinema:after{content:"";position:absolute;inset:22% -10% -9%;z-index:0;transform:perspective(400px) rotateX(70deg);background:repeating-linear-gradient(90deg,transparent 0 39px,var(--v20-grid) 40px),repeating-linear-gradient(0deg,transparent 0 32px,var(--v20-grid) 33px);opacity:.65}
+.v20-arena-city{--v20-scene-background:linear-gradient(180deg,#344e70 0%,#183147 45%,#121e31 46%,#192b36 68%,#07131e 100%);--v20-grid:#6fd4fb2f;--v20-glow:#87e4fd}
+.v20-arena-wilderness{--v20-scene-background:radial-gradient(circle at 80% 22%,#c2f0b15c,transparent 37%),linear-gradient(180deg,#4b775d,#1b423e 50%,#182c35 51%,#0a1822);--v20-grid:#9afa9530;--v20-glow:#c7fdab}
+.v20-arena-ruins{--v20-scene-background:radial-gradient(circle at 75% 25%,#d9aa7a69,transparent 40%),linear-gradient(180deg,#775c58,#4f4b52 51%,#2b2936 52%,#191824);--v20-grid:#f5c87e36;--v20-glow:#f5d49c}
+.v20-arena-frozen{--v20-scene-background:radial-gradient(circle at 75% 20%,#e8fbf88a,transparent 37%),linear-gradient(180deg,#7ba2bd,#47708b 50%,#305870 51%,#112c43);--v20-grid:#b7f9ff40;--v20-glow:#d9ffff}
+.v20-cinema .scene-ground{z-index:1;opacity:.42;border-color:var(--v20-glow);transform:perspective(320px) rotateX(65deg);bottom:-25px}
+.v20-cinema .scene-actor{z-index:8;filter:drop-shadow(0 5px 12px #000)}
+.v20-cinema .scene-character{z-index:9;transform-origin:center 82%}
+.v20-cinema .scene-name{background:#071321ed;color:#f4ffff;border:1px solid #7b9aa9;border-radius:6px;font-size:10px;font-weight:900;letter-spacing:.06em;box-shadow:0 4px 9px #0008}
+.v20-cinema .scene-impact{z-index:10;color:#f6e8bf;text-shadow:0 0 30px var(--v20-glow)}
+.v20-cinema .scene-status{z-index:10;filter:drop-shadow(0 2px 8px #000);color:#e7ffab}
+.v20-director-overlay{position:absolute;z-index:3;inset:0;pointer-events:none;color:white;overflow:hidden}
+.v20-luma{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 30%,#040913aa 99%);box-shadow:inset 0 0 55px #0009}
+.v20-scene-rays{position:absolute;inset:0;background:linear-gradient(109deg,transparent 5%,#ffffff00 32%,var(--v20-glow) 47%,#ffffff00 57%,transparent 85%);opacity:.07;animation:v20-light-sweep 7s ease-in-out infinite}
+.v20-scanline{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 6px,#0008 7px);opacity:.08}
+.v20-slate{position:absolute;top:20px;left:24px;display:flex;flex-direction:column;align-items:start;gap:2px;max-width:62%;filter:drop-shadow(0 3px 4px #000);z-index:6}
+.v20-slate-live{font-weight:900;color:#c7e9e2;letter-spacing:.18em;font-size:8px}
+.v20-slate-live b{display:inline-block;width:6px;height:6px;margin-right:5px;border-radius:50%;background:#dcff8b;box-shadow:0 0 10px #dcff8b}
+.v20-slate strong{font:900 clamp(21px,3.6vw,35px)/1 'Barlow Condensed',Impact,sans-serif;letter-spacing:.04em;color:#f8fff9;text-shadow:0 1px 7px #000}
+.v20-slate small{font-size:8px;color:#d5e5ee;letter-spacing:.12em;font-weight:800}
+.v20-cinema-streaks{position:absolute;inset:0;z-index:2;opacity:.7}
+.v20-cinema-streaks>i{position:absolute;display:block;top:var(--fx-y);left:var(--fx-x);width:var(--fx-l);height:1px;background:linear-gradient(90deg,transparent,var(--v20-glow),transparent);transform:skewX(-25deg);box-shadow:0 0 9px var(--v20-glow);animation:v20-streak calc(var(--v20-duration)*.7) ease-in-out var(--fx-delay) infinite}
+.v20-letterbox{position:absolute;left:0;right:0;height:9px;background:#010710d9;z-index:12}
+.v20-letterbox.top{top:0;border-bottom:1px solid #e8f5f333}
+.v20-letterbox.bottom{bottom:0;border-top:1px solid #e8f5f333}
+.v20-lens-flare{position:absolute;z-index:2;right:-11%;top:-20%;width:47%;aspect-ratio:1;border:2px solid #ffffff15;border-radius:50%;box-shadow:0 0 0 34px #ddffdd0c,0 0 0 70px #ddffdd05;transform:rotate(-15deg);opacity:.7;animation:v20-lens 5s ease-in-out infinite alternate}
+.v20-cinema-impact{position:absolute;z-index:11;left:50%;top:46%;transform:translate(-50%,-50%) scale(.9);opacity:0;text-align:center;pointer-events:none}
+.v20-cinema-impact span{display:inline-block;padding:9px 21px;border:1px solid var(--v20-glow);border-radius:2px;background:#071421df;font:900 clamp(17px,3vw,33px)/1 'Barlow Condensed',Impact,sans-serif;letter-spacing:.16em;color:#f9ffeb;box-shadow:0 0 40px var(--v20-glow),0 7px 25px #000c}
+.v20-impact .v20-cinema-impact,.v20-hazard .v20-cinema-impact,.v20-resource .v20-cinema-impact,.v20-alliance .v20-cinema-impact{animation:v20-caption var(--v20-duration) ease-in-out both}
+.v20-motion .v20-cinema-impact,.v20-recovery .v20-cinema-impact{animation:v20-caption-mild var(--v20-duration) ease-out both}
+.v20-players{position:absolute;z-index:7;left:22px;bottom:18px;display:flex;gap:6px;flex-wrap:wrap;max-width:78%;align-items:center}
+.v20-players span{background:#071321cf;border:1px solid #abc3d355;border-radius:4px;padding:5px 8px;font-size:9px;font-weight:800;line-height:1.1;max-width:140px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.v20-players b{color:var(--v20-glow);margin-right:4px;font-size:9px}
+.v20-cue-pill{display:inline-flex;gap:4px;background:#293d3d;border:1px solid #7fab94;color:#d9f2df;font-size:9px;letter-spacing:.1em;font-weight:900;padding:5px 8px;border-radius:5px;margin-bottom:8px}
+.v20-impact .v20-scene-rays{opacity:.22}
+.v20-hazard .v20-luma{background:linear-gradient(45deg,#ffb27a0e,transparent 60%),radial-gradient(ellipse at center,transparent,#221219bb)}
+.v20-hazard .v20-scene-rays{opacity:.19}
+.v20-resource .v20-lens-flare{border-color:#dfff7f58;box-shadow:0 0 60px #b6ff6e3c}
+.v20-alliance .v20-cinema-streaks>i{background:linear-gradient(90deg,transparent,#a8ffce,transparent)}
+.v20-recovery .v20-cinema-streaks>i{background:linear-gradient(90deg,transparent,#91f5e0,transparent)}
+.v20-cinema .scene-prop{z-index:10}
+.v20-cinema .v12-encounter-prop{z-index:12;background:#081c26bd;color:#e8ffae;border-color:#bcff8882}
+.v20-cinema .scene-actor:nth-child(odd) .rb-athlete-arm{animation-duration:1.5s}
+.v20-cinema .scene-actor:nth-child(even) .rb-athlete-arm{animation-duration:1.8s}
+@keyframes v20-caption{0%,17%,73%,100%{transform:translate(-50%,-40%) scale(.72);opacity:0}31%,62%{transform:translate(-50%,-50%) scale(1);opacity:1}}
+@keyframes v20-caption-mild{0%,8%,54%,100%{transform:translate(-50%,-40%) scale(.78);opacity:0}23%,37%{transform:translate(-50%,-50%) scale(1);opacity:.8}}
+@keyframes v20-streak{0%{transform:translateX(-30px) skewX(-25deg);opacity:0}42%{opacity:.9}100%{transform:translateX(140px) skewX(-25deg);opacity:0}}
+@keyframes v20-lens{to{transform:translate(-20px,15px) rotate(13deg);opacity:.3}}
+@keyframes v20-light-sweep{50%{transform:translateX(20%);opacity:.19}}
+@media(max-width:600px){.v20-slate{left:12px;top:16px}.v20-slate strong{font-size:23px}.v20-players{left:11px;bottom:14px;max-width:90%}.v20-players span{font-size:8px;padding:4px 5px;max-width:85px}.v20-players span:nth-child(n+4){display:none}}
+@media(prefers-reduced-motion:reduce){.v20-director-overlay *,#encounter .v20-cinema .scene-actor .rb-athlete-arm{animation:none!important;transition:none!important}.v20-cinema-impact{opacity:0!important}.v20-scene-rays{opacity:.07!important}}

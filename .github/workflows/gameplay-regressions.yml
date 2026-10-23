@@ -33,6 +33,7 @@ jobs:
           node tests/test_visual_rebirth_v18.cjs
           node tests/test_character_rebirth_v18.cjs
           node tests/test_battle_vision_v19.cjs
+          node tests/test_encounter_cinema_v20.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -46,6 +47,7 @@ jobs:
           python tests/test_browser_website_v8.py
           python tests/test_browser_visual_v18.py
           python tests/test_browser_battle_v19.py
+          python tests/test_browser_cinema_v20.py
       - name: Upload V18 visual QA screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -54,4 +56,5 @@ jobs:
           path: |
             reports/v18_visual_qa/*.png
             reports/v19_visual_qa/*.png
+            reports/v20_visual_qa/*.png
           if-no-files-found: ignore
