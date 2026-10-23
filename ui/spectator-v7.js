@@ -59,6 +59,7 @@ window.renderGrid=function(){
  var visible=list.slice(0,state.draftLimit);
  byId('athlete-grid').innerHTML=visible.map(function(a){
   var selected=opts.selected.includes(a.id),look=appearanceFor(a);
+  if(window.LastLegendProfiles)return window.LastLegendProfiles.draftCard(a);
   return '<button class="athlete-card ll-athlete-card'+(selected?' selected':'')+'" data-athlete="'+esc(a.id)+'" aria-pressed="'+selected+'" title="'+esc(a.name)+'"><div class="athlete-icon ll-portrait">'+figureSVG(a)+'</div><div class="athlete-info"><div class="athlete-name">'+esc(a.name)+'</div><div class="athlete-sport">'+esc(a.sport)+(look.number!=null?' · #'+esc(look.number):'')+'</div><div class="athlete-extra">'+esc(a.team||a.era||'Prime edition')+'</div></div><div class="athlete-add">'+(selected?'✓':'+')+'</div></button>';
  }).join('')||'<p>No matching competitors. Try another search.</p>';
  var load=byId('ll-more-athletes');
