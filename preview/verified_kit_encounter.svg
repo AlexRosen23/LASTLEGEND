@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 310" role="img" aria-label="Last Legend stick-figure encounter showing Haliburton, Judge and Tyson">
+<rect width="720" height="310" rx="18" fill="#1B2E27"/><path d="M0 195 Q190 155 365 192 T720 190" stroke="#294F3D" stroke-width="56" fill="none"/>
+<text x="27" y="34" font-size="15" font-weight="800" fill="#EBF5EE">LAST LEGEND / ENCOUNTER SPRITES</text><g role="img" aria-label="Tyrese Haliburton, basketball_jersey">
+  <ellipse cx="132.0" cy="223" rx="37" ry="7" fill="#0B1522" opacity=".35"/>
+  <path d="M132.0 158 L108.0 214 M132.0 158 L156.0 214" stroke="#E9F1F4" stroke-width="8" stroke-linecap="round"/>
+  <path d="M125.0 110 L103.0 143 M139.0 110 L161.0 143" stroke="#E9F1F4" stroke-width="7" stroke-linecap="round"/>
+  <path d="M132.0 98 L132.0 161" stroke="#E9F1F4" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="132.0" cy="78" r="23" fill="#F2CCAE" stroke="#132536" stroke-width="2"/>
+  <path d="M119.0 112 L108.0 156 L156.0 156 L145.0 112" fill="#EFC153" stroke="#E2E9EF" stroke-width="2"/><text x="132.0" y="140" font-size="19" fill="#111725" text-anchor="middle" font-weight="900">0</text>
+  <rect x="39.0" y="231" width="186" height="32" rx="9" fill="#162431" stroke="#657A8B" stroke-width="1"/>
+  <text x="132.0" y="251" font-size="13" font-weight="700" fill="#F5F7FC" text-anchor="middle">Tyrese Haliburton</text>
+  </g><g role="img" aria-label="Aaron Judge, baseball_uniform">
+  <ellipse cx="360.0" cy="223" rx="37" ry="7" fill="#0B1522" opacity=".35"/>
+  <path d="M360.0 158 L336.0 214 M360.0 158 L384.0 214" stroke="#E9F1F4" stroke-width="8" stroke-linecap="round"/>
+  <path d="M353.0 110 L331.0 143 M367.0 110 L389.0 143" stroke="#E9F1F4" stroke-width="7" stroke-linecap="round"/>
+  <path d="M360.0 98 L360.0 161" stroke="#E9F1F4" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="360.0" cy="78" r="23" fill="#F2CCAE" stroke="#132536" stroke-width="2"/><path d="M338.0 57 Q360.0 31 382.0 57 L388.0 60 L364.0 62" stroke="#E4ECF9" stroke-width="8" fill="#49657A"/>
+  <path d="M347.0 112 L336.0 156 L384.0 156 L373.0 112" fill="#A4D4EF" stroke="#E2E9EF" stroke-width="2"/><text x="360.0" y="140" font-size="19" fill="#111725" text-anchor="middle" font-weight="900">99</text>
+  <rect x="267.0" y="231" width="186" height="32" rx="9" fill="#162431" stroke="#657A8B" stroke-width="1"/>
+  <text x="360.0" y="251" font-size="13" font-weight="700" fill="#F5F7FC" text-anchor="middle">Aaron Judge</text>
+  </g><g role="img" aria-label="Mike Tyson, combat_trunks">
+  <ellipse cx="588.0" cy="223" rx="37" ry="7" fill="#0B1522" opacity=".35"/>
+  <path d="M588.0 158 L564.0 214 M588.0 158 L612.0 214" stroke="#E9F1F4" stroke-width="8" stroke-linecap="round"/>
+  <path d="M581.0 110 L559.0 143 M595.0 110 L617.0 143" stroke="#E9F1F4" stroke-width="7" stroke-linecap="round"/>
+  <path d="M588.0 98 L588.0 161" stroke="#E9F1F4" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="588.0" cy="78" r="23" fill="#F2CCAE" stroke="#132536" stroke-width="2"/>
+  <rect x="569.0" y="137" width="38" height="19" rx="3" fill="#DF8B85"/>
+  <rect x="495.0" y="231" width="186" height="32" rx="9" fill="#162431" stroke="#657A8B" stroke-width="1"/>
+  <text x="588.0" y="251" font-size="13" font-weight="700" fill="#F5F7FC" text-anchor="middle">Mike Tyson</text>
+  </g>
+<text x="360" y="293" font-size="11" text-anchor="middle" fill="#A8C6B5">Illustrative unbranded kits · sourced #0 and #99 · boxing has no invented jersey number</text></svg>
