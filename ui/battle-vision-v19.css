@@ -1,0 +1,30 @@
+/* LAST LEGEND V19 / DIRECTOR'S CAMERA
+   Labels are placed in data coordinates by battle-vision-v19.js. */
+#map .v19-match-layer{pointer-events:none;isolation:isolate}
+#map .v19-actor{filter:drop-shadow(1px 2px 2px #02070aaa);transform-box:fill-box}
+#map .v19-actor .v19-focus-ring{stroke-dasharray:4 5;transform-box:fill-box;transform-origin:center;animation:v19-ring-spin 8s linear infinite}
+#map .v19-actor .v19-action-ring{transform-box:fill-box;transform-origin:center;animation:v19-impact 1.3s ease-in-out infinite alternate}
+#map .v19-in-action{filter:drop-shadow(0 0 5px #ffd279)}
+#map .v19-focused{filter:drop-shadow(0 0 7px #d7ff4a)}
+#map .v19-label{filter:drop-shadow(0 2px 3px #020810dd)}
+#map .v19-label-focus{filter:drop-shadow(0 2px 4px #d7ff4a80)}
+#map .v19-motion-trail{animation:v19-trail .7s linear infinite}
+#map .ll-map-targets .ll-map-hit{r:16;cursor:crosshair}
+#map .ll-map-targets .ll-map-hit:hover,#map .ll-map-targets .ll-map-follow{stroke:#d7ff4a;stroke-width:1.3;fill:#d7ff4a17}
+#map .ll-biome-overlay{opacity:.19;filter:blur(.8px)}
+.map-holder{position:relative}
+.map-holder:after{content:"";position:absolute;left:8px;right:8px;top:69px;height:20px;pointer-events:none;background:linear-gradient(#08111a75,transparent)}
+.map-top{gap:12px;flex-wrap:wrap}
+.map-key{letter-spacing:.07em}
+.rb-broadcast-bar{border-top:2px solid #d7ff4a44;box-shadow:inset 0 0 24px #c7ff4a0c}
+.ll-director-panel{background:linear-gradient(105deg,#1d3340,#101d2a);border:1px solid #496877;border-radius:10px}
+.ll-director-panel select{min-height:44px;background:#102336;border-radius:7px}
+.ll-camera-label{color:#bef0e0!important}
+#ll-spotlight{background:linear-gradient(130deg,#1d3241,#111d2a);border:1px solid #52707b;border-radius:11px}
+#ll-spotlight .ll-spot-head strong{color:#f9fff7}
+#ll-spotlight .ll-signature-card{border-radius:7px}
+#ll-spotlight .ll-spot-bar span{background:linear-gradient(90deg,#71ddd6,#d7ff4a)}
+@keyframes v19-ring-spin{to{rotate:360deg}}
+@keyframes v19-impact{to{opacity:.25;scale:1.3}}
+@keyframes v19-trail{to{stroke-dashoffset:-14}}
+@media(prefers-reduced-motion:reduce){#map .v19-match-layer *,#map .v19-actor *,#map .v19-motion-trail{animation:none!important}}
