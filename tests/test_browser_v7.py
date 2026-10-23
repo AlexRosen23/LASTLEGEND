@@ -45,7 +45,11 @@ def main():
                 assert page.locator("#start").is_disabled()
                 page.select_option("#match-size","13")
                 page.locator("#search").fill("LeBron James")
-                page.locator('[data-athlete="lebron-james-sixers-2026"]').click()
+                page.locator('[data-athlete="lebron-james-sixers-2026"] [data-profile-open]').click()
+                assert page.locator("#site-profile-dialog").evaluate("(e)=>e.open")
+                assert page.locator("#site-profile-body .v11-stat-group .v11-stat").count()==20
+                page.locator("#site-profile-close").click()
+                page.locator('[data-athlete="lebron-james-sixers-2026"] [data-draft-add]').click()
                 assert page.evaluate("opts.selected.length===1 && opts.selected[0]==='lebron-james-sixers-2026'")
                 page.locator("#search").fill("")
                 page.locator("#demo").click()
