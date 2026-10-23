@@ -1,0 +1,13 @@
+/* V18–V22 preview modules */
+.ll-future-panel{border:1px solid #56717a;border-radius:6px;padding:16px;margin:15px 0;background:#132a33;color:#e9efe7}
+.ll-future-panel h3{margin:0 0 7px;color:#f6ce92;font:900 24px 'Barlow Condensed',sans-serif;letter-spacing:.03em}
+.ll-future-panel p,.ll-future-panel small{display:block;color:#d0e1df;font-size:12px;line-height:1.6}
+.ll-future-panel label{color:#f2d6ac;font-size:11px;font-weight:900;display:block;padding:10px 0}
+.ll-upload input{display:block;margin-top:8px;font-size:12px;max-width:100%}
+.v19-abilities{padding:6px 10px;border:1px solid #e0af6899;background:#4d3427;color:#ffdfae;font:900 11px/1.5 'DM Sans',sans-serif;letter-spacing:.04em;margin-top:8px}
+.v20-cinematic .v20-spotlight{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,transparent 30%,#02070e66 95%);pointer-events:none}
+.v20-finale{outline:2px solid #e7b978;outline-offset:-3px}
+.v21-climate{font:800 10px 'DM Sans',sans-serif;color:#ffd1a0;text-transform:uppercase;letter-spacing:.04em}
+.map-holder[data-biome=FROZEN] #map{filter:saturate(.75) brightness(1.1)}
+.map-holder[data-biome=CITY] #map{filter:saturate(1.15)}
+@media(prefers-reduced-motion:reduce){.v20-cinematic *, .v20-cinematic *::before{animation:none!important}}

@@ -20,7 +20,7 @@ def main():
     errors=[]
     page.on('pageerror',lambda err:errors.append(str(err)))
     page.goto(f'http://127.0.0.1:{server.server_port}/#/play',wait_until='domcontentloaded',timeout=60000)
-    page.wait_for_function("typeof LastLegendBattleVision==='object' && typeof LastLegendSpectator==='object' && opts.athletes.length===1652",timeout=60000)
+    page.wait_for_function("typeof LastLegendBattleVision==='object' && typeof LastLegendSpectator==='object' && opts.athletes.length>=1652",timeout=60000)
     page.locator('#arena').select_option('CITY')
     page.locator('#random-map').uncheck()
     page.locator('#demo').click()

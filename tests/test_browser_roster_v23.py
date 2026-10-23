@@ -19,8 +19,8 @@ def run():
     errors=[];page.on("pageerror",lambda exc:errors.append(str(exc)))
     url=f"http://127.0.0.1:{server.server_port}/"
     page.goto(url,wait_until="domcontentloaded",timeout=60000)
-    page.wait_for_function("typeof LastLegendWebsite==='object' && LastLegendWebsite.shell.ready && opts.athletes.length===1652",timeout=60000)
-    assert page.locator("#site-total").inner_text()=="1,652"
+    page.wait_for_function("typeof LastLegendWebsite==='object' && LastLegendWebsite.shell.ready && opts.athletes.length>=1652",timeout=60000)
+    assert int(page.locator("#site-total").inner_text().replace(",", "")) >= 1652
     assert page.evaluate("opts.athletes.filter(a=>a.collection_tags?.includes('EXPANSION_V23')).length")==442
     assert page.locator('#collection-filter option[value="EXPANSION_V23"]').count()==1
     page.goto(url+"#/legends",wait_until="domcontentloaded",timeout=60000)

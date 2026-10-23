@@ -70,8 +70,8 @@ def run():
                 origin = f"http://127.0.0.1:{server.server_port}/"
                 page.goto(origin, wait_until="domcontentloaded", timeout=60000)
                 page.wait_for_function(
-                    "(expected)=>typeof opts!=='undefined' && opts.athletes.length===expected",
-                    arg=1652+injected, timeout=60000,
+                    "(expected)=>typeof opts!=='undefined' && opts.athletes.filter(a=>a.collection_tags?.includes('ACTIVE_LEAGUES_V24')).length===expected",
+                    arg=injected, timeout=60000,
                 )
                 assert page.evaluate("LastLegendActiveRostersV24.status.lastReport.added") == {
                     code: count * each for code, (count, each, _) in LEAGUES.items()
@@ -80,8 +80,8 @@ def run():
                 assert page.locator("#collection-filter option[value='ACTIVE_NBA_V24']").count() == 1
                 page.goto(origin + "#/legends", wait_until="domcontentloaded", timeout=60000)
                 page.wait_for_function(
-                    "(expected)=>typeof opts!=='undefined' && opts.athletes.length===expected && LastLegendWebsite.shell.route==='legends'",
-                    arg=1652+injected, timeout=60000,
+                    "(expected)=>typeof opts!=='undefined' && opts.athletes.filter(a=>a.collection_tags?.includes('ACTIVE_LEAGUES_V24')).length===expected && LastLegendWebsite.shell.route==='legends'",
+                    arg=injected, timeout=60000,
                 )
                 page.locator("#site-legend-search").fill("Audit NBA Player 1")
                 profile = page.locator('[data-site-profile="active-nba-1"]')

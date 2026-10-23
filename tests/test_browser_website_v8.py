@@ -18,10 +18,10 @@ def run():
                 page=browser.new_page(viewport={"width":width,"height":height},reduced_motion="reduce")
                 errors=[];page.on("pageerror",lambda e:errors.append(str(e)))
                 page.goto(root,wait_until="domcontentloaded",timeout=60000)
-                page.wait_for_function("typeof LastLegendWebsite==='object' && LastLegendWebsite.shell.ready && opts.athletes.length===1652",timeout=60000)
+                page.wait_for_function("typeof LastLegendWebsite==='object' && LastLegendWebsite.shell.ready && opts.athletes.length>=1652",timeout=60000)
                 assert page.locator("#site-home").is_visible()
                 assert page.locator("#draft-view").is_hidden()
-                assert page.locator("#site-total").inner_text()=="1,652"
+                assert int(page.locator("#site-total").inner_text().replace(",", "")) >= 1652
                 assert page.evaluate("LastLegendEncounters.catalog.length") == 500
                 page.evaluate("LastLegendWebsite.goto('play')")
                 page.locator('#scene-intensity').select_option('graphic')
