@@ -1,0 +1,11 @@
+.v16-panel{margin:24px 0;padding:clamp(15px,3vw,26px);border:1px solid #62817c;background:linear-gradient(120deg,#172c33,#1f3232);border-radius:7px}
+.v16-panel h3{font:900 clamp(26px,4vw,40px)/1.12 'Barlow Condensed',sans-serif;color:#f6d39d;margin:7px 0}
+.v16-panel p{color:#d2e1de;font-size:13px;line-height:1.6}
+.v16-panel button{margin:14px 0 4px;min-height:44px}
+.v16-disclaimer{font-size:10px;color:#f2c187;font-weight:900;letter-spacing:.07em;margin:14px 0}
+.v16-results{display:grid;gap:7px}.v16-row{display:grid;grid-template-columns:24px minmax(0,1fr) 55px;gap:10px;align-items:center;background:#10252e;border:1px solid #395b62;padding:10px;border-radius:4px}
+.v16-row strong{display:block;color:#f2eada;font-size:13px}.v16-row small{display:block;color:#bdd1d0;font-size:10px;margin-bottom:5px}
+.v16-row b{color:#efbd77;text-align:right}.v16-rank{font-weight:900;color:#efbd77}
+.v16-meter{height:6px;background:#3e5760;border-radius:6px;overflow:hidden}.v16-meter span{display:block;background:#9ed3bb;height:100%}
+.v16-footnote{display:block;margin-top:12px;color:#c2d4d0;font-size:11px}
+@media(max-width:480px){.v16-row{grid-template-columns:16px minmax(0,1fr) 45px;gap:6px}.v16-row small{font-size:9px}}
