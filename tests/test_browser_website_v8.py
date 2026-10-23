@@ -74,6 +74,7 @@ def run():
                     page.locator("#site-menu-toggle").click()
                     assert page.locator("#site-navigation").evaluate("(e)=>e.classList.contains('site-open')")
                 page.locator('nav.site-nav [data-site-nav="home"]').click()
+                page.wait_for_function("LastLegendWebsite.shell.route==='home'",timeout=20000)
                 assert page.locator("#site-home").is_visible()
                 assert page.locator("#site-latest-champion").inner_text().find("MOST RECENT CHAMPION")>=0
                 assert page.evaluate("document.documentElement.scrollWidth-window.innerWidth")<=2
