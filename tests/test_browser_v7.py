@@ -37,8 +37,10 @@ def main():
                 page.select_option("#sport-filter","")
                 assert page.locator("#ll-team-filter").is_disabled()
                 # Confirm different career editions are independently selectable.
+                page.locator("#search").fill("LeBron James")
                 page.locator('[data-athlete="lebron-james-sixers-2026"]').click()
                 assert page.evaluate("opts.selected.includes('lebron-james-sixers-2026')")
+                page.locator("#search").fill("")
                 page.locator("#demo").click()
                 page.locator("#start").click()
                 page.locator("#battle-view:not(.hidden)").wait_for(timeout=60000)
