@@ -52,8 +52,17 @@ async function share(fromWinner){
 function init(){
  const action=document.querySelector('#draft-view .draft-actions');
  if(action&&!$('v15-share'))action.insertAdjacentHTML('beforeend','<button type="button" id="v15-share" class="btn btn-secondary" title="Copy a link containing the draft, arena, mode, and seed">SHARE SEEDED CHALLENGE ↗</button>');
- const query=location.hash.match(/[?&]llchallenge=([^&]+)/);
- if(query){const p=decode(query[1]);if(p){apply(p);}else announce('Challenge link was invalid or referred to unavailable competitors.');}
+ function readChallenge(){
+  const query=location.hash.match(/[?&]llchallenge=([^&]+)/);
+  if(!query)return;
+  const p=decode(query[1]);
+  if(p)apply(p);
+  else announce('Challenge link was invalid or referred to unavailable competitors.');
+ }
+ // Also support opening a challenge from the same tab: hash-only navigation
+ // does not reload the document and never fires load a second time.
+ window.addEventListener('hashchange',readChallenge);
+ readChallenge();
  document.addEventListener('click',function(e){
   if(e.target.closest('#v15-share')){e.preventDefault();share(false);}
   if(e.target.closest('#v15-share-finished')){e.preventDefault();share(true);}

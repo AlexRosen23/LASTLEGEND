@@ -7,6 +7,7 @@ const fakeWindow={addEventListener:()=>{},isSecureContext:false},ctx={window:fak
 vm.runInNewContext(code,ctx);const api=fakeWindow.LastLegendChallenges;
 assert(api);
 assert(html.includes('id="v15-share-finished"'));
+assert(code.includes("window.addEventListener('hashchange',readChallenge)"));
 const payload={v:1,s:1900,a:'CITY',m:'CHAOS',r:['a','b']};
 ctx.opts.profiles=new Map([['a',{}],['b',{}]]);
 assert.equal(api.decode(api.encode(payload)).s,1900);
