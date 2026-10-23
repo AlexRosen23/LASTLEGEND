@@ -318,7 +318,7 @@ function installCareerEditions(){
   CURATED_LOOK[child.id]=Object.assign({},look,{primary:edition.primary,secondary:edition.secondary,number:edition.number,helmet:edition.helmet||(look.helmet||null)});
  });
  var meta=byId('ll-edition-count');
- if(meta)meta.textContent='1,203 ORIGINAL PROFILES + '+(opts.athletes.length-1203)+' SELECTABLE CAREER EDITIONS';
+ if(meta){const editions=opts.athletes.filter(a=>!!a.edition_of).length;meta.textContent=(opts.athletes.length-editions).toLocaleString('en-US')+' BASE & EXPANDED ATHLETES + '+editions+' CAREER EDITIONS';}
  var title=byId('ll-draft-catalog-count');
  if(title)title.textContent=opts.athletes.length.toLocaleString('en-US');
  return true;
