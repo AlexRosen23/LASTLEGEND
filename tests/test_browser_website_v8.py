@@ -46,6 +46,7 @@ def run():
                 assert "LeBron James" in page.locator("#site-profile-body").inner_text()
                 assert "FICTIONAL" in page.locator("#site-profile-body").inner_text().upper()
                 page.locator('#site-profile-body [data-site-draft="lebron-james-sixers-2026"]').click()
+                page.wait_for_function("LastLegendWebsite.shell.route==='play'",timeout=20000)
                 assert page.locator("#draft-view").is_visible()
                 assert page.evaluate("opts.selected.length===1 && opts.selected[0]==='lebron-james-sixers-2026'")
                 # Draft, simulate and navigate with quit confirmation. Reuse V7 controls.
