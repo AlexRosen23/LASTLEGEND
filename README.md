@@ -1,48 +1,31 @@
-# LAST LEGEND
+# LAST LEGEND — V4 mechanics release
+**[Play LAST LEGEND](https://alexrosen23.github.io/LASTLEGEND/)**
 
-**Pick 2–24 legendary athletes. One champion remains.**
+Build 4 adds draftable crossovers and large arenas before a dedicated art update. Matches support **2–100 contestants** from **1,178 selectable records**. The source is in `main`; GitHub Pages serves `gh-pages`.
 
-**Play free on iPhone, Android or desktop:** https://alexrosen23.github.io/LASTLEGEND/
+### Content
+- 700 existing competitors preserved; 478 new distinct profile entries.
+- **100 Chicago Bears Top 100** members, **57 Indiana championship-season entries**, and 94 friends-requested themed entries; overlapping names are tagged rather than duplicated.
+- 100 college mascots and 133 pro mascots (named team mascots only; teams with no active official mascot aren't given a fictional replacement). Mascot-only draft filter; full crossover draft is also supported.
+- Multiple editions of Boomer Esiason as distinct choices, plus an alternate fictional green outfit for Anthony Richardson.
+- Horses, cars, aquatic creatures, creatures and mascots have **non-stick placeholder silhouettes**; detailed character art deferred.
+- The selected IU championship roster contains all requested verifiable players, starters and notable reserves plus Andrew Turvy, flagged for identity check where documentation is insufficient.
 
-## V3 — Living Arenas & Triumph (2026-10-23)
+### Simulator
+- Adjustable 2–100 contestants with the original 500- and 700-player libraries preserved.
+- Seeded generation, group encounters, contextual scoring, deterministic match replay, one sole champion and no newly formed alliances with fewer than four survivors.
+- Regular and mascot-only modes; additional category filters make large drafts manageable.
+- Existing victory screen and event animation pipeline preserved.
 
-- **700 pickable athletes:** retained the original 500 and added **100 October 2026 NFL roster-listed players** and **100 players listed in the NBA's 2026–27 opening-night roster report**.
-- **Procedurally generated seeded maps:** each new match randomizes the seed by default; terrain objects, paths and supply-cache positions change on every seed. The same manual seed, competitors, arena and settings reproduce an identical simulation and map. Terrain affects situational scoring.
-- **Final-three alliance prohibition:** no negotiation or alliance creation once fewer than four competitors remain. Existing alliances break as the field falls to three.
-- **Cinematic victory screen:** a large triumphant uniformed stick figure poses with both arms raised on a podium, with confetti, champion name, map ID and finishing order.
-- **Event variety and animations:** storms, arena traps, ambushes, surprise supplies and shelters join chases, clashes, alliances, resource contests and the zone. Event-specific animations visually depict outcomes recorded by the same simulation.
-- Retains **2–24** competitors, 500 previous legends, slow adjustable playback and all original arena themes.
-
-Open in iPhone Safari → Share → Add to Home Screen for a Home Screen shortcut.
-
-## Reproducibility
-
-The playable site is a self-contained `index.html` with HTML, CSS, SVG, JavaScript, embedded athlete/perk data and local client-side simulation. GitHub Pages serves exactly that file from `gh-pages`. Source of truth is `main`. No backend, credential, or account is required.
-
-Use the **New map every battle** toggle (on by default) to get a new seed. Uncheck it to control the seed manually and replay the same seeded scenario.
-
-## Files
-
-- `index.html` — playable mobile web game.
-- `data/athletes_700.json` and `data/signature_perks_700.json` — game roster, stats and signature abilities.
-- `data/current_roster_provenance.json` — exact 100 new NBA and 100 NFL names and sources.
-- `data/athletes_700_summary.csv` — sortable review dataset.
-- `tools/expand_current.py` — deterministic expansion using prior `data/athletes_500.json`, `data/signature_perks_500.json` and `generate_roster.py` for archetype baselines.
-- `tests/test_v3_rules.cjs` — headless 140-match testing of draft sizes, seed consistency, map variations, championship and alliance rules.
-- `tests/test_browser_v3.py` — optional Chromium / Playwright UI smoke test.
-- `engine/`, `examples/`, `reports/`, `docs/`, `source_v0_1/` — retained reference simulator, historical specifications and prior tests.
-
-## Test
-
+### Test
 ```bash
-node tests/test_v3_rules.cjs
-# Optional: pip install playwright, install chromium
-python tests/test_browser_v3.py
+node tests/test_v4.cjs
+python tests/test_browser_v4.py
 ```
+Local checks passed for contestant counts 2, 3, 4, 12, 24, 50, 75 and 100. A 390px browser test confirmed a mascot match and 100-character match, with no horizontal scroll. The 100-character test ran in approximately 0.6s headlessly in the local environment.
 
-## Sources and limitations
+### Source and safety notes
+The `data/manifest_v4.json` tracks collection counts, sources and **identity-review exceptions**. The labels in unresolved entries are placeholders, not verifications. The real-world athlete ratings, personalities, combat mechanics and fictional abilities are **game design, not factual claims**. Fictional characters and trademarked mascot depictions need rights clearance before monetization or marketing. Official mascot programs vary: not every franchise has one.
 
-- NBA: [2026–27 international opening-night player roster](https://www.nba.com/news/2026-27-international-players-opening-night), NBA.com, October 20, 2026.
-- NFL: [2026 NFL depth charts](https://www.profootballnetwork.com/nfl-hq/depth-charts), Pro Football Network, October 23, 2026.
-
-The 200 newly added **roster entries** are grounded in those dates and need rechecking for subsequent transactions. **All game ratings, behaviors, and perks are fictional provisional game design estimates**, not factual measurements or claims about actual athletes. No additional jersey numbers were displayed without verification. Commercial use of names/likenesses/real team designs needs independent rights review.
+### Next release
+Visual-focused: specialized animations for vehicles, horses, aquatic characters, all individual mascots, supers, outfits, environment, and a more cinematic victory screen.

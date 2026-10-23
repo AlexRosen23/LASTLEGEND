@@ -1,0 +1,96 @@
+{
+  "version": "v4.0-underlying-game",
+  "total_unique": 1203,
+  "original_athletes": 700,
+  "added": 503,
+  "collections": {
+    "BEARS_TOP_100": 100,
+    "IU_2025_CHAMPIONS": 57,
+    "FRIENDS_REQUESTS": 94,
+    "COLLEGE_MASCOTS": 100,
+    "PRO_MASCOTS": 158,
+    "NFL_MASCOTS": 36,
+    "NBA_MASCOTS": 41,
+    "MLB_MASCOTS": 45,
+    "NHL_MASCOTS": 36
+  },
+  "source_links": {
+    "bears": "https://www.chicagobears.com/photos/100-best-chicago-bears-of-the-last-century-100th-birthday",
+    "iu": "https://collegefootballplayoff.com/sports/2026/1/27/NCG-recap",
+    "college": "https://www.profootballnetwork.com/cfb/complete-list-of-college-football-mascots/",
+    "nfl": "https://en.wikipedia.org/wiki/List_of_NFL_mascots",
+    "nba": "https://en.wikipedia.org/wiki/List_of_NBA_mascots",
+    "mlb": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_mascots",
+    "nhl": "https://en.wikipedia.org/wiki/List_of_NHL_mascots",
+    "user": "User-requested fantasy entries; identity and IP checks are pending"
+  },
+  "review_needed": [
+    {
+      "name": "Alberto Mendoza",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Lee Beebe Jr.",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Davion Chandler",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "LeBron Bond",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Stephen Daley",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Kellan Wyatt",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Andrew Depaepe",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Tobi Osunsanmi",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Carson Walton",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Rudy Gillespie",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    },
+    {
+      "name": "Amari Skolnik",
+      "reason": "Unverified identity or spelling; user-supplied label retained; not identified as a specific real person."
+    }
+  ],
+  "no_official_mascot_programs": {
+    "NFL": [
+      "Green Bay Packers",
+      "Los Angeles Chargers",
+      "New York Giants",
+      "New York Jets"
+    ],
+    "NBA": [
+      "Brooklyn Nets",
+      "Golden State Warriors",
+      "Los Angeles Lakers",
+      "New York Knicks"
+    ],
+    "MLB": [
+      "Los Angeles Angels",
+      "Los Angeles Dodgers",
+      "New York Yankees"
+    ],
+    "NHL": [
+      "New York Rangers"
+    ]
+  },
+  "selection_policy": "All 100 Bears in one collection; existing players never duplicated. College 100 unique schools. Historical teams and variants share identity via tags. Ratings fictional and standardized."
+}

@@ -1,0 +1,1204 @@
+id,name,category,role,team,collections,identity_review
+michael-jordan,Michael Jordan,athlete,wing,,,original
+lebron-james,LeBron James,athlete,wing,,,original
+kobe-bryant,Kobe Bryant,athlete,wing,,,original
+shaquille-o-neal,Shaquille O'Neal,athlete,center,,,original
+stephen-curry,Stephen Curry,athlete,point_guard,,,original
+magic-johnson,Magic Johnson,athlete,point_guard,,,original
+larry-bird,Larry Bird,athlete,wing,,,original
+kareem-abdul-jabbar,Kareem Abdul-Jabbar,athlete,center,,,original
+wilt-chamberlain,Wilt Chamberlain,athlete,center,,,original
+bill-russell,Bill Russell,athlete,center,,,original
+tim-duncan,Tim Duncan,athlete,wing,,,original
+kevin-durant,Kevin Durant,athlete,wing,,,original
+hakeem-olajuwon,Hakeem Olajuwon,athlete,center,,,original
+giannis-antetokounmpo,Giannis Antetokounmpo,athlete,wing,,,original
+nikola-joki,Nikola Jokić,athlete,center,,,original
+dwyane-wade,Dwyane Wade,athlete,wing,,,original
+dirk-nowitzki,Dirk Nowitzki,athlete,wing,,,original
+allen-iverson,Allen Iverson,athlete,point_guard,,,original
+charles-barkley,Charles Barkley,athlete,wing,,,original
+kevin-garnett,Kevin Garnett,athlete,wing,,,original
+david-robinson,David Robinson,athlete,center,,,original
+oscar-robertson,Oscar Robertson,athlete,point_guard,,,original
+jerry-west,Jerry West,athlete,point_guard,,,original
+julius-erving,Julius Erving,athlete,wing,,,original
+kawhi-leonard,Kawhi Leonard,athlete,wing,,,original
+james-harden,James Harden,athlete,point_guard,,,original
+russell-westbrook,Russell Westbrook,athlete,point_guard,,,original
+luka-don-i,Luka Dončić,athlete,point_guard,,,original
+chris-paul,Chris Paul,athlete,point_guard,,,original
+anthony-davis,Anthony Davis,athlete,center,,,original
+lisa-leslie,Lisa Leslie,athlete,center,,,original
+diana-taurasi,Diana Taurasi,athlete,wing,,,original
+maya-moore,Maya Moore,athlete,wing,,,original
+candace-parker,Candace Parker,athlete,wing,,,original
+a-ja-wilson,A'ja Wilson,athlete,wing,,,original
+tom-brady,Tom Brady,athlete,quarterback,,,original
+patrick-mahomes,Patrick Mahomes,athlete,quarterback,,,original
+jerry-rice,Jerry Rice,athlete,receiver,,,original
+jim-brown,Jim Brown,athlete,running_back,,,original
+walter-payton,Walter Payton,athlete,running_back,,BEARS_TOP_100,original
+barry-sanders,Barry Sanders,athlete,running_back,,,original
+peyton-manning,Peyton Manning,athlete,quarterback,,,original
+joe-montana,Joe Montana,athlete,quarterback,,,original
+aaron-rodgers,Aaron Rodgers,athlete,quarterback,,,original
+dan-marino,Dan Marino,athlete,quarterback,,,original
+brett-favre,Brett Favre,athlete,quarterback,,,original
+randy-moss,Randy Moss,athlete,receiver,,,original
+calvin-johnson,Calvin Johnson,athlete,receiver,,,original
+terrell-owens,Terrell Owens,athlete,receiver,,,original
+rob-gronkowski,Rob Gronkowski,athlete,receiver,,,original
+travis-kelce,Travis Kelce,athlete,receiver,,,original
+tyreek-hill,Tyreek Hill,athlete,receiver,,,original
+deion-sanders,Deion Sanders,athlete,defender,,,original
+lawrence-taylor,Lawrence Taylor,athlete,defender,,,original
+reggie-white,Reggie White,athlete,lineman,,,original
+ray-lewis,Ray Lewis,athlete,defender,,,original
+ed-reed,Ed Reed,athlete,defender,,,original
+troy-polamalu,Troy Polamalu,athlete,defender,,,original
+j-j-watt,J.J. Watt,athlete,lineman,,,original
+aaron-donald,Aaron Donald,athlete,lineman,,,original
+derrick-henry,Derrick Henry,athlete,running_back,,,original
+adrian-peterson,Adrian Peterson,athlete,running_back,,,original
+lamar-jackson,Lamar Jackson,athlete,quarterback,,,original
+michael-vick,Michael Vick,athlete,quarterback,,FRIENDS_REQUESTS,original
+bo-jackson,Bo Jackson,athlete,running_back,,,original
+lionel-messi,Lionel Messi,athlete,soccer_attacker,,,original
+cristiano-ronaldo,Cristiano Ronaldo,athlete,soccer_attacker,,,original
+pel,Pelé,athlete,soccer_attacker,,,original
+diego-maradona,Diego Maradona,athlete,soccer_attacker,,,original
+zinedine-zidane,Zinedine Zidane,athlete,soccer_midfielder,,,original
+ronaldo-naz-rio,Ronaldo Nazário,athlete,soccer_attacker,,,original
+ronaldinho,Ronaldinho,athlete,soccer_attacker,,,original
+kylian-mbapp,Kylian Mbappé,athlete,soccer_attacker,,,original
+neymar,Neymar,athlete,soccer_attacker,,,original
+thierry-henry,Thierry Henry,athlete,soccer_attacker,,,original
+andr-s-iniesta,Andrés Iniesta,athlete,soccer_midfielder,,,original
+xavi-hern-ndez,Xavi Hernández,athlete,soccer_midfielder,,,original
+luka-modri,Luka Modrić,athlete,soccer_midfielder,,,original
+kevin-de-bruyne,Kevin De Bruyne,athlete,soccer_midfielder,,,original
+erling-haaland,Erling Haaland,athlete,soccer_attacker,,,original
+mohamed-salah,Mohamed Salah,athlete,soccer_attacker,,,original
+robert-lewandowski,Robert Lewandowski,athlete,soccer_attacker,,,original
+george-best,George Best,athlete,soccer_attacker,,,original
+johan-cruyff,Johan Cruyff,athlete,soccer_midfielder,,,original
+franz-beckenbauer,Franz Beckenbauer,athlete,soccer_defender,,,original
+paolo-maldini,Paolo Maldini,athlete,soccer_defender,,,original
+sergio-ramos,Sergio Ramos,athlete,soccer_defender,,,original
+virgil-van-dijk,Virgil van Dijk,athlete,soccer_defender,,,original
+manuel-neuer,Manuel Neuer,athlete,soccer_keeper,,,original
+gianluigi-buffon,Gianluigi Buffon,athlete,soccer_keeper,,,original
+marta,Marta,athlete,soccer_attacker,,,original
+alex-morgan,Alex Morgan,athlete,soccer_attacker,,,original
+mia-hamm,Mia Hamm,athlete,soccer_attacker,,,original
+alexia-putellas,Alexia Putellas,athlete,soccer_midfielder,,,original
+aitana-bonmat,Aitana Bonmatí,athlete,soccer_midfielder,,,original
+babe-ruth,Babe Ruth,athlete,baseball_power,,,original
+willie-mays,Willie Mays,athlete,baseball_speed,,,original
+hank-aaron,Hank Aaron,athlete,baseball_power,,,original
+barry-bonds,Barry Bonds,athlete,baseball_power,,,original
+ted-williams,Ted Williams,athlete,baseball_power,,,original
+jackie-robinson,Jackie Robinson,athlete,baseball_speed,,,original
+mickey-mantle,Mickey Mantle,athlete,baseball_power,,,original
+ken-griffey-jr,Ken Griffey Jr.,athlete,baseball_power,,,original
+derek-jeter,Derek Jeter,athlete,baseball_power,,,original
+alex-rodriguez,Alex Rodriguez,athlete,baseball_power,,,original
+shohei-ohtani,Shohei Ohtani,athlete,baseball_power,,,original
+mike-trout,Mike Trout,athlete,baseball_power,,,original
+albert-pujols,Albert Pujols,athlete,baseball_power,,,original
+ichiro-suzuki,Ichiro Suzuki,athlete,baseball_speed,,,original
+rickey-henderson,Rickey Henderson,athlete,baseball_speed,,,original
+pedro-mart-nez,Pedro Martínez,athlete,baseball_pitcher,,,original
+randy-johnson,Randy Johnson,athlete,baseball_pitcher,,,original
+nolan-ryan,Nolan Ryan,athlete,baseball_pitcher,,,original
+sandy-koufax,Sandy Koufax,athlete,baseball_pitcher,,,original
+mariano-rivera,Mariano Rivera,athlete,baseball_pitcher,,,original
+wayne-gretzky,Wayne Gretzky,athlete,hockey_forward,,,original
+mario-lemieux,Mario Lemieux,athlete,hockey_forward,,,original
+sidney-crosby,Sidney Crosby,athlete,hockey_forward,,,original
+alex-ovechkin,Alex Ovechkin,athlete,hockey_forward,,,original
+connor-mcdavid,Connor McDavid,athlete,hockey_forward,,,original
+gordie-howe,Gordie Howe,athlete,hockey_forward,,,original
+bobby-orr,Bobby Orr,athlete,hockey_defender,,,original
+jarom-r-j-gr,Jaromír Jágr,athlete,hockey_forward,,,original
+patrick-kane,Patrick Kane,athlete,hockey_forward,,,original
+jonathan-toews,Jonathan Toews,athlete,hockey_forward,,,original
+dominik-ha-ek,Dominik Hašek,athlete,hockey_goalie,,,original
+martin-brodeur,Martin Brodeur,athlete,hockey_goalie,,,original
+nicklas-lidstr-m,Nicklas Lidström,athlete,hockey_defender,,,original
+carey-price,Carey Price,athlete,hockey_goalie,,,original
+hilary-knight,Hilary Knight,athlete,hockey_forward,,,original
+muhammad-ali,Muhammad Ali,athlete,boxer,,,original
+mike-tyson,Mike Tyson,athlete,boxer,,,original
+floyd-mayweather-jr,Floyd Mayweather Jr.,athlete,boxer,,,original
+manny-pacquiao,Manny Pacquiao,athlete,boxer,,,original
+sugar-ray-robinson,Sugar Ray Robinson,athlete,boxer,,,original
+sugar-ray-leonard,Sugar Ray Leonard,athlete,boxer,,,original
+joe-frazier,Joe Frazier,athlete,boxer,,,original
+george-foreman,George Foreman,athlete,boxer,,,original
+joe-louis,Joe Louis,athlete,boxer,,,original
+rocky-marciano,Rocky Marciano,athlete,boxer,,,original
+roberto-dur-n,Roberto Durán,athlete,boxer,,,original
+canelo-lvarez,Canelo Álvarez,athlete,boxer,,,original
+claressa-shields,Claressa Shields,athlete,boxer,,,original
+katie-taylor,Katie Taylor,athlete,boxer,,,original
+conor-mcgregor,Conor McGregor,athlete,mma_striker,,,original
+khabib-nurmagomedov,Khabib Nurmagomedov,athlete,mma_grappler,,,original
+jon-jones,Jon Jones,athlete,mma_grappler,,,original
+georges-st-pierre,Georges St-Pierre,athlete,mma_grappler,,,original
+anderson-silva,Anderson Silva,athlete,mma_striker,,,original
+amanda-nunes,Amanda Nunes,athlete,mma_striker,,,original
+ronda-rousey,Ronda Rousey,athlete,mma_grappler,,,original
+valentina-shevchenko,Valentina Shevchenko,athlete,mma_striker,,,original
+usain-bolt,Usain Bolt,athlete,sprinter,,,original
+carl-lewis,Carl Lewis,athlete,sprinter,,,original
+florence-griffith-joyner,Florence Griffith Joyner,athlete,sprinter,,,original
+allyson-felix,Allyson Felix,athlete,sprinter,,,original
+shelly-ann-fraser-pryce,Shelly-Ann Fraser-Pryce,athlete,sprinter,,,original
+elaine-thompson-herah,Elaine Thompson-Herah,athlete,sprinter,,,original
+noah-lyles,Noah Lyles,athlete,sprinter,,,original
+michael-johnson,Michael Johnson,athlete,sprinter,,,original
+wayde-van-niekerk,Wayde van Niekerk,athlete,sprinter,,,original
+jesse-owens,Jesse Owens,athlete,sprinter,,,original
+eliud-kipchoge,Eliud Kipchoge,athlete,distance_runner,,,original
+haile-gebrselassie,Haile Gebrselassie,athlete,distance_runner,,,original
+kenenisa-bekele,Kenenisa Bekele,athlete,distance_runner,,,original
+mo-farah,Mo Farah,athlete,distance_runner,,,original
+sydney-mclaughlin-levrone,Sydney McLaughlin-Levrone,athlete,sprinter,,,original
+armand-duplantis,Armand Duplantis,athlete,field_athlete,,,original
+yulimar-rojas,Yulimar Rojas,athlete,field_athlete,,,original
+jackie-joyner-kersee,Jackie Joyner-Kersee,athlete,field_athlete,,,original
+michael-phelps,Michael Phelps,athlete,swimmer,,,original
+katie-ledecky,Katie Ledecky,athlete,swimmer,,,original
+caeleb-dressel,Caeleb Dressel,athlete,swimmer,,,original
+mark-spitz,Mark Spitz,athlete,swimmer,,,original
+ian-thorpe,Ian Thorpe,athlete,swimmer,,,original
+ryan-lochte,Ryan Lochte,athlete,swimmer,,,original
+adam-peaty,Adam Peaty,athlete,swimmer,,,original
+sarah-sj-str-m,Sarah Sjöström,athlete,swimmer,,,original
+simone-manuel,Simone Manuel,athlete,swimmer,,,original
+missy-franklin,Missy Franklin,athlete,swimmer,,,original
+kristin-otto,Kristin Otto,athlete,swimmer,,,original
+alexander-popov,Alexander Popov,athlete,swimmer,,,original
+serena-williams,Serena Williams,athlete,other,,,original
+venus-williams,Venus Williams,athlete,other,,,original
+roger-federer,Roger Federer,athlete,other,,,original
+rafael-nadal,Rafael Nadal,athlete,other,,,original
+novak-djokovic,Novak Djokovic,athlete,other,,,original
+carlos-alcaraz,Carlos Alcaraz,athlete,other,,,original
+jannik-sinner,Jannik Sinner,athlete,other,,,original
+steffi-graf,Steffi Graf,athlete,other,,,original
+martina-navratilova,Martina Navratilova,athlete,other,,,original
+chris-evert,Chris Evert,athlete,other,,,original
+billie-jean-king,Billie Jean King,athlete,other,,,original
+pete-sampras,Pete Sampras,athlete,other,,,original
+andre-agassi,Andre Agassi,athlete,other,,,original
+bj-rn-borg,Björn Borg,athlete,other,,,original
+naomi-osaka,Naomi Osaka,athlete,other,,,original
+iga-wi-tek,Iga Świątek,athlete,other,,,original
+simone-biles,Simone Biles,athlete,gymnast,,,original
+nadia-com-neci,Nadia Comăneci,athlete,gymnast,,,original
+suni-lee,Suni Lee,athlete,gymnast,,,original
+gabby-douglas,Gabby Douglas,athlete,gymnast,,,original
+aly-raisman,Aly Raisman,athlete,gymnast,,,original
+kohei-uchimura,Kohei Uchimura,athlete,gymnast,,,original
+daiki-hashimoto,Daiki Hashimoto,athlete,gymnast,,,original
+rebeca-andrade,Rebeca Andrade,athlete,gymnast,,,original
+olga-korbut,Olga Korbut,athlete,gymnast,,,original
+larisa-latynina,Larisa Latynina,athlete,gymnast,,,original
+tiger-woods,Tiger Woods,athlete,golf_precision,,,original
+jack-nicklaus,Jack Nicklaus,athlete,golf_precision,,,original
+arnold-palmer,Arnold Palmer,athlete,golf_precision,,,original
+rory-mcilroy,Rory McIlroy,athlete,golf_precision,,,original
+scottie-scheffler,Scottie Scheffler,athlete,golf_precision,,,original
+phil-mickelson,Phil Mickelson,athlete,golf_precision,,,original
+brooks-koepka,Brooks Koepka,athlete,golf_precision,,,original
+nelly-korda,Nelly Korda,athlete,golf_precision,,,original
+annika-s-renstam,Annika Sörenstam,athlete,golf_precision,,,original
+lydia-ko,Lydia Ko,athlete,golf_precision,,,original
+eddy-merckx,Eddy Merckx,athlete,cycling_endurance,,,original
+lance-armstrong,Lance Armstrong,athlete,cycling_endurance,,,original
+tadej-poga-ar,Tadej Pogačar,athlete,cycling_endurance,,,original
+jonas-vingegaard,Jonas Vingegaard,athlete,cycling_endurance,,,original
+marianne-vos,Marianne Vos,athlete,cycling_endurance,,,original
+chris-froome,Chris Froome,athlete,cycling_endurance,,,original
+lewis-hamilton,Lewis Hamilton,athlete,motorsport_driver,,,original
+michael-schumacher,Michael Schumacher,athlete,motorsport_driver,,,original
+ayrton-senna,Ayrton Senna,athlete,motorsport_driver,,,original
+max-verstappen,Max Verstappen,athlete,motorsport_driver,,,original
+fernando-alonso,Fernando Alonso,athlete,motorsport_driver,,,original
+dale-earnhardt,Dale Earnhardt,athlete,motorsport_driver,,,original
+richard-petty,Richard Petty,athlete,motorsport_driver,,,original
+lindsey-vonn,Lindsey Vonn,athlete,snow_athlete,,,original
+mikaela-shiffrin,Mikaela Shiffrin,athlete,snow_athlete,,,original
+bode-miller,Bode Miller,athlete,snow_athlete,,,original
+ingemar-stenmark,Ingemar Stenmark,athlete,snow_athlete,,,original
+shaun-white,Shaun White,athlete,snow_athlete,,,original
+chloe-kim,Chloe Kim,athlete,snow_athlete,,,original
+sachin-tendulkar,Sachin Tendulkar,athlete,cricket_batter,,,original
+virat-kohli,Virat Kohli,athlete,cricket_batter,,,original
+ms-dhoni,MS Dhoni,athlete,cricket_batter,,,original
+don-bradman,Don Bradman,athlete,cricket_batter,,,original
+brian-lara,Brian Lara,athlete,cricket_batter,,,original
+shane-warne,Shane Warne,athlete,cricket_batter,,,original
+ellyse-perry,Ellyse Perry,athlete,cricket_batter,,,original
+aleksandr-karelin,Aleksandr Karelin,athlete,combat_grappler,,,original
+jim-thorpe,Jim Thorpe,athlete,other,,,original
+hakuho-sho,Hakuho Sho,athlete,combat_grappler,,,original
+teddy-riner,Teddy Riner,athlete,combat_grappler,,,original
+mija-n-l-pez,Mijaín López,athlete,combat_grappler,,,original
+kelly-slater,Kelly Slater,athlete,other,,,original
+tyrese-haliburton,Tyrese Haliburton,athlete,point_guard,,,original
+aaron-judge,Aaron Judge,athlete,baseball_power,,,original
+kyrie-irving,Kyrie Irving,athlete,wing,,,original
+josh-allen,Josh Allen,athlete,defender,,,original
+david-beckham,David Beckham,athlete,soccer_attacker,,,original
+juan-soto,Juan Soto,athlete,baseball_power,,,original
+oleksandr-usyk,Oleksandr Usyk,athlete,boxer,,,original
+yohan-blake,Yohan Blake,athlete,sprinter,,,original
+andy-murray,Andy Murray,athlete,other,,,original
+nathan-mackinnon,Nathan MacKinnon,athlete,hockey_forward,,,original
+leon-marchand,Léon Marchand,athlete,swimmer,,,original
+shawn-johnson,Shawn Johnson,athlete,gymnast,,,original
+jon-rahm,Jon Rahm,athlete,golf_precision,,,original
+remco-evenepoel,Remco Evenepoel,athlete,cycling_endurance,,,original
+charles-leclerc,Charles Leclerc,athlete,motorsport_driver,,,original
+rohit-sharma,Rohit Sharma,athlete,cricket_batter,,,original
+eileen-gu,Eileen Gu,athlete,snow_athlete,,,original
+michael-van-gerwen,Michael van Gerwen,athlete,other,,,original
+jayson-tatum,Jayson Tatum,athlete,wing,,,original
+joe-burrow,Joe Burrow,athlete,defender,,,original
+wayne-rooney,Wayne Rooney,athlete,soccer_attacker,,,original
+mookie-betts,Mookie Betts,athlete,baseball_power,,,original
+tyson-fury,Tyson Fury,athlete,boxer,,,original
+asafa-powell,Asafa Powell,athlete,sprinter,,,original
+stan-wawrinka,Stan Wawrinka,athlete,other,,,original
+leon-draisaitl,Leon Draisaitl,athlete,hockey_forward,,,original
+summer-mcintosh,Summer McIntosh,athlete,swimmer,,,original
+mckayla-maroney,McKayla Maroney,athlete,gymnast,,,original
+collin-morikawa,Collin Morikawa,athlete,golf_precision,,,original
+wout-van-aert,Wout van Aert,athlete,cycling_endurance,,,original
+lando-norris,Lando Norris,athlete,motorsport_driver,,,original
+jasprit-bumrah,Jasprit Bumrah,athlete,cricket_batter,,,original
+ester-ledecka,Ester Ledecká,athlete,snow_athlete,,,original
+phil-taylor,Phil Taylor,athlete,other,,,original
+jaylen-brown,Jaylen Brown,athlete,wing,,,original
+jalen-hurts,Jalen Hurts,athlete,defender,,,original
+harry-kane,Harry Kane,athlete,soccer_attacker,,,original
+freddie-freeman,Freddie Freeman,athlete,baseball_power,,,original
+anthony-joshua,Anthony Joshua,athlete,boxer,,,original
+justin-gatlin,Justin Gatlin,athlete,sprinter,,,original
+daniil-medvedev,Daniil Medvedev,athlete,other,,FRIENDS_REQUESTS,original
+nikita-kucherov,Nikita Kucherov,athlete,hockey_forward,,,original
+ariarne-titmus,Ariarne Titmus,athlete,swimmer,,,original
+jordyn-wieber,Jordyn Wieber,athlete,gymnast,,,original
+xander-schauffele,Xander Schauffele,athlete,golf_precision,,,original
+mathieu-van-der-poel,Mathieu van der Poel,athlete,cycling_endurance,,,original
+oscar-piastri,Oscar Piastri,athlete,motorsport_driver,,,original
+hardik-pandya,Hardik Pandya,athlete,cricket_batter,,,original
+michela-moioli,Michela Moioli,athlete,snow_athlete,,,original
+luke-littler,Luke Littler,athlete,other,,,original
+jimmy-butler,Jimmy Butler,athlete,wing,,,original
+justin-jefferson,Justin Jefferson,athlete,defender,,,original
+jude-bellingham,Jude Bellingham,athlete,soccer_attacker,,,original
+bryce-harper,Bryce Harper,athlete,baseball_power,,,original
+deontay-wilder,Deontay Wilder,athlete,boxer,,,original
+fred-kerley,Fred Kerley,athlete,sprinter,,,original
+alexander-zverev,Alexander Zverev,athlete,other,,,original
+auston-matthews,Auston Matthews,athlete,hockey_forward,,,original
+kaylee-mckeown,Kaylee McKeown,athlete,swimmer,,,original
+nastia-liukin,Nastia Liukin,athlete,gymnast,,,original
+bryson-dechambeau,Bryson DeChambeau,athlete,golf_precision,,,original
+primoz-roglic,Primož Roglič,athlete,cycling_endurance,,,original
+george-russell,George Russell,athlete,motorsport_driver,,,original
+ravindra-jadeja,Ravindra Jadeja,athlete,cricket_batter,,,original
+anna-gasser,Anna Gasser,athlete,snow_athlete,,,original
+stephen-hendry,Stephen Hendry,athlete,other,,,original
+damian-lillard,Damian Lillard,athlete,wing,,,original
+ja-marr-chase,Ja'Marr Chase,athlete,defender,,,original
+vinicius-junior,Vinícius Júnior,athlete,soccer_attacker,,,original
+ronald-acuna-jr,Ronald Acuña Jr.,athlete,baseball_power,,,original
+lennox-lewis,Lennox Lewis,athlete,boxer,,,original
+christian-coleman,Christian Coleman,athlete,sprinter,,,original
+taylor-fritz,Taylor Fritz,athlete,other,,FRIENDS_REQUESTS,original
+david-pastrnak,David Pastrňák,athlete,hockey_forward,,,original
+regan-smith,Regan Smith,athlete,swimmer,,,original
+shannon-miller,Shannon Miller,athlete,gymnast,,,original
+jordan-spieth,Jordan Spieth,athlete,golf_precision,,,original
+mark-cavendish,Mark Cavendish,athlete,cycling_endurance,,,original
+carlos-sainz-jr,Carlos Sainz Jr.,athlete,motorsport_driver,,,original
+rishabh-pant,Rishabh Pant,athlete,cricket_batter,,,original
+mark-mcmorris,Mark McMorris,athlete,snow_athlete,,,original
+ronnie-o-sullivan,Ronnie O'Sullivan,athlete,other,,,original
+joel-embiid,Joel Embiid,athlete,wing,,,original
+ceedee-lamb,CeeDee Lamb,athlete,defender,,,original
+rodri,Rodri,athlete,soccer_attacker,,,original
+bobby-witt-jr,Bobby Witt Jr.,athlete,baseball_power,,,original
+evander-holyfield,Evander Holyfield,athlete,boxer,,,original
+letsile-tebogo,Letsile Tebogo,athlete,sprinter,,,original
+ben-shelton,Ben Shelton,athlete,other,,FRIENDS_REQUESTS,original
+jack-hughes,Jack Hughes,athlete,hockey_forward,,,original
+gretchen-walsh,Gretchen Walsh,athlete,swimmer,,,original
+dominique-dawes,Dominique Dawes,athlete,gymnast,,,original
+justin-thomas,Justin Thomas,athlete,golf_precision,,,original
+peter-sagan,Peter Sagan,athlete,cycling_endurance,,,original
+sergio-perez,Sergio Pérez,athlete,motorsport_driver,,,original
+shubman-gill,Shubman Gill,athlete,cricket_batter,,,original
+red-gerard,Red Gerard,athlete,snow_athlete,,,original
+judd-trump,Judd Trump,athlete,other,,,original
+shai-gilgeous-alexander,Shai Gilgeous-Alexander,athlete,wing,,,original
+a-j-brown,A.J. Brown,athlete,defender,,,original
+lamine-yamal,Lamine Yamal,athlete,soccer_attacker,,,original
+francisco-lindor,Francisco Lindor,athlete,baseball_power,,,original
+wladimir-klitschko,Wladimir Klitschko,athlete,boxer,,,original
+akani-simbine,Akani Simbine,athlete,sprinter,,,original
+frances-tiafoe,Frances Tiafoe,athlete,other,,,original
+quinn-hughes,Quinn Hughes,athlete,hockey_forward,,,original
+kate-douglass,Kate Douglass,athlete,swimmer,,,original
+dominique-moceanu,Dominique Moceanu,athlete,gymnast,,,original
+viktor-hovland,Viktor Hovland,athlete,golf_precision,,,original
+geraint-thomas,Geraint Thomas,athlete,cycling_endurance,,,original
+sebastian-vettel,Sebastian Vettel,athlete,motorsport_driver,,,original
+smriti-mandhana,Smriti Mandhana,athlete,cricket_batter,,,original
+ayumu-hirano,Ayumu Hirano,athlete,snow_athlete,,,original
+efren-reyes,Efren Reyes,athlete,other,,,original
+anthony-edwards,Anthony Edwards,athlete,wing,,,original
+cooper-kupp,Cooper Kupp,athlete,defender,,,original
+pedri,Pedri,athlete,soccer_attacker,,,original
+jose-ramirez,José Ramírez,athlete,baseball_power,,,original
+vitali-klitschko,Vitali Klitschko,athlete,boxer,,,original
+marcell-jacobs,Marcell Jacobs,athlete,sprinter,,,original
+casper-ruud,Casper Ruud,athlete,other,,,original
+cale-makar,Cale Makar,athlete,hockey_forward,,,original
+torri-huske,Torri Huske,athlete,swimmer,,,original
+kerri-strug,Kerri Strug,athlete,gymnast,,,original
+hideki-matsuyama,Hideki Matsuyama,athlete,golf_precision,,,original
+egan-bernal,Egan Bernal,athlete,cycling_endurance,,,original
+kimi-raikkonen,Kimi Räikkönen,athlete,motorsport_driver,,,original
+harmanpreet-kaur,Harmanpreet Kaur,athlete,cricket_batter,,,original
+yuto-totsuka,Yuto Totsuka,athlete,snow_athlete,,,original
+shane-van-boening,Shane Van Boening,athlete,other,,,original
+victor-wembanyama,Victor Wembanyama,athlete,wing,,,original
+davante-adams,Davante Adams,athlete,defender,,,original
+phil-foden,Phil Foden,athlete,soccer_attacker,,,original
+gunnar-henderson,Gunnar Henderson,athlete,baseball_power,,,original
+gennady-golovkin,Gennady Golovkin,athlete,boxer,,,original
+andre-de-grasse,Andre De Grasse,athlete,sprinter,,,original
+holger-rune,Holger Rune,athlete,other,,,original
+mikko-rantanen,Mikko Rantanen,athlete,hockey_forward,,,original
+emma-mckeon,Emma McKeon,athlete,swimmer,,,original
+carly-patterson,Carly Patterson,athlete,gymnast,,,original
+tommy-fleetwood,Tommy Fleetwood,athlete,golf_precision,,,original
+alberto-contador,Alberto Contador,athlete,cycling_endurance,,,original
+jenson-button,Jenson Button,athlete,motorsport_driver,,,original
+mithali-raj,Mithali Raj,athlete,cricket_batter,,,original
+scotty-james,Scotty James,athlete,snow_athlete,,,original
+karch-kiraly,Karch Kiraly,athlete,other,,,original
+donovan-mitchell,Donovan Mitchell,athlete,wing,,,original
+julio-jones,Julio Jones,athlete,defender,,,original
+bukayo-saka,Bukayo Saka,athlete,soccer_attacker,,,original
+corbin-carroll,Corbin Carroll,athlete,baseball_power,,,original
+terence-crawford,Terence Crawford,athlete,boxer,,,original
+kishane-thompson,Kishane Thompson,athlete,sprinter,,,original
+stefanos-tsitsipas,Stefanos Tsitsipas,athlete,other,,,original
+artemi-panarin,Artemi Panarin,athlete,hockey_forward,,,original
+mollie-o-callaghan,Mollie O'Callaghan,athlete,swimmer,,,original
+laurie-hernandez,Laurie Hernandez,athlete,gymnast,,,original
+patrick-cantlay,Patrick Cantlay,athlete,golf_precision,,,original
+vincenzo-nibali,Vincenzo Nibali,athlete,cycling_endurance,,,original
+nico-rosberg,Nico Rosberg,athlete,motorsport_driver,,,original
+jhulan-goswami,Jhulan Goswami,athlete,cricket_batter,,,original
+jamie-anderson,Jamie Anderson,athlete,snow_athlete,,,original
+kerri-walsh-jennings,Kerri Walsh Jennings,athlete,other,,,original
+jalen-brunson,Jalen Brunson,athlete,wing,,,original
+larry-fitzgerald,Larry Fitzgerald,athlete,defender,,,original
+son-heung-min,Son Heung-min,athlete,soccer_attacker,,,original
+fernando-tatis-jr,Fernando Tatis Jr.,athlete,baseball_power,,,original
+naoya-inoue,Naoya Inoue,athlete,boxer,,,original
+gabby-thomas,Gabby Thomas,athlete,sprinter,,,original
+grigor-dimitrov,Grigor Dimitrov,athlete,other,,,original
+kirill-kaprizov,Kirill Kaprizov,athlete,hockey_forward,,,original
+penny-oleksiak,Penny Oleksiak,athlete,swimmer,,,original
+jade-carey,Jade Carey,athlete,gymnast,,,original
+sergio-garcia,Sergio García,athlete,golf_precision,,,original
+fabian-cancellara,Fabian Cancellara,athlete,cycling_endurance,,,original
+daniel-ricciardo,Daniel Ricciardo,athlete,motorsport_driver,,,original
+meg-lanning,Meg Lanning,athlete,cricket_batter,,,original
+julia-marino,Julia Marino,athlete,snow_athlete,,,original
+misty-may-treanor,Misty May-Treanor,athlete,other,,,original
+karl-anthony-towns,Karl-Anthony Towns,athlete,wing,,,original
+steve-smith-sr,Steve Smith Sr.,athlete,defender,,,original
+karim-benzema,Karim Benzema,athlete,soccer_attacker,,,original
+vladimir-guerrero-jr,Vladimir Guerrero Jr.,athlete,baseball_power,,,original
+vasyl-lomachenko,Vasyl Lomachenko,athlete,boxer,,,original
+sha-carri-richardson,Sha'Carri Richardson,athlete,sprinter,,,original
+nick-kyrgios,Nick Kyrgios,athlete,other,,,original
+brady-tkachuk,Brady Tkachuk,athlete,hockey_forward,,,original
+federica-pellegrini,Federica Pellegrini,athlete,swimmer,,,original
+jordan-chiles,Jordan Chiles,athlete,gymnast,,,original
+adam-scott,Adam Scott,athlete,golf_precision,,,original
+tom-boonen,Tom Boonen,athlete,cycling_endurance,,,original
+valtteri-bottas,Valtteri Bottas,athlete,motorsport_driver,,,original
+alyssa-healy,Alyssa Healy,athlete,cricket_batter,,,original
+zoi-sadowski-synnott,Zoi Sadowski-Synnott,athlete,snow_athlete,,,original
+april-ross,April Ross,athlete,other,,,original
+paul-george,Paul George,athlete,wing,,,original
+marvin-harrison,Marvin Harrison,athlete,defender,,,original
+gareth-bale,Gareth Bale,athlete,soccer_attacker,,,original
+vladimir-guerrero-sr,Vladimir Guerrero Sr.,athlete,baseball_power,,,original
+oscar-de-la-hoya,Oscar De La Hoya,athlete,boxer,,,original
+melissa-jefferson-wooden,Melissa Jefferson-Wooden,athlete,sprinter,,,original
+john-mcenroe,John McEnroe,athlete,other,,FRIENDS_REQUESTS,original
+matthew-tkachuk,Matthew Tkachuk,athlete,hockey_forward,,,original
+katinka-hosszu,Katinka Hosszú,athlete,swimmer,,,original
+hezly-rivera,Hezly Rivera,athlete,gymnast,,,original
+dustin-johnson,Dustin Johnson,athlete,golf_precision,,,original
+chris-hoy,Chris Hoy,athlete,cycling_endurance,,,original
+alain-prost,Alain Prost,athlete,motorsport_driver,,,original
+beth-mooney,Beth Mooney,athlete,cricket_batter,,,original
+marco-odermatt,Marco Odermatt,athlete,snow_athlete,,,original
+anders-mol,Anders Mol,athlete,other,,,original
+carmelo-anthony,Carmelo Anthony,athlete,wing,,,original
+antonio-brown,Antonio Brown,athlete,defender,,,original
+eden-hazard,Eden Hazard,athlete,soccer_attacker,,,original
+jose-altuve,José Altuve,athlete,baseball_power,,,original
+julio-cesar-chavez,Julio César Chávez,athlete,boxer,,,original
+julien-alfred,Julien Alfred,athlete,sprinter,,,original
+jimmy-connors,Jimmy Connors,athlete,other,,,original
+aleksander-barkov,Aleksander Barkov,athlete,hockey_forward,,,original
+rebecca-adlington,Rebecca Adlington,athlete,swimmer,,,original
+mykayla-skinner,MyKayla Skinner,athlete,gymnast,,,original
+bubba-watson,Bubba Watson,athlete,golf_precision,,,original
+bradley-wiggins,Bradley Wiggins,athlete,cycling_endurance,,,original
+nigel-mansell,Nigel Mansell,athlete,motorsport_driver,,,original
+sophie-devine,Sophie Devine,athlete,cricket_batter,,,original
+aleksander-aamodt-kilde,Aleksander Aamodt Kilde,athlete,snow_athlete,,,original
+christian-srum,Christian Sørum,athlete,other,,,original
+tracy-mcgrady,Tracy McGrady,athlete,wing,,,original
+chris-johnson,Chris Johnson,athlete,defender,,,original
+sadio-mane,Sadio Mané,athlete,soccer_attacker,,,original
+yordan-alvarez,Yordan Alvarez,athlete,baseball_power,,,original
+marvin-hagler,Marvin Hagler,athlete,boxer,,,original
+shericka-jackson,Shericka Jackson,athlete,sprinter,,,original
+ivan-lendl,Ivan Lendl,athlete,other,,,original
+jack-eichel,Jack Eichel,athlete,hockey_forward,,,original
+dara-torres,Dara Torres,athlete,swimmer,,,original
+svetlana-khorkina,Svetlana Khorkina,athlete,gymnast,,,original
+jason-day,Jason Day,athlete,golf_precision,,,original
+miguel-indurain,Miguel Indurain,athlete,cycling_endurance,,,original
+niki-lauda,Niki Lauda,athlete,motorsport_driver,,,original
+suzie-bates,Suzie Bates,athlete,cricket_batter,,,original
+marcel-hirscher,Marcel Hirscher,athlete,snow_athlete,,,original
+giba,Giba,athlete,other,,,original
+vince-carter,Vince Carter,athlete,wing,,,original
+ladainian-tomlinson,LaDainian Tomlinson,athlete,defender,,,original
+didier-drogba,Didier Drogba,athlete,soccer_attacker,,,original
+giancarlo-stanton,Giancarlo Stanton,athlete,baseball_power,,,original
+thomas-hearns,Thomas Hearns,athlete,boxer,,,original
+dina-asher-smith,Dina Asher-Smith,athlete,sprinter,,,original
+boris-becker,Boris Becker,athlete,other,,,original
+steven-stamkos,Steven Stamkos,athlete,hockey_forward,,,original
+alperen-sengun,Alperen Sengun,athlete,wing,,,original
+jamal-murray,Jamal Murray,athlete,point_guard,,,original
+pascal-siakam,Pascal Siakam,athlete,wing,,,original
+bennedict-mathurin,Bennedict Mathurin,athlete,wing,,,original
+andrew-wiggins,Andrew Wiggins,athlete,wing,,,original
+lauri-markkanen,Lauri Markkanen,athlete,wing,,,original
+rudy-gobert,Rudy Gobert,athlete,center,,,original
+franz-wagner,Franz Wagner,athlete,wing,,,original
+kristaps-porzingis,Kristaps Porziņģis,athlete,wing,,,original
+domantas-sabonis,Domantas Sabonis,athlete,wing,,,original
+deni-avdija,Deni Avdija,athlete,wing,,,original
+og-anunoby,OG Anunoby,athlete,wing,,,original
+josh-giddey,Josh Giddey,athlete,point_guard,,,original
+rj-barrett,RJ Barrett,athlete,wing,,,original
+ivica-zubac,Ivica Zubac,athlete,center,,,original
+jonathan-kuminga,Jonathan Kuminga,athlete,wing,,,original
+dyson-daniels,Dyson Daniels,athlete,point_guard,,,original
+zach-edey,Zach Edey,athlete,center,,,original
+alex-sarr,Alex Sarr,athlete,center,,,original
+vj-edgecombe,VJ Edgecombe,athlete,point_guard,,,original
+jusuf-nurkic,Jusuf Nurkić,athlete,center,,,original
+luguentz-dort,Luguentz Dort,athlete,wing,,,original
+andrew-nembhard,Andrew Nembhard,athlete,point_guard,,,original
+nickeil-alexander-walker,Nickeil Alexander-Walker,athlete,wing,,,original
+shaedon-sharpe,Shaedon Sharpe,athlete,wing,,,original
+deandre-ayton,Deandre Ayton,athlete,center,,,original
+buddy-hield,Buddy Hield,athlete,wing,,,original
+ben-simmons,Ben Simmons,athlete,point_guard,,,original
+dillon-brooks,Dillon Brooks,athlete,wing,,,original
+trey-lyles,Trey Lyles,athlete,wing,,,original
+clint-capela,Clint Capela,athlete,center,,,original
+isaiah-hartenstein,Isaiah Hartenstein,athlete,center,,,original
+goga-bitadze,Goga Bitadze,athlete,center,,,original
+rui-hachimura,Rui Hachimura,athlete,wing,,,original
+bogdan-bogdanovic,Bogdan Bogdanović,athlete,wing,,,original
+nikola-jovic,Nikola Jović,athlete,wing,,,original
+santi-aldama,Santi Aldama,athlete,wing,,,original
+al-horford,Al Horford,athlete,wing,,,original
+nick-richards,Nick Richards,athlete,wing,,,original
+tyrese-proctor,Tyrese Proctor,athlete,wing,,,original
+jock-landale,Jock Landale,athlete,wing,,,original
+johnny-furphy,Johnny Furphy,athlete,wing,,,original
+rocco-zikarsky,Rocco Zikarsky,athlete,wing,,,original
+josh-green,Josh Green,athlete,wing,,,original
+jakob-poeltl,Jakob Poeltl,athlete,wing,,,original
+ajay-mitchell,Ajay Mitchell,athlete,wing,,,original
+toumani-camara,Toumani Camara,athlete,wing,,,original
+gui-santos,Gui Santos,athlete,wing,,,original
+yves-missi,Yves Missi,athlete,wing,,,original
+leonard-miller,Leonard Miller,athlete,wing,,,original
+ryan-nembhard,Ryan Nembhard,athlete,wing,,,original
+olivier-maxence-prosper,Olivier-Maxence Prosper,athlete,wing,,,original
+will-riley,Will Riley,athlete,wing,,,original
+yang-hansen,Yang Hansen,athlete,wing,,,original
+mario-hezonja,Mario Hezonja,athlete,wing,,,original
+karlo-matkovic,Karlo Matković,athlete,wing,,,original
+vit-krejci,Vít Krejčí,athlete,wing,,,original
+oscar-tshiebwe,Oscar Tshiebwe,athlete,wing,,,original
+david-jones-garcia,David Jones Garcia,athlete,wing,,,original
+henri-veesaar,Henri Veesaar,athlete,wing,,,original
+nolan-traore,Nolan Traoré,athlete,wing,,,original
+moussa-diabate,Moussa Diabaté,athlete,wing,,,original
+tidjane-salaun,Tidjane Salaün,athlete,wing,,,original
+noa-essengue,Noa Essengue,athlete,wing,,,original
+zaccharie-risacher,Zaccharie Risacher,athlete,wing,,,original
+ousmane-dieng,Ousmane Dieng,athlete,wing,,,original
+joan-beringer,Joan Beringer,athlete,wing,,,original
+pacome-dadiet,Pacôme Dadiet,athlete,wing,,,original
+mohamed-diawara,Mohamed Diawara,athlete,wing,,,original
+noah-penda,Noah Penda,athlete,wing,,,original
+rayan-rupert,Rayan Rupert,athlete,wing,,,original
+sidy-cissoko,Sidy Cissoko,athlete,wing,,,original
+maxime-raynaud,Maxime Raynaud,athlete,wing,,,original
+bilal-coulibaly,Bilal Coulibaly,athlete,wing,,,original
+sandro-mamukelashvili,Sandro Mamukelashvili,athlete,wing,,,original
+moritz-wagner,Moritz Wagner,athlete,wing,,,original
+dennis-schroder,Dennis Schröder,athlete,point_guard,,,original
+hannes-steinbach,Hannes Steinbach,athlete,wing,,,original
+tristan-da-silva,Tristan da Silva,athlete,wing,,,original
+ariel-hukporti,Ariel Hukporti,athlete,wing,,,original
+moussa-cisse,Moussa Cissé,athlete,wing,,,original
+ben-saraf,Ben Saraf,athlete,wing,,,original
+simone-fontecchio,Simone Fontecchio,athlete,wing,,,original
+kasparas-jakucionis,Kasparas Jakučionis,athlete,wing,,,original
+karim-lopez,Karim López,athlete,wing,,,original
+nikola-vucevic,Nikola Vučević,athlete,wing,,,original
+tristan-enaruna,Tristan Enaruna,athlete,wing,,,original
+malevy-leons,Malevy Leons,athlete,wing,,,original
+quinten-post,Quinten Post,athlete,wing,,,original
+steven-adams,Steven Adams,athlete,wing,,,original
+ugonna-onyenso,Ugonna Onyenso,athlete,wing,,,original
+charles-bassey,Charles Bassey,athlete,wing,,,original
+adem-bona,Adem Bona,athlete,wing,,,original
+precious-achiuwa,Precious Achiuwa,athlete,wing,,,original
+josh-okogie,Josh Okogie,athlete,wing,,,original
+felix-okpara,Felix Okpara,athlete,wing,,,original
+neemias-queta,Neemias Queta,athlete,wing,,,original
+egor-dmin,Egor Dёmin,athlete,wing,,,original
+vladislav-goldin,Vladislav Goldin,athlete,wing,,,original
+mouhamed-gueye,Mouhamed Gueye,athlete,wing,,,original
+jacoby-brissett,Jacoby Brissett,athlete,quarterback,,,original
+michael-penix-jr,Michael Penix Jr.,athlete,quarterback,,,original
+tyler-huntley,Tyler Huntley,athlete,quarterback,,,original
+bryce-young,Bryce Young,athlete,quarterback,,,original
+caleb-williams,Caleb Williams,athlete,quarterback,,,original
+deshaun-watson,Deshaun Watson,athlete,quarterback,,,original
+dak-prescott,Dak Prescott,athlete,quarterback,,,original
+bo-nix,Bo Nix,athlete,quarterback,,,original
+jared-goff,Jared Goff,athlete,quarterback,,,original
+jordan-love,Jordan Love,athlete,quarterback,,,original
+c-j-stroud,C.J. Stroud,athlete,quarterback,,,original
+daniel-jones,Daniel Jones,athlete,quarterback,,,original
+trevor-lawrence,Trevor Lawrence,athlete,quarterback,,,original
+kirk-cousins,Kirk Cousins,athlete,quarterback,,,original
+justin-herbert,Justin Herbert,athlete,quarterback,,,original
+matthew-stafford,Matthew Stafford,athlete,quarterback,,,original
+malik-willis,Malik Willis,athlete,quarterback,,,original
+kyler-murray,Kyler Murray,athlete,quarterback,,,original
+drake-maye,Drake Maye,athlete,quarterback,,,original
+tyler-shough,Tyler Shough,athlete,quarterback,,,original
+j-j-mccarthy,J.J. McCarthy,athlete,quarterback,,,original
+geno-smith,Geno Smith,athlete,quarterback,,,original
+tanner-mckee,Tanner McKee,athlete,quarterback,,,original
+sam-darnold,Sam Darnold,athlete,quarterback,,,original
+jalon-daniels,Jalon Daniels,athlete,quarterback,,,original
+cam-ward,Cam Ward,athlete,quarterback,,,original
+jayden-daniels,Jayden Daniels,athlete,quarterback,,,original
+tyler-allgeier,Tyler Allgeier,athlete,running_back,,,original
+bijan-robinson,Bijan Robinson,athlete,running_back,,,original
+james-cook-iii,James Cook III,athlete,running_back,,,original
+chuba-hubbard,Chuba Hubbard,athlete,running_back,,,original
+d-andre-swift,D'Andre Swift,athlete,running_back,,,original
+chase-brown,Chase Brown,athlete,running_back,,,original
+michael-burton,Michael Burton,athlete,running_back,,,original
+javonte-williams,Javonte Williams,athlete,running_back,,,original
+j-k-dobbins,J.K. Dobbins,athlete,running_back,,,original
+jahmyr-gibbs,Jahmyr Gibbs,athlete,running_back,,,original
+josh-jacobs,Josh Jacobs,athlete,running_back,,,original
+woody-marks,Woody Marks,athlete,running_back,,,original
+jonathan-taylor,Jonathan Taylor,athlete,running_back,,,original
+bhayshul-tuten,Bhayshul Tuten,athlete,running_back,,,original
+kenneth-walker-iii,Kenneth Walker III,athlete,running_back,,,original
+ashton-jeanty,Ashton Jeanty,athlete,running_back,,,original
+omarion-hampton,Omarion Hampton,athlete,running_back,,,original
+kyren-williams,Kyren Williams,athlete,running_back,,,original
+ollie-gordon-ii,Ollie Gordon II,athlete,running_back,,,original
+aaron-jones-sr,Aaron Jones Sr.,athlete,running_back,,,original
+rhamondre-stevenson,Rhamondre Stevenson,athlete,running_back,,,original
+kendre-miller,Kendre Miller,athlete,running_back,,,original
+cam-skattebo,Cam Skattebo,athlete,running_back,,,original
+braelon-allen,Braelon Allen,athlete,running_back,,,original
+dameon-pierce,Dameon Pierce,athlete,running_back,,,original
+jaylen-warren,Jaylen Warren,athlete,running_back,,,original
+emanuel-wilson,Emanuel Wilson,athlete,running_back,,,original
+kenny-gainwell,Kenny Gainwell,athlete,running_back,,,original
+tony-pollard,Tony Pollard,athlete,running_back,,,original
+rachaad-white,Rachaad White,athlete,running_back,,,original
+michael-wilson,Michael Wilson,athlete,wide_receiver,,,original
+drake-london,Drake London,athlete,wide_receiver,,,original
+zay-flowers,Zay Flowers,athlete,wide_receiver,,,original
+khalil-shakir,Khalil Shakir,athlete,wide_receiver,,,original
+tetairoa-mcmillan,Tetairoa McMillan,athlete,wide_receiver,,,original
+rome-odunze,Rome Odunze,athlete,wide_receiver,,,original
+jerry-jeudy,Jerry Jeudy,athlete,wide_receiver,,,original
+courtland-sutton,Courtland Sutton,athlete,wide_receiver,,,original
+amon-ra-st-brown,Amon-Ra St. Brown,athlete,wide_receiver,,,original
+j-michael-sturdivant,J. Michael Sturdivant,athlete,wide_receiver,,,original
+nico-collins,Nico Collins,athlete,wide_receiver,,,original
+josh-downs,Josh Downs,athlete,wide_receiver,,,original
+parker-washington,Parker Washington,athlete,wide_receiver,,,original
+xavier-worthy,Xavier Worthy,athlete,wide_receiver,,,original
+tre-tucker,Tre Tucker,athlete,wide_receiver,,,original
+quentin-johnston,Quentin Johnston,athlete,wide_receiver,,,original
+konata-mumpfield,Konata Mumpfield,athlete,wide_receiver,,,original
+malik-washington,Malik Washington,athlete,wide_receiver,,,original
+chris-olave,Chris Olave,athlete,wide_receiver,,,original
+malik-nabers,Malik Nabers,athlete,wide_receiver,,,original
+garrett-wilson,Garrett Wilson,athlete,wide_receiver,,,original
+makai-lemon,Makai Lemon,athlete,wide_receiver,,,original
+dk-metcalf,DK Metcalf,athlete,wide_receiver,,,original
+jaxon-smith-njigba,Jaxon Smith-Njigba,athlete,wide_receiver,,,original
+chris-godwin-jr,Chris Godwin Jr.,athlete,wide_receiver,,,original
+carnell-tate,Carnell Tate,athlete,wide_receiver,,,original
+stefon-diggs,Stefon Diggs,athlete,wide_receiver,,,original
+trey-mcbride,Trey McBride,athlete,tight_end,,,original
+kyle-pitts-sr,Kyle Pitts Sr.,athlete,tight_end,,,original
+mark-andrews,Mark Andrews,athlete,tight_end,,,original
+dalton-kincaid,Dalton Kincaid,athlete,tight_end,,,original
+tommy-tremble,Tommy Tremble,athlete,tight_end,,,original
+colston-loveland,Colston Loveland,athlete,tight_end,,,original
+mike-gesicki,Mike Gesicki,athlete,tight_end,,,original
+harold-fannin-jr,Harold Fannin Jr.,athlete,tight_end,,,original
+jake-ferguson,Jake Ferguson,athlete,tight_end,,,original
+evan-engram,Evan Engram,athlete,tight_end,,,original
+sam-laporta,Sam LaPorta,athlete,tight_end,,,original
+tucker-kraft,Tucker Kraft,athlete,tight_end,,,original
+foster-moreau,Foster Moreau,athlete,tight_end,,,original
+will-mallory,Will Mallory,athlete,tight_end,,,original
+brenton-strange,Brenton Strange,athlete,tight_end,,,original
+noah-gray,Noah Gray,athlete,tight_end,,,original
+dick-butkus,Dick Butkus,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+bronko-nagurski,Bronko Nagurski,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+sid-luckman,Sid Luckman,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+gale-sayers,Gale Sayers,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+mike-ditka,Mike Ditka,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+bill-george,Bill George,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+clyde-bulldog-turner,Clyde Bulldog Turner,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+doug-atkins,Doug Atkins,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+danny-fortmann,Danny Fortmann,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+dan-hampton,Dan Hampton,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+richard-dent,Richard Dent,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+jimbo-covert,Jimbo Covert,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+brian-urlacher,Brian Urlacher,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+mike-singletary,Mike Singletary,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+bill-hewitt,Bill Hewitt,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+stan-jones,Stan Jones,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+jay-hilgenberg,Jay Hilgenberg,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+steve-mcmichael,Steve McMichael,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+devin-hester,Devin Hester,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+joe-stydahar,Joe Stydahar,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+george-connor,George Connor,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+george-mcafee,George McAfee,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+joe-fortunato,Joe Fortunato,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+ed-sprinkle,Ed Sprinkle,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+ed-healey,Ed Healey,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+olin-kreutz,Olin Kreutz,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+lance-briggs,Lance Briggs,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+rick-casares,Rick Casares,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+gary-fencik,Gary Fencik,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+charles-tillman,Charles Tillman,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+paddy-driscoll,Paddy Driscoll,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+george-trafton,George Trafton,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+matt-forte,Matt Forte,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+george-musso,George Musso,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+red-grange,Red Grange,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+george-halas,George Halas,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+link-lyman,Link Lyman,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+harlon-hill,Harlon Hill,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+ken-kavanaugh,Ken Kavanaugh,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+neal-anderson,Neal Anderson,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+richie-petitbon,Richie Petitbon,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+wilber-marshall,Wilber Marshall,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+johnny-morris,Johnny Morris,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+otis-wilson,Otis Wilson,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+doug-buffone,Doug Buffone,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+dave-duerson,Dave Duerson,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+fred-williams,Fred Williams,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+ray-bray,Ray Bray,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+mark-bortz,Mark Bortz,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+keith-van-horne,Keith Van Horne,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+joe-kopcha,Joe Kopcha,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+jim-mcmahon,Jim McMahon,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+ed-brown,Ed Brown,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+johnny-lujack,Johnny Lujack,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+roosevelt-taylor,Roosevelt Taylor,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+jim-osborne,Jim Osborne,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+wally-chambers,Wally Chambers,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+julius-peppers,Julius Peppers,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+khalil-mack,Khalil Mack,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+willie-galimore,Willie Galimore,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+robbie-gould,Robbie Gould,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+mike-brown,Mike Brown,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+james-williams,James Williams,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+dick-gordon,Dick Gordon,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+mike-hartenstine,Mike Hartenstine,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+ed-o-bradovich,Ed O'Bradovich,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+dick-barwegen,Dick Barwegen,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+bill-wade,Bill Wade,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+matt-suhey,Matt Suhey,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+kevin-butler,Kevin Butler,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+mark-carrier,Mark Carrier,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+tommie-harris,Tommie Harris,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+kyle-long,Kyle Long,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+akiem-hicks,Akiem Hicks,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+j-c-caroline,J.C. Caroline,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+bennie-mcrae,Bennie McRae,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+donnell-woolford,Donnell Woolford,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+dennis-mckinnon,Dennis McKinnon,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+alshon-jeffery,Alshon Jeffery,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+brandon-marshall,Brandon Marshall,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+george-blanda,George Blanda,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+willie-gault,Willie Gault,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+tom-thayer,Tom Thayer,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+jay-cutler,Jay Cutler,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+allan-ellis,Allan Ellis,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+luke-johnsos,Luke Johnsos,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+joey-sternaman,Joey Sternaman,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+mike-pyle,Mike Pyle,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+beattie-feathers,Beattie Feathers,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+bob-wetoska,Bob Wetoska,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+bill-osmanski,Bill Osmanski,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+herm-lee,Herm Lee,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+jim-dooley,Jim Dooley,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+larry-morris,Larry Morris,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+eddie-jackson,Eddie Jackson,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+bobby-joe-green,Bobby Joe Green,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+trace-armstrong,Trace Armstrong,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+doug-plank,Doug Plank,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+patrick-mannelly,Patrick Mannelly,athlete,football_legend,Chicago Bears,BEARS_TOP_100,NOT_VERIFIED
+roman-hemby,Roman Hemby,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+elijah-sarratt,Elijah Sarratt,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+fernando-mendoza,Fernando Mendoza,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+omar-cooper-jr,Omar Cooper Jr.,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+riley-nowakowski,Riley Nowakowski,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+drew-evans,Drew Evans,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+carter-smith,Carter Smith,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+kahlil-benson,Kahlil Benson,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+bray-lynch,Bray Lynch,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+pat-coogan,Pat Coogan,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+charlie-becker,Charlie Becker,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+amare-ferrell,Amare Ferrell,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+rolijah-hardy,Rolijah Hardy,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+jamari-sharpe,Jamari Sharpe,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+aiden-fisher,Aiden Fisher,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+isaiah-jones,Isaiah Jones,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+d-angelo-ponds,D'Angelo Ponds,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+mikail-kamara,Mikail Kamara,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+louis-moore,Louis Moore,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+dominique-ratcliff,Dominique Ratcliff,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+tyrique-tucker,Tyrique Tucker,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+mario-landino,Mario Landino,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_STARTERS,NOT_VERIFIED
+hosea-wheeler,Hosea Wheeler,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+jonathan-brady,Jonathan Brady,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+ryland-gandy,Ryland Gandy,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+devan-boykin,Devan Boykin,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+kaiden-turner,Kaiden Turner,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+nicolas-radicic,Nicolas Radicic,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+daniel-ndukwe,Daniel Ndukwe,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+solomon-vanhorse,Solomon Vanhorse,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+holden-staes,Holden Staes,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+byron-baldwin-jr,Byron Baldwin Jr.,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+jaylen-bell,Jaylen Bell,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+anthony-chung,Anthony Chung,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+garrett-reese,Garrett Reese,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+jeff-utzinger,Jeff Utzinger,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+brendan-franke,Brendan Franke,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+clay-conner,Clay Conner,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+quentin-clark,Quentin Clark,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+mitch-mccarthy,Mitch McCarthy,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+mark-langston,Mark Langston,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+james-bomba,James Bomba,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+e-j-williams-jr,E.J. Williams Jr.,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+adedamola-ajani,Adedamola Ajani,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+zen-michalski,Zen Michalski,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+kaelon-black,Kaelon Black,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+j-mari-monnette,J'mari Monnette,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+quinn-warren,Quinn Warren,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_RESERVES,NOT_VERIFIED
+andrew-turvy,Andrew Turvy,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NOT_VERIFIED
+alberto-mendoza,Alberto Mendoza,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NEEDS_IDENTITY_REVIEW
+lee-beebe-jr,Lee Beebe Jr.,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NEEDS_IDENTITY_REVIEW
+davion-chandler,Davion Chandler,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NEEDS_IDENTITY_REVIEW
+lebron-bond,LeBron Bond,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NEEDS_IDENTITY_REVIEW
+stephen-daley,Stephen Daley,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NEEDS_IDENTITY_REVIEW
+kellan-wyatt,Kellan Wyatt,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NEEDS_IDENTITY_REVIEW
+andrew-depaepe,Andrew Depaepe,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NEEDS_IDENTITY_REVIEW
+tobi-osunsanmi,Tobi Osunsanmi,athlete,college_football,Indiana Hoosiers 2025,IU_2025_CHAMPIONS;IU_ADDITIONAL,NEEDS_IDENTITY_REVIEW
+ray-rice,Ray Rice,athlete,running_back,,FRIENDS_REQUESTS,NOT_VERIFIED
+ben-roethlisberger,Ben Roethlisberger,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+andrew-luck,Andrew Luck,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+o-j-simpson,O.J. Simpson,athlete,running_back,,FRIENDS_REQUESTS,NOT_VERIFIED
+secretariat,Secretariat,animal,racehorse,,FRIENDS_REQUESTS,NOT_VERIFIED
+ron-turcotte,Ron Turcotte,athlete,jockey,,FRIENDS_REQUESTS,NOT_VERIFIED
+american-pharoah,American Pharoah,animal,racehorse,,FRIENDS_REQUESTS,NOT_VERIFIED
+victor-espinoza,Victor Espinoza,athlete,jockey,,FRIENDS_REQUESTS,NOT_VERIFIED
+bailey-grupe,Bailey Grupe,athlete,kicker,,FRIENDS_REQUESTS,NOT_VERIFIED
+t-j-mcconnell,T.J. McConnell,athlete,guard,,FRIENDS_REQUESTS,NOT_VERIFIED
+lance-stephenson,Lance Stephenson,athlete,guard,,FRIENDS_REQUESTS,NOT_VERIFIED
+bobby-knight,Bobby Knight,coach,coach,,FRIENDS_REQUESTS,NOT_VERIFIED
+ron-artest,Ron Artest,athlete,wing,,FRIENDS_REQUESTS,NOT_VERIFIED
+chad-powers,Chad Powers,fictional,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+brian-scalabrine,Brian Scalabrine,athlete,forward,,FRIENDS_REQUESTS,NOT_VERIFIED
+lightning-mcqueen,Lightning McQueen,fictional,racecar,,FRIENDS_REQUESTS,NOT_VERIFIED
+eddie-hall,Eddie Hall,athlete,strongman,,FRIENDS_REQUESTS,NOT_VERIFIED
+shamu,Shamu,animal,orca,,FRIENDS_REQUESTS,NOT_VERIFIED
+doc-hudson,Doc Hudson,fictional,racecar,,FRIENDS_REQUESTS,NOT_VERIFIED
+paul-blart,Paul Blart,fictional,mall_cop,,FRIENDS_REQUESTS,NOT_VERIFIED
+thad-castle,Thad Castle,fictional,linebacker,,FRIENDS_REQUESTS,NOT_VERIFIED
+paul-crewe,Paul Crewe,fictional,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+kenny-powers,Kenny Powers,fictional,baseball_pitcher,,FRIENDS_REQUESTS,NOT_VERIFIED
+carson-walton,Carson Walton,unverified,unknown,,FRIENDS_REQUESTS,NEEDS_IDENTITY_REVIEW
+deacon-moss,Deacon Moss,fictional,football_player,,FRIENDS_REQUESTS,NOT_VERIFIED
+ricky-vaughn,Ricky Vaughn,fictional,baseball_pitcher,,FRIENDS_REQUESTS,NOT_VERIFIED
+ricky-bobby,Ricky Bobby,fictional,race_driver,,FRIENDS_REQUESTS,NOT_VERIFIED
+jackie-moon,Jackie Moon,fictional,basketball_player,,FRIENDS_REQUESTS,NOT_VERIFIED
+jaden-newman,Jaden Newman,athlete,guard,,FRIENDS_REQUESTS,NOT_VERIFIED
+vontae-mack,Vontae Mack,fictional,linebacker,,FRIENDS_REQUESTS,NOT_VERIFIED
+bo-callahan,Bo Callahan,fictional,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+joey-chestnut,Joey Chestnut,athlete,competitive_eater,,FRIENDS_REQUESTS,NOT_VERIFIED
+rudy-gillespie,Rudy Gillespie,unverified,unknown,,FRIENDS_REQUESTS,NEEDS_IDENTITY_REVIEW
+mike-katic,Mike Katic,athlete,lineman,,FRIENDS_REQUESTS,NOT_VERIFIED
+peyton-ramsey,Peyton Ramsey,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+zander-diamont,Zander Diamont,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+jordan-howard,Jordan Howard,athlete,running_back,,FRIENDS_REQUESTS,NOT_VERIFIED
+tevin-coleman,Tevin Coleman,athlete,running_back,,FRIENDS_REQUESTS,NOT_VERIFIED
+nate-sudfeld,Nate Sudfeld,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+dennis-rodman,Dennis Rodman,athlete,forward,,FRIENDS_REQUESTS,NOT_VERIFIED
+jack-tuttle,Jack Tuttle,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+connor-bazelak,Connor Bazelak,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+brendan-sorsby,Brendan Sorsby,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+micah-mcfadden,Micah McFadden,athlete,linebacker,,FRIENDS_REQUESTS,NOT_VERIFIED
+antwaan-randle-el,Antwaan Randle El,athlete,receiver,,FRIENDS_REQUESTS,NOT_VERIFIED
+dan-feeney,Dan Feeney,athlete,lineman,,FRIENDS_REQUESTS,NOT_VERIFIED
+tegray-scales,Tegray Scales,athlete,linebacker,,FRIENDS_REQUESTS,NOT_VERIFIED
+whop-philyor,Whop Philyor,athlete,receiver,,FRIENDS_REQUESTS,NOT_VERIFIED
+ty-fryfogle,Ty Fryfogle,athlete,receiver,,FRIENDS_REQUESTS,NOT_VERIFIED
+peyton-hendershot,Peyton Hendershot,athlete,tight_end,,FRIENDS_REQUESTS,NOT_VERIFIED
+boomer-esiason-prime,Boomer Esiason (Prime),athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+boomer-esiason-current,Boomer Esiason (Current),athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+damien-woody,Damien Woody,athlete,lineman,,FRIENDS_REQUESTS,NOT_VERIFIED
+anthony-richardson,Anthony Richardson,athlete,quarterback,,FRIENDS_REQUESTS,NOT_VERIFIED
+amari-skolnik,Amari Skolnik,athlete,track,,FRIENDS_REQUESTS,NEEDS_IDENTITY_REVIEW
+vinny-chase,Vinny Chase,fictional,actor,,FRIENDS_REQUESTS,NOT_VERIFIED
+turtle-entourage,Turtle (Entourage),fictional,actor,,FRIENDS_REQUESTS,NOT_VERIFIED
+drama-entourage,Drama (Entourage),fictional,actor,,FRIENDS_REQUESTS,NOT_VERIFIED
+e-entourage,E (Entourage),fictional,actor,,FRIENDS_REQUESTS,NOT_VERIFIED
+ari-gold,Ari Gold,fictional,agent,,FRIENDS_REQUESTS,NOT_VERIFIED
+tony-soprano,Tony Soprano,fictional,mob_boss,,FRIENDS_REQUESTS,NOT_VERIFIED
+jon-snow,Jon Snow,fictional,knight,,FRIENDS_REQUESTS,NOT_VERIFIED
+arya-stark,Arya Stark,fictional,knight,,FRIENDS_REQUESTS,NOT_VERIFIED
+the-night-king,The Night King,fictional,fantasy_magic,,FRIENDS_REQUESTS,NOT_VERIFIED
+hodor,Hodor,fictional,gentle_giant,,FRIENDS_REQUESTS,NOT_VERIFIED
+tyrion-lannister,Tyrion Lannister,fictional,strategist,,FRIENDS_REQUESTS,NOT_VERIFIED
+batman,Batman,fictional,superhero,,FRIENDS_REQUESTS,NOT_VERIFIED
+superman,Superman,fictional,superhero,,FRIENDS_REQUESTS,NOT_VERIFIED
+homelander,Homelander,fictional,superhero,,FRIENDS_REQUESTS,NOT_VERIFIED
+billy-butcher,Billy Butcher,fictional,antihero,,FRIENDS_REQUESTS,NOT_VERIFIED
+a-train-the-boys,A-Train (The Boys),fictional,super_speedster,,FRIENDS_REQUESTS,NOT_VERIFIED
+dominik-szoboszlai,Dominik Szoboszlai,athlete,soccer_midfielder,,FRIENDS_REQUESTS,NOT_VERIFIED
+dustin-brown,Dustin Brown,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+learner-tien,Learner Tien,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+rafael-jodar,Rafael Jódar,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+emma-raducanu,Emma Raducanu,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+jakub-mensik,Jakub Menšík,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+jiri-lehecka,Jiří Lehečka,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+paula-badosa,Paula Badosa,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+tommy-paul,Tommy Paul,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+alex-eala,Alex Eala,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+iva-jovic,Iva Jovic,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+emilio-nava,Emilio Nava,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+alex-michelsen,Alex Michelsen,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+dominic-thiem,Dominic Thiem,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+gael-monfils,Gaël Monfils,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+karen-khachanov,Karen Khachanov,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+nishesh-basavareddy,Nishesh Basavareddy,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+amanda-anisimova,Amanda Anisimova,athlete,tennis,,FRIENDS_REQUESTS,NOT_VERIFIED
+mascot-college-army-black-knights-mule,Mule,mascot,mascot,Army Black Knights,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-charlotte-49ers-norm-the-niner,Norm the Niner,mascot,mascot,Charlotte 49ers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-east-carolina-pirates-peedee-the-pirate,PeeDee the Pirate,mascot,mascot,East Carolina Pirates,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-florida-atlantic-owls-owlsley-the-owl,Owlsley the Owl,mascot,mascot,Florida Atlantic Owls,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-memphis-tigers-pouncer,Pouncer,mascot,mascot,Memphis Tigers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-navy-midshipmen-bill-the-goat,Bill the Goat,mascot,mascot,Navy Midshipmen,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-north-texas-mean-green-scrappy,Scrappy,mascot,mascot,North Texas Mean Green,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-rice-owls-sammy-the-owl,Sammy the Owl,mascot,mascot,Rice Owls,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-south-florida-bulls-rocky-d-bull,Rocky D. Bull,mascot,mascot,South Florida Bulls,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-temple-owls-hooter-the-owl,Hooter the Owl,mascot,mascot,Temple Owls,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-tulane-green-wave-riptide-the-pelican,Riptide the Pelican,mascot,mascot,Tulane Green Wave,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-tulsa-golden-hurricane-captain-cane,Captain Cane,mascot,mascot,Tulsa Golden Hurricane,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-uab-blazers-blaze-the-dragon,Blaze the Dragon,mascot,mascot,UAB Blazers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-utsa-roadrunners-rowdy-the-roadrunner,Rowdy the Roadrunner,mascot,mascot,UTSA Roadrunners,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-boston-college-eagles-baldwin-the-eagle,Baldwin the Eagle,mascot,mascot,Boston College Eagles,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-california-golden-bears-oski,Oski,mascot,mascot,California Golden Bears,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-clemson-tigers-the-tiger,The Tiger,mascot,mascot,Clemson Tigers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-duke-blue-devils-the-blue-devil,The Blue Devil,mascot,mascot,Duke Blue Devils,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-florida-state-seminoles-renegade,Renegade,mascot,mascot,Florida State Seminoles,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-georgia-tech-yellow-jackets-buzz,Buzz,mascot,mascot,Georgia Tech Yellow Jackets,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-louisville-cardinals-cardinal-bird,Cardinal Bird,mascot,mascot,Louisville Cardinals,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-miami-hurricanes-sebastian-the-ibis,Sebastian the Ibis,mascot,mascot,Miami Hurricanes,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-nc-state-wolfpack-mr-wuf,Mr. Wuf,mascot,mascot,NC State Wolfpack,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-north-carolina-tar-heels-rameses,Rameses,mascot,mascot,North Carolina Tar Heels,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-pittsburgh-panthers-roc-the-panther,Roc the Panther,mascot,mascot,Pittsburgh Panthers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-smu-mustangs-peruna,Peruna,mascot,mascot,SMU Mustangs,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-stanford-cardinal-stanford-tree,Stanford Tree,mascot,mascot,Stanford Cardinal,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-syracuse-orange-otto-the-orange,Otto the Orange,mascot,mascot,Syracuse Orange,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-virginia-cavaliers-the-cavalier,The Cavalier,mascot,mascot,Virginia Cavaliers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-virginia-tech-hokies-hokie-bird,Hokie Bird,mascot,mascot,Virginia Tech Hokies,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-wake-forest-demon-deacons-demon-deacon,Demon Deacon,mascot,mascot,Wake Forest Demon Deacons,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-arizona-wildcats-wilbur-the-wildcat,Wilbur the Wildcat,mascot,mascot,Arizona Wildcats,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-arizona-state-sun-devils-sparky-the-sun-devil,Sparky the Sun Devil,mascot,mascot,Arizona State Sun Devils,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-baylor-bears-bruiser,Bruiser,mascot,mascot,Baylor Bears,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-cincinnati-bearcats-the-bearcat,The Bearcat,mascot,mascot,Cincinnati Bearcats,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-colorado-buffaloes-ralphie-the-buffalo,Ralphie the Buffalo,mascot,mascot,Colorado Buffaloes,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-houston-cougars-shasta,Shasta,mascot,mascot,Houston Cougars,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-iowa-state-cyclones-cy,Cy,mascot,mascot,Iowa State Cyclones,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-kansas-jayhawks-big-jay,Big Jay,mascot,mascot,Kansas Jayhawks,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-kansas-state-wildcats-willie-the-wildcat,Willie the Wildcat,mascot,mascot,Kansas State Wildcats,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-oklahoma-state-cowboys-pistol-pete,Pistol Pete,mascot,mascot,Oklahoma State Cowboys,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-tcu-horned-frogs-super-frog,Super Frog,mascot,mascot,TCU Horned Frogs,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-texas-tech-red-raiders-raider-red,Raider Red,mascot,mascot,Texas Tech Red Raiders,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-ucf-knights-knightro,Knightro,mascot,mascot,UCF Knights,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-utah-utes-swoop,Swoop,mascot,mascot,Utah Utes,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-west-virginia-mountaineers-mountaineer,Mountaineer,mascot,mascot,West Virginia Mountaineers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-indiana-hoosiers-hoosier-the-bison,Hoosier the Bison,mascot,mascot,Indiana Hoosiers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-iowa-hawkeyes-herky-the-hawk,Herky the Hawk,mascot,mascot,Iowa Hawkeyes,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-maryland-terrapins-testudo,Testudo,mascot,mascot,Maryland Terrapins,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-michigan-wolverines-biff-the-wolverine,Biff the Wolverine,mascot,mascot,Michigan Wolverines,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-michigan-state-spartans-sparty,Sparty,mascot,mascot,Michigan State Spartans,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-minnesota-gophers-goldy-gopher,Goldy Gopher,mascot,mascot,Minnesota Gophers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-nebraska-cornhuskers-herbie-husker,Herbie Husker,mascot,mascot,Nebraska Cornhuskers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-northwestern-wildcats-willie-the-wildcat,Willie the Wildcat,mascot,mascot,Northwestern Wildcats,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-ohio-state-buckeyes-brutus-the-buckeye,Brutus the Buckeye,mascot,mascot,Ohio State Buckeyes,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-oregon-ducks-the-oregon-duck,The Oregon Duck,mascot,mascot,Oregon Ducks,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-penn-state-nittany-lions-nittany-lion,Nittany Lion,mascot,mascot,Penn State Nittany Lions,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-purdue-boilermakers-boilermaker-special,Boilermaker Special,mascot,mascot,Purdue Boilermakers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-rutgers-scarlet-knights-scarlet-knight,Scarlet Knight,mascot,mascot,Rutgers Scarlet Knights,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-ucla-bruins-joe-bruin,Joe Bruin,mascot,mascot,UCLA Bruins,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-usc-trojans-traveler,Traveler,mascot,mascot,USC Trojans,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-washington-huskies-harry-the-husky,Harry the Husky,mascot,mascot,Washington Huskies,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-wisconsin-badgers-bucky-the-badger,Bucky the Badger,mascot,mascot,Wisconsin Badgers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-fiu-panthers-roary-the-panther,Roary the Panther,mascot,mascot,FIU Panthers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-jacksonville-state-gamecocks-cocky-the-gamecock,Cocky the Gamecock,mascot,mascot,Jacksonville State Gamecocks,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-kennesaw-state-owls-scrappy,Scrappy,mascot,mascot,Kennesaw State Owls,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-liberty-flames-sparky,Sparky,mascot,mascot,Liberty Flames,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-louisiana-tech-bulldogs-tech,Tech,mascot,mascot,Louisiana Tech Bulldogs,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-middle-tennessee-blue-raiders-lightning,Lightning,mascot,mascot,Middle Tennessee Blue Raiders,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-new-mexico-state-aggies-pistol-pete,Pistol Pete,mascot,mascot,New Mexico State Aggies,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-sam-houston-bearkats-sammy-bearkat,Sammy Bearkat,mascot,mascot,Sam Houston Bearkats,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-utep-miners-paydirt-pete,Paydirt Pete,mascot,mascot,UTEP Miners,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-wku-hilltoppers-big-red,Big Red,mascot,mascot,WKU Hilltoppers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-delaware-blue-hens-youdee,YoUDee,mascot,mascot,Delaware Blue Hens,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-missouri-state-bears-boomer-the-bear,Boomer the Bear,mascot,mascot,Missouri State Bears,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-notre-dame-fighting-irish-leprechaun,Leprechaun,mascot,mascot,Notre Dame Fighting Irish,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-uconn-huskies-jonathan-the-husky,Jonathan the Husky,mascot,mascot,UConn Huskies,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-akron-zips-zippy,Zippy,mascot,mascot,Akron Zips,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-ball-state-cardinals-charlie-cardinal,Charlie Cardinal,mascot,mascot,Ball State Cardinals,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-bowling-green-falcons-freddie-falcon,Freddie Falcon,mascot,mascot,Bowling Green Falcons,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-buffalo-bulls-victor-e-bull,Victor E. Bull,mascot,mascot,Buffalo Bulls,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-central-michigan-chippewas-flying-c,Flying C,mascot,mascot,Central Michigan Chippewas,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-eastern-michigan-eagles-swoop,Swoop,mascot,mascot,Eastern Michigan Eagles,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-kent-state-golden-flashes-the-golden-eagle,The Golden Eagle,mascot,mascot,Kent State Golden Flashes,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-miami-oh-redhawks-swoop,Swoop,mascot,mascot,Miami (OH) RedHawks,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-northern-illinois-huskies-mission,Mission,mascot,mascot,Northern Illinois Huskies,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-ohio-bobcats-rufus,Rufus,mascot,mascot,Ohio Bobcats,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-toledo-rockets-rocky,Rocky,mascot,mascot,Toledo Rockets,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-western-michigan-broncos-buster-bronco,Buster Bronco,mascot,mascot,Western Michigan Broncos,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-umass-minutemen-sam-the-minuteman,Sam the Minuteman,mascot,mascot,UMass Minutemen,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-alabama-crimson-tide-big-al,Big Al,mascot,mascot,Alabama Crimson Tide,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-auburn-tigers-aubie-the-tiger,Aubie the Tiger,mascot,mascot,Auburn Tigers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-georgia-bulldogs-uga,Uga,mascot,mascot,Georgia Bulldogs,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-texas-longhorns-bevo,Bevo,mascot,mascot,Texas Longhorns,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-oklahoma-sooners-boomer-and-sooner,Boomer and Sooner,mascot,mascot,Oklahoma Sooners,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-tennessee-volunteers-smokey,Smokey,mascot,mascot,Tennessee Volunteers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-lsu-tigers-mike-the-tiger,Mike the Tiger,mascot,mascot,LSU Tigers,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-texas-a-m-aggies-reveille,Reveille,mascot,mascot,Texas A&M Aggies,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-florida-gators-albert-the-alligator,Albert the Alligator,mascot,mascot,Florida Gators,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-college-mississippi-state-bulldogs-bully,Bully,mascot,mascot,Mississippi State Bulldogs,COLLEGE_MASCOTS,NOT_VERIFIED
+mascot-nfl-arizona-cardinals-big-red,Big Red,mascot,mascot,Arizona Cardinals,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-atlanta-falcons-freddie-falcon,Freddie Falcon,mascot,mascot,Atlanta Falcons,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-baltimore-ravens-poe,Poe,mascot,mascot,Baltimore Ravens,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-baltimore-ravens-edgar,Edgar,mascot,mascot,Baltimore Ravens,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-baltimore-ravens-allen,Allen,mascot,mascot,Baltimore Ravens,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-buffalo-bills-billy-buffalo,Billy Buffalo,mascot,mascot,Buffalo Bills,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-carolina-panthers-sir-purr,Sir Purr,mascot,mascot,Carolina Panthers,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-chicago-bears-staley-da-bear,Staley Da Bear,mascot,mascot,Chicago Bears,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-cincinnati-bengals-who-dey,Who Dey,mascot,mascot,Cincinnati Bengals,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-cleveland-browns-chomps,Chomps,mascot,mascot,Cleveland Browns,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-cleveland-browns-brownie-the-elf,Brownie the Elf,mascot,mascot,Cleveland Browns,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-dallas-cowboys-rowdy,Rowdy,mascot,mascot,Dallas Cowboys,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-denver-broncos-miles,Miles,mascot,mascot,Denver Broncos,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-denver-broncos-thunder,Thunder,mascot,mascot,Denver Broncos,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-detroit-lions-roary,Roary,mascot,mascot,Detroit Lions,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-houston-texans-toro,Toro,mascot,mascot,Houston Texans,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-indianapolis-colts-blue,Blue,mascot,mascot,Indianapolis Colts,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-jacksonville-jaguars-jaxson-de-ville,Jaxson de Ville,mascot,mascot,Jacksonville Jaguars,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-kansas-city-chiefs-k-c-wolf,K. C. Wolf,mascot,mascot,Kansas City Chiefs,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-las-vegas-raiders-raider-rusher,Raider Rusher,mascot,mascot,Las Vegas Raiders,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-los-angeles-rams-rampage,Rampage,mascot,mascot,Los Angeles Rams,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-miami-dolphins-t-d,T. D.,mascot,mascot,Miami Dolphins,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-minnesota-vikings-viktor,Viktor,mascot,mascot,Minnesota Vikings,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-new-england-patriots-pat-patriot,Pat Patriot,mascot,mascot,New England Patriots,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-new-orleans-saints-gumbo,Gumbo,mascot,mascot,New Orleans Saints,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-new-orleans-saints-sir-saint,Sir Saint,mascot,mascot,New Orleans Saints,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-philadelphia-eagles-swoop,Swoop,mascot,mascot,Philadelphia Eagles,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-pittsburgh-steelers-steely-mcbeam,Steely McBeam,mascot,mascot,Pittsburgh Steelers,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-san-francisco-49ers-sourdough-sam,Sourdough Sam,mascot,mascot,San Francisco 49ers,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-seattle-seahawks-blitz,Blitz,mascot,mascot,Seattle Seahawks,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-seattle-seahawks-boom,Boom,mascot,mascot,Seattle Seahawks,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-seattle-seahawks-taima,Taima,mascot,mascot,Seattle Seahawks,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-tampa-bay-buccaneers-captain-fear,Captain Fear,mascot,mascot,Tampa Bay Buccaneers,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-tennessee-titans-t-rac,T-Rac,mascot,mascot,Tennessee Titans,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-washington-commanders-major-tuddy,Major Tuddy,mascot,mascot,Washington Commanders,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nfl-philadelphia-eagles-air-swoop,Air Swoop,mascot,mascot,Philadelphia Eagles,PRO_MASCOTS;NFL_MASCOTS,NOT_VERIFIED
+mascot-nba-atlanta-hawks-harry-the-hawk,Harry the Hawk,mascot,mascot,Atlanta Hawks,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-boston-celtics-lucky-the-leprechaun,Lucky the Leprechaun,mascot,mascot,Boston Celtics,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-charlotte-hornets-hugo-the-hornet,Hugo the Hornet,mascot,mascot,Charlotte Hornets,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-charlotte-hornets-super-hugo,Super Hugo,mascot,mascot,Charlotte Hornets,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-chicago-bulls-benny-the-bull,Benny the Bull,mascot,mascot,Chicago Bulls,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-chicago-bulls-mini-benny,Mini Benny,mascot,mascot,Chicago Bulls,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-chicago-bulls-big-ben,Big Ben,mascot,mascot,Chicago Bulls,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-cleveland-cavaliers-moondog,Moondog,mascot,mascot,Cleveland Cavaliers,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-cleveland-cavaliers-sir-cc,Sir CC,mascot,mascot,Cleveland Cavaliers,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-dallas-mavericks-champ,Champ,mascot,mascot,Dallas Mavericks,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-dallas-mavericks-mavs-man,Mavs Man,mascot,mascot,Dallas Mavericks,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-denver-nuggets-rocky-the-mountain-lion,Rocky the Mountain Lion,mascot,mascot,Denver Nuggets,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-detroit-pistons-hooper,Hooper,mascot,mascot,Detroit Pistons,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-houston-rockets-clutch-the-bear,Clutch the Bear,mascot,mascot,Houston Rockets,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-indiana-pacers-boomer,Boomer,mascot,mascot,Indiana Pacers,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-indiana-pacers-mini-boomer,Mini Boomer,mascot,mascot,Indiana Pacers,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-los-angeles-clippers-chuck-the-condor,Chuck the Condor,mascot,mascot,Los Angeles Clippers,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-memphis-grizzlies-grizz,Grizz,mascot,mascot,Memphis Grizzlies,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-miami-heat-burnie,Burnie,mascot,mascot,Miami Heat,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-milwaukee-bucks-bango,Bango,mascot,mascot,Milwaukee Bucks,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-minnesota-timberwolves-crunch-the-wolf,Crunch the Wolf,mascot,mascot,Minnesota Timberwolves,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-new-orleans-pelicans-pierre-the-pelican,Pierre the Pelican,mascot,mascot,New Orleans Pelicans,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-oklahoma-city-thunder-rumble-the-bison,Rumble the Bison,mascot,mascot,Oklahoma City Thunder,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-orlando-magic-stuff-the-magic-dragon,Stuff the Magic Dragon,mascot,mascot,Orlando Magic,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-philadelphia-76ers-franklin-the-dog,Franklin the Dog,mascot,mascot,Philadelphia 76ers,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-phoenix-suns-the-gorilla,The Gorilla,mascot,mascot,Phoenix Suns,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-portland-trail-blazers-blaze-the-trail-cat,Blaze the Trail Cat,mascot,mascot,Portland Trail Blazers,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-sacramento-kings-slamson-the-lion,Slamson the Lion,mascot,mascot,Sacramento Kings,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-san-antonio-spurs-the-coyote,The Coyote,mascot,mascot,San Antonio Spurs,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-toronto-raptors-the-raptor,The Raptor,mascot,mascot,Toronto Raptors,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-utah-jazz-jazz-bear,Jazz Bear,mascot,mascot,Utah Jazz,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-washington-wizards-g-wiz,G-Wiz,mascot,mascot,Washington Wizards,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-chicago-bulls-benji,Benji,mascot,mascot,Chicago Bulls,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-chicago-bulls-mama-betty,Mama Betty,mascot,mascot,Chicago Bulls,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-chicago-bulls-inflatabulls,Inflatabulls,mascot,mascot,Chicago Bulls,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-detroit-pistons-mini-hooper,Mini Hooper,mascot,mascot,Detroit Pistons,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-houston-rockets-mini-clutch,Mini Clutch,mascot,mascot,Houston Rockets,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-milwaukee-bucks-bango-jr,Bango Jr.,mascot,mascot,Milwaukee Bucks,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-utah-jazz-lil-bear,Lil Bear,mascot,mascot,Utah Jazz,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-portland-trail-blazers-douglas-fur,Douglas Fur,mascot,mascot,Portland Trail Blazers,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-nba-washington-wizards-g-man,G-Man,mascot,mascot,Washington Wizards,PRO_MASCOTS;NBA_MASCOTS,NOT_VERIFIED
+mascot-mlb-arizona-diamondbacks-baxter-the-bobcat,Baxter the Bobcat,mascot,mascot,Arizona Diamondbacks,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-arizona-diamondbacks-d-backs-luchador,D-backs Luchador,mascot,mascot,Arizona Diamondbacks,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-atlanta-braves-blooper,Blooper,mascot,mascot,Atlanta Braves,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-baltimore-orioles-the-oriole-bird,The Oriole Bird,mascot,mascot,Baltimore Orioles,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-boston-red-sox-wally-the-green-monster,Wally the Green Monster,mascot,mascot,Boston Red Sox,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-boston-red-sox-tessie-the-green-monster,Tessie the Green Monster,mascot,mascot,Boston Red Sox,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-chicago-cubs-clark-the-cub,Clark the Cub,mascot,mascot,Chicago Cubs,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-chicago-white-sox-southpaw,Southpaw,mascot,mascot,Chicago White Sox,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-cleveland-guardians-slider,Slider,mascot,mascot,Cleveland Guardians,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-colorado-rockies-dinger,Dinger,mascot,mascot,Colorado Rockies,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-detroit-tigers-paws,PAWS,mascot,mascot,Detroit Tigers,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-houston-astros-orbit,Orbit,mascot,mascot,Houston Astros,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-kansas-city-royals-sluggerrr,Sluggerrr,mascot,mascot,Kansas City Royals,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-miami-marlins-billy-the-marlin,Billy the Marlin,mascot,mascot,Miami Marlins,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-milwaukee-brewers-bernie-brewer,Bernie Brewer,mascot,mascot,Milwaukee Brewers,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-milwaukee-brewers-the-racing-sausages,The Racing Sausages,mascot,mascot,Milwaukee Brewers,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-minnesota-twins-t-c-bear,T. C. Bear,mascot,mascot,Minnesota Twins,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-new-york-mets-mr-met,Mr. Met,mascot,mascot,New York Mets,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-new-york-mets-mrs-met,Mrs. Met,mascot,mascot,New York Mets,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-athletics-stomper,Stomper,mascot,mascot,Athletics,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-philadelphia-phillies-phillie-phanatic,Phillie Phanatic,mascot,mascot,Philadelphia Phillies,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-pittsburgh-pirates-pirate-parrot,Pirate Parrot,mascot,mascot,Pittsburgh Pirates,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-pittsburgh-pirates-the-pierogis,The Pierogis,mascot,mascot,Pittsburgh Pirates,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-san-diego-padres-swinging-friar,Swinging Friar,mascot,mascot,San Diego Padres,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-san-francisco-giants-lou-seal,Lou Seal,mascot,mascot,San Francisco Giants,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-seattle-mariners-mariner-moose,Mariner Moose,mascot,mascot,Seattle Mariners,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-st-louis-cardinals-fredbird,Fredbird,mascot,mascot,St. Louis Cardinals,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-tampa-bay-rays-raymond,Raymond,mascot,mascot,Tampa Bay Rays,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-texas-rangers-rangers-captain,Rangers Captain,mascot,mascot,Texas Rangers,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-toronto-blue-jays-ace,Ace,mascot,mascot,Toronto Blue Jays,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-washington-nationals-screech,Screech,mascot,mascot,Washington Nationals,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-washington-nationals-the-racing-presidents,The Racing Presidents,mascot,mascot,Washington Nationals,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-cincinnati-reds-mr-red,Mr. Red,mascot,mascot,Cincinnati Reds,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-cincinnati-reds-rosie-red,Rosie Red,mascot,mascot,Cincinnati Reds,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-milwaukee-brewers-barrelman,Barrelman,mascot,mascot,Milwaukee Brewers,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-tampa-bay-rays-dj-kitty,DJ Kitty,mascot,mascot,Tampa Bay Rays,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-cincinnati-reds-gapper,Gapper,mascot,mascot,Cincinnati Reds,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-toronto-blue-jays-junior,Junior,mascot,mascot,Toronto Blue Jays,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-cincinnati-reds-mr-redlegs,Mr. Redlegs,mascot,mascot,Cincinnati Reds,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-philadelphia-phillies-phoebe-phanatic,Phoebe Phanatic,mascot,mascot,Philadelphia Phillies,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-philadelphia-phillies-phred,Phred,mascot,mascot,Philadelphia Phillies,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-st-louis-cardinals-rally-squirrel,Rally Squirrel,mascot,mascot,St. Louis Cardinals,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-seattle-mariners-the-salmon-run,The Salmon Run,mascot,mascot,Seattle Mariners,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-tampa-bay-rays-stinger,Stinger,mascot,mascot,Tampa Bay Rays,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-mlb-new-york-mets-5-borough-mascot-race,5-Borough Mascot Race,mascot,mascot,New York Mets,PRO_MASCOTS;MLB_MASCOTS,NOT_VERIFIED
+mascot-nhl-anaheim-ducks-wild-wing,Wild Wing,mascot,mascot,Anaheim Ducks,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-boston-bruins-blades,Blades,mascot,mascot,Boston Bruins,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-buffalo-sabres-sabretooth,Sabretooth,mascot,mascot,Buffalo Sabres,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-calgary-flames-harvey-the-hound,Harvey the Hound,mascot,mascot,Calgary Flames,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-carolina-hurricanes-stormy-the-ice-hog,Stormy the Ice Hog,mascot,mascot,Carolina Hurricanes,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-chicago-blackhawks-tommy-hawk,Tommy Hawk,mascot,mascot,Chicago Blackhawks,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-colorado-avalanche-bernie,Bernie,mascot,mascot,Colorado Avalanche,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-columbus-blue-jackets-stinger,Stinger,mascot,mascot,Columbus Blue Jackets,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-dallas-stars-victor-e-green,Victor E. Green,mascot,mascot,Dallas Stars,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-detroit-red-wings-al-the-octopus,Al the Octopus,mascot,mascot,Detroit Red Wings,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-edmonton-oilers-hunter,Hunter,mascot,mascot,Edmonton Oilers,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-florida-panthers-stanley-c-panther,Stanley C. Panther,mascot,mascot,Florida Panthers,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-florida-panthers-viktor-e-rat,Viktor E. Rat,mascot,mascot,Florida Panthers,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-los-angeles-kings-bailey,Bailey,mascot,mascot,Los Angeles Kings,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-minnesota-wild-nordy,Nordy,mascot,mascot,Minnesota Wild,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-montreal-canadiens-youppi,Youppi!,mascot,mascot,Montreal Canadiens,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-nashville-predators-gnash,Gnash,mascot,mascot,Nashville Predators,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-new-jersey-devils-nj-devil,NJ Devil,mascot,mascot,New Jersey Devils,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-new-york-islanders-sparky-the-dragon,Sparky the Dragon,mascot,mascot,New York Islanders,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-ottawa-senators-spartacat,Spartacat,mascot,mascot,Ottawa Senators,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-philadelphia-flyers-gritty,Gritty,mascot,mascot,Philadelphia Flyers,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-pittsburgh-penguins-iceburgh,Iceburgh,mascot,mascot,Pittsburgh Penguins,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-san-jose-sharks-s-j-sharkie,S.J. Sharkie,mascot,mascot,San Jose Sharks,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-seattle-kraken-buoy,Buoy,mascot,mascot,Seattle Kraken,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-st-louis-blues-louie,Louie,mascot,mascot,St. Louis Blues,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-tampa-bay-lightning-thunderbug,Thunderbug,mascot,mascot,Tampa Bay Lightning,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-toronto-maple-leafs-carlton-the-bear,Carlton the Bear,mascot,mascot,Toronto Maple Leafs,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-utah-mammoth-tusky,Tusky,mascot,mascot,Utah Mammoth,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-vancouver-canucks-fin,Fin,mascot,mascot,Vancouver Canucks,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-vegas-golden-knights-chance,Chance,mascot,mascot,Vegas Golden Knights,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-washington-capitals-slapshot,Slapshot,mascot,mascot,Washington Capitals,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-winnipeg-jets-mick-e-moose,Mick E. Moose,mascot,mascot,Winnipeg Jets,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-carolina-hurricanes-caroline,Caroline,mascot,mascot,Carolina Hurricanes,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-colorado-avalanche-lil-bern,Lil Bern,mascot,mascot,Colorado Avalanche,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-montreal-canadiens-metal,METAL!,mascot,mascot,Montreal Canadiens,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
+mascot-nhl-winnipeg-jets-benny,Benny,mascot,mascot,Winnipeg Jets,PRO_MASCOTS;NHL_MASCOTS,NOT_VERIFIED
