@@ -78,11 +78,23 @@ def main():
                 page.locator("#timeline").evaluate("(e)=>{e.value=e.max;e.dispatchEvent(new Event('input',{bubbles:true}));}")
                 assert page.locator("#champion-banner").is_visible()
                 assert "CHAMPIONSHIP MOMENTS" in page.locator("#champion-banner").inner_text()
-                assert page.evaluate("LastLegendSpectator.readHistory().length")>=1
-                page.locator("#ll-home").click()
-                page.locator("#ll-confirm-exit").click()
+                completed_records=page.evaluate("LastLegendSpectator.readHistory().length")
+                assert completed_records>=1
+                assert page.locator("#victory-home").is_visible()
+                assert page.locator("#rematch").is_visible()
+                assert page.locator("#replay").is_visible()
+                # Replay still works, with a genuinely finished match afterward.
+                page.locator("#replay").click()
+                assert not page.locator("#champion-banner").is_visible()
+                page.locator("#timeline").evaluate("(e)=>{e.value=e.max;e.dispatchEvent(new Event('input',{bubbles:true}));}")
+                assert page.locator("#champion-banner").is_visible()
+                page.locator("#victory-home").click()
+                page.wait_for_function("LastLegendWebsite.shell.route==='home'",timeout=20000)
                 assert page.locator("#site-home").is_visible()
                 assert not page.locator("#battle-view").is_visible()
+                assert page.evaluate("opts.match===null")
+                assert not page.locator("#ll-exit-dialog").evaluate("(e)=>e.open")
+                assert page.evaluate("LastLegendSpectator.readHistory().length")==completed_records
                 page.goto(url+"#/champions",wait_until="domcontentloaded",timeout=60000)
                 page.wait_for_function("LastLegendWebsite.shell.route==='champions'",timeout=20000)
                 assert "CHAMPION HISTORY" in page.locator("#ll-match-history").inner_text()

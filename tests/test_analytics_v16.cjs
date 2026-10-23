@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const js=fs.readFileSync(path.join(root,'ui/analytics-v16.js'),'utf8');
+const fakeWindow={addEventListener:()=>{}},ctx={window:fakeWindow,document:{getElementById:()=>null},Set,Map};
+vm.runInNewContext(js,ctx);
+assert(fakeWindow.LastLegendAnalytics);
+assert(html.includes('ui/analytics-v16.js'));
+assert(js.includes('new Simulation(ids,opts.athletes,opts.perks'));
+assert(js.includes('setTimeout(tick,0)'));
+assert(js.includes('FICTIONAL GAME SIMULATIONS'));
+console.log('V16: sampled seeded outcome analysis implementation present');

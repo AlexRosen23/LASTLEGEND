@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict'),path=require('node:path');
+const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const css=fs.readFileSync(path.join(root,'ui/polish-v14.css'),'utf8');
+assert(html.includes('class="ll-skip"'));
+assert(html.includes('id="main-content" tabindex="-1"'));
+assert(css.includes('prefers-reduced-motion:reduce'));
+assert(css.includes(':focus-visible'));
+assert(css.includes('.champion-actions{flex-wrap:wrap}'));
+assert(html.includes('name="twitter:card"'));
+console.log('V14: accessibility, responsive buttons and SEO metadata validated');
