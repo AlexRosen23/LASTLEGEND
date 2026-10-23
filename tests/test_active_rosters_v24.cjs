@@ -11,16 +11,27 @@ vm.runInContext(fs.readFileSync(path.join(root,'ui/roster-expansion-v23.js'),'ut
 assert.equal(ctx.LastLegendRosterV23.install(athletes,perks).added,442);
 vm.runInContext(fs.readFileSync(path.join(root,'ui/active-rosters-v24.js'),'utf8'),ctx);
 const api=ctx.LastLegendActiveRostersV24,expected={NBA:[30,18],NFL:[32,59],MLB:[30,30],NHL:[32,24]};
+const gamePositions={NBA:['Guard','point_guard'],NFL:['Quarterback','quarterback'],MLB:['Starting Pitcher','baseball_pitcher'],NHL:['Goaltender','hockey_goalie']};
+for(const [league,[name,role]] of Object.entries(gamePositions))assert.equal(api.roleFor(league,name),role);
+for(const [league,position,role] of [
+ ['NBA','Center','center'],['NBA','Forward','wing'],
+ ['NFL','Defensive Tackle','defender'],['NFL','Offensive Tackle','lineman'],
+ ['NFL','Linebacker','defender'],['NFL','Wide Receiver','receiver'],
+ ['NFL','Running Back','running_back'],['NFL','Guard','lineman'],
+ ['MLB','Relief Pitcher','baseball_pitcher'],['MLB','First Baseman','baseball_power'],
+ ['MLB','Third Baseman','baseball_power'],['MLB','Shortstop','baseball_speed'],
+ ['NHL','Defense','hockey_defender'],['NHL','Left Wing','hockey_forward']
+])assert.equal(api.roleFor(league,position),role,`${league} ${position} expected ${role}`);
 const snapshot={version:24,generatedAt:'2026-10-23T23:00:00Z',leagues:{}};
 for(const [league,[teams,playersPerTeam]] of Object.entries(expected)){
  const allTeams=[],people=[];
  for(let i=0;i<teams;i++){
   const teamId=String(i+1),team=league+' Club '+i;
-  allTeams.push({id:teamId,name:team,abbr:league+String(i)});
+  allTeams.push({id:teamId,name:team,abbr:league+String(i),rosterCount:playersPerTeam});
   for(let j=0;j<playersPerTeam;j++){
    const id=String(i*playersPerTeam+j+1);
    people.push({id,name:'Fixture '+league+' Player '+id,memberships:[{
-    teamId,team,abbr:league,position:'Forward',status:j===0?'injured':'active',jersey:String(j+1),season:'2026-27',url:'https://www.espn.com/'+league.toLowerCase()+'/player/'+id
+    teamId,team,abbr:league+String(i),position:gamePositions[league][0],status:j===0?'injured':'active',jersey:String(j+1),season:'2026-27',url:'https://www.espn.com/'+league.toLowerCase()+'/player/'+id
    }]});
   }
  }
@@ -45,10 +56,38 @@ for(const league of Object.keys(expected)){
   assert.equal(Object.keys(a.ratings).length,20);
   assert.equal(Object.keys(a.behavior).length,5);
   assert.equal(a.secondary.length,2);
+  assert.equal(a.role,gamePositions[league][1]);
+  assert.equal(a.roster_position_role,gamePositions[league][1]);
   assert(a.source_url&&a.provider_player_id&&a.verification_status.includes('NOT_OFFICIAL'));
   assert(a.data_quality.personality_is_fictional);
  }
 }
+
+// A league-wide minimum is not proof of full team-by-team inclusion.
+const wrongCount=structuredClone(snapshot);
+wrongCount.leagues.NBA.teams[0].rosterCount++;
+assert.throws(()=>api.validate(wrongCount),/NBA roster count mismatch/);
+const wrongMember=structuredClone(snapshot);
+wrongMember.leagues.MLB.players[0].memberships[0].teamId='2';
+wrongMember.leagues.MLB.players[0].memberships[0].team=wrongMember.leagues.MLB.teams[1].name;
+wrongMember.leagues.MLB.players[0].memberships[0].abbr=wrongMember.leagues.MLB.teams[1].abbr;
+assert.throws(()=>api.validate(wrongMember),/MLB roster count mismatch/);
+const duplicatedMember=structuredClone(snapshot);
+duplicatedMember.leagues.NHL.players[0].memberships.push({...duplicatedMember.leagues.NHL.players[0].memberships[0]});
+assert.throws(()=>api.validate(duplicatedMember),/NHL duplicated team membership/);
+const forgedTotal=structuredClone(snapshot);
+forgedTotal.leagues.NFL.playerCount--;
+assert.throws(()=>api.validate(forgedTotal),/NFL incomplete league source/);
+const badAffiliation=structuredClone(snapshot);
+badAffiliation.leagues.NBA.players[0].memberships[0].team='Another Club';
+assert.throws(()=>api.validate(badAffiliation),/NBA invalid membership details/);
+// Any failed game mapping must leave both arrays untouched (no partial player import).
+const rollbackAthletes=athletes.slice(0,oldCount);
+const rollbackPerks={signatures:[]};
+assert.throws(()=>api.install(rollbackAthletes,rollbackPerks,snapshot),/Missing archetype signature/);
+assert.equal(rollbackAthletes.length,oldCount);
+assert.equal(rollbackPerks.signatures.length,0);
+
 assert.throws(()=>api.validate({...snapshot,leagues:{...snapshot.leagues,NFL:{...snapshot.leagues.NFL,teamCount:31}}}),/NFL incomplete/);
 assert.throws(()=>api.validate({...snapshot,leagues:{...snapshot.leagues,NBA:{...snapshot.leagues.NBA,players:[]}}}),/NBA incomplete/);
 assert(html.includes('await window.LastLegendActiveRostersV24?.load()'));
@@ -61,4 +100,4 @@ vm.runInContext(fs.readFileSync(path.join(root,'ui/pathfinding-v22.js'),'utf8'),
 const Simulation=vm.runInContext('Simulation',ctx),ids=current.filter(a=>['NBA','NFL','MLB','NHL'].includes(a.league)).slice(0,12).map(a=>a.id);
 const m=new Simulation(ids,athletes,perks,{seed:20261023,arena:'CITY'}).run();
 assert.equal(m.placements.length,12);assert.equal(m.frames.at(-1).alive.length,1);
-console.log('V24 ACTIVE BIG FOUR PASS: all 124 franchise IDs, '+expectedAdded+' synthetic active/injured membership records, 20 stats, 5 traits, 1 signature + 2 secondaries, zero ID conflicts, authentic match engine');
+console.log('V24 ACTIVE BIG FOUR PASS: validated all 124 franchise IDs + per-team completeness + rollback; '+expectedAdded+' synthetic active/injured membership records, 20 stats, 5 traits, 1 signature + 2 secondaries, zero ID conflicts, authentic match engine');
