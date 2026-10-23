@@ -11,6 +11,17 @@ vm.runInContext(fs.readFileSync(path.join(root,'ui/roster-expansion-v23.js'),'ut
 assert.equal(ctx.LastLegendRosterV23.install(athletes,perks).added,442);
 vm.runInContext(fs.readFileSync(path.join(root,'ui/active-rosters-v24.js'),'utf8'),ctx);
 const api=ctx.LastLegendActiveRostersV24,expected={NBA:[30,18],NFL:[32,59],MLB:[30,30],NHL:[32,24]};
+const gamePositions={NBA:['Guard','point_guard'],NFL:['Quarterback','quarterback'],MLB:['Starting Pitcher','baseball_pitcher'],NHL:['Goaltender','hockey_goalie']};
+for(const [league,[name,role]] of Object.entries(gamePositions))assert.equal(api.roleFor(league,name),role);
+for(const [league,position,role] of [
+ ['NBA','Center','center'],['NBA','Forward','wing'],
+ ['NFL','Defensive Tackle','defender'],['NFL','Offensive Tackle','lineman'],
+ ['NFL','Linebacker','defender'],['NFL','Wide Receiver','receiver'],
+ ['NFL','Running Back','running_back'],['NFL','Guard','lineman'],
+ ['MLB','Relief Pitcher','baseball_pitcher'],['MLB','First Baseman','baseball_power'],
+ ['MLB','Third Baseman','baseball_power'],['MLB','Shortstop','baseball_speed'],
+ ['NHL','Defense','hockey_defender'],['NHL','Left Wing','hockey_forward']
+])assert.equal(api.roleFor(league,position),role,`${league} ${position} expected ${role}`);
 const snapshot={version:24,generatedAt:'2026-10-23T23:00:00Z',leagues:{}};
 for(const [league,[teams,playersPerTeam]] of Object.entries(expected)){
  const allTeams=[],people=[];
@@ -20,7 +31,7 @@ for(const [league,[teams,playersPerTeam]] of Object.entries(expected)){
   for(let j=0;j<playersPerTeam;j++){
    const id=String(i*playersPerTeam+j+1);
    people.push({id,name:'Fixture '+league+' Player '+id,memberships:[{
-    teamId,team,abbr:league+String(i),position:'Forward',status:j===0?'injured':'active',jersey:String(j+1),season:'2026-27',url:'https://www.espn.com/'+league.toLowerCase()+'/player/'+id
+    teamId,team,abbr:league+String(i),position:gamePositions[league][0],status:j===0?'injured':'active',jersey:String(j+1),season:'2026-27',url:'https://www.espn.com/'+league.toLowerCase()+'/player/'+id
    }]});
   }
  }
@@ -45,6 +56,8 @@ for(const league of Object.keys(expected)){
   assert.equal(Object.keys(a.ratings).length,20);
   assert.equal(Object.keys(a.behavior).length,5);
   assert.equal(a.secondary.length,2);
+  assert.equal(a.role,gamePositions[league][1]);
+  assert.equal(a.roster_position_role,gamePositions[league][1]);
   assert(a.source_url&&a.provider_player_id&&a.verification_status.includes('NOT_OFFICIAL'));
   assert(a.data_quality.personality_is_fictional);
  }
