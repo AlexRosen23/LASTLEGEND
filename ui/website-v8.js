@@ -120,13 +120,14 @@ function renderLegends(){
  $('site-legend-grid').innerHTML=page.map(a=>{
   const isSelected=opts.selected.includes(a.id),look=appearanceFor(a);
   const tag=a.edition_of?'CAREER EDITION':a.render_type==='mascot'?'MASCOT':a.kind==='animal'?'WILDCARD':'COMPETITOR';
-  return '<article class="site-legend-card" data-site-profile="'+esc(a.id)+'"><div class="site-legend-head"><span>'+tag+'</span><span>'+esc(a.sport)+'</span></div><button class="site-legend-view" data-site-open="'+esc(a.id)+'" type="button" aria-label="View '+esc(a.name)+' profile">'+figureSVG(a,{large:true})+'</button><h3>'+esc(a.name)+'</h3><div class="site-legend-affiliation">'+esc(getTeam(a))+'</div><div class="site-legend-tail"><small>'+(look.number!=null?'#'+esc(look.number):'NUMBER NOT VERIFIED')+'</small><button type="button" class="site-add" data-site-draft="'+esc(a.id)+'" aria-label="Add '+esc(a.name)+' to lineup" '+(isSelected?'disabled':'')+'>'+(isSelected?'DRAFTED':'+ ADD TO DRAFT')+'</button></div></article>';
+  return '<article class="site-legend-card" data-site-profile="'+esc(a.id)+'"><div class="site-legend-head"><span>'+tag+'</span><span>'+esc(a.sport)+'</span></div><button class="site-legend-view" data-site-open="'+esc(a.id)+'" type="button" aria-label="View '+esc(a.name)+' profile">'+figureSVG(a,{large:true})+'</button><h3>'+esc(a.name)+'</h3><div class="site-legend-affiliation">'+esc(getTeam(a))+'</div><div class="site-legend-tail"><small>'+(look.number!=null?'#'+esc(look.number):'NUMBER NOT VERIFIED')+'</small><div class="site-legend-actions"><button type="button" class="v11-show-stats" data-site-open="'+esc(a.id)+'" aria-label="Show stats and abilities for '+esc(a.name)+'">SHOW STATS</button><button type="button" class="site-add" data-site-draft="'+esc(a.id)+'" aria-label="Add '+esc(a.name)+' to lineup" '+(isSelected||opts.selected.length>=opts.matchSize?'disabled':'')+'>'+(isSelected?'DRAFTED':opts.selected.length>=opts.matchSize?'LINEUP FULL':'+ ADD TO DRAFT')+'</button></div></div></article>';
  }).join('')||'<p class="site-no-results">No legends match. Try another sport, team, or search.</p>';
  const more=$('site-legend-more');
  more.hidden=page.length>=list.length;
  more.textContent='SHOW MORE · '+page.length+' / '+list.length;
 }
 function playerDialog(id){
+ if(window.LastLegendProfiles)return window.LastLegendProfiles.open(id);
  const a=opts.profiles.get(id);if(!a)return;
  const look=appearanceFor(a),ratings=a.ratings||{},ranked=Object.entries(ratings).filter(([k,v])=>Number.isFinite(v)).sort((a,b)=>b[1]-a[1]).slice(0,5);
  const isSelected=opts.selected.includes(id);
@@ -161,7 +162,8 @@ function setupFilters(){
  $('site-legend-grid').addEventListener('click',e=>{
   const add=e.target.closest('[data-site-draft]'),view=e.target.closest('[data-site-open]');
   if(add){addDraft(add.dataset.siteDraft);return;}
-  if(view)playerDialog(view.dataset.siteOpen);
+  if(view){playerDialog(view.dataset.siteOpen);return;}
+  const card=e.target.closest('[data-site-profile]');if(card)playerDialog(card.dataset.siteProfile);
  });
  $('site-profile-close').addEventListener('click',()=>$('site-profile-dialog').close());
  $('site-profile-dialog').addEventListener('click',e=>{if(e.target===$('site-profile-dialog'))$('site-profile-dialog').close();});

@@ -136,6 +136,7 @@
 <link rel="stylesheet" href="ui/character-polish.css">
 <link rel="stylesheet" href="ui/spectator-v7.css">
 <link rel="stylesheet" href="ui/website-v8.css">
+<link rel="stylesheet" href="ui/profiles-v11.css">
 <meta property="og:type" content="website"><meta property="og:title" content="LAST LEGEND · The Arena Never Forgets"><meta property="og:description" content="Build a lineup. Watch legends collide. One competitor survives. Free browser-based battle royale.">
 <title>LAST LEGEND · The Arena Never Forgets</title>
 </head><body>
@@ -211,11 +212,14 @@
 <section id="site-updates" class="site-page hidden" aria-labelledby="site-updates-heading">
 <div class="site-page-head"><div class="site-eyebrow">THE PATCH NOTES / ROAD TO PUBLIC RELEASE</div><h1 id="site-updates-heading">WHAT'S NEW.</h1><p>Changes actually released in the public game. Future plans are identified as planned—not advertised as playable.</p></div>
 <div class="site-updates-list">
+<article class="site-update"><div class="site-update-num">V11.0 · PREVIEW</div><div><h2>THE COMPLETE ATHLETE DOSSIER</h2><p>Show Stats and Add to Draft on Legends and Draft cards. Inspect all fictional ratings, stat bars, tendencies, signature and secondary abilities; upgraded text contrast and readability. The Big Four league-wide roster expansion is still planned.</p></div></article>
+<article class="site-update"><div class="site-update-num">V10.0</div><div><h2>500 ENCOUNTERS</h2><p>500 seeded contextual encounter scenarios with character/arena compatibility, intensity controls and non-graphic default.</p></div></article>
+<article class="site-update"><div class="site-update-num">V9.0</div><div><h2>ZONE SURVIVAL AI</h2><p>Competitors prioritize moving inward toward the shrinking safe zone, with deterministic battle regression coverage.</p></div></article>
 <article class="site-update"><div class="site-update-num">V8.0</div><div><h2>WEBSITE FOUNDATION</h2><p>New Lobby, working navigation, roster catalog, career-profile inspection, Champions, How to Play, About, and Updates. Distinct home-page design and mobile menu. Existing arena remains playable.</p></div></article>
 <article class="site-update"><div class="site-update-num">V7.1</div><div><h2>DRAFT QUALITY FIXES</h2><p>Clear Lineup, Fill Rest preserving manual picks, and removal of Anthony Richardson's alternate skin.</p></div></article>
 <article class="site-update"><div class="site-update-num">V7.0</div><div><h2>THE SPECTATOR UPDATE</h2><p>Top-10 scrollable arena rankings, automatic and follow cameras, local match history, extra career editions and championship presentation.</p></div></article>
 <article class="site-update"><div class="site-update-num">V6.0</div><div><h2>CHARACTER ART</h2><p>Animated nonhuman silhouettes, distinct appearances and in-game victor presentation.</p></div></article>
-<article class="site-update"><div class="site-update-num">NEXT</div><div><h2>PLANNED, NOT LIVE</h2><p>Expanded contextual encounter library, better zone-survival strategy, all-current Big Four player rosters and additional public-website polish.</p></div></article>
+<article class="site-update"><div class="site-update-num">NEXT</div><div><h2>PLANNED, NOT LIVE</h2><p>Verified current NBA, NFL, NHL and MLB roster expansion, character animation polish, stronger mobile performance, public challenges and optional persistent accounts.</p></div></article>
 </div></section>
 <dialog id="site-profile-dialog" class="site-profile-dialog" aria-label="Legend profile"><button type="button" id="site-profile-close" class="site-profile-close" aria-label="Close profile">✕</button><div id="site-profile-body"></div></dialog>
 <div id="site-live-region" role="status" aria-live="polite"></div>
@@ -543,7 +547,7 @@ function chooseSize(value){
  $('hero-count').textContent=`${next} ENTER.`;
  renderSlots();renderGrid();
 }
-function renderSlots(){const html=Array.from({length:opts.matchSize},(_,i)=>{const id=opts.selected[i];if(!id)return `<div class="slot"><div class="slot-number">${String(i+1).padStart(2,'0')}</div><div class="slot-add">+</div></div>`;const a=opts.profiles.get(id);return `<button class="slot filled" data-remove="${escapeHtml(id)}" title="Remove ${escapeHtml(a.name)}"><span class="slot-number">${String(i+1).padStart(2,'0')}</span><span class="slot-jersey">${iconFor(a.sport)}</span><span class="slot-name">${escapeHtml(surname(a.name))}</span></button>`}).join('');$('draft-slots').innerHTML=html;const el=$('draft-slots');el.style.setProperty('--slot-cols',String(Math.min(12,opts.matchSize)));el.style.setProperty('--slot-cols-tablet',String(Math.min(6,opts.matchSize)));el.style.setProperty('--slot-cols-mobile',String(Math.min(6,opts.matchSize)));buttonDisabled();}
+function renderSlots(){const html=Array.from({length:opts.matchSize},(_,i)=>{const id=opts.selected[i];if(!id)return `<div class="slot"><div class="slot-number">${String(i+1).padStart(2,'0')}</div><div class="slot-add">+</div></div>`;const a=opts.profiles.get(id);return `<div class="v11-slot-wrap"><button type="button" class="slot filled" data-slot-profile="${escapeHtml(id)}" title="View ${escapeHtml(a.name)} stats"><span class="slot-number">${String(i+1).padStart(2,'0')}</span><span class="slot-jersey">${iconFor(a.sport)}</span><span class="slot-name">${escapeHtml(surname(a.name))}</span></button><button type="button" class="v11-slot-remove" data-remove="${escapeHtml(id)}" aria-label="Remove ${escapeHtml(a.name)} from draft">REMOVE</button></div>`}).join('');$('draft-slots').innerHTML=html;const el=$('draft-slots');el.style.setProperty('--slot-cols',String(Math.min(12,opts.matchSize)));el.style.setProperty('--slot-cols-tablet',String(Math.min(6,opts.matchSize)));el.style.setProperty('--slot-cols-mobile',String(Math.min(6,opts.matchSize)));buttonDisabled();}
 function allowedInMode(a){if(opts.battleMode==='MASCOT')return a.kind==='mascot';if(opts.battleMode==='ATHLETE')return !a.kind||a.kind==='athlete'||a.kind==='coach';if(opts.battleMode==='WILDCARD')return ['fictional','animal','unverified'].includes(a.kind);return true;}
 function getFiltered(){return opts.athletes.filter(a=>allowedInMode(a)&&(!opts.collection||opts.collection==='ALL'||(a.collection_tags||[]).includes(opts.collection))&&(!opts.sport||opts.sport===a.sport)&&(!opts.search||a.name.toLowerCase().includes(opts.search)||a.sport.toLowerCase().includes(opts.search)||(a.team||'').toLowerCase().includes(opts.search)));}
 function renderGrid(){let list=getFiltered();$('filtered-count').textContent=`${list.length} available · ${opts.selected.length} drafted`;
@@ -851,8 +855,9 @@ function bindings(){
  $('sport-filter').addEventListener('change',e=>{opts.sport=e.target.value;renderGrid()});
  $('battle-mode').addEventListener('change',e=>{opts.battleMode=e.target.value;opts.selected=opts.selected.filter(id=>allowedInMode(opts.profiles.get(id)));renderSlots();renderGrid()});
  $('collection-filter').addEventListener('change',e=>{opts.collection=e.target.value;renderGrid()});
- $('athlete-grid').addEventListener('click',e=>{const btn=e.target.closest('[data-athlete]');if(btn)toggle(btn.dataset.athlete)});
- $('draft-slots').addEventListener('click',e=>{const btn=e.target.closest('[data-remove]');if(btn)toggle(btn.dataset.remove)});
+ $('athlete-grid').addEventListener('click',e=>{const add=e.target.closest('[data-draft-add]');if(add){if(!opts.selected.includes(add.dataset.draftAdd))toggle(add.dataset.draftAdd);return;}const profile=e.target.closest('[data-profile-open]')||e.target.closest('[data-athlete]');if(profile){const id=profile.dataset.profileOpen||profile.dataset.athlete;if(!window.LastLegendProfiles?.open(id))toggle(id);}});
+ $('athlete-grid').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('.v11-draft-card')){e.preventDefault();window.LastLegendProfiles?.open(e.target.dataset.athlete);}});
+ $('draft-slots').addEventListener('click',e=>{const remove=e.target.closest('[data-remove]');if(remove){toggle(remove.dataset.remove);return;}const profile=e.target.closest('[data-slot-profile]');if(profile)window.LastLegendProfiles?.open(profile.dataset.slotProfile);});
  $('demo').addEventListener('click',loadDemo);$('clear-draft').addEventListener('click',clearLineup);$('start').addEventListener('click',startMatch);
  $('back').addEventListener('click',()=>{stop();$('battle-view').classList.add('hidden');$('draft-view').classList.remove('hidden');window.scrollTo(0,0)});
  $('play').addEventListener('click',()=>opts.playing?stop():startPlayback());
@@ -873,6 +878,7 @@ init();
 </script>
 <script src="ui/character-renderer.js"></script>
 <script src="ui/spectator-v7.js"></script>
+<script src="ui/profiles-v11.js"></script>
 <script src="ui/website-v8.js"></script>
 <script src="ui/encounters-v10.js"></script>
 </body></html>
