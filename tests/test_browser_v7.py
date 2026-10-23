@@ -37,11 +37,18 @@ def main():
                 page.select_option("#sport-filter","")
                 assert page.locator("#ll-team-filter").is_disabled()
                 # Confirm different career editions are independently selectable.
+                assert page.locator("#skin-select").count()==0
+                page.locator("#clear-draft").click()
+                assert page.evaluate("opts.selected.length")==0
+                assert page.locator("#start").is_disabled()
                 page.select_option("#match-size","13")
                 page.locator("#search").fill("LeBron James")
                 page.locator('[data-athlete="lebron-james-sixers-2026"]').click()
-                assert page.evaluate("opts.selected.includes('lebron-james-sixers-2026')")
+                assert page.evaluate("opts.selected===['lebron-james-sixers-2026']")
                 page.locator("#search").fill("")
+                page.locator("#demo").click()
+                assert page.evaluate("opts.selected.length===13 && opts.selected[0]==='lebron-james-sixers-2026' && new Set(opts.selected).size===13")
+                assert page.locator("#demo").is_disabled()
                 page.locator("#start").click()
                 page.locator("#battle-view:not(.hidden)").wait_for(timeout=60000)
                 page.locator("#play").click()  # pause already running playback
