@@ -98,6 +98,30 @@ def enrich_missing_jersey(item:dict,sport:str,league:str,delay:float):
     time.sleep(min(delay,.1))
     return value is not None
 
+def official_number_overrides(now:str):
+    """Allow narrowly verified official-team jersey numbers, expiring after 30 days.
+    These cannot overwrite ESPN's directly reported current-team jersey.
+    """
+    path=pathlib.Path(__file__).resolve().parents[1]/"data"/"verified_jersey_v26.json"
+    if not path.exists():return {}
+    source=json.loads(path.read_text(encoding="utf-8"))
+    if source.get("version")!=1:raise ValueError("Unknown official jersey override schema")
+    as_of=dt.date.fromisoformat(source["verifiedAt"])
+    age=(dt.date.fromisoformat(now[:10])-as_of).days
+    max_age=int(source.get("maxAgeDays",30))
+    if not (0<=age<=max_age):
+        print(f"OFFICIAL JERSEY SOURCES EXPIRED: {source['verifiedAt']}",flush=True)
+        return {}
+    out={}
+    for entry in source.get("entries",[]):
+        key=(str(entry["league"]),str(entry["playerId"]),str(entry["teamId"]))
+        jersey=valid_jersey(entry["jersey"])
+        link=str(entry["source"])
+        if not jersey or not link.startswith("https://") or key in out:
+            raise ValueError("Invalid/duplicate official jersey evidence")
+        out[key]=entry
+    return out
+
 def roster_entry(player,team,league,season):
     status=player.get("status") or {}
     if isinstance(status,str):status={"type":status}
@@ -123,7 +147,8 @@ def roster_entry(player,team,league,season):
         "season":str(season),
     }
 def capture(now:str,delay:float):
-    result={"version":24,"generatedAt":now,"provider":"ESPN public site-v2 team-roster feeds",
+    official_jerseys=official_number_overrides(now)
+    result={"version":24,"generatedAt":now,"provider":"ESPN public site-v2 team-roster feeds + dated official-team jersey exceptions",
         "measurementUnits":{"heightInches":"in","weightLbs":"lb"},
         "definition":"All named players ESPN lists on each of the 124 current NBA, NFL, MLB, NHL franchise rosters (including injured/inactive designations); not independent official league verification",
         "leagues":{}}
@@ -132,7 +157,7 @@ def capture(now:str,delay:float):
         raw=[entry.get("team",{}) for entry in directory.get("teams",[]) if entry.get("team",{}).get("isActive",True)]
         teams={str(t["id"]):t for t in raw if t.get("id") and t.get("displayName") and not t.get("isAllStar")}
         if len(teams)!=expected:raise ValueError(f"{code}: expected {expected} teams, got {len(teams)}: {list(teams)}")
-        athletes={};failures=[];counts={};secondary_total=0;secondary_filled=0
+        athletes={};failures=[];counts={};secondary_total=0;secondary_filled=0;official_filled=0
         for i,(team_id,team) in enumerate(sorted(teams.items(),key=lambda pair:pair[1]["displayName"])):
             url=f"{API}/{sport}/{league}/teams/{team_id}/roster"
             payload=get_json(url)
@@ -148,6 +173,13 @@ def capture(now:str,delay:float):
             counts[team_id]=len(unique)
             for person_id,item in unique.items():
                 if item["jersey"] is None:
+                    key=(code,person_id,team_id)
+                    verified=official_jerseys.get(key)
+                    if verified and verified["team"]==item["team"] and verified["name"]==item["name"]:
+                        item["jersey"]=valid_jersey(verified["jersey"])
+                        item["jerseySource"]=str(verified["source"])
+                        official_filled+=1
+                if item["jersey"] is None:
                     secondary_total+=1
                     if enrich_missing_jersey(item,sport,league,delay):secondary_filled+=1
             for person_id,item in unique.items():
@@ -158,7 +190,7 @@ def capture(now:str,delay:float):
             print(f"{code:3}  {i+1:2}/{expected} {team.get('displayName'):32} {len(unique):3}",flush=True)
             time.sleep(delay)
         if failures:raise ValueError("Failed closed on suspicious team lists: "+"; ".join(failures))
-        print(f"{code}: secondary player-card jersey lookups {secondary_total}, team-verified numbers found {secondary_filled}",flush=True)
+        print(f"{code}: official-team jersey exceptions {official_filled}; secondary player-card lookups {secondary_total}; team-verified numbers found {secondary_filled}",flush=True)
         if len(athletes)<min_players:raise ValueError(f"{code} too few unique athletes: {len(athletes)} < {min_players}")
         result["leagues"][code]={
             "season":directory.get("season",{}).get("displayName"),
