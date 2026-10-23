@@ -31,7 +31,7 @@ for(const [league,[teams,playersPerTeam]] of Object.entries(expected)){
   for(let j=0;j<playersPerTeam;j++){
    const id=String(i*playersPerTeam+j+1);
    people.push({id,name:'Fixture '+league+' Player '+id,memberships:[{
-    teamId,team,abbr:league+String(i),position:gamePositions[league][0],status:j===0?'injured':'active',jersey:String(j+1),season:'2026-27',url:'https://www.espn.com/'+league.toLowerCase()+'/player/'+id
+    teamId,team,abbr:league+String(i),position:gamePositions[league][0],status:j===0?'injured':'active',jersey:String(j+1),heightInches:72,weightLbs:215,season:'2026-27',url:'https://www.espn.com/'+league.toLowerCase()+'/player/'+id
    }]});
   }
  }
@@ -58,10 +58,23 @@ for(const league of Object.keys(expected)){
   assert.equal(a.secondary.length,2);
   assert.equal(a.role,gamePositions[league][1]);
   assert.equal(a.roster_position_role,gamePositions[league][1]);
+  assert.equal(a.heightInches,72);
+  assert.equal(a.weightLbs,215);
   assert(a.source_url&&a.provider_player_id&&a.verification_status.includes('NOT_OFFICIAL'));
   assert(a.data_quality.personality_is_fictional);
  }
 }
+
+const impossibleHeight=structuredClone(snapshot);
+impossibleHeight.leagues.NBA.players[0].memberships[0].heightInches=999;
+assert.throws(()=>api.validate(impossibleHeight),/NBA invalid physical measurement/);
+const impossibleWeight=structuredClone(snapshot);
+impossibleWeight.leagues.NHL.players[0].memberships[0].weightLbs=-10;
+assert.throws(()=>api.validate(impossibleWeight),/NHL invalid physical measurement/);
+const missingPhysicals=structuredClone(snapshot);
+missingPhysicals.leagues.MLB.players[0].memberships[0].heightInches=null;
+missingPhysicals.leagues.MLB.players[0].memberships[0].weightLbs=null;
+assert.equal(api.validate(missingPhysicals),true);
 
 // A league-wide minimum is not proof of full team-by-team inclusion.
 const wrongCount=structuredClone(snapshot);
