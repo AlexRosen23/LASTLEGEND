@@ -1,0 +1,80 @@
+/* Last Legend V11 accessibility and readable athlete dossier */
+.site-profile-dialog{width:min(1000px,96vw);max-width:min(1000px,96vw);max-height:min(92dvh,950px);padding:clamp(14px,2.5vw,30px);overflow-y:auto;overscroll-behavior:contain;color:#f5f0e5}
+.site-profile-close{z-index:3;min-width:44px;min-height:44px;font-size:19px;background:#2d4750;border:1px solid #92adb4;color:#fff}
+.v11-profile-grid{grid-template-columns:minmax(185px,235px) minmax(0,1fr);gap:22px;align-items:start}
+.v11-profile-visual{position:sticky;top:6px;min-width:0}
+.v11-profile-visual .site-profile-art{min-height:270px}
+.v11-profile-id{display:flex;flex-direction:column;gap:4px;background:#1b323a;border:1px solid #3c646b;border-radius:5px;margin-top:10px;padding:12px}
+.v11-profile-id span{font-size:10px;font-weight:800;letter-spacing:.12em;color:#ffce95}
+.v11-profile-id strong{font-size:16px;line-height:1.4;color:#fff1da;overflow-wrap:anywhere}
+.v11-profile-id small{color:#d0e4df;font-size:12px}
+.v11-profile-main{min-width:0;padding-top:8px}
+.v11-profile-main h2{font:900 clamp(33px,5vw,59px)/1.12 'Barlow Condensed',Impact,sans-serif;color:#fff4dc;letter-spacing:0;overflow-wrap:anywhere;margin:8px 0 16px}
+.v11-facts{display:flex;flex-wrap:wrap;gap:7px}
+.v11-facts span{background:#274048;border:1px solid #4d6971;color:#f1e6cc;font-size:11px;font-weight:750;padding:7px 9px;border-radius:4px;line-height:1.4}
+.v11-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0}
+.v11-overview>div{min-width:0;background:#20343c;border:1px solid #46636b;border-radius:6px;padding:11px}
+.v11-overview span{display:block;color:#dfd2ae;font-size:9px;font-weight:900;line-height:1.4;letter-spacing:.06em}
+.v11-overview strong{display:block;font:900 42px/1.1 'Barlow Condensed',sans-serif;color:#ffe0ae}
+.v11-overview p{color:#e8f3ec;font-size:12px;line-height:1.6;margin:8px 0 0}
+.v11-overview small{color:#bed4d4;font-size:10px;line-height:1.5}
+.v11-section-heading{font:900 23px/1.15 'Barlow Condensed',Impact,sans-serif;color:#f7debd;margin:22px 0 12px;letter-spacing:.025em}
+.v11-section-heading small{display:block;font:700 10px/1.6 'DM Sans',sans-serif;color:#bcd5d0;letter-spacing:.07em;margin-top:3px}
+.v11-stat-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.v11-stat-group{padding:12px;background:#182e37;border:1px solid #3e5760;border-radius:6px;min-width:0}
+.v11-stat-group h4{margin:0 0 12px;color:#f2ce95;font-size:11px;letter-spacing:.09em;line-height:1.4}
+.v11-stat{margin:0 0 11px}
+.v11-stat:last-child{margin-bottom:0}
+.v11-stat-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#e8f2f0;font-size:11px;font-weight:750;margin-bottom:5px}
+.v11-stat-heading span{overflow-wrap:anywhere}
+.v11-stat-score{color:#ffe0ac;font:900 16px/1.25 'DM Sans',sans-serif;font-variant-numeric:tabular-nums}
+.v11-stat-track{height:9px;border-radius:9px;background:#39535c;overflow:hidden}
+.v11-stat-track>span{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#77bfb3,#eeb778)}
+.v11-abilities{display:grid;gap:10px}
+.v11-ability{border:1px solid #49626b;background:#1b3039;border-radius:6px;padding:14px}
+.v11-signature{background:linear-gradient(135deg,#2a3630,#233942);border-color:#b08858}
+.v11-ability-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:9px;letter-spacing:.08em;color:#ffd4a2;font-weight:900}
+.v11-ability-top strong{color:#d2f3e2}
+.v11-ability h4{font:900 22px/1.2 'Barlow Condensed',sans-serif;color:#fff1d7;margin:7px 0}
+.v11-ability p{color:#e0ebe7;font-size:12px;line-height:1.6;margin:6px 0 10px}
+.v11-ability-meta{display:flex;flex-wrap:wrap;gap:7px;color:#d3dfd6;font-size:10px;font-weight:800;line-height:1.5}
+.v11-ability-meta span{padding:5px 7px;background:#28454b;border-radius:3px}
+.v11-behavior{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 15px;background:#1a3038;padding:13px;border:1px solid #415d67;border-radius:6px}
+.v11-accuracy{color:#cdddda!important;font-size:12px!important;line-height:1.7!important}
+.v11-source{color:#cdddda!important;font-size:11px!important;line-height:1.5}
+.v11-source a{color:#ffd49e;text-decoration:underline;text-underline-offset:3px}
+.v11-profile-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;padding-bottom:6px}
+.v11-profile-actions button:disabled{opacity:.72;cursor:not-allowed}
+.v11-draft-card{min-width:0;min-height:156px;display:grid;grid-template-columns:54px minmax(0,1fr);grid-template-rows:auto auto;align-content:start;gap:9px;cursor:pointer}
+.v11-draft-card .athlete-info{min-width:0;overflow-wrap:anywhere}
+.v11-draft-card .athlete-name{color:#f6ebd8;font-size:13px;line-height:1.4}
+.v11-draft-card .athlete-sport{color:#d4e0dc;font-size:10px}
+.v11-draft-card .athlete-extra{color:#f4c389;line-height:1.4}
+.v11-draft-buttons{grid-column:1/-1;display:flex;gap:6px}
+.v11-draft-buttons button{flex:1 1 50%;min-width:0;min-height:35px;font:900 9px/1.3 'DM Sans',sans-serif;letter-spacing:.015em;border:1px solid #7f999d;border-radius:4px;background:#25464e;color:#fff4e3;cursor:pointer;padding:6px 4px}
+.v11-draft-buttons .v11-add-button{background:#425034;border-color:#c7a772;color:#fff4d8}
+.v11-draft-buttons button:disabled{color:#d9d9d2;opacity:.7;cursor:not-allowed}
+.v11-draft-card:focus-visible,.site-legend-card:focus-within{outline:2px solid #ffdaa2;outline-offset:2px}
+.v11-slot-wrap{position:relative;min-width:0}
+.v11-slot-wrap .slot{width:100%;min-height:84px;padding:6px 4px 17px}
+.v11-slot-remove{position:absolute;bottom:0;right:1px;left:1px;min-height:20px;background:#472e2b;color:#fff1e4;border:1px solid #9e7462;border-radius:0 0 5px 5px;font-size:9px;font-weight:800;cursor:pointer}
+.v11-slot-wrap .slot-name{color:#fff1da}
+.v11-slot-wrap .slot-number{color:#dfb983}
+.site-legend-tail{flex-wrap:wrap;align-items:stretch}
+.site-legend-actions{display:flex;flex-wrap:wrap;gap:6px;flex:1 1 auto}
+.site-legend-actions button{flex:1 1 45%;min-width:0;min-height:38px;font:900 10px/1.3 'DM Sans',sans-serif;padding:7px 6px;letter-spacing:0;overflow-wrap:anywhere}
+.site-legend-actions .v11-show-stats{background:#29474f;color:#f6ebda;border:1px solid #85a2a2;border-radius:4px}
+.site-legend-card h3{color:#f8f0de;line-height:1.25!important;overflow-wrap:anywhere}
+.site-legend-head{color:#d2e0db}
+.site-legend-tail small{color:#f2cfa6}
+.site-hero-copy h1{line-height:1.03;overflow:visible}
+.site-hero-copy h1,.site-page-head h1,.hero h1,.site-section-title h2,.site-home-feature h3,.site-step h2,.site-update h2{line-height:1.08!important;overflow-wrap:break-word;text-wrap:balance;color:#fff1d9}
+.site-page-head h1 em,.site-hero-copy h1 em{color:#f4c38e}
+.site-page-head p,.site-home-feature p,.site-step p,.site-update p{color:#dfebe8;line-height:1.65}
+.site-home-metrics span,.site-hero-footnote,.site-legend-affiliation,.site-roster-count{color:#d3e1d8}
+.site-nav a{color:#e1eae2;font-weight:800;line-height:1.4}
+.site-nav a.site-active{color:#ffe0a9}
+button:focus-visible,a:focus-visible{outline:2px solid #ffdc9c;outline-offset:3px}
+@media(max-width:880px){.v11-profile-grid{grid-template-columns:1fr}.v11-profile-visual{position:static;display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:10px}.v11-profile-id{margin:0;align-self:center}.v11-profile-visual .site-profile-art{min-height:160px}}
+@media(max-width:600px){.site-profile-dialog{max-width:96vw;width:96vw;padding:14px}.v11-stat-groups,.v11-overview{grid-template-columns:1fr}.v11-overview{gap:6px}.v11-behavior{grid-template-columns:1fr}.site-legend-actions{width:100%}.site-legend-actions button{font-size:9px;min-height:42px}.v11-draft-buttons{flex-direction:column}.v11-draft-card{min-height:172px}.v11-profile-main h2{font-size:39px}.v11-profile-visual{grid-template-columns:105px minmax(0,1fr)}.v11-profile-visual .site-profile-art{min-height:132px}.v11-profile-visual .site-profile-art svg{max-width:100%!important}.v11-profile-id strong{font-size:13px}.v11-stat-track{height:10px}}
+@media(prefers-reduced-motion:reduce){.v11-stat-track>span{transition:none}}
