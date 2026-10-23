@@ -70,12 +70,15 @@ function jumpTo(id){
  var choose=byId('ll-camera-mode');if(choose)choose.value='FOLLOW';
  var selector=byId('ll-follow-select');if(selector)selector.value=id;
  var frame=currentFrame();if(frame){renderMap(frame);window.renderLeaders(frame);updateSpotlight(frame);}
+ var caption=byId('ll-camera-caption');if(caption)caption.textContent='TRACKING '+name(id).toUpperCase();
 }
 function setMode(mode){
  state.mode=mode;if(mode!=='FOLLOW')state.follow=null;
  var sel=byId('ll-camera-mode');if(sel)sel.value=mode;
  var follow=byId('ll-follow-select');if(follow)follow.value=state.follow||'';
  var f=currentFrame();if(f){renderMap(f);window.renderLeaders(f);updateSpotlight(f);}
+ var label=byId('ll-camera-caption');
+ if(label)label.textContent=mode==='OVERVIEW'?'WIDE ARENA VIEW':mode==='FOLLOW'?(state.follow?'TRACKING '+name(state.follow).toUpperCase():'SELECT A LEGEND'):'AUTO DIRECTOR · EVENT FOCUS';
 }
 function updateSpotlight(frame){
  var box=byId('ll-spotlight');if(!box||!opts.match)return;
