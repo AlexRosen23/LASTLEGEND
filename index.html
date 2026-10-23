@@ -145,6 +145,7 @@
 <link rel="stylesheet" href="ui/analytics-v16.css">
 <link rel="stylesheet" href="ui/future-v18-v22.css">
 <link rel="stylesheet" href="ui/future-v23-v25.css">
+<link rel="stylesheet" href="ui/future-v26-v28.css">
 <meta property="og:type" content="website"><meta property="og:title" content="LAST LEGEND · The Arena Never Forgets"><meta property="og:description" content="Build a lineup. Watch legends collide. One competitor survives. Free browser-based battle royale.">
 <title>LAST LEGEND · The Arena Never Forgets</title>
 </head><body>
@@ -298,12 +299,12 @@ const weighted=(seed,tick,id,slot,options)=>{let sum=options.reduce((x,y)=>x+y[1
 const logistic=(sa,sb,t)=>cap(1/(1+Math.exp(-cap((sa-sb)/t,-40,40))),.025,.975);
 function makeActor(id,x,y){return{id,x,y,hp:100,stamina:100,supplies:0,healed:0,alive:true,ally:null,intent:'WAIT',target:null,observed:{},used:new Set(),encounters:0,eliminations:0,distance:0,lastContact:-99,survival:0,eliminatedAt:null,eliminatedBy:null};}
 class Simulation{
- constructor(roster,allAthletes,perkData,{seed=20261022,arena='WILDERNESS',mode='BALANCED',maxTicks=140}={}){
+ constructor(roster,allAthletes,perkData,{seed=20261022,arena='WILDERNESS',mode='BALANCED',maxTicks=140,advancedAI=false}={}){
   if(!Array.isArray(roster)||roster.length<2||roster.length>100||new Set(roster).size!==roster.length)throw Error('Choose 2–100 unique competitors');
   if(!ARENAS[arena]||!TEMPS[mode]||!Number.isSafeInteger(seed)||seed<0)throw Error('Invalid match configuration');
   this.roster=[...roster].sort();this.db=new Map(allAthletes.map(a=>[a.id,a]));this.perks=new Map(perkData.signatures.map(p=>[p.athlete_id,p]));this.secondary=new Map(perkData.secondary.map(p=>[p.id,p]));
   if(this.roster.some(id=>!this.db.has(id)||!this.perks.has(id)))throw Error('Unknown athlete or perk');
-  this.seed=seed;this.arena=arena;this.mode=mode;this.map=generateMap(seed,arena);this.maxTicks=maxTicks;this.tick=0;this.events=[];this.frames=[];this.actors=new Map();this.serial=0;
+  this.seed=seed;this.arena=arena;this.mode=mode;this.advancedAI=Boolean(advancedAI);this.rivalries=new Map();this.map=generateMap(seed,arena);this.maxTicks=maxTicks;this.tick=0;this.events=[];this.frames=[];this.actors=new Map();this.serial=0;
   const spawn=[...this.roster].sort((a,b)=>draw(seed,'spawn',a)-draw(seed,'spawn',b));
   spawn.forEach((id,i)=>{const angle=i*2*Math.PI/this.roster.length+draw(seed,'spawn-offset',id)*.08;this.actors.set(id,makeActor(id,16+8.5*Math.cos(angle),10+7.5*Math.sin(angle)))});
   this.caches=this.map.caches.map((xy,i)=>({id:i,x:xy.x,y:xy.y,supplies:2,restock:0}));
@@ -352,7 +353,12 @@ class Simulation{
   // current/forecast circle cannot safely contain this competitor.
   const radial=dist(a,{x:16,y:10});
   if(radial>this.safeRadius())return ['ESCAPE_ZONE',null];
-  const near=this.observe(a);
+  const observed=this.observe(a);
+  const near=this.advancedAI?observed.slice().sort((x,y)=>{
+   const rival=id=>(this.rivalries.get(a.id+'|'+id)||0);
+   return (dist(a,this.actors.get(x))-Math.min(1.4,rival(x)*.35))-
+          (dist(a,this.actors.get(y))-Math.min(1.4,rival(y)*.35))||x.localeCompare(y);
+  }):observed;
   if(a.hp<=58&&a.supplies>0&&a.healed<3)return ['HEAL',null];
   if(a.stamina<33)return ['REST',null];
   if(near.length){const target=near[0];if(a.ally===target&&this.alive().length>=4)return ['LINK',target];
@@ -401,7 +407,7 @@ class Simulation{
   else if(intent==='EVADE'){const b=this.actors.get(target);this.move(a,a.x+2*(a.x-b.x),a.y+2*(a.y-b.y),true)}
   else if(intent==='OBSERVE')a.stamina=cap(a.stamina+2);
  }
- resolve(a,b){if(!a.alive||!b.alive)return;if(this.alive().length<4){for(const live of this.actors.values())live.ally=null;}if(a.ally===b.id){if(this.tick%3===0)this.emit('ALLY_TRAVEL',[a.id,b.id],{},'minor');return}
+ resolve(a,b){if(!a.alive||!b.alive)return;if(this.advancedAI&&a.ally!==b.id){for(const [u,v] of [[a.id,b.id],[b.id,a.id]]){const k=u+'|'+v;this.rivalries.set(k,Math.min(9,(this.rivalries.get(k)||0)+1));}}if(this.alive().length<4){for(const live of this.actors.values())live.ally=null;}if(a.ally===b.id){if(this.tick%3===0)this.emit('ALLY_TRAVEL',[a.id,b.id],{},'minor');return}
   a.encounters++;b.encounters++;a.lastContact=b.lastContact=this.tick;
   const ai=a.intent,bi=b.intent;
   const contested=this.caches.find(c=>c.supplies>0&&dist(a,c)<1.6&&dist(b,c)<1.6);
@@ -862,7 +868,7 @@ function scheduleNext(){
 function startPlayback(){if(!opts.match)return;if(opts.frame>=opts.match.frames.length-1){opts.frame=0;opts.lastEncounterId=null;renderFrame()}
  opts.playing=true;$('play').textContent='Ⅱ PAUSE';if(opts.timer)clearTimeout(opts.timer);opts.timer=null;scheduleNext()}
 function startMatch(){if(opts.selected.length!==opts.matchSize)return;stop();if($('random-map').checked)$('seed').value=randomSeed();const seed=Number($('seed').value);if(!Number.isSafeInteger(seed)||seed<0||seed>2147483647){alert('Enter a whole-number seed between 0 and 2147483647.');return;}
- try{opts.match=new Simulation(opts.selected,opts.athletes,opts.perks,{seed,arena:$('arena').value,mode:$('mode').value}).run();opts.frame=0;opts.lastEncounterId=null;
+ try{opts.match=new Simulation(opts.selected,opts.athletes,opts.perks,{seed,arena:$('arena').value,mode:$('mode').value,advancedAI:!!document.getElementById('v26-ai')?.checked}).run();opts.frame=0;opts.lastEncounterId=null;
  $('draft-view').classList.add('hidden');$('battle-view').classList.remove('hidden');$('map-label').textContent=ARENAS[opts.match.arena].label+' · '+opts.match.map.mapId;
  $('encounter-tag').textContent='TRACKING';$('encounter-visual').innerHTML='';$('encounter-text').textContent='The competitors enter the arena. Watch the story unfold.';
  window.scrollTo(0,0);renderFrame();startPlayback();
@@ -925,4 +931,7 @@ init();
 <script src="ui/tournaments-v23.js"></script>
 <script src="ui/daily-v24.js"></script>
 <script src="ui/replay-v25.js"></script>
+<script src="ui/rival-ai-v26.js"></script>
+<script src="ui/creator-v27.js"></script>
+<script src="ui/data-v28.js"></script>
 </body></html>
