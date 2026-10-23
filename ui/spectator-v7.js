@@ -257,7 +257,94 @@ function cancelExit(){
  if(state.exitWasPlaying&&opts.match&&opts.frame<opts.match.frames.length-1)startPlayback();
  state.exitWasPlaying=false;
 }
+/* Career editions are independent selectable fighters, with cloned EXISTING gameplay perk
+   definitions. They do not overwrite the parent, manufacture ratings or alter outcomes. */
+var llEditionDefinitions=[
+ {parent:'lebron-james',id:'lebron-james-heat-2013',team:'Miami Heat',era:'Miami Heat 2012-13',short:'Heat',number:6,primary:'#98002e',secondary:'#f9a01b',url:'https://www.nba.com/news/lebron-james-free-agency-sixers-2026'},
+ {parent:'lebron-james',id:'lebron-james-lakers-2020',team:'Los Angeles Lakers',era:'Lakers 2019-20',short:'Lakers',number:23,primary:'#552583',secondary:'#fdb927',url:'https://www.nba.com/news/lebron-james-free-agency-sixers-2026'},
+ {parent:'lebron-james',id:'lebron-james-sixers-2026',team:'Philadelphia 76ers',era:'76ers 2026-27',short:'76ers',number:23,primary:'#006bb6',secondary:'#ed174c',url:'https://www.nba.com/sixers/76ers-players/lebron-james'},
+ {parent:'lionel-messi',id:'lionel-messi-argentina-2022',team:'Argentina national team',era:'Argentina 2022',short:'Argentina',number:10,primary:'#75b7e9',secondary:'#ffffff',url:'https://www.fifa.com/en/articles/lionel-messi-argentina-world-cup-2022'},
+ {parent:'lionel-messi',id:'lionel-messi-psg-2022',team:'Paris Saint-Germain',era:'Paris Saint-Germain 2022-23',short:'PSG',number:30,primary:'#004170',secondary:'#da291c',url:'https://en.psg.fr/teams/first-team/content/number-30-for-leo-messi'},
+ {parent:'lionel-messi',id:'lionel-messi-miami-2024',team:'Inter Miami CF',era:'Inter Miami 2024',short:'Inter Miami',number:10,primary:'#f7b5cd',secondary:'#1c2023',url:'https://www.intermiamicf.com/news/inter-miami-cf-announces-squad-numbers-for-2024-season'},
+ {parent:'tom-brady',id:'tom-brady-buccaneers-2020',team:'Tampa Bay Buccaneers',era:'Buccaneers 2020',short:'Buccaneers',number:12,primary:'#d50a0a',secondary:'#f3f3f3',helmet:'#4a4c53',url:'https://www.buccaneers.com/team/players-roster/tom-brady/'}
+];
+var llTeamAliases=[
+ ['Philadelphia 76ers','Philadelphia 76ers'],['76ers','Philadelphia 76ers'],['Sixers','Philadelphia 76ers'],
+ ['Cavaliers','Cleveland Cavaliers'],['Cleveland','Cleveland Cavaliers'],['Miami Heat','Miami Heat'],['Heat','Miami Heat'],['Lakers','Los Angeles Lakers'],['Bulls','Chicago Bulls'],
+ ['Barcelona','FC Barcelona'],['Paris Saint-Germain','Paris Saint-Germain'],['PSG','Paris Saint-Germain'],['Inter Miami','Inter Miami CF'],['Argentina','Argentina national team'],
+ ['Patriots','New England Patriots'],['Buccaneers','Tampa Bay Buccaneers'],
+ ['Warriors','Golden State Warriors'],['Celtics','Boston Celtics'],['Knicks','New York Knicks'],['Pacers','Indiana Pacers'],
+ ['Hoosiers','Indiana Hoosiers'],['Indiana University','Indiana Hoosiers'],['Yankees','New York Yankees'],['Cubs','Chicago Cubs'],
+ ['Chiefs','Kansas City Chiefs'],['Cardinals','Arizona Cardinals'],['Bears','Chicago Bears'],
+ ['Colts','Indianapolis Colts'],['Packers','Green Bay Packers'],['Broncos','Denver Broncos'],
+ ['Seahawks','Seattle Seahawks'],['Eagles','Philadelphia Eagles'],['Cowboys','Dallas Cowboys']
+];
+function llTeamFor(a){
+ if(a.team)return String(a.team);
+ var era=String(a.era||a.edition||'').trim();
+ if(!era)return 'Independent / Other';
+ // Longest specific names take priority over broad nicknames.
+ for(var i=0;i<llTeamAliases.length;i++){
+  var alias=llTeamAliases[i][0].toLowerCase();
+  if(era.toLowerCase().includes(alias))return llTeamAliases[i][1];
+ }
+ var cleaned=era.replace(/\b(?:19|20)\d\d(?:[-–/]\d\d(?:\d\d)?)?.*$/,'').replace(/^active roster[ ·—:-]*/i,'').replace(/[ ·—-]+$/,'').trim();
+ if(!cleaned||/^(modern|prime|world|all time|historic|unknown)$/i.test(cleaned))return 'Independent / Other';
+ return cleaned.length>45?'Independent / Other':cleaned;
+}
+function installCareerEditions(){
+ if(!opts.athletes||!opts.profiles||!opts.perks||!Array.isArray(opts.perks.signatures))return false;
+ if(opts.athletes.some(function(a){return !!a.edition_of;}))return true;
+ var originalTeams={'lebron-james':'Cleveland Cavaliers','lionel-messi':'FC Barcelona','tom-brady':'New England Patriots'};
+ Object.keys(originalTeams).forEach(function(id){
+  var base=opts.profiles.get(id);if(!base)return;
+  base.team=originalTeams[id];
+  base.edition_short=originalTeams[id];
+  if(CURATED_LOOK[id]&&CURATED_LOOK[id].number!=null)base.number=CURATED_LOOK[id].number;
+ });
+ llEditionDefinitions.forEach(function(edition){
+  var parent=opts.profiles.get(edition.parent);
+  if(!parent||opts.profiles.has(edition.id))return;
+  var perk=opts.perks.signatures.find(function(x){return x.athlete_id===parent.id;});
+  if(!perk)return;
+  var child=Object.assign({},parent,{id:edition.id,name:parent.name+' — '+edition.short,team:edition.team,era:edition.era,number:edition.number,edition_of:parent.id,edition_short:edition.short,source_url:edition.url});
+  opts.athletes.push(child);opts.profiles.set(child.id,child);
+  opts.perks.signatures.push(Object.assign({},perk,{athlete_id:child.id}));
+  var look=CURATED_LOOK[parent.id]||{};
+  CURATED_LOOK[child.id]=Object.assign({},look,{primary:edition.primary,secondary:edition.secondary,number:edition.number,helmet:edition.helmet||(look.helmet||null)});
+ });
+ var meta=byId('ll-edition-count');
+ if(meta)meta.textContent='1,203 ORIGINAL PROFILES + '+(opts.athletes.length-1203)+' SELECTABLE CAREER EDITIONS';
+ var title=byId('ll-draft-catalog-count');
+ if(title)title.textContent=opts.athletes.length.toLocaleString('en-US');
+ return true;
+}
+var llOriginalGetFiltered=getFiltered;
+getFiltered=function(){
+ var matches=llOriginalGetFiltered();
+ var teamSelect=byId('ll-team-filter'),team=teamSelect&&teamSelect.value;
+ return team?matches.filter(function(a){return llTeamFor(a)===team;}):matches;
+};
+function refreshTeamOptions(){
+ var el=byId('ll-team-filter');if(!el)return;
+ var sport=byId('sport-filter')?.value||'';
+ if(!sport){el.disabled=true;el.innerHTML='<option value="">CHOOSE A SPORT FIRST</option>';return;}
+ var selected=el.value;
+ var teams=[...new Set(opts.athletes.filter(function(a){return a.sport===sport;}).map(llTeamFor))].sort(function(a,b){return a.localeCompare(b);});
+ el.innerHTML='<option value="">ALL TEAMS / AFFILIATIONS ('+teams.length+')</option>'+
+  teams.map(function(t){return '<option value="'+esc(t)+'">'+esc(t)+'</option>';}).join('');
+ el.disabled=false;
+ el.value=teams.includes(selected)?selected:'';
+}
+function wireTeamFilter(){
+ var sport=byId('sport-filter'),team=byId('ll-team-filter');if(!sport||!team)return;
+ sport.addEventListener('change',function(){team.value='';refreshTeamOptions();window.renderGrid();});
+ team.addEventListener('change',function(){state.draftLimit=96;window.renderGrid();});
+ refreshTeamOptions();
+}
+
 function setup(){
+ installCareerEditions();wireTeamFilter();
  var logo=byId('ll-home');if(logo)logo.addEventListener('click',exitPrompt);
  var yes=byId('ll-confirm-exit');if(yes)yes.addEventListener('click',function(){state.exitWasPlaying=false;home();});
  var no=byId('ll-cancel-exit');if(no)no.addEventListener('click',cancelExit);
@@ -274,7 +361,7 @@ function setup(){
  if(opts.profiles&&opts.athletes&&opts.athletes.length)renderGrid();
  renderHistory();
 }
-window.LastLegendSpectator={state:state,leaderboard:leaderboard,saveFinished:saveFinished,readHistory:readHistory,home:home,exitPrompt:exitPrompt,seenStats:seenStats,cameraBox:cameraBox};
+window.LastLegendSpectator={state:state,leaderboard:leaderboard,saveFinished:saveFinished,readHistory:readHistory,home:home,exitPrompt:exitPrompt,seenStats:seenStats,cameraBox:cameraBox,installCareerEditions:installCareerEditions,teamFor:llTeamFor,refreshTeamOptions:refreshTeamOptions,editionDefinitions:llEditionDefinitions};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup);
 else setup();
 })();
