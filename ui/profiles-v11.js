@@ -3,7 +3,7 @@
 (function(root){
 'use strict';
 const esc=x=>String(x==null?'':x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const label=s=>String(s||'').replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+const label=s=>String(s||'').replace(/_/g,' ').toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
 const groups=[
  ['SPEED & MOVEMENT',['acceleration','top_speed','agility','reflexes','coordination','balance']],
  ['PHYSICAL',['strength','endurance','durability','recovery']],
