@@ -1,0 +1,615 @@
+{
+  "as_of": "2026-10-23",
+  "nba_source": "https://www.nba.com/news/2026-27-international-players-opening-night",
+  "nfl_source": "https://www.profootballnetwork.com/nfl-hq/depth-charts",
+  "nba_names": [
+    "Alperen Sengun",
+    "Jamal Murray",
+    "Pascal Siakam",
+    "Bennedict Mathurin",
+    "Andrew Wiggins",
+    "Lauri Markkanen",
+    "Rudy Gobert",
+    "Franz Wagner",
+    "Kristaps Porziņģis",
+    "Domantas Sabonis",
+    "Deni Avdija",
+    "OG Anunoby",
+    "Josh Giddey",
+    "RJ Barrett",
+    "Ivica Zubac",
+    "Jonathan Kuminga",
+    "Dyson Daniels",
+    "Zach Edey",
+    "Alex Sarr",
+    "VJ Edgecombe",
+    "Jusuf Nurkić",
+    "Luguentz Dort",
+    "Andrew Nembhard",
+    "Nickeil Alexander-Walker",
+    "Shaedon Sharpe",
+    "Deandre Ayton",
+    "Buddy Hield",
+    "Ben Simmons",
+    "Dillon Brooks",
+    "Trey Lyles",
+    "Clint Capela",
+    "Isaiah Hartenstein",
+    "Goga Bitadze",
+    "Rui Hachimura",
+    "Bogdan Bogdanović",
+    "Nikola Jović",
+    "Santi Aldama",
+    "Al Horford",
+    "Nick Richards",
+    "Tyrese Proctor",
+    "Jock Landale",
+    "Johnny Furphy",
+    "Rocco Zikarsky",
+    "Josh Green",
+    "Jakob Poeltl",
+    "Ajay Mitchell",
+    "Toumani Camara",
+    "Gui Santos",
+    "Yves Missi",
+    "Leonard Miller",
+    "Ryan Nembhard",
+    "Olivier-Maxence Prosper",
+    "Will Riley",
+    "Yang Hansen",
+    "Mario Hezonja",
+    "Karlo Matković",
+    "Vít Krejčí",
+    "Oscar Tshiebwe",
+    "David Jones Garcia",
+    "Henri Veesaar",
+    "Nolan Traoré",
+    "Moussa Diabaté",
+    "Tidjane Salaün",
+    "Noa Essengue",
+    "Zaccharie Risacher",
+    "Ousmane Dieng",
+    "Joan Beringer",
+    "Pacôme Dadiet",
+    "Mohamed Diawara",
+    "Noah Penda",
+    "Rayan Rupert",
+    "Sidy Cissoko",
+    "Maxime Raynaud",
+    "Bilal Coulibaly",
+    "Sandro Mamukelashvili",
+    "Moritz Wagner",
+    "Dennis Schröder",
+    "Hannes Steinbach",
+    "Tristan da Silva",
+    "Ariel Hukporti",
+    "Moussa Cissé",
+    "Ben Saraf",
+    "Simone Fontecchio",
+    "Kasparas Jakučionis",
+    "Karim López",
+    "Nikola Vučević",
+    "Tristan Enaruna",
+    "Malevy Leons",
+    "Quinten Post",
+    "Steven Adams",
+    "Ugonna Onyenso",
+    "Charles Bassey",
+    "Adem Bona",
+    "Precious Achiuwa",
+    "Josh Okogie",
+    "Felix Okpara",
+    "Neemias Queta",
+    "Egor Dёmin",
+    "Vladislav Goldin",
+    "Mouhamed Gueye"
+  ],
+  "nfl_players": [
+    {
+      "name": "Jacoby Brissett",
+      "team": "Cardinals",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Michael Penix Jr.",
+      "team": "Falcons",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Tyler Huntley",
+      "team": "Ravens",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Bryce Young",
+      "team": "Panthers",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Caleb Williams",
+      "team": "Bears",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Deshaun Watson",
+      "team": "Browns",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Dak Prescott",
+      "team": "Cowboys",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Bo Nix",
+      "team": "Broncos",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Jared Goff",
+      "team": "Lions",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Jordan Love",
+      "team": "Packers",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "C.J. Stroud",
+      "team": "Texans",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Daniel Jones",
+      "team": "Colts",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Trevor Lawrence",
+      "team": "Jaguars",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Kirk Cousins",
+      "team": "Raiders",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Justin Herbert",
+      "team": "Chargers",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Matthew Stafford",
+      "team": "Rams",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Malik Willis",
+      "team": "Dolphins",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Kyler Murray",
+      "team": "Vikings",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Drake Maye",
+      "team": "Patriots",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Tyler Shough",
+      "team": "Saints",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "J.J. McCarthy",
+      "team": "Giants",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Geno Smith",
+      "team": "Jets",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Tanner McKee",
+      "team": "Eagles",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Sam Darnold",
+      "team": "Seahawks",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Jalon Daniels",
+      "team": "Buccaneers",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Cam Ward",
+      "team": "Titans",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Jayden Daniels",
+      "team": "Commanders",
+      "position_archetype": "quarterback"
+    },
+    {
+      "name": "Tyler Allgeier",
+      "team": "Cardinals",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Bijan Robinson",
+      "team": "Falcons",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "James Cook III",
+      "team": "Bills",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Chuba Hubbard",
+      "team": "Panthers",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "D'Andre Swift",
+      "team": "Bears",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Chase Brown",
+      "team": "Bengals",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Michael Burton",
+      "team": "Browns",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Javonte Williams",
+      "team": "Cowboys",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "J.K. Dobbins",
+      "team": "Broncos",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Jahmyr Gibbs",
+      "team": "Lions",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Josh Jacobs",
+      "team": "Packers",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Woody Marks",
+      "team": "Texans",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Jonathan Taylor",
+      "team": "Colts",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Bhayshul Tuten",
+      "team": "Jaguars",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Kenneth Walker III",
+      "team": "Chiefs",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Ashton Jeanty",
+      "team": "Raiders",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Omarion Hampton",
+      "team": "Chargers",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Kyren Williams",
+      "team": "Rams",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Ollie Gordon II",
+      "team": "Dolphins",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Aaron Jones Sr.",
+      "team": "Vikings",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Rhamondre Stevenson",
+      "team": "Patriots",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Kendre Miller",
+      "team": "Saints",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Cam Skattebo",
+      "team": "Giants",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Braelon Allen",
+      "team": "Jets",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Dameon Pierce",
+      "team": "Eagles",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Jaylen Warren",
+      "team": "Steelers",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Emanuel Wilson",
+      "team": "Seahawks",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Kenny Gainwell",
+      "team": "Buccaneers",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Tony Pollard",
+      "team": "Titans",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Rachaad White",
+      "team": "Commanders",
+      "position_archetype": "running_back"
+    },
+    {
+      "name": "Michael Wilson",
+      "team": "Cardinals",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Drake London",
+      "team": "Falcons",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Zay Flowers",
+      "team": "Ravens",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Khalil Shakir",
+      "team": "Bills",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Tetairoa McMillan",
+      "team": "Panthers",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Rome Odunze",
+      "team": "Bears",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Jerry Jeudy",
+      "team": "Browns",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Courtland Sutton",
+      "team": "Broncos",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Amon-Ra St. Brown",
+      "team": "Lions",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "J. Michael Sturdivant",
+      "team": "Packers",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Nico Collins",
+      "team": "Texans",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Josh Downs",
+      "team": "Colts",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Parker Washington",
+      "team": "Jaguars",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Xavier Worthy",
+      "team": "Chiefs",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Tre Tucker",
+      "team": "Raiders",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Quentin Johnston",
+      "team": "Chargers",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Konata Mumpfield",
+      "team": "Rams",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Malik Washington",
+      "team": "Dolphins",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Chris Olave",
+      "team": "Saints",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Malik Nabers",
+      "team": "Giants",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Garrett Wilson",
+      "team": "Jets",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Makai Lemon",
+      "team": "Eagles",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "DK Metcalf",
+      "team": "Steelers",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Jaxon Smith-Njigba",
+      "team": "Seahawks",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Chris Godwin Jr.",
+      "team": "Buccaneers",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Carnell Tate",
+      "team": "Titans",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Stefon Diggs",
+      "team": "Commanders",
+      "position_archetype": "wide_receiver"
+    },
+    {
+      "name": "Trey McBride",
+      "team": "Cardinals",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Kyle Pitts Sr.",
+      "team": "Falcons",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Mark Andrews",
+      "team": "Ravens",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Dalton Kincaid",
+      "team": "Bills",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Tommy Tremble",
+      "team": "Panthers",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Colston Loveland",
+      "team": "Bears",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Mike Gesicki",
+      "team": "Bengals",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Harold Fannin Jr.",
+      "team": "Browns",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Jake Ferguson",
+      "team": "Cowboys",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Evan Engram",
+      "team": "Broncos",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Sam LaPorta",
+      "team": "Lions",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Tucker Kraft",
+      "team": "Packers",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Foster Moreau",
+      "team": "Texans",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Will Mallory",
+      "team": "Colts",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Brenton Strange",
+      "team": "Jaguars",
+      "position_archetype": "tight_end"
+    },
+    {
+      "name": "Noah Gray",
+      "team": "Chiefs",
+      "position_archetype": "tight_end"
+    }
+  ],
+  "new_nba": 100,
+  "new_nfl": 100,
+  "previous": 500,
+  "total": 700,
+  "numbers_verified": false,
+  "ratings_provisional": true
+}

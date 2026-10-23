@@ -1,42 +1,48 @@
 # LAST LEGEND
 
-**Choose 2–24 legendary athletes. One remains.**
+**Pick 2–24 legendary athletes. One champion remains.**
 
-**[Play LAST LEGEND on your phone](https://alexrosen23.github.io/LASTLEGEND/)**
+**Play free on iPhone, Android or desktop:** https://alexrosen23.github.io/LASTLEGEND/
 
-## V2.1 — Adjustable Battle Size · October 23, 2026
+## V3 — Living Arenas & Triumph (2026-10-23)
 
-- **Choose 2–24 contestants per match**, while keeping the 500-athlete searchable database.
-- Draft-size selector and plus/minus buttons dynamically rebuild slots; default remains 12.
-- Reducing the draft size keeps the first N picks and removes excess selections; the quick-fill button respects the selected size.
-- Spawn distribution, dynamic survivor counts, eliminations, placement validation, and story text all honor the selected size.
-- Run `node test_sizes.cjs` for 70 seeded simulations covering 2, 3, 4, 8, 12, 18, and 24 contestants, plus input and draft-size assertions.
+- **700 pickable athletes:** retained the original 500 and added **100 October 2026 NFL roster-listed players** and **100 players listed in the NBA's 2026–27 opening-night roster report**.
+- **Procedurally generated seeded maps:** each new match randomizes the seed by default; terrain objects, paths and supply-cache positions change on every seed. The same manual seed, competitors, arena and settings reproduce an identical simulation and map. Terrain affects situational scoring.
+- **Final-three alliance prohibition:** no negotiation or alliance creation once fewer than four competitors remain. Existing alliances break as the field falls to three.
+- **Cinematic victory screen:** a large triumphant uniformed stick figure poses with both arms raised on a podium, with confetti, champion name, map ID and finishing order.
+- **Event variety and animations:** storms, arena traps, ambushes, surprise supplies and shelters join chases, clashes, alliances, resource contests and the zone. Event-specific animations visually depict outcomes recorded by the same simulation.
+- Retains **2–24** competitors, 500 previous legends, slow adjustable playback and all original arena themes.
 
-## V2 — Cinematic Encounters · October 23, 2026
+Open in iPhone Safari → Share → Add to Home Screen for a Home Screen shortcut.
 
-- Draft **2–24 athletes from 500** provisional profiles across 16 sports, including Tyrese Haliburton and Aaron Judge.
-- Story-first playback is now slower: approximately 1.55 seconds per ordinary tick at 1×, with major encounters allotted approximately 2.85–3.55 seconds. Use ½× Cinematic, 1× Story, 2× or 4×.
-- Animated stick-figure interactions show approaches, dodges, impacts, escapes, alliances and eliminations. The encounter camera can stage 2–4 participants, with actual event-log outcomes driving the story.
-- Match results remain seeded and statistical rather than chosen by narration. A match ends with exactly one champion.
-- Reduced zone-attrition dominance, so encounters cause more eliminations.
+## Reproducibility
 
-Open the live URL in **iPhone Safari → Share → Add to Home Screen** to install a Home Screen shortcut.
+The playable site is a self-contained `index.html` with HTML, CSS, SVG, JavaScript, embedded athlete/perk data and local client-side simulation. GitHub Pages serves exactly that file from `gh-pages`. Source of truth is `main`. No backend, credential, or account is required.
 
-## Project files
+Use the **New map every battle** toggle (on by default) to get a new seed. Uncheck it to control the seed manually and replay the same seeded scenario.
 
-- `index.html`: fully self-contained playable mobile browser game (data, visuals and simulation bundled).
-- `data/athletes_500.json`, `data/signature_perks_500.json`: expanded game profiles and special abilities.
-- `data/athletes_500_summary.csv`: sortable summary of the 500 profiles.
-- `tools/expand_roster.py`: deterministic expansion generator, preserving the earlier 252-profile source for audit.
-- `engine/`, `tests/`, `examples/`, `reports/`, `docs/`, `source_v0_1/`: reference Python simulator, tests, recorded runs and production planning documents.
-- `prompts/CLAUDE_CODE_MASTER_PROMPT.md`: older full-scale implementation prompt; use the V2 files as the latest game source.
+## Files
 
-The deployed website is served from the separate `gh-pages` branch. The source-of-truth remains `main`.
+- `index.html` — playable mobile web game.
+- `data/athletes_700.json` and `data/signature_perks_700.json` — game roster, stats and signature abilities.
+- `data/current_roster_provenance.json` — exact 100 new NBA and 100 NFL names and sources.
+- `data/athletes_700_summary.csv` — sortable review dataset.
+- `tools/expand_current.py` — deterministic expansion using prior `data/athletes_500.json`, `data/signature_perks_500.json` and `generate_roster.py` for archetype baselines.
+- `tests/test_v3_rules.cjs` — headless 140-match testing of draft sizes, seed consistency, map variations, championship and alliance rules.
+- `tests/test_browser_v3.py` — optional Chromium / Playwright UI smoke test.
+- `engine/`, `examples/`, `reports/`, `docs/`, `source_v0_1/` — retained reference simulator, historical specifications and prior tests.
 
-## Verification
+## Test
 
-The V2.1 size validation suite passed 70 seeded simulations with correct single-winner results and size-dependent elimination counts. Browser UX verification is performed against the published site.
+```bash
+node tests/test_v3_rules.cjs
+# Optional: pip install playwright, install chromium
+python tests/test_browser_v3.py
+```
 
-The JavaScript test harness completed 81 seeded matches; 11 different champions appeared across 80 standard-roster runs, with group clashes involving three and four athletes. The 390px mobile browser test checked the 500-athlete roster, encounter animations, one winner, and no JavaScript errors or horizontal overflow.
+## Sources and limitations
 
-These are **gameplay ratings**, not verified measurements of real athletes, and fictional events are not claims about real behavior. Some historical jersey details and intellectual-property rights need further review before commercial release.
+- NBA: [2026–27 international opening-night player roster](https://www.nba.com/news/2026-27-international-players-opening-night), NBA.com, October 20, 2026.
+- NFL: [2026 NFL depth charts](https://www.profootballnetwork.com/nfl-hq/depth-charts), Pro Football Network, October 23, 2026.
+
+The 200 newly added **roster entries** are grounded in those dates and need rechecking for subsequent transactions. **All game ratings, behaviors, and perks are fictional provisional game design estimates**, not factual measurements or claims about actual athletes. No additional jersey numbers were displayed without verification. Commercial use of names/likenesses/real team designs needs independent rights review.
