@@ -25,6 +25,11 @@ jobs:
           node tests/test_zone_v9.cjs
           node tests/test_encounters_v10.cjs
           node tests/test_profiles_v11.cjs
+          node tests/test_choreography_v12.cjs
+          node tests/test_strategy_v13.cjs
+          node tests/test_polish_v14.cjs
+          node tests/test_challenges_v15.cjs
+          node tests/test_analytics_v16.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
