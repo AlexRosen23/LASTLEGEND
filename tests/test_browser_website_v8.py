@@ -22,6 +22,13 @@ def run():
                 assert page.locator("#site-home").is_visible()
                 assert page.locator("#draft-view").is_hidden()
                 assert page.locator("#site-total").inner_text()=="1,210"
+                assert page.evaluate("LastLegendEncounters.catalog.length") == 500
+                page.evaluate("LastLegendWebsite.goto('play')")
+                page.locator('#scene-intensity').select_option('graphic')
+                assert page.evaluate("LastLegendEncounters.getIntensity()") == 'graphic'
+                page.locator('#scene-intensity').select_option('standard')
+                assert page.evaluate("LastLegendEncounters.getIntensity()") == 'standard'
+                page.evaluate("LastLegendWebsite.goto('home')")
                 assert page.locator("#site-sports .site-sport-chip").count()==6
                 assert page.locator("[data-site-nav]").count()==7
                 # All linked sections have real content, headings and a distinct route.
@@ -53,6 +60,7 @@ def run():
                 page.locator("#demo").click()
                 assert page.evaluate("opts.selected.length===12 && opts.selected[0]==='lebron-james-sixers-2026'")
                 page.locator("#start").click()
+                page.wait_for_function("opts.match && opts.match.events.some(e => !!e.encounterId)", timeout=60000)
                 page.locator("#battle-view:not(.hidden)").wait_for(timeout=60000)
                 page.locator("#play").click()
                 page.evaluate("LastLegendWebsite.goto('about')")
