@@ -51,7 +51,10 @@ def run():
                 assert page.locator('#map .rb-terrain-feature').count()>=8
                 assert 'NEON CITY' in page.locator('#map-label').inner_text()
                 assert page.evaluate('document.documentElement.scrollWidth-innerWidth')<=2,'battle overflow'
+                page.locator('#timeline').evaluate('(el)=>{el.value=Math.max(1,Math.floor(Number(el.max)*.32));el.dispatchEvent(new Event("input",{bubbles:true}));}')
+                page.evaluate('window.scrollTo(0,0)')
                 page.screenshot(path=str(SHOT/f'battle_{width}.png'),full_page=False,animations='disabled')
+                page.locator('#map').screenshot(path=str(SHOT/f'arena_{width}.png'),animations='disabled')
                 assert not errors,f'page errors at {width}: {errors}'
                 print(f'V18 BROWSER PASS {width}px: hologram, cards, legends, arena selection, detailed map, broadcast strip, no overflow; four screenshots')
                 page.close()
