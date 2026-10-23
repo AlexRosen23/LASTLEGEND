@@ -48,7 +48,7 @@ def run():
                 page.locator('#site-legend-team').select_option("Philadelphia 76ers")
                 page.locator("#site-legend-search").fill("LeBron")
                 assert page.locator('[data-site-profile="lebron-james-sixers-2026"]').count()==1
-                page.locator('[data-site-open="lebron-james-sixers-2026"]').click()
+                page.locator('[data-site-profile="lebron-james-sixers-2026"] .v11-show-stats').click()
                 assert page.locator("#site-profile-dialog").evaluate("(el)=>el.open")
                 assert "LeBron James" in page.locator("#site-profile-body").inner_text()
                 assert "FICTIONAL" in page.locator("#site-profile-body").inner_text().upper()
