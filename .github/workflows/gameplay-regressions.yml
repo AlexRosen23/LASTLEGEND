@@ -30,4 +30,6 @@ jobs:
           python -m pip install playwright==1.55.0
           python -m playwright install --with-deps chromium
       - name: Desktop and phone Chromium V7 smoke tests
-        run: python tests/test_browser_v7.py
+        run: |
+          python tests/test_browser_v7.py
+          python tests/test_browser_website.py
