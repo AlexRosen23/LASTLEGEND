@@ -298,7 +298,7 @@ function llTeamFor(a){
 }
 function installCareerEditions(){
  if(!opts.athletes||!opts.profiles||!opts.perks||!Array.isArray(opts.perks.signatures))return false;
- if(opts.athletes.some(function(a){return !!a.edition_of;}))return true;
+ if(opts.athletes.some(function(a){return llEditionDefinitions.some(function(e){return e.id===a.id;});}))return true;
  var originalTeams={'lebron-james':'Cleveland Cavaliers','lionel-messi':'FC Barcelona','tom-brady':'New England Patriots'};
  Object.keys(originalTeams).forEach(function(id){
   var base=opts.profiles.get(id);if(!base)return;
