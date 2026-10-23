@@ -1,0 +1,20 @@
+{
+  "schema": "lastlegend.appearance.v5",
+  "date": "2026-10-23",
+  "note": "Only the cited elements for LeBron and Trey have been checked against official source material; cartoon details are not verified biometric descriptions.",
+  "verified_uniform_numbers": [
+    {
+      "id": "lebron-james",
+      "number": 23,
+      "source": "https://www.nba.com/lakers/team/player-pages/lebron-james-2544",
+      "edition_note": "Displayed Cavaliers-era jersey colors are from original game roster."
+    },
+    {
+      "id": "trey-mcbride",
+      "number": 85,
+      "source": "https://www.azcardinals.com/team/players-roster/",
+      "edition_note": "Cardinals uniform red/white, helmet and faceguard."
+    }
+  ],
+  "provisional_style_policy": "Deterministic generated appearances for all other profiles; do not assume accuracy based on identity, ethnicity, or names. No invented jersey numbers."
+}

@@ -1,4 +1,13 @@
 # LAST LEGEND — V4 mechanics release
+
+## V5 — Athlete identity + always-visible arena leaders
+
+- Individualized 2D stick-figure styling: team/era jersey palettes, stable stylized skin-tone/hair/facial-hair variation, helmets, eye black, gloves, tattoos and sport-specific accessories.
+- Featured art direction: LeBron James full beard, darker skin and #23; Trey McBride lighter skin, Cardinals red #85, helmet and faceguard.
+- Top three live HP and top three total eliminations appear in a fixed sidebar on desktop and a compact sticky scoreboard directly above the arena map on phones. Rankings update from the current replay frame and never spoil future scores.
+- Full V4 crossover roster (1,203), 2–100 player mode, procedural arenas and events preserved. 
+- See [V5 release notes](docs/RELEASE_V5.md), [appearance sources](data/appearance_v5_sources.json) and run `node tests/test_v5.cjs`.
+
 **[Play LAST LEGEND](https://alexrosen23.github.io/LASTLEGEND/)**
 
 Build 4 adds draftable crossovers and large arenas before a dedicated art update. Matches support **2–100 contestants** from **1,203 selectable records**. The source is in `main`; GitHub Pages serves `gh-pages`.
