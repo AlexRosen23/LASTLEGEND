@@ -44,7 +44,7 @@ def main():
                 page.select_option("#match-size","13")
                 page.locator("#search").fill("LeBron James")
                 page.locator('[data-athlete="lebron-james-sixers-2026"]').click()
-                assert page.evaluate("opts.selected===['lebron-james-sixers-2026']")
+                assert page.evaluate("opts.selected.length===1 && opts.selected[0]==='lebron-james-sixers-2026'")
                 page.locator("#search").fill("")
                 page.locator("#demo").click()
                 assert page.evaluate("opts.selected.length===13 && opts.selected[0]==='lebron-james-sixers-2026' && new Set(opts.selected).size===13")
