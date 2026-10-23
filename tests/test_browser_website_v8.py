@@ -52,10 +52,29 @@ def run():
                 assert page.locator("#site-profile-dialog").evaluate("(el)=>el.open")
                 assert "LeBron James" in page.locator("#site-profile-body").inner_text()
                 assert "FICTIONAL" in page.locator("#site-profile-body").inner_text().upper()
+                assert page.locator("#site-profile-body .v11-stat-group .v11-stat").count()==20
+                assert page.locator("#site-profile-body .v11-behavior .v11-stat").count()==5
+                assert page.locator("#site-profile-body .v11-ability").count()>=3
+                assert "SIGNATURE & ABILITIES" in page.locator("#site-profile-body").inner_text()
+                assert page.locator('[data-site-profile="lebron-james-sixers-2026"] .v11-show-stats').count()==1
+                assert page.locator('[data-site-profile="lebron-james-sixers-2026"] [data-site-draft]').count()==1
                 page.locator('#site-profile-body [data-site-draft="lebron-james-sixers-2026"]').click()
                 page.wait_for_function("LastLegendWebsite.shell.route==='play'",timeout=20000)
                 assert page.locator("#draft-view").is_visible()
                 assert page.evaluate("opts.selected.length===1 && opts.selected[0]==='lebron-james-sixers-2026'")
+                # Draft card and selected slot both open the same full dossier.
+                page.locator('#search').fill('LeBron James')
+                page.locator('[data-athlete="lebron-james-sixers-2026"] [data-profile-open]').click()
+                assert page.locator("#site-profile-dialog").evaluate("(e)=>e.open")
+                assert page.locator('#site-profile-body .v11-stat-group .v11-stat').count()==20
+                assert 'ALREADY DRAFTED' in page.locator('#site-profile-body').inner_text()
+                page.locator("#site-profile-close").click()
+                page.locator('[data-slot-profile="lebron-james-sixers-2026"]').click()
+                assert page.locator("#site-profile-dialog").evaluate("(e)=>e.open")
+                assert page.locator('#site-profile-body .v11-ability').count()>=3
+                page.locator("#site-profile-close").click()
+                page.locator('#search').fill('')
+                assert page.evaluate('document.documentElement.scrollWidth - window.innerWidth')<=2
                 # Draft, simulate and navigate with quit confirmation. Reuse V7 controls.
                 page.locator("#demo").click()
                 assert page.evaluate("opts.selected.length===12 && opts.selected[0]==='lebron-james-sixers-2026'")
