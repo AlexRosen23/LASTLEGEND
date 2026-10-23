@@ -25,14 +25,14 @@ function roleFor(code,position){
   if(pos.includes('quarterback'))return 'quarterback';
   if(pos.includes('wide receiver')||pos.includes('tight end'))return 'receiver';
   if(pos.includes('running back')||pos.includes('fullback'))return 'running_back';
-  if(/offensive|tackle|guard|center|long snapper/.test(pos))return 'lineman';
   if(/linebacker|cornerback|safety|defensive|defense/.test(pos))return 'defender';
+  if(/offensive|tackle|guard|center|long snapper/.test(pos))return 'lineman';
   if(/kicker|punter/.test(pos))return 'other';
  }
  if(code==='MLB'){
   if(pos.includes('pitcher'))return 'baseball_pitcher';
+  if(/first baseman|third baseman|catcher|designated hitter/.test(pos))return 'baseball_power';
   if(/fielder|baseman|shortstop|outfielder/.test(pos))return 'baseball_speed';
-  if(/catcher|designated hitter/.test(pos))return 'baseball_power';
  }
  if(code==='NHL'){
   if(pos.includes('goaltender')||pos.includes('goalie'))return 'hockey_goalie';
