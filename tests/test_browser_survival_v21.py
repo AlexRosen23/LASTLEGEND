@@ -18,7 +18,7 @@ def main():
     errors=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.goto(f'http://127.0.0.1:{server.server_port}/#/play',wait_until='domcontentloaded',timeout=60000)
-    page.wait_for_function("typeof LastLegendSurvivalAI==='object'&&opts.athletes.length===1210",timeout=60000)
+    page.wait_for_function("typeof LastLegendSurvivalAI==='object'&&opts.athletes.length===1652",timeout=60000)
     assert page.locator('#draft-view .v21-ai-indicator').is_visible()
     assert 'PREDICTIVE ZONE' in page.locator('.v21-ai-indicator').inner_text().upper()
     assert page.evaluate("Simulation.prototype.plan.toString().includes('tacticalPlan')")
