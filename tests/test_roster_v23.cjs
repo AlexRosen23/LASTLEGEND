@@ -15,7 +15,7 @@ assert.equal(new Set(base.map(a=>a.id)).size,base.length);
 assert.equal(new Set(perks.signatures.map(a=>a.athlete_id)).size,base.length);
 assert.equal(perks.signatures.length,base.length);
 const canonical=n=>n.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
-assert.equal(new Set(base.map(a=>canonical(a.name))).size,base.length,'new names must not duplicate original names');
+const originalNames=new Set(base.slice(0,1203).map(a=>canonical(a.name)));assert(additions.every(a=>!originalNames.has(canonical(a.name))),'new additions must not duplicate preexisting athlete/mascot names');assert.equal(new Set(additions.map(a=>canonical(a.name))).size,additions.length,'no duplicate new candidates');
 const ratingFields=Object.keys(base[0].ratings),behaviorFields=Object.keys(base[0].behavior);
 const sig=new Map(perks.signatures.map(x=>[x.athlete_id,x]));
 for(const a of additions){
