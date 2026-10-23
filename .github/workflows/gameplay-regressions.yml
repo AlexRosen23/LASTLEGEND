@@ -35,6 +35,7 @@ jobs:
           node tests/test_battle_vision_v19.cjs
           node tests/test_encounter_cinema_v20.cjs
           node tests/test_survival_ai_v21.cjs
+          node tests/test_pathfinding_v22.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
