@@ -6,3 +6,9 @@
 .site-page-head .v24-roster-freshness{max-width:620px}
 #draft-view .mode-controls .v24-roster-freshness{flex:1 1 100%}
 @media(max-width:640px){.v24-roster-freshness{padding:11px;gap:5px}.v24-roster-freshness strong{font-size:9px}.v24-roster-freshness span{font-size:10px}}
+
+/* V25: Source failure and stale snapshots must not look like verified roster coverage. */
+.v24-roster-freshness.v24-roster-warning{border-color:#bb8547;background:linear-gradient(110deg,#342b22,#292c2b)}
+.v24-roster-freshness.v24-roster-warning strong{color:#ffd198}
+.v24-roster-freshness.v24-roster-warning span{color:#ffe3bc}
+.v24-roster-freshness.v24-roster-warning small{color:#efcaa8}
