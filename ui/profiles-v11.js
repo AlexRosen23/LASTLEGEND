@@ -41,10 +41,18 @@ function build(a){
  const showAdd=!picked&&!full,verified=a.verification_status==='VERIFIED';
  const affiliation=a.team||((root.LastLegendSpectator&&root.LastLegendSpectator.teamFor(a))||a.era)||'Independent';
  const sourceUrl=source(a);
+ const currentLeagueProfile=['NBA','NFL','MLB','NHL'].includes(a.league);
+ const reportedHeight=Number.isInteger(a.heightInches)&&a.heightInches>=48&&a.heightInches<=100?
+    Math.floor(a.heightInches/12)+"' "+(a.heightInches%12)+'"':'NOT LISTED';
+ const reportedWeight=Number.isInteger(a.weightLbs)&&a.weightLbs>=75&&a.weightLbs<=550?
+    a.weightLbs+' LB':'NOT LISTED';
+ const reportedJersey=currentLeagueProfile?(a.number==null?'NOT LISTED':'#'+esc(a.number)):
+    (look.number==null?'NOT VERIFIED':'#'+esc(look.number));
  const notes='All ratings, behavior tendencies, perks and ability effects shown here are fictional game design. Appearance and jersey details may be provisional. No league or athlete endorsement is implied.';
  const str='<div class="site-profile-grid v11-profile-grid"><div class="v11-profile-visual"><div class="site-profile-art">'+(typeof figureSVG==='function'?figureSVG(a,{victory:true}):'')+'</div><div class="v11-profile-id"><span>'+esc(a.sport||'Competitor')+'</span><strong>'+esc(affiliation)+'</strong><small>'+esc(a.era||'Original edition')+'</small></div></div>'+
  '<div class="site-profile-copy v11-profile-main"><div class="site-eyebrow">LAST LEGEND / CHARACTER DOSSIER</div><h2 id="site-profile-title">'+esc(a.name)+'</h2>'+
- '<div class="v11-facts"><span>ROLE: '+esc(label(a.role||a.kind||'Athlete'))+'</span><span>EDITION: '+esc(a.era||'Original')+'</span><span>JERSEY: '+(look.number==null?'NOT VERIFIED':'#'+esc(look.number))+'</span>'+
+ '<div class="v11-facts"><span>ROLE: '+esc(label(a.role||a.kind||'Athlete'))+'</span><span>EDITION: '+esc(a.era||'Original')+'</span><span>JERSEY: '+reportedJersey+'</span>'+
+ (currentLeagueProfile?'<span>HEIGHT: '+esc(reportedHeight)+'</span><span>WEIGHT: '+esc(reportedWeight)+'</span>':'')+
  '<span>PROFILE: '+(verified?'SOURCE VERIFIED':'PROVISIONAL')+'</span></div>'+
  '<div class="v11-overview"><div><span>GAME RATING AVERAGE</span><strong>'+(average===null?'—':average)+'</strong><small>Average of '+stats.length+' fictional attributes; not a real-world rating</small></div>'+
  '<div><span>TOP ATTRIBUTES</span><p>'+stats.slice(0,3).map(([k,v])=>esc(label(k))+' '+v).join(' · ')+'</p></div>'+

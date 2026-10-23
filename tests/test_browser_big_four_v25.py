@@ -42,7 +42,7 @@ def fixture():
                     "memberships": [{
                         "teamId": team_id, "team": name, "abbr": abbr,
                         "position": position, "status": "active",
-                        "jersey": str((p % 99) + 1), "season": "2026",
+                        "jersey": str((p % 99) + 1), "heightInches": 75, "weightLbs": 225, "season": "2026",
                         "url": f"https://www.espn.com/{code.lower()}/player/{player_id}",
                     }],
                 })
@@ -90,6 +90,9 @@ def run():
                 assert page.locator("#site-profile-dialog").evaluate("(element)=>element.open")
                 assert page.locator("#site-profile-body .v11-stat-group .v11-stat").count() == 20
                 assert page.locator("#site-profile-body .v11-ability").count() >= 3
+                assert page.locator("#site-profile-body").get_by_text('HEIGHT: 6\' 3"').count() == 1
+                assert page.locator("#site-profile-body").get_by_text("WEIGHT: 225 LB").count() == 1
+                assert page.locator("#site-profile-body").get_by_text("JERSEY: #1").count() == 1
                 page.locator('#site-profile-body [data-site-draft="active-nba-1"]').click()
                 page.wait_for_function("opts.selected.includes('active-nba-1')", timeout=30000)
                 assert page.evaluate("opts.athletes.find(a=>a.id==='active-nhl-1').role") == "hockey_goalie"

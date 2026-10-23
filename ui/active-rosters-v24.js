@@ -67,6 +67,11 @@ function validate(data){
     if(memberships.has(id))throw Error(code+' duplicated team membership for '+p.id);
     if(!m.team||m.team!==team.name||!m.position||!m.status)throw Error(code+' invalid membership details');
     if(team.abbr && m.abbr!==team.abbr)throw Error(code+' team abbreviation mismatch');
+    for(const [field,min,max] of [['heightInches',48,100],['weightLbs',75,550]]){
+     const value=m[field];
+     if(value!=null&&(!Number.isInteger(value)||value<min||value>max))
+      throw Error(code+' invalid physical measurement '+field);
+    }
     memberships.add(id);counts.set(id,counts.get(id)+1);
    }
   }
@@ -120,7 +125,8 @@ function install(athletes,perks,data){
     team=String(selected.team||'Unassigned team'),pos=selected.position||template.role;
    const entry={
     ...template,id,name,sport,team,era:suffix+' · '+(selected.position||'')+' · '+String(selected.status||'').toUpperCase(),
-    source_url:selected.url||null,number:selected.jersey||null,
+    source_url:selected.url||null,number:selected.jersey??null,
+    heightInches:selected.heightInches??null,weightLbs:selected.weightLbs??null,
     ratings:vals,behavior:traits,
     perk:perkId,
     edition_of:parent?.id||null,edition_short:parent?team+' '+suffix:null,
@@ -132,9 +138,11 @@ function install(athletes,perks,data){
     data_quality:{ratings_are_provisional:true,personality_is_fictional:true,
       source:'ESPN public site-v2 team roster',verified_as_official:false,
       position_mapped_from_provider:!!desiredRole,
-      snapshot_date:data.generatedAt,source_team:team,league:code,number_from_provider:true,
+      snapshot_date:data.generatedAt,source_team:team,league:code,
+      number_from_provider:selected.jersey!=null,jersey_source:selected.jerseySource||null,
+      physical_measurements_from_provider:true,
       licensing_reviewed:false},
-    description:'ESPN-reported '+code+' team-roster entry as of '+data.generatedAt+'. Attributes and behavior are fictional game balance.'
+    description:'ESPN-reported '+code+' team-roster entry as of '+data.generatedAt+'. Height and weight, when present, come from the source; ratings and behavior are fictional game balance.'
    };
    pendingAthletes.push(entry);pendingPerks.push({
     ...signature,id:perkId,athlete_id:id,name:'Roster Edition · '+String(signature.name||'Signature'),

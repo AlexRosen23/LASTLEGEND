@@ -45,7 +45,20 @@ jobs:
               assert source['teamCount']==n
               assert len(source['teams'])==n
               assert source['playerCount']>=minimums[league]
-              print(league,source['playerCount'],'players on',n,'teams',flush=True)
+              people=[m for p in source['players'] for m in p['memberships']]
+              assert sum(p['rosterCount'] for p in source['teams'])==len(people)
+              heights=sum(m.get('heightInches') is not None for m in people)
+              weights=sum(m.get('weightLbs') is not None for m in people)
+              missing_jersey=sum(m.get('jersey') is None for m in people)
+              assert heights>=len(people)//2, f'{league} too few source heights: {heights}/{len(people)}'
+              assert weights>=len(people)//2, f'{league} too few source weights: {weights}/{len(people)}'
+              for m in people:
+                  h,w=m.get('heightInches'),m.get('weightLbs')
+                  assert h is None or isinstance(h,int) and 48<=h<=100
+                  assert w is None or isinstance(w,int) and 75<=w<=550
+                  assert all(field not in m for field in ('age','dateOfBirth','headshot','historicalStats'))
+              print(league,source['playerCount'],'players on',n,'teams;',
+                    heights,'heights;',weights,'weights;',missing_jersey,'jerseys unreported',flush=True)
           print('V24 source snapshot verified:',d['generatedAt'])
           PY
       - name: Archive reproducible roster dataset
