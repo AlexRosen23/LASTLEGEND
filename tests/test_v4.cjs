@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert'),performance=require('perf_hooks').performance;
-const html=fs.readFileSync(__dirname+'/index.html','utf8');
+const html=fs.readFileSync(__dirname+'/../index.html','utf8');
 const roster=JSON.parse(html.match(/<script type="application\/json" id="INLINE_ATHLETES">([\s\S]*?)<\/script>/)[1]);
 const perks=JSON.parse(html.match(/<script type="application\/json" id="INLINE_PERKS">([\s\S]*?)<\/script>/)[1]);
 const script=html.match(/<script>([\s\S]*?)<\/script>\s*<\/body>/)[1].replace(/\ninit\(\);\s*$/,'');
