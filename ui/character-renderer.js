@@ -83,6 +83,13 @@ function nonhumanArt(a,options={}){
     '<ellipse cx="-10" cy="-20" rx="5.5" ry="7" fill="#fff"/><ellipse cx="10" cy="-20" rx="5.5" ry="7" fill="#fff"/>'+
     '<circle cx="-9" cy="-19" r="2.5" fill="#172029"/><circle cx="11" cy="-19" r="2.5" fill="#172029"/>'+face;
  }
+ if(kind==='mascot'){
+   // Names and affiliations already in the roster distinguish costumes without invented jersey numbers.
+   const parts=String(a.team||'').trim().split(/\s+/).filter(Boolean);
+   const monogram=(parts.length?parts.slice(0,2).map(x=>x[0]).join(''):'')+String(a.name||'?')[0];
+   art+='<rect x="-13" y="8" width="26" height="15" rx="3" fill="#14202b" opacity=".82" stroke="'+trim+'" stroke-width="1"/>'+
+     '<text x="0" y="19" font-size="10" text-anchor="middle" font-weight="900" fill="'+trim+'">'+escape(monogram.toUpperCase())+'</text>';
+ }
  const cls='ll-rendered-sprite ll-'+escape(kind)+' ll-'+escape(model)+(victory?' ll-victory':'')+(options.dead?' ll-dead':'');
  const label=escape(a.name)+' '+escape(kind)+' '+(victory?'victory':'character')+' animation';
  return '<svg viewBox="-57 -58 114 105" width="'+size+'" height="'+(victory?179:options.large?101:50)+'" class="'+cls+'" role="img" aria-label="'+label+'">'+group('ll-sprite-body',art)+'</svg>';
