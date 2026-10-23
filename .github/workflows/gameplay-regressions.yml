@@ -30,6 +30,7 @@ jobs:
           node tests/test_polish_v14.cjs
           node tests/test_challenges_v15.cjs
           node tests/test_analytics_v16.cjs
+          node tests/test_future_v30.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -41,3 +42,4 @@ jobs:
         run: |
           python tests/test_browser_v7.py
           python tests/test_browser_website_v8.py
+          python tests/test_browser_future_v30.py
