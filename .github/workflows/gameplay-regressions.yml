@@ -31,6 +31,7 @@ jobs:
           node tests/test_challenges_v15.cjs
           node tests/test_analytics_v16.cjs
           node tests/test_visual_rebirth_v18.cjs
+          node tests/test_character_rebirth_v18.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
