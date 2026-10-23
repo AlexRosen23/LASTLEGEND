@@ -1,12 +1,12 @@
 # LAST LEGEND — V4 mechanics release
 **[Play LAST LEGEND](https://alexrosen23.github.io/LASTLEGEND/)**
 
-Build 4 adds draftable crossovers and large arenas before a dedicated art update. Matches support **2–100 contestants** from **1,178 selectable records**. The source is in `main`; GitHub Pages serves `gh-pages`.
+Build 4 adds draftable crossovers and large arenas before a dedicated art update. Matches support **2–100 contestants** from **1,203 selectable records**. The source is in `main`; GitHub Pages serves `gh-pages`.
 
 ### Content
-- 700 existing competitors preserved; 478 new distinct profile entries.
+- 700 existing competitors preserved; 503 new distinct profile entries.
 - **100 Chicago Bears Top 100** members, **57 Indiana championship-season entries**, and 94 friends-requested themed entries; overlapping names are tagged rather than duplicated.
-- 100 college mascots and 133 pro mascots (named team mascots only; teams with no active official mascot aren't given a fictional replacement). Mascot-only draft filter; full crossover draft is also supported.
+- 100 college mascots and 158 pro mascots (named team mascots only; teams with no active official mascot aren't given a fictional replacement). Mascot-only draft filter; full crossover draft is also supported.
 - Multiple editions of Boomer Esiason as distinct choices, plus an alternate fictional green outfit for Anthony Richardson.
 - Horses, cars, aquatic creatures, creatures and mascots have **non-stick placeholder silhouettes**; detailed character art deferred.
 - The selected IU championship roster contains all requested verifiable players, starters and notable reserves plus Andrew Turvy, flagged for identity check where documentation is insufficient.
