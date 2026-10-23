@@ -98,8 +98,8 @@ window.figureSVG=function(a,options={}){
 };
 window.championMarkup=function(){
  let html=previousChampion();
- if(!window.opts?.match)return html;
- const match=window.opts.match,a=window.opts.profiles.get(match.winner),kind=kindOf(a);
+ if(!opts?.match)return html;
+ const match=opts.match,a=opts.profiles.get(match.winner),kind=kindOf(a);
  const final=match.frames[match.frames.length-1]?.actors[match.winner];
  const team=a.team||a.era||a.sport||'Independent contender';
  const stats=match.statistics[match.winner];
@@ -116,10 +116,10 @@ window.championMarkup=function(){
 window.renderMap=function(frame){
  previousMap(frame);
  // Draw small silhouette markers on top of the legacy initialed pips.
- if(!window.opts?.match)return;
+ if(!opts?.match)return;
  let markers='';
- for(const id of window.opts.match.roster){
-  const a=window.opts.profiles.get(id),kind=kindOf(a),p=frame.actors[id];
+ for(const id of opts.match.roster){
+  const a=opts.profiles.get(id),kind=kindOf(a),p=frame.actors[id];
   if(!p?.alive||kind==='human')continue;
   const x=(p.x*620/31).toFixed(2),y=(p.y*390/19).toFixed(2);
   const fill=window.appearanceFor(a).secondary||'#f4e4c7';
@@ -132,5 +132,5 @@ window.renderMap=function(frame){
  }
  if(markers)document.getElementById('map').insertAdjacentHTML('beforeend',markers);
 };
-window.LastLegendArt={kindOf,modelOf,profileCount:()=>window.opts?.athletes?.length||0};
+window.LastLegendArt={kindOf,modelOf,profileCount:()=>opts?.athletes?.length||0};
 })();
