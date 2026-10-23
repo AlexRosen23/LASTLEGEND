@@ -838,7 +838,7 @@ function bindings(){
 async function init(){try{const [a,p]=await Promise.all([Promise.resolve(JSON.parse(document.getElementById('INLINE_ATHLETES').textContent)),Promise.resolve(JSON.parse(document.getElementById('INLINE_PERKS').textContent))]);opts.athletes=a;opts.perks=p;opts.profiles=new Map(a.map(x=>[x.id,x]));if(a.length!==1203)throw Error(`Expected 1203 competitors, received ${a.length}`);
  const sports=[...new Set(a.map(x=>x.sport))].sort();$('sport-filter').innerHTML='<option value="">All sports</option>'+sports.map(s=>`<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
   $('match-size').innerHTML=Array.from({length:99},(_,i)=>`<option value="${i+2}" ${i+2===12?'selected':''}>${i+2} ATHLETES</option>`).join('');
-  bindings();chooseSize(12);loadDemo();
+  bindings();chooseSize(12); // New users start with a genuinely empty lineup. Fill Rest is opt-in.
  
  }catch(e){console.error(e);$('athlete-grid').textContent='Could not load athlete data. Serve this folder over HTTP(S) and reload: '+e.message}}
 init();
