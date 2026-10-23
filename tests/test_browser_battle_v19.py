@@ -40,7 +40,8 @@ def main():
     assert page.locator('#map .v19-label').count()>0
     page.locator('#map').screenshot(path=str(SHOTS/f'city_map_{width}.png'),animations='disabled')
     page.locator('#ll-camera-mode').select_option('AUTO')
-    page.locator('.ll-map-hit').first.click(force=True)
+    page.locator('#ll-camera-mode').select_option('OVERVIEW')
+    page.locator('.ll-map-hit').first.evaluate("el=>el.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true}))")
     assert page.locator('#ll-camera-mode').input_value()=='FOLLOW'
     assert page.locator('#map .v19-focused').count()==1
     assert page.locator('#map .v19-label-focus').count()<=1
