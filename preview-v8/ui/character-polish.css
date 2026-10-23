@@ -1,0 +1,44 @@
+/* V6 integration: one gameplay renderer for humans and nonhumans. */
+.ll-rendered-sprite{overflow:visible;display:inline-block;vertical-align:middle;filter:drop-shadow(0 3px 2px #06111860);transform:translateZ(0)}
+.ll-rendered-sprite .ll-sprite-body{transform-box:fill-box;transform-origin:center 74%;animation:ll-idle 2.4s ease-in-out infinite}
+.ll-rendered-sprite.ll-human .ll-sprite-body{animation-duration:2.7s}
+.ll-rendered-sprite.ll-mascot .ll-sprite-body{animation:ll-mascot-hop 1.35s ease-in-out infinite}
+.ll-rendered-sprite.ll-horse .ll-sprite-body{animation:ll-gallop .8s ease-in-out infinite}
+.ll-rendered-sprite.ll-vehicle .ll-sprite-body{animation:ll-vehicle-roll 1.8s ease-in-out infinite}
+.ll-rendered-sprite.ll-aquatic .ll-sprite-body{animation:ll-swim 1.9s ease-in-out infinite}
+.ll-rendered-sprite.ll-undead .ll-sprite-body{animation:ll-float 2.9s ease-in-out infinite}
+.ll-rendered-sprite .ll-leg-a,.ll-rendered-sprite .ll-leg-b,.ll-rendered-sprite .ll-tail,.ll-rendered-sprite .ll-wheel{transform-box:fill-box;transform-origin:center 10%}
+.ll-rendered-sprite .ll-leg-a{animation:ll-step .34s ease-in-out infinite alternate}
+.ll-rendered-sprite .ll-leg-b{animation:ll-step .34s ease-in-out infinite alternate-reverse}
+.ll-rendered-sprite .ll-tail{transform-origin:right center;animation:ll-fin .7s ease-in-out infinite alternate}
+.ll-rendered-sprite .ll-wheel{transform-origin:center;animation:ll-wheel .55s linear infinite}
+.ll-rendered-sprite.ll-victory .ll-sprite-body{animation:ll-champion-bounce 1.25s ease-in-out infinite}
+.ll-rendered-sprite.ll-victory.ll-vehicle .ll-sprite-body{animation:ll-champion-car 1.25s ease-in-out infinite}
+.ll-rendered-sprite.ll-victory.ll-aquatic .ll-sprite-body{animation:ll-champion-swim 1.25s ease-in-out infinite}
+.ll-rendered-sprite.ll-dead .ll-sprite-body{animation:none;opacity:.38;filter:grayscale(1)}
+.ll-map-creature{pointer-events:none}
+.ll-map-creature path,.ll-map-creature circle,.ll-map-creature rect{vector-effect:non-scaling-stroke}
+.ll-champion-details{max-width:670px;margin:13px auto 20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.ll-champion-details>div{background:#132730;border:1px solid #5e735c;padding:10px 6px;min-width:0;border-radius:4px}
+.ll-champion-details small{display:block;font-size:9px;letter-spacing:.1em;color:#c5baa0;margin-bottom:5px;font-weight:800}
+.ll-champion-details strong{display:block;font:900 17px 'Barlow Condensed',system-ui,sans-serif;color:#f3dfaf;line-height:1.2;overflow-wrap:anywhere}
+.ll-victory-vehicle .victory-stage,.ll-victory-horse .victory-stage,.ll-victory-aquatic .victory-stage{min-height:255px}
+.ll-victory-vehicle .victory-podium{margin-top:-7px}
+.ll-lab-link{font-size:10px;letter-spacing:.08em;font-weight:900;text-decoration:none;color:#f4cb87;border:1px solid #667070;padding:9px 10px;display:inline-flex;align-items:center;border-radius:5px}
+.ll-lab-link:hover,.ll-lab-link:focus-visible{background:#294048;color:white}
+.arena-leaders-desktop{position:sticky;top:8px;z-index:5}
+@media(max-width:950px){.arena-leaders-mobile{position:sticky;top:env(safe-area-inset-top,0px);z-index:20}}
+@media(max-width:480px){.ll-champion-details{grid-template-columns:repeat(2,minmax(0,1fr))}.ll-lab-link{font-size:9px;padding:7px}}
+@keyframes ll-idle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-2.5px) rotate(1deg)}}
+@keyframes ll-mascot-hop{0%,100%{transform:translateY(0) scale(1)}45%{transform:translateY(-9px) scale(1.025)}70%{transform:translateY(-2px) scale(.97)}}
+@keyframes ll-gallop{0%,100%{transform:translateY(0) translateX(-1px)}50%{transform:translateY(-5px) translateX(3px)}}
+@keyframes ll-vehicle-roll{0%,100%{transform:translateX(-3px)}50%{transform:translateX(4px)}}
+@keyframes ll-swim{0%,100%{transform:translateY(-4px) rotate(-3deg)}50%{transform:translateY(4px) rotate(3deg)}}
+@keyframes ll-float{0%,100%{transform:translateY(2px)}50%{transform:translateY(-7px)}}
+@keyframes ll-step{from{transform:rotate(-7deg)}to{transform:rotate(8deg)}}
+@keyframes ll-fin{from{transform:rotate(-13deg)}to{transform:rotate(13deg)}}
+@keyframes ll-wheel{to{transform:rotate(360deg)}}
+@keyframes ll-champion-bounce{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-11px) rotate(3deg)}}
+@keyframes ll-champion-car{0%,100%{transform:translateX(-8px)}50%{transform:translateX(8px)}}
+@keyframes ll-champion-swim{0%,100%{transform:translateY(-6px) rotate(-5deg)}50%{transform:translateY(7px) rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.ll-rendered-sprite .ll-sprite-body,.ll-rendered-sprite .ll-leg-a,.ll-rendered-sprite .ll-leg-b,.ll-rendered-sprite .ll-tail,.ll-rendered-sprite .ll-wheel{animation:none!important}}
