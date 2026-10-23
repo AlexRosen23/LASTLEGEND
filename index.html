@@ -135,11 +135,31 @@
 </style>
 <link rel="stylesheet" href="ui/character-polish.css">
 <link rel="stylesheet" href="ui/spectator-v7.css">
+<link rel="stylesheet" href="ui/website-v8.css">
 <title>LAST LEGEND — 1,203 Characters. One Champion.</title>
 </head><body>
 <div id="app" class="app">
-<header class="topbar"><button type="button" id="ll-home" class="logo-box ll-home-logo" aria-label="Last Legend home · end battle confirmation"><div class="logo-symbol">LL<span>●</span></div><div><div class="eyebrow">THE ULTIMATE ATHLETE SURVIVAL SIM · CINEMATIC ENCOUNTERS</div><div class="brand">LAST <em>LEGEND</em></div></div></button><button id="help-btn" class="icon-btn" title="About this game" aria-label="About game">?</button></header>
+<header class="topbar"><button type="button" id="ll-home" class="logo-box ll-home-logo" aria-label="Last Legend home · end battle confirmation"><div class="logo-symbol">LL<span>●</span></div><div><div class="eyebrow">THE ULTIMATE ATHLETE SURVIVAL SIM · CINEMATIC ENCOUNTERS</div><div class="brand">LAST <em>LEGEND</em></div></div></button><button type="button" class="ll-nav-toggle" id="ll-nav-toggle" aria-expanded="false" aria-controls="ll-mobile-nav">☰ MENU</button><nav class="ll-site-nav" id="ll-mobile-nav" aria-label="Main navigation"><button type="button" data-ll-page="home">HOME</button><button type="button" data-ll-page="play">PLAY</button><button type="button" data-ll-page="legends">LEGENDS</button><button type="button" data-ll-page="champions">CHAMPIONS</button><button type="button" data-ll-page="how-to-play">HOW TO PLAY</button></nav><button id="help-btn" class="icon-btn" title="About this game" aria-label="About game">?</button></header>
 <main>
+<section class="ll-site-web-panel" id="ll-web-home" aria-labelledby="ll-site-hero-title" hidden>
+<div class="ll-site-hero"><div><div class="ll-eyebrow">THE ARENA IS OPEN · SPORTS LEGENDS / ONE SURVIVOR</div><h1 id="ll-site-hero-title">EVERY LEGEND.<br><span>ONE CHAMPION.</span></h1><p>Build an impossible roster from sports icons, mascots and wildcards. Watch alliances fracture, superstars collide and one competitor emerge from the storm.</p><div class="ll-site-actions"><button class="ll-site-action-primary" data-ll-page="play">ENTER THE ARENA →</button><button class="ll-site-action-secondary" data-ll-page="legends">EXPLORE LEGENDS</button></div></div></div>
+<div class="ll-site-section"><div class="ll-eyebrow">DISCOVER THE UNIVERSE</div><h2>CHOOSE YOUR PATH</h2><div class="ll-site-shortcuts">
+<button data-ll-page="play"><span>⚔</span><strong>ENTER A BATTLE</strong><small>2–100 competitors. One survivor.</small></button>
+<button data-ll-page="legends"><span>♛</span><strong>MEET THE LEGENDS</strong><small>Browse sports, teams and career editions.</small></button>
+<button data-ll-page="champions"><span>★</span><strong>YOUR CHAMPIONS</strong><small>Review locally saved winning matches.</small></button>
+<button data-ll-page="how-to-play"><span>◎</span><strong>HOW IT WORKS</strong><small>Understand the draft, arena and survival.</small></button>
+</div></div></section>
+<section class="ll-site-section ll-site-web-panel" id="ll-web-legends" hidden><div class="ll-site-panel-head"><div><div class="ll-eyebrow">THE RECORD BOOK / ROSTER DIRECTORY</div><h2>LEGENDS</h2></div><span id="ll-legend-count" class="ll-eyebrow">LOADING</span></div>
+<div class="ll-site-filters"><input type="search" id="ll-legend-search" placeholder="SEARCH A PLAYER OR TEAM…" aria-label="Search legends"><select id="ll-legend-sport" aria-label="Filter roster by sport"><option value="">ALL SPORTS</option></select><select id="ll-legend-team" aria-label="Filter roster by team" disabled><option value="">SELECT SPORT FIRST</option></select></div>
+<p id="ll-site-legend-message" role="status" class="ll-eyebrow"></p><div id="ll-web-legend-list" class="ll-site-legend-grid"></div><button id="ll-legend-more" class="ll-site-more" hidden>SHOW MORE</button></section>
+<section class="ll-site-section ll-site-web-panel" id="ll-web-guide" hidden><div class="ll-eyebrow">THE RULEBOOK</div><h2>HOW TO PLAY</h2>
+<div class="ll-site-guide-grid">
+<article><b>01</b><strong>DRAFT YOUR LEGENDS</strong><p>Choose 2–100 competitors. Filter by sport and team, mix career editions, fill empty slots or clear your whole lineup.</p></article>
+<article><b>02</b><strong>WATCH THE BATTLE</strong><p>The seeded simulation handles movement, supplies, alliances, combat and the shrinking safe zone. Follow any character or let the cinematic camera direct the action.</p></article>
+<article><b>03</b><strong>CROWN A CHAMPION</strong><p>See elimination rankings, a final showdown and the surviving champion. Finished matches are saved only in this browser's local history.</p></article></div>
+<p style="color:#b9c8c8;font-size:12px;margin-top:17px">All match outcomes and signature abilities are fictional gameplay. Names and appearances do not imply athlete or league endorsement. Most appearances are stylized game interpretations rather than verified portraits.</p>
+<div class="ll-site-actions"><button class="ll-site-action-primary" data-ll-page="play">BUILD A LINEUP →</button></div></section>
+<div id="ll-site-history-count" class="ll-eyebrow" style="margin-top:12px"></div>
 <section class="hero" id="draft-view"><div class="hero-meta"><span class="live-pill"><i></i> THE DRAFT</span><span>SEASON 001 · LEGENDS NEVER DIE</span></div>
 <a class="ll-lab-link" href="identity-lab.html" title="Review roster portraits, nonhuman animations, and appearance verification">✧ CHARACTER IDENTITY LAB ↗</a>
 <h1><span id="hero-count" style="color:var(--pale)">12 ENTER.</span><br><span>ONE REMAINS.</span></h1><p class="hero-desc">Choose 2–100 athletes from <span id="ll-draft-catalog-count">1,203</span> selectable roster editions. Watch them strategize, form alliances, fight for supplies, and survive. No guaranteed winner. Mascots, athletes, wildcards, and every battle tell a new story.</p>
@@ -158,6 +178,7 @@
 </div><aside class="battle-aside"><section id="arena-leaders-desktop" class="arena-leaders arena-leaders-desktop" aria-label="Live match leaders"></section><div class="aside-tabs"><button class="tab active" data-tab="feed">STORY</button><button class="tab" data-tab="roster">SURVIVORS</button></div><div id="feed-panel" class="feed-panel"><div class="feed-head">LIVE CHRONICLE <span id="event-total">0 EVENTS</span></div><div id="feed" class="feed" aria-live="polite"></div></div><div id="roster-panel" class="roster-panel hidden"></div></aside></div>
 <div id="champion-banner" class="champion-banner hidden"></div><div class="disclaimer">Fictional, non-graphic game simulation. Ratings and fictional behavior are provisional game design estimates, not claims about real athletes. Displayed jersey numbers require verification. No endorsement implied.</div></section>
 </main>
+<div class="ll-site-foot-links"><button data-ll-page="home">HOME</button><button data-ll-page="play">PLAY</button><button data-ll-page="legends">LEGENDS</button><button data-ll-page="champions">CHAMPIONS</button><button data-ll-page="how-to-play">HOW TO PLAY</button></div><div class="ll-site-foot-note">Independent fictional simulation · No official league or athlete endorsement</div>
 <footer>LAST LEGEND / BUILT FOR THE UPSET <span>1,203 CHARACTERS · MASCOT MODE · 2–100 COMPETITORS · ONE CHAMPION</span></footer></div>
 <dialog id="ll-exit-dialog" class="ll-exit-dialog" aria-labelledby="ll-exit-title" aria-describedby="ll-exit-description"><div class="ll-exit-content"><div class="ll-eyebrow">LAST LEGEND / LEAVE THE ARENA</div><h2 id="ll-exit-title">END THIS BATTLE?</h2><p id="ll-exit-description">Are you sure you want to end the battle and return to the home page? Your unfinished battle will be discarded. You can stay and keep watching.</p><div class="ll-exit-actions"><button type="button" id="ll-cancel-exit" class="btn btn-secondary ll-exit-keep">KEEP WATCHING</button><button type="button" id="ll-confirm-exit" class="btn btn-primary">END BATTLE &amp; GO HOME</button></div></div></dialog>
 <dialog id="about"><div class="modal-body"><button id="close-about" class="modal-close" aria-label="Close">✕</button><div class="eyebrow">ABOUT THE SIMULATION</div><h2>STATS MATTER.<br>LUCK MATTERS TOO.</h2><p>Every encounter uses sport-inspired ratings, tactical decisions, fatigue, terrain, game perks, and a seeded random roll. Same roster + arena + mode + seed produces an identical outcome. Change the seed to create a fresh story.</p><p>The real athletes' fictional game behavior is not a factual judgment of their personalities or real-world combat abilities. All ratings are estimates for entertainment. Only verified historical numbers are shown.</p><button class="btn btn-primary" id="about-ok">LET'S PLAY →</button></div></dialog>
@@ -777,4 +798,5 @@ init();
 </script>
 <script src="ui/character-renderer.js"></script>
 <script src="ui/spectator-v7.js"></script>
+<script src="ui/website-v8.js"></script>
 </body></html>
