@@ -271,6 +271,7 @@ function setup(){
    var tracking=e.target.closest('[data-ll-track]');if(tracking){e.preventDefault();jumpTo(tracking.dataset.llTrack);return;}
    if(e.target.closest('#ll-clear-follow'))setMode('AUTO');
  });
+ if(opts.profiles&&opts.athletes&&opts.athletes.length)renderGrid();
  renderHistory();
 }
 window.LastLegendSpectator={state:state,leaderboard:leaderboard,saveFinished:saveFinished,readHistory:readHistory,home:home,exitPrompt:exitPrompt,seenStats:seenStats,cameraBox:cameraBox};
