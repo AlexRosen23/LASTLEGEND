@@ -25,7 +25,7 @@ def run():
                 assert page.locator('.rb-holo').count()==1
                 assert page.locator('.rb-arena-card').count()==4
                 assert page.locator('.rb-holo-grid').count()==1
-                assert page.locator('#site-total').inner_text()=='1,210'
+                assert page.locator('#site-total').inner_text()=='1,652'
                 assert page.locator('.site-home-hero').evaluate('(el)=>getComputedStyle(el).borderRadius')!='0px'
                 assert page.evaluate('document.documentElement.scrollWidth-innerWidth')<=2,'homepage overflow'
                 page.screenshot(path=str(SHOT/f'home_{width}.png'),full_page=True,animations='disabled')

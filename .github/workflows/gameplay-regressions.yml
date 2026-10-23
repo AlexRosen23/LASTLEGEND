@@ -36,6 +36,7 @@ jobs:
           node tests/test_encounter_cinema_v20.cjs
           node tests/test_survival_ai_v21.cjs
           node tests/test_pathfinding_v22.cjs
+          node tests/test_roster_v23.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -51,6 +52,7 @@ jobs:
           python tests/test_browser_battle_v19.py
           python tests/test_browser_cinema_v20.py
           python tests/test_browser_survival_v21.py
+          python tests/test_browser_roster_v23.py
       - name: Upload V18 visual QA screenshots
         if: always()
         uses: actions/upload-artifact@v4
