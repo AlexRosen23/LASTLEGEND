@@ -43,7 +43,7 @@ for(const a of opts.athletes){
  const markup=profiles.build(a);
  assert(markup.includes('FULL STAT SPREAD'),a.id);
  assert(markup.includes('SIGNATURE & ABILITIES'),a.id);
- assert(markup.includes(a.name.replaceAll('&','&amp;')),a.id);
+ assert(markup.includes(a.name.replaceAll('&','&amp;').replaceAll("'",'&#39;').replaceAll('"','&quot;')),a.id);
  assert((markup.match(/class="v11-stat"/g)||[]).length>=18,a.id+' must expose full rated spread');
 }
 assert(html.includes('ui/profiles-v11.js')&&html.includes('ui/profiles-v11.css'));
