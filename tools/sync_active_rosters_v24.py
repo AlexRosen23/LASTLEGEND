@@ -54,12 +54,12 @@ def physical_measurements(athlete:dict):
     if height is None:
         # ESPN sometimes provides a display height without the numeric version.
         label=str(athlete.get("displayHeight") or "")
-        match=re.fullmatch(r"\\s*(\\d)\\s*(?:'|ft)\\s*(\\d{1,2})\\s*(?:\\\"|in)?\\s*",label,re.I)
+        match=re.fullmatch(r"\s*(\d)\s*(?:'|ft)\s*(\d{1,2})\s*(?:\"|in)?\s*",label,re.I)
         if match:
             height=physical_number(12*int(match.group(1))+int(match.group(2)),48,100)
     if weight is None:
         label=str(athlete.get("displayWeight") or "")
-        match=re.fullmatch(r"\\s*(\\d{2,3})\\s*(?:lbs?\\.?|pounds?)?\\s*",label,re.I)
+        match=re.fullmatch(r"\s*(\d{2,3})\s*(?:lbs?\.?|pounds?)?\s*",label,re.I)
         if match:
             weight=physical_number(match.group(1),75,550)
     return height,weight
