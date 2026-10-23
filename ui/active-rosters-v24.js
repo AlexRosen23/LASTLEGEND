@@ -12,6 +12,35 @@ const hash=s=>{let h=2166136261;for(const c of String(s)){h=Math.imul(h^c.charCo
 const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const status={snapshot:null,lastReport:null,lastError:null};
+// ESPN roster positions are informative; use matching game archetypes rather than
+// assigning a random goalkeeper, pitcher or quarterback build to unrelated roles.
+function roleFor(code,position){
+ const pos=String(position||'').toLowerCase();
+ if(code==='NBA'){
+  if(pos.includes('center'))return 'center';
+  if(pos.includes('guard'))return 'point_guard';
+  if(pos.includes('forward'))return 'wing';
+ }
+ if(code==='NFL'){
+  if(pos.includes('quarterback'))return 'quarterback';
+  if(pos.includes('wide receiver')||pos.includes('tight end'))return 'receiver';
+  if(pos.includes('running back')||pos.includes('fullback'))return 'running_back';
+  if(/offensive|tackle|guard|center|long snapper/.test(pos))return 'lineman';
+  if(/linebacker|cornerback|safety|defensive|defense/.test(pos))return 'defender';
+  if(/kicker|punter/.test(pos))return 'other';
+ }
+ if(code==='MLB'){
+  if(pos.includes('pitcher'))return 'baseball_pitcher';
+  if(/fielder|baseman|shortstop|outfielder/.test(pos))return 'baseball_speed';
+  if(/catcher|designated hitter/.test(pos))return 'baseball_power';
+ }
+ if(code==='NHL'){
+  if(pos.includes('goaltender')||pos.includes('goalie'))return 'hockey_goalie';
+  if(pos.includes('defense'))return 'hockey_defender';
+  if(/wing|center|forward/.test(pos))return 'hockey_forward';
+ }
+ return null;
+}
 function validate(data){
  if(!data||data.version!==24||typeof data.generatedAt!=='string'||!data.leagues)throw Error('Invalid V24 source schema');
  if(!Number.isFinite(Date.parse(data.generatedAt)))throw Error('Snapshot timestamp missing');
@@ -76,7 +105,11 @@ function install(athletes,perks,data){
    const selected=person.memberships.find(m=>String(m.status).toLowerCase()==='active')||person.memberships[0];
    const id='active-'+code.toLowerCase()+'-'+person.id,canonical=normalize(person.name);
    if(used.has(id))throw Error('Duplicate external roster ID '+id);
-   const parent=lookups.get(canonical),template=parent?.ratings&&parent.sport===sport?parent:pool[hash(code+person.id)%pool.length];
+   const parent=lookups.get(canonical),desiredRole=roleFor(code,selected.position),
+     rolePool=desiredRole?pool.filter(a=>a.role===desiredRole):[],
+     candidates=rolePool.length?rolePool:pool,
+     template=parent?.ratings&&parent.sport===sport&&(!desiredRole||parent.role===desiredRole)?
+      parent:candidates[hash(code+person.id)%candidates.length];
    const signature=originalPerks.get(template.id);if(!signature)throw Error('Missing archetype signature for '+template.id);
    const vals={},traits={};
    for(const [key,value] of Object.entries(template.ratings))vals[key]=clamp(Math.round(value)+(hash(id+key)%11-5),20,98);
@@ -91,13 +124,14 @@ function install(athletes,perks,data){
     ratings:vals,behavior:traits,
     perk:perkId,
     edition_of:parent?.id||null,edition_short:parent?team+' '+suffix:null,
-    role:template.role,
+    role:desiredRole||template.role,roster_position_role:desiredRole||null,
     collection_tags:['ACTIVE_LEAGUES_V24','ACTIVE_'+code+'_V24'],
     league:code,provider_player_id:String(person.id),source_status:selected.status,
     roster_memberships:person.memberships.map(m=>({teamId:m.teamId,team:m.team,status:m.status})),
     verification_status:'ESPN_REPORTED_ROSTER_NOT_OFFICIAL_VERIFIED',
     data_quality:{ratings_are_provisional:true,personality_is_fictional:true,
       source:'ESPN public site-v2 team roster',verified_as_official:false,
+      position_mapped_from_provider:!!desiredRole,
       snapshot_date:data.generatedAt,source_team:team,league:code,number_from_provider:true,
       licensing_reviewed:false},
     description:'ESPN-reported '+code+' team-roster entry as of '+data.generatedAt+'. Attributes and behavior are fictional game balance.'
@@ -136,5 +170,5 @@ function renderCoverage(){
   card.innerHTML='<strong>'+esc(heading)+'</strong><span>'+esc(message)+'</span><small>'+esc(detail)+'</small>';
  }
 }
-window.LastLegendActiveRostersV24=Object.freeze({version:'24.0',load,validate,install,renderCoverage,status,required});
+window.LastLegendActiveRostersV24=Object.freeze({version:'24.0',load,validate,install,renderCoverage,roleFor,status,required});
 })();
