@@ -219,6 +219,12 @@
 <section id="site-updates" class="site-page hidden" aria-labelledby="site-updates-heading">
 <div class="site-page-head"><div class="site-eyebrow">THE PATCH NOTES / ROAD TO PUBLIC RELEASE</div><h1 id="site-updates-heading">WHAT'S NEW.</h1><p>Changes actually released in the public game. Future plans are identified as planned—not advertised as playable.</p></div>
 <div class="site-updates-list">
+<article class="site-update"><div class="site-update-num">V17.0 · PREVIEW</div><div><h2>BACK TO HOME</h2><p>Return directly to the Lobby after a completed match while keeping local champion history.</p></div></article>
+<article class="site-update"><div class="site-update-num">V16.0 · PREVIEW</div><div><h2>SIMULATION LAB</h2><p>Run 16 seeded fictional matches with 2–12 drafted legends; measure game-only win share, average placement and eliminations.</p></div></article>
+<article class="site-update"><div class="site-update-num">V15.0 · PREVIEW</div><div><h2>SEEDED SHARE LINKS</h2><p>Reconstruct legends, arena, mode and seed from a portable link. No online accounts or global rankings.</p></div></article>
+<article class="site-update"><div class="site-update-num">V14.0 · PREVIEW</div><div><h2>WEBSITE ACCESSIBILITY</h2><p>Keyboard focus, skip link, text contrast, reduced motion and better responsive controls.</p></div></article>
+<article class="site-update"><div class="site-update-num">V13.0 · PREVIEW</div><div><h2>SAFER RESOURCE ROUTES</h2><p>Choose future-safe caches; avoid chasing supplies into the storm. No physical-obstacle pathfinding yet.</p></div></article>
+<article class="site-update"><div class="site-update-num">V12.0 · PREVIEW</div><div><h2>ENCOUNTER CHOREOGRAPHY</h2><p>Character-specific motion families and prop cues, not 500 individually rigged animations.</p></div></article>
 <article class="site-update"><div class="site-update-num">V11.0 · PREVIEW</div><div><h2>THE COMPLETE ATHLETE DOSSIER</h2><p>Show Stats and Add to Draft on Legends and Draft cards. Inspect all fictional ratings, stat bars, tendencies, signature and secondary abilities; upgraded text contrast and readability. The Big Four league-wide roster expansion is still planned.</p></div></article>
 <article class="site-update"><div class="site-update-num">V10.0</div><div><h2>500 ENCOUNTERS</h2><p>500 seeded contextual encounter scenarios with character/arena compatibility, intensity controls and non-graphic default.</p></div></article>
 <article class="site-update"><div class="site-update-num">V9.0</div><div><h2>ZONE SURVIVAL AI</h2><p>Competitors prioritize moving inward toward the shrinking safe zone, with deterministic battle regression coverage.</p></div></article>
@@ -360,8 +366,8 @@ class Simulation{
     return score(left)-score(right)||left.id-right.id;
    });
   if(caches.length&&a.supplies<2){const c=caches[0];return dist(a,c)<1.35?['TAKE_CACHE',c.id]:['GO_CACHE',c.id]}
-  if(this.tick/this.maxTicks>.4||dist(a,{x:16,y:10})>this.radius()-1)return ['GO_CENTER',null];
-  return ['GO_CACHE',Math.floor(draw(this.seed,'landmark',a.id)*this.caches.length)];
+  // No in-zone supplies remain: seek center rather than any unsafe cache.
+  return ['GO_CENTER',null];
  }
  move(a,x,y,run=false){const dx=x-a.x,dy=y-a.y,d=Math.hypot(dx,dy);if(d<.001)return;const r=this.db.get(a.id).ratings;
   let speed=.65+r.top_speed/110+(run?.6:0);if(run&&a.stamina<18)speed*=.6;speed=Math.min(d,speed);

@@ -78,8 +78,26 @@ def run():
                 # Draft, simulate and navigate with quit confirmation. Reuse V7 controls.
                 page.locator("#demo").click()
                 assert page.evaluate("opts.selected.length===12 && opts.selected[0]==='lebron-james-sixers-2026'")
+                assert page.locator("#v15-share").is_visible()
+                assert page.locator("#v16-run").is_visible()
+                # V15: create a portable URL, visit it, and verify the restored draft.
+                challenge=page.evaluate("LastLegendChallenges.challengeURL(LastLegendChallenges.make())")
+                assert "llchallenge=" in challenge
+                page.goto(challenge,wait_until="domcontentloaded",timeout=60000)
+                page.wait_for_function("LastLegendWebsite.shell.route==='play' && opts.selected.length===12",timeout=60000)
+                assert page.evaluate("opts.selected[0]==='lebron-james-sixers-2026'")
+                assert not page.locator("#random-map").is_checked()
+                # V16: sampled match outcomes are generated on demand.
+                page.locator("#v16-run").click()
+                page.wait_for_function("document.querySelectorAll('#v16-output .v16-row').length===12",timeout=90000)
+                assert page.evaluate("Array.from(document.querySelectorAll('#v16-output .v16-row small')).reduce((s,e)=>s+Number(e.textContent.match(/^(\\d+) wins/)[1]),0)===16")
+                assert "FICTIONAL GAME SIMULATIONS" in page.locator("#v16-output").inner_text()
                 page.locator("#start").click()
                 page.wait_for_function("opts.match && opts.match.events.some(e => !!e.encounterId)", timeout=60000)
+                # V12: a tagged real event drives the rendered choreography class.
+                page.evaluate("renderEncounter(opts.match.events.find(e=>!!e.encounterId))")
+                assert page.locator("#encounter-visual .v12-choreography").count()==1
+                assert page.locator("#encounter-visual .v12-encounter-prop").count()==1
                 page.locator("#battle-view:not(.hidden)").wait_for(timeout=60000)
                 page.locator("#play").click()
                 page.evaluate("LastLegendWebsite.goto('about')")
