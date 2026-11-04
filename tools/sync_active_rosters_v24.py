@@ -14,6 +14,44 @@ LEAGUES={
     "MLB":("baseball","mlb",30,700),
     "NHL":("hockey","nhl",32,600),
 }
+# Per-team roster floors. In season a short list means a truncated or wrong feed.
+TEAM_FLOOR={"NBA":12,"NFL":26,"MLB":26,"NHL":12}
+# MLB has no 26-man active roster between the World Series and spring training.
+# ESPN can keep a World Series club on its postseason 26-man list and drop the
+# players who file for free agency before it switches that club to the 40-man
+# roster (2026: Milwaukee went 26 -> 20 the day after the Series). Off-season
+# lists may be shorter, but only a few clubs at once and never a collapsed feed.
+OFFSEASON={
+    # league: ((start month, day), (end month, day), team floor, max clubs under the in-season floor)
+    "MLB":((10,20),(2,18),15,4),
+}
+ESPN_OFFSEASON_TYPE=4
+def is_offseason(code:str,today:dt.date,season_type=None)->bool:
+    """True in the league's off-season window, or when ESPN itself says Off Season."""
+    window=OFFSEASON.get(code)
+    if window is None:return False
+    if season_type==ESPN_OFFSEASON_TYPE:return True
+    (sm,sd),(em,ed),_,_=window
+    key=(today.month,today.day)
+    if (sm,sd)>(em,ed):  # window wraps over New Year
+        return key>=(sm,sd) or key<=(em,ed)
+    return (sm,sd)<=key<=(em,ed)
+def roster_size_failures(code:str,counts:dict,offseason:bool):
+    """Return (failures, notices) for per-team roster sizes, keyed by team name."""
+    floor=TEAM_FLOOR[code]
+    short={team:n for team,n in counts.items() if n<floor}
+    if not offseason:
+        return [f"{code}:{team}:only {n} athletes" for team,n in short.items()],[]
+    _,_,off_floor,max_short=OFFSEASON[code]
+    failures=[f"{code}:{team}:only {n} athletes (off-season floor {off_floor})" for team,n in short.items() if n<off_floor]
+    if len(short)>max_short:
+        failures.append(f"{code}:{len(short)} clubs under {floor} athletes (off-season allows {max_short})")
+    sizes=sorted(counts.values())
+    median=sizes[len(sizes)//2] if sizes else 0
+    if median<floor:
+        failures.append(f"{code}:median roster {median} < {floor}")
+    notices=[f"{code} off-season: {team} lists {n} athletes (in-season floor {floor})" for team,n in short.items() if n>=off_floor]
+    return failures,notices
 HEADERS={"User-Agent":"LastLegendRosterAuditor/26.0 (+https://github.com/AlexRosen23/LASTLEGEND)","Accept":"application/json"}
 def get_json(url:str,tries:int=4,timeout:float=25):
     for attempt in range(tries):
@@ -157,20 +195,20 @@ def capture(now:str,delay:float):
         raw=[entry.get("team",{}) for entry in directory.get("teams",[]) if entry.get("team",{}).get("isActive",True)]
         teams={str(t["id"]):t for t in raw if t.get("id") and t.get("displayName") and not t.get("isAllStar")}
         if len(teams)!=expected:raise ValueError(f"{code}: expected {expected} teams, got {len(teams)}: {list(teams)}")
-        athletes={};failures=[];counts={};secondary_total=0;secondary_filled=0;official_filled=0
+        athletes={};counts={};sizes={};season_types=set();secondary_total=0;secondary_filled=0;official_filled=0
         for i,(team_id,team) in enumerate(sorted(teams.items(),key=lambda pair:pair[1]["displayName"])):
             url=f"{API}/{sport}/{league}/teams/{team_id}/roster"
             payload=get_json(url)
             grouped=list(group_athletes(payload.get("athletes") or []))
             season=(payload.get("season") or {}).get("displayName") or directory.get("season",{}).get("displayName","Unspecified")
+            season_types.add((payload.get("season") or {}).get("type"))
             unique={}
             for p in grouped:
                 item=roster_entry(p,team,code,season)
                 if not item["name"]:continue
                 unique[item["id"]]=item
-            if len(unique)<(12 if code in ("NBA","NHL") else 26):
-                failures.append(f"{code}:{team.get('displayName')}:only {len(unique)} athletes")
             counts[team_id]=len(unique)
+            sizes[team.get("displayName")]=len(unique)
             for person_id,item in unique.items():
                 if item["jersey"] is None:
                     key=(code,person_id,team_id)
@@ -189,6 +227,9 @@ def capture(now:str,delay:float):
                 record["memberships"].append({k:v for k,v in item.items() if k not in ("id","name")})
             print(f"{code:3}  {i+1:2}/{expected} {team.get('displayName'):32} {len(unique):3}",flush=True)
             time.sleep(delay)
+        offseason=is_offseason(code,dt.date.fromisoformat(now[:10]),ESPN_OFFSEASON_TYPE if season_types=={ESPN_OFFSEASON_TYPE} else None)
+        failures,notices=roster_size_failures(code,sizes,offseason)
+        for notice in notices:print("NOTICE",notice,flush=True)
         if failures:raise ValueError("Failed closed on suspicious team lists: "+"; ".join(failures))
         print(f"{code}: official-team jersey exceptions {official_filled}; secondary player-card lookups {secondary_total}; team-verified numbers found {secondary_filled}",flush=True)
         if len(athletes)<min_players:raise ValueError(f"{code} too few unique athletes: {len(athletes)} < {min_players}")

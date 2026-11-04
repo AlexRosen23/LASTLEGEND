@@ -42,8 +42,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate physical roster metadata and jersey source gating
-        run: python -m unittest discover -s tests -p 'test_roster_physicals_v26.py'
+      - name: Validate roster metadata, jersey source gating and roster-size guard
+        run: python -m unittest discover -s tests -p 'test_roster_*.py'
       - name: Install browser smoke-test runtime
         run: |
           python -m pip install playwright==1.55.0
