@@ -1,0 +1,10 @@
+# gitleaks configuration: the default rules plus one narrowly scoped false positive.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Athlete-id fixture in the lineup-controls test: the id 'secretariat' (the racehorse) makes generic-api-key read the next athlete id as a key."
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''^tests/test_lineup_controls\.cjs$''']
+regexes = ['''^lebron-james-sixers-2026$''']
