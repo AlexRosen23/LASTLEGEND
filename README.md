@@ -1,53 +1,88 @@
-# LAST LEGEND — V6 integrated character-art release
+# LAST LEGEND
 
-## V6 — Integrated character rendering and match presentation
+A free browser battle-royale game where athletes, mascots and other legends fight until one is left.
 
-- The production `index.html` now loads `ui/character-renderer.js` and `ui/character-polish.css`.
-- Match encounter scenes and champion presentations use new distinct animated SVG silhouettes for 258 mascots, 2 horses, 2 vehicles, one aquatic competitor, and one undead character. Human sprite art remains the V5 individualized stick-figure system, with subtle animation.
-- Mascot art gets bird, horned, bear, feline, canine, costume or general stylized variants based on existing names/affiliations; these are **provisional interpretations** rather than licensed, verified likenesses.
-- Map overlays distinguish surviving nonhuman entrants, without changing simulation math, hitboxes, abilities or results.
-- The champion presentation adds final HP and affiliation and uses type-specific celebration motion, preserving placements and replay controls.
-- Existing desktop and mobile live leaderboards remain tied to the displayed replay frame; their sticky visibility rules are retained and reinforced.
-- Open [Character Identity Lab](identity-lab.html) from the draft screen for separate roster inspection. Run `node tests/test_v6.cjs` alongside V5 regression tests.
-- All 1,203 entries passed in-memory SVG renderability checks; actual browser viewport testing remains an additional release check.
-
-
-
-## V5 — Athlete identity + always-visible arena leaders
-
-- Individualized 2D stick-figure styling: team/era jersey palettes, stable stylized skin-tone/hair/facial-hair variation, helmets, eye black, gloves, tattoos and sport-specific accessories.
-- Featured art direction: LeBron James full beard, darker skin and #23; Trey McBride lighter skin, Cardinals red #85, helmet and faceguard.
-- Top three live HP and top three total eliminations appear in a fixed sidebar on desktop and a compact sticky scoreboard directly above the arena map on phones. Rankings update from the current replay frame and never spoil future scores.
-- Full V4 crossover roster (1,203), 2–100 player mode, procedural arenas and events preserved. 
-- See [V5 release notes](docs/RELEASE_V5.md), [appearance sources](data/appearance_v5_sources.json) and run `node tests/test_v5.cjs`.
+**Status:** Live, playable on GitHub Pages and still evolving · **Stack:** JavaScript, HTML/CSS/SVG, Python · Built with [Claude Code](https://claude.com/claude-code)
 
 **[Play LAST LEGEND](https://alexrosen23.github.io/LASTLEGEND/)**
 
-Build 4 adds draftable crossovers and large arenas before a dedicated art update. Matches support **2–100 contestants** from **1,203 selectable records**. The source is in `main`; GitHub Pages serves `gh-pages`.
+## What it does
 
-### Content
-- 700 existing competitors preserved; 503 new distinct profile entries.
-- **100 Chicago Bears Top 100** members, **57 Indiana championship-season entries**, and 94 friends-requested themed entries; overlapping names are tagged rather than duplicated.
-- 100 college mascots and 158 pro mascots (named team mascots only; teams with no active official mascot aren't given a fictional replacement). Mascot-only draft filter; full crossover draft is also supported.
-- Multiple editions of Boomer Esiason as distinct choices, plus an alternate fictional green outfit for Anthony Richardson.
-- Horses, cars, aquatic creatures, creatures and mascots have **non-stick placeholder silhouettes**; detailed character art deferred.
-- The selected IU championship roster contains all requested verifiable players, starters and notable reserves plus Andrew Turvy, flagged for identity check where documentation is insufficient.
+You draft a field of 2 to 100 contestants from a roster of more than 1,200 athletes, mascots and other characters, pick an arena, and watch a seeded match play out. Fights, storms and eliminations are simulated, then replayed with commentary, a live leaderboard and a champion screen.
 
-### Simulator
-- Adjustable 2–100 contestants with the original 500- and 700-player libraries preserved.
-- Seeded generation, group encounters, contextual scoring, deterministic match replay, one sole champion and no newly formed alliances with fewer than four survivors.
-- Regular and mascot-only modes; additional category filters make large drafts manageable.
-- Existing victory screen and event animation pipeline preserved.
+The same seed always produces the same match, so results can be replayed, shared and tested. The roster holds real-world names, but ratings, personalities and abilities are game design, not factual claims.
 
-### Test
-```bash
-node tests/test_v4.cjs
-python tests/test_browser_v4.py
+## Key features
+
+- 2 to 100 contestants per match, with draft filters (including a mascot-only mode) to make large fields manageable.
+- Procedural arenas, storm and zone survival, group encounters and contextual scoring.
+- Deterministic simulation with replay controls and a single champion.
+- Animated SVG character art, with individualized styling for human athletes and distinct silhouettes for mascots, horses, vehicles and creatures.
+- Live top-three leaderboards for HP and eliminations that never spoil future scores.
+- Athlete profiles, a Character Identity Lab for inspecting the roster, and public challenges.
+- Phone-friendly layout, contrast and reduced-motion options, and an optional captions mode.
+- A roster data pipeline with source tracking and identity-review flags for unverified entries.
+
+## How it works
+
 ```
-Local checks passed for contestant counts 2, 3, 4, 12, 24, 50, 75 and 100. A 390px browser test confirmed a mascot match and 100-character match, with no horizontal scroll. The 100-character test ran in approximately 0.6s headlessly in the local environment.
+index.html, identity-lab.html   the game (static, no build step)
+ui/                             browser modules, one per feature version (replay, encounters, rosters, AI...)
+data/                           rosters, perks, rulesets and source manifests (JSON/CSV)
+engine/                         Python reference simulation and CLI
+tools/                          roster building and sync scripts
+tests/                          Node and Python tests, including browser tests
+docs/                           release notes, roster audits and roadmaps
+```
 
-### Source and safety notes
-The `data/manifest_v4.json` tracks collection counts, sources and **identity-review exceptions**. The labels in unresolved entries are placeholders, not verifications. The real-world athlete ratings, personalities, combat mechanics and fictional abilities are **game design, not factual claims**. Fictional characters and trademarked mascot depictions need rights clearance before monetization or marketing. Official mascot programs vary: not every franchise has one.
+The game itself runs entirely in the browser. The Python engine is a reference model used for batch simulation and balance smoke tests. The site is served from the `gh-pages` branch; `main` holds the source.
 
-### Next release
-Visual-focused: specialized animations for vehicles, horses, aquatic characters, all individual mascots, supers, outfits, environment, and a more cinematic victory screen.
+## Built with
+
+Vanilla JavaScript, HTML, CSS and SVG for the game; Python for the reference engine and tooling; Node scripts and Python with Playwright for tests. Built with Claude Code as an AI pair programmer: Claude wrote most of the code under Alex's direction and review.
+
+## Run it locally
+
+The game is static files, so open `index.html` in a browser or serve the folder with any static file server.
+
+Reference engine and checks (see the scripts for details):
+
+```bash
+python -m engine.cli --seed 42 --out examples/match_42.json   # run one simulated match
+python validate_package.py                                    # package validation and smoke suite
+node tests/test_v6.cjs                                        # example of a Node feature test
+```
+
+Release notes and design docs are in [docs/](docs/).
+
+## Project stats
+
+| | |
+|---|---|
+| Timeline | 2026-10-23 → 2026-11-04 (first to last commit) |
+| Commits | 56 |
+| Active Claude Code time | 0.3 hours across 6 sessions (2026-10-25 → 2026-11-03) |
+| Claude tokens (new work) | 356 thousand: 132 input, 307 thousand written to cache, 50 thousand output |
+| Claude tokens (cache reads) | 15.3 million, counted separately (see below) |
+| Models (share of responses) | Claude Opus 5.5 97%, Claude Sonnet 5.5 3% |
+
+<details>
+<summary>How these numbers were measured</summary>
+
+Measured from Claude Code session transcripts (the `.jsonl` files Claude Code writes for every session and subagent) with a small read-only script. Each Claude response's `usage` record is counted once. A response counts toward this repo when its working directory is inside the repo (or a git worktree of it); for sessions started from a general folder, when its tool calls point into the repo, or else the project that session was last working on.
+
+- **New-work tokens** = input tokens + tokens written to the prompt cache + output tokens.
+- **Cache reads** are the conversation context that Claude re-reads from Anthropic's prompt cache on every turn. They are far larger than new work and are billed at about a tenth of the input price, so they are listed separately rather than added to the total.
+- **Active time** joins transcript events that are at most 15 minutes apart into working intervals, then merges overlapping intervals so parallel sessions and subagents are not double counted. Idle gaps longer than 15 minutes are not counted.
+
+All figures are approximate.
+
+</details>
+
+## Part of The Constellation
+
+This project is one world in [The Constellation](https://github.com/AlexRosen23/constellation), Alex's 3D command center for every project.
+
+## Notes
+
+Fictional characters and trademarked mascot depictions are provisional interpretations, not licensed likenesses, and would need rights clearance before any monetization. Some roster entries are flagged in the data as awaiting identity review. See [docs/VALIDATION_AND_LIMITS.md](docs/VALIDATION_AND_LIMITS.md).
