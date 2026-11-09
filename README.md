@@ -48,6 +48,7 @@ The game is static files, so open `index.html` in a browser or serve the folder 
 Reference engine and checks (see the scripts for details):
 
 ```bash
+python -m pip install -r requirements-dev.txt && python -m playwright install chromium   # once: the browser checks need Playwright
 python -m engine.cli --seed 42 --out examples/match_42.json   # run one simulated match
 python validate_package.py                                    # package validation and smoke suite
 node tests/test_v6.cjs                                        # example of a Node feature test
