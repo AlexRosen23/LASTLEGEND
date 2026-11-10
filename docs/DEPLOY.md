@@ -33,9 +33,9 @@ itself (mirroring `ui/`, keeping the roster snapshot and previews, refusing a bl
    A commit message containing `[skip ci]` skips that run; don't deploy such a commit until the tests have run
    (locally or in a later run).
 2. Open **Actions → Deploy game files to GitHub Pages (manual) → Run workflow**, branch `main`.
-3. Leave **publish** unticked first. That is a dry run: the job runs the 22 Node feature tests, the roster unit
-   tests and the deploy-list check, copies the files into a `gh-pages` checkout, and prints `git diff --stat`
-   of what would change. Nothing is pushed.
+3. Leave **publish** unticked first. That is a dry run: the job runs every Node feature test (`tests/*.cjs`),
+   the roster unit tests and the deploy-list check, copies the files into a `gh-pages` checkout, and prints
+   `git diff --stat` of what would change. Nothing is pushed.
 4. If the diff is what you expect, run it again with **publish** ticked. The job commits
    `deploy: game files from main <sha>` to `gh-pages` as `github-actions[bot]` and pushes. If `gh-pages` already
    matches, it says so and pushes nothing.

@@ -370,7 +370,7 @@ different winners. It is a game-model output from a small sample, not a predicti
 | `data/` | Roster datasets by generation (252, 500, 700, v4), ability catalogues, ruleset, appearance sources and verification queues, roster provenance |
 | `engine/` | Python reference simulation and CLI |
 | `tools/` | Roster builders and expanders, the ESPN roster sync, the `main` → `gh-pages` deploy copy (`pages_deploy.py`), package and example builders |
-| `tests/` | 22 Node feature tests (`*.cjs`), 4 Python unit-test files, 9 Playwright browser tests |
+| `tests/` | Node feature tests (`*.cjs`), Python unit tests (`test_*.py`) and 9 Playwright browser tests (`test_browser_*.py`) |
 | `docs/` | Release notes per version, roster audits and limits, product scope, roadmaps, the athlete JSON schema |
 | `source_v0_1/` | The original design documents and seed data, kept unchanged |
 | `prompts/` | The build prompt from the design package |
