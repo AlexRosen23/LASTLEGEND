@@ -7,6 +7,20 @@ const required={NBA:30,NFL:32,MLB:30,NHL:32};
 const sports={NBA:'Basketball',NFL:'American Football',MLB:'Baseball',NHL:'Ice Hockey'};
 const minPlayers={NBA:400,NFL:1400,MLB:700,NHL:600};
 const minTeamPlayers={NBA:12,NFL:26,MLB:26,NHL:12};
+// MLB has no 26-man active roster between the World Series and spring training, and ESPN can
+// leave a club on a short list for weeks (2026: Milwaukee 26 -> 20 after six free agents filed).
+// Same window and limits as OFFSEASON in tools/sync_active_rosters_v24.py, keyed to the snapshot's
+// own UTC generatedAt (not the viewer's clock). With at most 4 of 30 clubs short, the sync's
+// "median >= 26" rule always holds, so it needs no separate check here.
+const offseason={MLB:{start:[10,20],end:[2,18],teamFloor:15,maxShortTeams:4}};
+function offseasonRules(code,generatedAt){
+ const rules=offseason[code],time=Date.parse(generatedAt);
+ if(!rules||!Number.isFinite(time))return null;
+ const day=new Date(time),key=(day.getUTCMonth()+1)*100+day.getUTCDate();
+ const start=rules.start[0]*100+rules.start[1],end=rules.end[0]*100+rules.end[1];
+ const inside=start>end?(key>=start||key<=end):(key>=start&&key<=end);
+ return inside?rules:null;
+}
 const normalize=s=>String(s||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const hash=s=>{let h=2166136261;for(const c of String(s)){h=Math.imul(h^c.charCodeAt(0),16777619)}return h>>>0};
 const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
@@ -50,12 +64,17 @@ function validate(data){
     !Array.isArray(league.players)||league.players.length<minPlayers[code]||
     league.playerCount!==league.players.length)throw Error(code+' incomplete league source');
   const teams=new Map(),counts=new Map(),ids=new Set();
+  const relaxed=offseasonRules(code,data.generatedAt),teamFloor=relaxed?relaxed.teamFloor:minTeamPlayers[code];
+  let shortTeams=0;
   for(const t of league.teams){
    const id=String(t?.id||'');
    if(!id||!t.name||teams.has(id)||!Number.isInteger(t.rosterCount)||
-      t.rosterCount<minTeamPlayers[code])throw Error(code+' invalid team roster declaration');
+      t.rosterCount<teamFloor)throw Error(code+' invalid team roster declaration');
+   if(t.rosterCount<minTeamPlayers[code])shortTeams++;
    teams.set(id,t);counts.set(id,0);
   }
+  if(relaxed&&shortTeams>relaxed.maxShortTeams)
+   throw Error(code+' too many short off-season team rosters ('+shortTeams+' under '+minTeamPlayers[code]+', allows '+relaxed.maxShortTeams+')');
   for(const p of league.players){
    if(!p?.id||!p.name||!Array.isArray(p.memberships)||!p.memberships.length)throw Error(code+' invalid player entry');
    if(ids.has(String(p.id)))throw Error(code+' duplicated player id '+p.id);
@@ -178,5 +197,5 @@ function renderCoverage(){
   card.innerHTML='<strong>'+esc(heading)+'</strong><span>'+esc(message)+'</span><small>'+esc(detail)+'</small>';
  }
 }
-window.LastLegendActiveRostersV24=Object.freeze({version:'24.0',load,validate,install,renderCoverage,roleFor,status,required});
+window.LastLegendActiveRostersV24=Object.freeze({version:'24.0',load,validate,install,renderCoverage,roleFor,offseasonRules,status,required});
 })();
