@@ -250,6 +250,8 @@ small PRs. PRs #1–#21 carry no tool attribution; [#22](https://github.com/Alex
 
 The game is published by committing files to `gh-pages` separately from `main` (59 owner commits there, the
 game deploys all on 2026-10-23), plus a bot commit from the roster workflow whenever the snapshot changes.
+Merging to `main` does not update the live site; [docs/DEPLOY.md](docs/DEPLOY.md) describes what is published,
+by what, and the owner's manual deploy step.
 
 ### Key decisions and trade-offs
 
@@ -367,8 +369,8 @@ different winners. It is a game-model output from a small sample, not a predicti
 | `ui/` | 29 JavaScript modules and 16 stylesheets, one per feature version (art, spectator, website, encounters, survival AI, routing, rosters, tournaments, replay, broadcast, settings) |
 | `data/` | Roster datasets by generation (252, 500, 700, v4), ability catalogues, ruleset, appearance sources and verification queues, roster provenance |
 | `engine/` | Python reference simulation and CLI |
-| `tools/` | Roster builders and expanders, the ESPN roster sync, package and example builders |
-| `tests/` | 22 Node feature tests (`*.cjs`), 3 Python unit-test files, 9 Playwright browser tests |
+| `tools/` | Roster builders and expanders, the ESPN roster sync, the `main` → `gh-pages` deploy copy (`pages_deploy.py`), package and example builders |
+| `tests/` | Node feature tests (`*.cjs`), Python unit tests (`test_*.py`) and 9 Playwright browser tests (`test_browser_*.py`) |
 | `docs/` | Release notes per version, roster audits and limits, product scope, roadmaps, the athlete JSON schema |
 | `source_v0_1/` | The original design documents and seed data, kept unchanged |
 | `prompts/` | The build prompt from the design package |
@@ -376,7 +378,7 @@ different winners. It is a game-model output from a small sample, not a predicti
 | `reports/` | Saved validation summary and balance batch |
 | `examples/` | Recorded matches from the Python engine |
 | `generate_roster.py`, `validate_package.py`, `package_release.py` | Regenerate the 252-athlete data, validate the package, build a release zip |
-| `.github/workflows/` | Gameplay regression CI and the daily roster sync |
+| `.github/workflows/` | Gameplay regression CI, the daily roster sync and the manual Pages deploy |
 
 ## Testing and CI
 
@@ -391,6 +393,8 @@ Results on 2026-11-09 (`main` at `8b4641c`, macOS, Node 24, Python 3.12, Playwri
 - **Node:** 22 of 22 scripts pass (35 s in total).
 - **Python unit tests:** 31 of 31 pass (15 engine tests, 16 roster-sync guard and physical-data tests).
 - **`validate_package.py`:** `"pass": true` (31 unit tests, 300 of 300 smoke matches, 11 s).
+- **Deploy file list** (added after that run, 2026-11-10): `tests/test_pages_deploy.py`, 6 of 6 pass. It runs in
+  the deploy workflow and is also picked up by `validate_package.py` (so that now runs 37 unit tests).
 - **Browser tests:** 9 of 9 pass, each at a desktop and a phone width, but three are flaky under load. On the
   first run, `test_browser_v7.py`, `test_browser_roster_v23.py` and `test_browser_future_v30.py` timed out
   waiting for the page's modules to load while other heavy jobs were running on the machine. The first two
@@ -402,7 +406,7 @@ The browser tests start their own static server on a random port and drive Chrom
 phone (390 px) sizes.
 
 **GitHub Actions: enabled** (`gh api repos/AlexRosen23/LASTLEGEND/actions/permissions`: enabled, all actions
-allowed). Two workflows:
+allowed). Three workflows:
 
 - [`gameplay-regressions.yml`](.github/workflows/gameplay-regressions.yml) runs on every pull request and push to
   `main`: the 22 Node tests, the roster unit tests, and the 9 browser tests, then uploads the visual QA
@@ -410,6 +414,9 @@ allowed). Two workflows:
 - [`roster-sync-v24.yml`](.github/workflows/roster-sync-v24.yml) runs daily at 11:19 UTC (GitHub may start it
   later), on manual dispatch, and when the sync code changes. It captures the rosters, verifies them, archives
   the JSON for 30 days and commits it to `gh-pages`. The 2026-11-09 run passed in 2 min 17 s.
+- [`deploy-pages.yml`](.github/workflows/deploy-pages.yml) runs only when the owner starts it from the Actions
+  tab. It copies the game files (`index.html`, `identity-lab.html`, `ui/`, `data/roster_v4.json`) from `main` to
+  `gh-pages`; by default it is a dry run that only prints the diff. See [docs/DEPLOY.md](docs/DEPLOY.md).
 
 GitHub's own CodeQL and dependency-graph jobs also run on pushes to `main`. There is no Dependabot
 configuration.
@@ -417,6 +424,7 @@ configuration.
 ## Related
 
 - **Play:** https://alexrosen23.github.io/LASTLEGEND/ (served from the `gh-pages` branch)
+- **Deploys:** [docs/DEPLOY.md](docs/DEPLOY.md), how `main` reaches the live site
 - **Design (original package):**
   - [Master design](source_v0_1/01_MASTER_DESIGN.md)
   - [Ratings and calibration](source_v0_1/02_RATINGS_AND_CALIBRATION.md)
