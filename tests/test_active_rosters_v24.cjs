@@ -94,6 +94,57 @@ assert.throws(()=>api.validate(forgedTotal),/NFL incomplete league source/);
 const badAffiliation=structuredClone(snapshot);
 badAffiliation.leagues.NBA.players[0].memberships[0].team='Another Club';
 assert.throws(()=>api.validate(badAffiliation),/NBA invalid membership details/);
+
+// MLB off-season rosters (regression: every snapshot was rejected from 2026-11-04 because the
+// browser kept the in-season 26-player floor after the sync started publishing off-season lists).
+// Mirrors tools/sync_active_rosters_v24.py: Oct 20 - Feb 18, team floor 15, at most 4 clubs under 26,
+// league median >= 26. Other leagues and in-season MLB keep the strict floor.
+function withTeamSizes(base,league,sizes,generatedAt){
+ const copy=structuredClone(base);copy.generatedAt=generatedAt;
+ const source=copy.leagues[league],players=[];
+ source.teams.forEach((team,i)=>{
+  const size=sizes[i]??team.rosterCount;
+  const members=source.players.filter(p=>p.memberships[0].teamId===team.id);
+  while(members.length<size){
+   const id=league+'-extra-'+team.id+'-'+members.length;
+   members.push({...structuredClone(members[0]),id,name:'Fixture '+id});
+  }
+  team.rosterCount=size;players.push(...members.slice(0,size));
+ });
+ source.players=players;source.playerCount=players.length;
+ return copy;
+}
+const mlbSizes=(short)=>Array.from({length:30},(_,i)=>i<short.length?short[i]:38);
+const offseasonDay='2026-11-09T21:27:02Z',inSeasonDay='2026-07-15T11:19:00Z';
+// The live 2026-11-09 shape: Milwaukee at 20 (World Series 26-man list minus six free agents).
+assert.equal(api.validate(withTeamSizes(snapshot,'MLB',mlbSizes([20]),offseasonDay)),true);
+assert.equal(api.validate(withTeamSizes(snapshot,'MLB',mlbSizes([20,15,25,22]),offseasonDay)),true);
+for(const day of ['2026-10-20T00:00:00Z','2026-12-31T23:59:59Z','2027-01-15T12:00:00Z','2027-02-18T23:59:59Z'])
+ assert.equal(api.validate(withTeamSizes(snapshot,'MLB',mlbSizes([20]),day)),true,day);
+// The same list is still malformed in season, including either side of the window.
+for(const day of [inSeasonDay,'2026-10-19T23:59:59Z','2027-02-19T00:00:00Z','2026-04-01T12:00:00Z'])
+ assert.throws(()=>api.validate(withTeamSizes(snapshot,'MLB',mlbSizes([20]),day)),/MLB invalid team roster declaration/,day);
+assert.equal(api.validate(withTeamSizes(snapshot,'MLB',mlbSizes([26]),inSeasonDay)),true);
+// Off-season still rejects a collapsed club feed, a widespread shrink and a league-wide short list.
+for(const size of [0,3,14])
+ assert.throws(()=>api.validate(withTeamSizes(snapshot,'MLB',mlbSizes([size]),offseasonDay)),/MLB invalid team roster declaration/,String(size));
+assert.throws(()=>api.validate(withTeamSizes(snapshot,'MLB',mlbSizes([20,20,20,20,20]),offseasonDay)),/MLB too many short off-season team rosters/);
+assert.throws(()=>api.validate(withTeamSizes(snapshot,'MLB',Array.from({length:30},(_,i)=>i<12?40:22),offseasonDay)),/MLB too many short off-season team rosters/);
+const lowMedian=withTeamSizes(snapshot,'MLB',Array.from({length:30},(_,i)=>i<4?20:26),offseasonDay);
+assert.equal(api.validate(lowMedian),true,'median exactly 26 is fine');
+assert.equal(api.offseasonRules('MLB','2026-11-09T21:27:02Z')?.teamFloor,15);
+assert.equal(api.offseasonRules('MLB','2026-07-15T00:00:00Z'),null);
+// A malformed or missing timestamp never unlocks the off-season floor.
+assert.equal(api.offseasonRules('MLB','not a date'),null);
+// No relaxation for the other leagues, even inside the MLB window.
+for(const [league,shortSize] of [['NBA',11],['NFL',25],['NHL',11]]){
+ assert.equal(api.offseasonRules(league,offseasonDay),null,league);
+ assert.throws(()=>api.validate(withTeamSizes(snapshot,league,[shortSize],offseasonDay)),new RegExp(league+' invalid team roster declaration'),league);
+}
+// Declared counts must still match the listed players for a short off-season club.
+const shortMismatch=withTeamSizes(snapshot,'MLB',mlbSizes([20]),offseasonDay);
+shortMismatch.leagues.MLB.teams[0].rosterCount=21;
+assert.throws(()=>api.validate(shortMismatch),/MLB roster count mismatch/);
 // Any failed game mapping must leave both arrays untouched (no partial player import).
 const rollbackAthletes=athletes.slice(0,oldCount);
 const rollbackPerks={signatures:[]};
