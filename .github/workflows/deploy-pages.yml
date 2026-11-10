@@ -1,0 +1,63 @@
+name: Deploy game files to GitHub Pages (manual)
+# Pages serves the gh-pages branch. Merging to main does NOT update the live site; this workflow does,
+# and only when the owner runs it from the Actions tab. Default is a dry run that shows what would
+# change. Tick "publish" to push. See docs/DEPLOY.md.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Push the game files to gh-pages (leave unticked for a dry run)'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+# Same group as roster-sync-v24.yml, so the daily roster commit and a deploy never push to gh-pages at once.
+concurrency:
+  group: last-legend-active-roster-sync
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Gate on the feature tests and the deploy file list
+        run: |
+          for f in tests/*.cjs; do echo "node $f"; node "$f"; done
+          python -m unittest discover -s tests -p 'test_roster_*.py'
+          python -m unittest discover -s tests -p 'test_pages_deploy.py'
+          python tools/pages_deploy.py --check
+      - name: Copy the game files into the gh-pages tree
+        run: |
+          git fetch origin gh-pages
+          git worktree add --detach _site origin/gh-pages
+          python tools/pages_deploy.py --source . --site _site
+          cd _site
+          git add -A -- index.html identity-lab.html ui data/roster_v4.json .nojekyll
+          echo "Changes against gh-pages:"
+          git diff --cached --stat
+      - name: Publish to gh-pages
+        if: inputs.publish
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          cd _site
+          if git diff --cached --quiet; then
+            echo "gh-pages already serves the game files from main ${SOURCE_SHA}; nothing to publish."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "deploy: game files from main ${SOURCE_SHA:0:7}"
+          git push origin HEAD:gh-pages
