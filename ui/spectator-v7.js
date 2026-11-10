@@ -317,11 +317,23 @@ function installCareerEditions(){
   var look=CURATED_LOOK[parent.id]||{};
   CURATED_LOOK[child.id]=Object.assign({},look,{primary:edition.primary,secondary:edition.secondary,number:edition.number,helmet:edition.helmet||(look.helmet||null)});
  });
- var meta=byId('ll-edition-count');
- if(meta){const editions=opts.athletes.filter(a=>!!a.edition_of).length;meta.textContent=(opts.athletes.length-editions).toLocaleString('en-US')+' BASE & EXPANDED ATHLETES + '+editions+' CAREER EDITIONS';}
- var title=byId('ll-draft-catalog-count');
- if(title)title.textContent=opts.athletes.length.toLocaleString('en-US');
+ refreshCatalogCounts();
  return true;
+}
+// Every count of the library shown on the page comes from opts.athletes at the moment it is drawn.
+// Entries arrive in several steps (V23 expansion, V7 editions, V22 eras, the V24 league feed, V18
+// imports, V27 custom characters), and each of those calls refreshTeamOptions(), which refreshes
+// these counters, so no text keeps an earlier step's total.
+function refreshCatalogCounts(){
+ if(!opts.athletes||!opts.athletes.length)return;
+ var total=opts.athletes.length,editions=opts.athletes.filter(function(a){return !!a.edition_of;}).length;
+ var fmt=function(n){return n.toLocaleString('en-US');};
+ var meta=byId('ll-edition-count');
+ if(meta)meta.textContent=fmt(total-editions)+' BASE & EXPANDED ATHLETES + '+fmt(editions)+' CAREER EDITIONS';
+ var title=byId('ll-draft-catalog-count');if(title)title.textContent=fmt(total);
+ var home=byId('site-total');if(home)home.textContent=fmt(total);
+ var size=byId('size-status'),library=/^(Select \d+ athletes from the )[\d,]+(-character library\.)$/;
+ if(size&&library.test(size.textContent))size.textContent=size.textContent.replace(library,'$1'+fmt(total)+'$2');
 }
 var llOriginalGetFiltered=getFiltered;
 getFiltered=function(){
@@ -330,6 +342,7 @@ getFiltered=function(){
  return team?matches.filter(function(a){return llTeamFor(a)===team;}):matches;
 };
 function refreshTeamOptions(){
+ refreshCatalogCounts();
  var el=byId('ll-team-filter');if(!el)return;
  var sport=byId('sport-filter')?.value||'';
  if(!sport){el.disabled=true;el.innerHTML='<option value="">CHOOSE A SPORT FIRST</option>';return;}
@@ -365,7 +378,7 @@ function setup(){
  if(opts.profiles&&opts.athletes&&opts.athletes.length)renderGrid();
  renderHistory();
 }
-window.LastLegendSpectator={state:state,leaderboard:leaderboard,saveFinished:saveFinished,readHistory:readHistory,home:home,exitPrompt:exitPrompt,seenStats:seenStats,cameraBox:cameraBox,installCareerEditions:installCareerEditions,teamFor:llTeamFor,refreshTeamOptions:refreshTeamOptions,editionDefinitions:llEditionDefinitions};
+window.LastLegendSpectator={state:state,leaderboard:leaderboard,saveFinished:saveFinished,readHistory:readHistory,home:home,exitPrompt:exitPrompt,seenStats:seenStats,cameraBox:cameraBox,installCareerEditions:installCareerEditions,teamFor:llTeamFor,refreshTeamOptions:refreshTeamOptions,refreshCatalogCounts:refreshCatalogCounts,editionDefinitions:llEditionDefinitions};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup);
 else setup();
 })();
