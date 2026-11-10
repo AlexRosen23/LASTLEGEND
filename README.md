@@ -440,5 +440,5 @@ configuration.
 - **Roadmaps:** [V8–V9 next phase](docs/NEXT_PHASE_V8_V9.md), [V11+](docs/ROADMAP_V11_PLUS.md),
   [website productization](docs/WEBSITE_PRODUCTIZATION_ROADMAP.md)
 - **Constellation world:** "The Gauntlet" (`proj:last-legend`) in the owner's Constellation, a private 3D
-  dashboard of his projects (separate private repository; attached in `AlexRosen23/constellation#111`).
+  dashboard of the owner's projects (separate private repository; attached in `AlexRosen23/constellation#111`).
 - **License:** no license file; all rights reserved.
