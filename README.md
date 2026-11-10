@@ -19,10 +19,10 @@ engineers curious how far a single static page with a seed-keyed simulation can 
 
 | | |
 |---|---|
-| **Status** | Working and public. The game (draft, simulation, replay, website pages, local-only extras) is live on GitHub Pages. One feature is currently broken on the live site: the current NBA/NFL/MLB/NHL team rosters fail to load (see [Limitations](#limitations-and-whats-next)). Accounts, global leaderboards and multiplayer are not built. |
+| **Status** | Working and public. The game (draft, simulation, replay, website pages, local-only extras) is live on GitHub Pages, including the current NBA/NFL/MLB/NHL team rosters (restored on 2026-11-10 by [#28](https://github.com/AlexRosen23/LASTLEGEND/pull/28) after six days of failing to load). Merging to `main` does not update the live site; game files are copied to `gh-pages` separately. Accounts, global leaderboards and multiplayer are not built. |
 | **Stack** | Vanilla JavaScript, HTML, CSS and SVG (one static page plus 29 feature modules); Python 3.12 for the reference engine, roster tooling and browser tests (Playwright); Node 22+ for the feature tests; GitHub Actions and GitHub Pages |
 | **Run it** | Open the [live site](https://alexrosen23.github.io/LASTLEGEND/), or `python3 -m http.server 8000` in the repo root and open http://127.0.0.1:8000 |
-| **Verified** | 2026-11-09 against `main` at `8b4641c`. The game files on `main` (`index.html`, `identity-lab.html`, `ui/`) are byte-identical to the deployed `gh-pages` branch on that date. |
+| **Verified** | 2026-11-09 against `main` at `8b4641c`; live site and roster fix re-checked 2026-11-10 against `main` at `d501d53`, whose game files (`index.html`, `identity-lab.html`, `ui/`, `data/roster_v4.json`) are byte-identical to the deployed `gh-pages` branch (`650ec6c`). |
 | **License** | No license file; all rights reserved. |
 
 ## Why this exists
@@ -100,9 +100,9 @@ tests listed were run on `main` at `8b4641c`.
 | Character dossiers (20 ratings, 5 tendencies, abilities) | Working | `tests/test_profiles_v11.cjs` |
 | Seeded challenge links, 16-match analysis, tournaments (4–64), UTC daily match, replay bookmarks and JSON export, local character creator, captions, display settings | Working, device-local only | `tests/test_challenges_v15.cjs`, `tests/test_analytics_v16.cjs`, `tests/test_future_v30.cjs`, `tests/test_browser_future_v30.py`. Nothing is shared between devices. |
 | Optional rivalry AI (opponents remember encounters) | Working, off by default | `tests/test_future_v30.cjs` ("AI opt-in") |
-| Character Identity Lab (roster inspection page) | Working | [`identity-lab.html`](identity-lab.html); `tests/test_v6.cjs`. Not opened in a browser for this README. |
+| Character Identity Lab (roster inspection page) | Working | [`identity-lab.html`](identity-lab.html); `tests/test_v6.cjs`. Live check 2026-11-10: "1203 of 1203 competitors", `data/roster_v4.json` 200, no console errors. |
 | Daily capture of all 124 NBA/NFL/MLB/NHL team rosters from ESPN's public feed | Working | `roster-sync-v24.yml` scheduled run on 2026-11-09 succeeded and published a snapshot to `gh-pages` (5,056 players: NBA 522, NFL 2,567, MLB 1,113, NHL 854). |
-| Current team rosters playable in the game | **Broken on the live site since 2026-11-04** | Live check: the browser rejects the snapshot with `MLB invalid team roster declaration`, and the Legends page shows "Full-league roster feed unavailable". Cause under [Limitations](#limitations-and-whats-next). The built-in library is unaffected. |
+| Current team rosters playable in the game | Working (was broken 2026-11-04 to 11-10) | Live check 2026-11-10: "Big Four team rosters loaded", NBA 522, NFL 2,567, MLB 1,113, NHL 854 from the 2026-11-09 snapshot; 6,720 draftable entries; a 12-contestant match ran to one champion; no console errors, every request 200. Fixed by [#28](https://github.com/AlexRosen23/LASTLEGEND/pull/28) (browser validator now uses the sync's MLB off-season rule). |
 | Python reference engine and CLI (12 contestants, 252-athlete dataset) | Working | `python -m engine.cli --seed 42` (winner `mike-tyson`, 792 events, 224 ticks); `tests/test_simulation.py` 15/15 |
 | Package validation: unit tests plus a 300-match smoke batch | Working | `python validate_package.py`: `"pass": true`, 31 of 31 unit tests, 300 of 300 matches completed in 9.8 s |
 | Ratings, tendencies and abilities checked against real performance | Not built | All are game estimates by design ([docs/VALIDATION_AND_LIMITS.md](docs/VALIDATION_AND_LIMITS.md)) |
@@ -141,7 +141,7 @@ python -m pip install -r requirements-dev.txt && python -m playwright install ch
 python -m engine.cli --seed 42 --out examples/match_42.json    # one 12-athlete match, about 1 s
 python -m engine.cli --batch 100 --arena CITY --mode BALANCED  # win counts over 100 seeds
 python validate_package.py                                     # unit tests + 300 smoke matches
-for f in tests/*.cjs; do node "$f" || echo "FAIL $f"; done      # the 22 Node feature tests
+for f in tests/*.cjs; do node "$f" || echo "FAIL $f"; done      # the Node feature tests
 ```
 
 Expected: the CLI prints the winner, placements, event count and a state hash (seed 42: `mike-tyson`, 792
@@ -282,12 +282,12 @@ by what, and the owner's manual deploy step.
 | Problem | What happened | Fix |
 |---|---|---|
 | MLB off-season broke the roster sync | `roster-sync-v24` failed every day from 2026-10-30: Milwaukee listed 20 players after the World Series, below the flat floor of 26. The data was real; MLB has no 26-man roster in the off-season. | An off-season rule for MLB: at least 15 per club, at most 4 short clubs, league median still ≥ 26, and a `NOTICE` line per short club ([#23](https://github.com/AlexRosen23/LASTLEGEND/pull/23)). Only the Python side was changed, which caused the bug below. |
-| The browser rejects the snapshot the sync now accepts | Since 2026-11-04 every published snapshot has Milwaukee at 20. `ui/active-rosters-v24.js` still requires 26 per MLB club, so the whole feed fails closed on the live site. | **Not fixed.** Found while writing this README; see Limitations. |
+| The browser rejects the snapshot the sync now accepts | From 2026-11-04 every published snapshot had Milwaukee at 20. `ui/active-rosters-v24.js` still required 26 per MLB club, so the whole feed failed closed on the live site for six days. The unit test used a synthetic in-season fixture, so it didn't catch this. | The browser validator got the same off-season rule ([#28](https://github.com/AlexRosen23/LASTLEGEND/pull/28)), deployed to `gh-pages` on 2026-11-10. The roster workflow now also runs every new snapshot through the browser's own validator before publishing (`tools/check_roster_snapshot_v24.cjs`). |
 | Replay captions behind the players | Group-clash titles and action text rendered under player sprites. | Moved the overlay and captions up the stacking order, with Chromium checks of the effective `z-index` on desktop and phone ([#20](https://github.com/AlexRosen23/LASTLEGEND/pull/20)). |
 | Integrating two lines of work | The V18–V30 review batch ([#10](https://github.com/AlexRosen23/LASTLEGEND/pull/10)) was built in parallel with the V18–V26 releases and had older copies of shared files. | A merge commit that kept the newer `index.html`, spectator, profile and test fixtures, hardened the optional roster import, and kept both parents ([#21](https://github.com/AlexRosen23/LASTLEGEND/pull/21)). Tests were updated for the 12 added career editions. |
 | Stale tests | `tests/test_v3_rules.cjs` read a file that didn't exist and checked a V3 page shape. Later, three scratch scripts made `validate_package.py` fail on a fresh clone, and Playwright wasn't declared. | Removed them; added `requirements-dev.txt` ([#22](https://github.com/AlexRosen23/LASTLEGEND/pull/22), [#26](https://github.com/AlexRosen23/LASTLEGEND/pull/26)). |
 | A racehorse tripped the secret scanner | gitleaks read the athlete id after `'secretariat'` as an API key. | A `.gitleaks.toml` allowlist scoped to one rule, one file and one exact id; a copy with a real-looking key is still caught ([#24](https://github.com/AlexRosen23/LASTLEGEND/pull/24)). |
-| Count drift in docs | V4 was first documented as 1,178 entries; the real count was 1,203. | Corrected in `ebce93a` and `55822dc`. Counters still disagree today (see Limitations). |
+| Count drift in docs | V4 was first documented as 1,178 entries; the real count was 1,203. | Corrected in `ebce93a` and `55822dc`. The page counters then drifted too (1,203 / 1,645 / 1,652 while 1,664 were loaded): each was written once while the library was still growing. They now refresh whenever entries are added (`refreshCatalogCounts()` in `ui/spectator-v7.js`, `tests/test_catalog_counts.cjs`). |
 | An alternate website build | A second V8 website draft failed its browser test. | Closed in favour of the tested one ([#5](https://github.com/AlexRosen23/LASTLEGEND/pull/5)). |
 
 ## Results and evidence
@@ -323,42 +323,30 @@ different winners. It is a game-model output from a small sample, not a predicti
 
 ### Known gaps, stated plainly
 
-- **Bug: current team rosters don't load on the live site.** [#23](https://github.com/AlexRosen23/LASTLEGEND/pull/23)
-  let the sync publish MLB off-season rosters below 26 players, but the browser validator in
-  [`ui/active-rosters-v24.js`](ui/active-rosters-v24.js) still has `minTeamPlayers={…,MLB:26,…}`. Every snapshot
-  since 2026-11-04 14:33 UTC is rejected with `MLB invalid team roster declaration`. The game fails closed as
-  designed: the Legends page shows "Full-league roster feed unavailable" and the 1,664 built-in entries still
-  play. `tests/test_active_rosters_v24.cjs` runs on a synthetic in-season fixture, so it didn't catch this.
+- **Deploys are manual.** GitHub Pages serves the `gh-pages` branch, so a fix merged to `main` is not live until
+  its files are copied there. The roster fix above needed a separate `gh-pages` commit.
 - **Ratings, tendencies and most appearances are game estimates.** Jersey numbers are shown only where a
   source is recorded; ratings have no source at all, by design.
 - **No balance validation.** Smoke batches show every match completes and different athletes win; they don't
   show fairness across sports, eras, mascots or arenas.
 - **Two engines, no parity test.** The Python reference engine and the browser engine have diverged.
 - **The page is heavy.** `index.html` is 1.58 MB with the roster inlined, plus 29 scripts and 16 stylesheets.
-- **Counters disagree.** The home page stat strip says 1,203 selectable editions, the Play page says 1,652
-  editions and a 1,645-character library, and 1,664 entries are actually loaded.
 - **Captions are template text** and occasionally read awkwardly (one seen on 2026-11-09: "By the beside a
   river"). They stay tied to recorded events.
 - **Hand-verified jersey overrides expire.** The 7 entries in `data/verified_jersey_v26.json` were verified on
   2026-10-23 with a 30-day limit, so from 2026-11-23 the sync stops applying them until they are re-checked.
 - **Three browser tests are flaky under load** (see Testing and CI).
-- **CI and local Playwright versions differ.** CI installs `playwright==1.55.0`; `requirements-dev.txt` pins
-  1.64.1.
 - **Rights.** Names, team colours and mascot depictions are provisional. They would need a rights review before
   any commercial use ([docs/VALIDATION_AND_LIMITS.md](docs/VALIDATION_AND_LIMITS.md)).
 - **Everything social is local.** Challenges, tournaments, history and created characters live on one device.
 
 ### Next steps, highest value first
 
-1. Make the browser validator use the same off-season rule as the sync (or have the sync publish the floors it
-   applied), and add an off-season fixture to `tests/test_active_rosters_v24.cjs`.
-2. Add a check that loads the real published snapshot through `validate()` in CI, so the two sides can't drift
-   again.
-3. Derive every displayed count from the loaded roster instead of hard-coded text.
-4. Run the planned balance study: at least 1,000 seeds per arena and mode across several lineups, with
+1. Re-check the 7 hand-verified jersey numbers against the teams' official roster pages before 2026-11-23, or
+   accept that ESPN's own numbers (or none) are shown after that.
+2. Run the planned balance study: at least 1,000 seeds per arena and mode across several lineups, with
    confidence intervals ([docs/VALIDATION_AND_LIMITS.md](docs/VALIDATION_AND_LIMITS.md)).
-5. Move the inlined roster into a lazily loaded JSON file to cut the first load.
-6. Align the CI Playwright version with `requirements-dev.txt`.
+3. Move the inlined roster into a lazily loaded JSON file to cut the first load.
 
 ## Repository map
 
@@ -383,7 +371,7 @@ different winners. It is a game-model output from a small sample, not a predicti
 ## Testing and CI
 
 ```bash
-for f in tests/*.cjs; do node "$f" || echo "FAIL $f"; done   # 22 Node feature tests
+for f in tests/*.cjs; do node "$f" || echo "FAIL $f"; done   # Node feature tests
 python validate_package.py                                    # Python unit tests + 300-match smoke batch
 python tests/test_browser_v7.py                               # one of the 9 Playwright browser tests
 ```
@@ -402,6 +390,10 @@ Results on 2026-11-09 (`main` at `8b4641c`, macOS, Node 24, Python 3.12, Playwri
   module and all 1,664 entries within 12 s with no failed requests, so this reads as load sensitivity in the
   tests' fixed 30–60 s waits rather than a game bug.
 
+Re-run on 2026-11-10 at `main` `d501d53`. CI never ran on that commit: #28's message carried `[skip ci]`, which
+skips every workflow, the gameplay regressions included. Locally, all 22 Node scripts, the roster unit tests,
+`validate_package.py` (`"pass": true`, 31 tests, 300/300) and all 9 browser tests passed on the first try.
+
 The browser tests start their own static server on a random port and drive Chromium at desktop (1280 px) and
 phone (390 px) sizes.
 
@@ -409,10 +401,10 @@ phone (390 px) sizes.
 allowed). Three workflows:
 
 - [`gameplay-regressions.yml`](.github/workflows/gameplay-regressions.yml) runs on every pull request and push to
-  `main`: the 22 Node tests, the roster unit tests, and the 9 browser tests, then uploads the visual QA
+  `main`: the Node feature tests, the roster unit tests, and the 9 browser tests (Playwright from `requirements-dev.txt`), then uploads the visual QA
   screenshots. The run for the [#26](https://github.com/AlexRosen23/LASTLEGEND/pull/26) merge passed in 1 min 1 s.
 - [`roster-sync-v24.yml`](.github/workflows/roster-sync-v24.yml) runs daily at 11:19 UTC (GitHub may start it
-  later), on manual dispatch, and when the sync code changes. It captures the rosters, verifies them, archives
+  later), on manual dispatch, and when the sync code changes. It captures the rosters, verifies them (also with the browser's own validator), archives
   the JSON for 30 days and commits it to `gh-pages`. The 2026-11-09 run passed in 2 min 17 s.
 - [`deploy-pages.yml`](.github/workflows/deploy-pages.yml) runs only when the owner starts it from the Actions
   tab. It copies the game files (`index.html`, `identity-lab.html`, `ui/`, `data/roster_v4.json`) from `main` to

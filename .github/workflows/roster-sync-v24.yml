@@ -8,12 +8,14 @@ on:
     paths:
       - 'tools/sync_active_rosters_v24.py'
       - 'ui/active-rosters-v24.js'
+      - 'tools/check_roster_snapshot_v24.cjs'
       - '.github/workflows/roster-sync-v24.yml'
   push:
     branches: [main]
     paths:
       - 'tools/sync_active_rosters_v24.py'
       - 'ui/active-rosters-v24.js'
+      - 'tools/check_roster_snapshot_v24.cjs'
       - '.github/workflows/roster-sync-v24.yml'
 permissions:
   contents: write
@@ -61,6 +63,13 @@ jobs:
                     heights,'heights;',weights,'weights;',missing_jersey,'jerseys unreported',flush=True)
           print('V24 source snapshot verified:',d['generatedAt'])
           PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check the snapshot with the browser's own validator
+        # The site re-validates the file with ui/active-rosters-v24.js and rejects all of it on any error,
+        # so never archive or publish a snapshot that check would reject.
+        run: node tools/check_roster_snapshot_v24.cjs data/active_rosters_v24.json
       - name: Archive reproducible roster dataset
         uses: actions/upload-artifact@v4
         with:
