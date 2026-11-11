@@ -1,5 +1,7 @@
 # NEXT PHASE — LAST LEGEND V8: 500 Encounters, Storm AI, Public Launch, League-wide Rosters
 
+> **Historical:** this document is kept as written. The project is now at V30; see the README for current status.
+
 **Status:** Planned after V7 spectator release. This is a design brief, not a claim of implementation.
 
 ## Priority order

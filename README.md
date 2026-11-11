@@ -378,7 +378,7 @@ python tests/test_browser_v7.py                               # one of the 9 Pla
 
 Results on 2026-11-09 (`main` at `8b4641c`, macOS, Node 24, Python 3.12, Playwright 1.64.1):
 
-- **Node:** 22 of 22 scripts pass (35 s in total).
+- **Node:** 24 of 24 scripts pass (the 22 of 22 in 35 s at the 2026-11-09 run; re-run 2026-11-11 on `main`: 24 of 24, 9 s in total).
 - **Python unit tests:** 31 of 31 pass (15 engine tests, 16 roster-sync guard and physical-data tests).
 - **`validate_package.py`:** `"pass": true` (31 unit tests, 300 of 300 smoke matches, 11 s).
 - **Deploy file list** (added after that run, 2026-11-10): `tests/test_pages_deploy.py`, 6 of 6 pass. It runs in

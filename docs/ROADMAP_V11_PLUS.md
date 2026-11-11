@@ -1,5 +1,7 @@
 # Last Legend — Post V10 / V11+ delivery plan
 
+> **Historical:** this document is kept as written. The project is now at V30; see the README for current status.
+
 Status as of 2026-10-23. Features under review are not considered published without green CI and deployment.
 
 ## Done before V11
