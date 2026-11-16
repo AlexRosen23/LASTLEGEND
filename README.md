@@ -21,7 +21,7 @@ engineers curious how far a single static page with a seed-keyed simulation can 
 |---|---|
 | **Status** | Working and public. The game (draft, simulation, replay, website pages, local-only extras) is live on GitHub Pages, including the current NBA/NFL/MLB/NHL team rosters (restored on 2026-11-10 by [#28](https://github.com/AlexRosen23/LASTLEGEND/pull/28) after six days of failing to load). Merging to `main` does not update the live site; game files are copied to `gh-pages` separately. Accounts, global leaderboards and multiplayer are not built. |
 | **Stack** | Vanilla JavaScript, HTML, CSS and SVG (one static page plus 29 feature modules); Python 3.12 for the reference engine, roster tooling and browser tests (Playwright); Node 22+ for the feature tests; GitHub Actions and GitHub Pages |
-| **Run it** | Open the [live site](https://alexrosen23.github.io/LASTLEGEND/), or `python3 -m http.server 8000` in the repo root and open http://127.0.0.1:8000 |
+| **Run it** | Open the [live site](https://alexrosen23.github.io/LASTLEGEND/), or `./scripts/serve` in the repo root and open http://127.0.0.1:8000 |
 | **Verified** | 2026-11-09 against `main` at `8b4641c`; live site and roster fix re-checked 2026-11-10 against `main` at `d501d53`, whose game files (`index.html`, `identity-lab.html`, `ui/`, `data/roster_v4.json`) are byte-identical to the deployed `gh-pages` branch (`650ec6c`). |
 | **License** | No license file; all rights reserved. |
 
@@ -120,8 +120,11 @@ loads its modules with relative URLs, so serve the folder rather than opening th
 ```bash
 git clone https://github.com/AlexRosen23/LASTLEGEND.git
 cd LASTLEGEND
-python3 -m http.server 8000 --bind 127.0.0.1
+./scripts/serve
 ```
+
+`scripts/serve` is a three-line wrapper around `python3 -m http.server "${PORT:-8000}" --bind 127.0.0.1`; set
+`PORT=8123 ./scripts/serve` to use another port.
 
 Open http://127.0.0.1:8000/#play. Checked on 2026-11-09 (on a spare port): Fill Rest and Start the Battle
 ran a 12-contestant match with 1,664 entries loaded. Two things differ from the live site:
