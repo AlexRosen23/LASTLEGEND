@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verifiedAt": "2026-10-23",
+  "verifiedAt": "2026-11-16",
   "maxAgeDays": 30,
   "definition": "Current-season jersey numbers explicitly listed on the named teams' official roster pages, double-keyed by ESPN league/player ID and current team ID. Only use when ESPN team roster omitted a number.",
   "entries": [
@@ -65,6 +65,249 @@
       "teamId": "26",
       "team": "Seattle Seahawks",
       "jersey": "17",
+      "source": "https://www.seahawks.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4248557",
+      "name": "E.J. Jenkins",
+      "teamId": "1",
+      "team": "Atlanta Falcons",
+      "jersey": "84",
+      "source": "https://www.atlantafalcons.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4685477",
+      "name": "Jam Miller",
+      "teamId": "1",
+      "team": "Atlanta Falcons",
+      "jersey": "38",
+      "source": "https://www.atlantafalcons.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4682692",
+      "name": "Josh Thompson",
+      "teamId": "1",
+      "team": "Atlanta Falcons",
+      "jersey": "67",
+      "source": "https://www.atlantafalcons.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4426332",
+      "name": "Zacch Pickens",
+      "teamId": "1",
+      "team": "Atlanta Falcons",
+      "jersey": "93",
+      "source": "https://www.atlantafalcons.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4429291",
+      "name": "Beau Brade",
+      "teamId": "4",
+      "team": "Cincinnati Bengals",
+      "jersey": "33",
+      "source": "https://www.bengals.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4687509",
+      "name": "Caden Prieskorn",
+      "teamId": "4",
+      "team": "Cincinnati Bengals",
+      "jersey": "41",
+      "source": "https://www.bengals.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4700712",
+      "name": "Cam Grandy",
+      "teamId": "4",
+      "team": "Cincinnati Bengals",
+      "jersey": "85",
+      "source": "https://www.bengals.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4361437",
+      "name": "Emany Johnson",
+      "teamId": "4",
+      "team": "Cincinnati Bengals",
+      "jersey": "50",
+      "source": "https://www.bengals.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4428304",
+      "name": "Garmon Randolph",
+      "teamId": "4",
+      "team": "Cincinnati Bengals",
+      "jersey": "56",
+      "source": "https://www.bengals.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4426513",
+      "name": "Trikweze Bridges",
+      "teamId": "4",
+      "team": "Cincinnati Bengals",
+      "jersey": "24",
+      "source": "https://www.bengals.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4360469",
+      "name": "Amari Gainer",
+      "teamId": "15",
+      "team": "Miami Dolphins",
+      "jersey": "53",
+      "source": "https://www.miamidolphins.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4569016",
+      "name": "Eric Watts",
+      "teamId": "15",
+      "team": "Miami Dolphins",
+      "jersey": "95",
+      "source": "https://www.miamidolphins.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4569448",
+      "name": "Jordan Jefferson",
+      "teamId": "15",
+      "team": "Miami Dolphins",
+      "jersey": "98",
+      "source": "https://www.miamidolphins.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4685784",
+      "name": "Tre Watson",
+      "teamId": "15",
+      "team": "Miami Dolphins",
+      "jersey": "87",
+      "source": "https://www.miamidolphins.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4608679",
+      "name": "Will Sheppard",
+      "teamId": "15",
+      "team": "Miami Dolphins",
+      "jersey": "81",
+      "source": "https://www.miamidolphins.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4599158",
+      "name": "Al-Jay Henderson",
+      "teamId": "20",
+      "team": "New York Jets",
+      "jersey": "36",
+      "source": "https://www.newyorkjets.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4708859",
+      "name": "Amari McNeill",
+      "teamId": "20",
+      "team": "New York Jets",
+      "jersey": "78",
+      "source": "https://www.newyorkjets.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4429636",
+      "name": "Blake Freeland",
+      "teamId": "20",
+      "team": "New York Jets",
+      "jersey": "76",
+      "source": "https://www.newyorkjets.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4046165",
+      "name": "Jimmy Morrissey",
+      "teamId": "20",
+      "team": "New York Jets",
+      "jersey": "65",
+      "source": "https://www.newyorkjets.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4683227",
+      "name": "Joseph Manjack IV",
+      "teamId": "20",
+      "team": "New York Jets",
+      "jersey": "83",
+      "source": "https://www.newyorkjets.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4431060",
+      "name": "Nick Dawkins",
+      "teamId": "20",
+      "team": "New York Jets",
+      "jersey": "53",
+      "source": "https://www.newyorkjets.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "3933407",
+      "name": "Quinton Bell",
+      "teamId": "20",
+      "team": "New York Jets",
+      "jersey": "43",
+      "source": "https://www.newyorkjets.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4361182",
+      "name": "Adrian Martinez",
+      "teamId": "26",
+      "team": "Seattle Seahawks",
+      "jersey": "9",
+      "source": "https://www.seahawks.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4373030",
+      "name": "Ben Sims",
+      "teamId": "26",
+      "team": "Seattle Seahawks",
+      "jersey": "49",
+      "source": "https://www.seahawks.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4430818",
+      "name": "Cole Brevard",
+      "teamId": "26",
+      "team": "Seattle Seahawks",
+      "jersey": "69",
+      "source": "https://www.seahawks.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4040950",
+      "name": "Cordell Volson",
+      "teamId": "26",
+      "team": "Seattle Seahawks",
+      "jersey": "66",
+      "source": "https://www.seahawks.com/team/players-roster/"
+    },
+    {
+      "league": "NFL",
+      "playerId": "4685984",
+      "name": "Jamie Sheriff",
+      "teamId": "26",
+      "team": "Seattle Seahawks",
+      "jersey": "50",
       "source": "https://www.seahawks.com/team/players-roster/"
     }
   ]

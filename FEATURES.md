@@ -226,7 +226,7 @@ Recorded results (from the README):
 - **Two engines, no parity test.**
 - **Heavy first load**: 1.58 MB page plus about 45 requests. *Planned*: lazy-load the inline roster.
 - **Captions are template text** and sometimes read awkwardly.
-- **Hand-verified jersey overrides expire** on 2026-11-23 unless re-checked.
+- **Hand-verified jersey overrides expire** on 2026-12-17 unless re-checked (34 entries, last checked against the official team roster pages on 2026-11-16).
 - **Everything social is local**: no accounts, global leaderboards or multiplayer.
 - **Rights**: names, colours and mascots are provisional; a rights review is needed before commercial use.
 
@@ -234,6 +234,7 @@ Recorded results (from the README):
 
 | Date | PR | Change |
 | --- | --- | --- |
+| 2026-11-16 | #34 | Jersey overrides re-checked against official rosters (7 confirmed, 27 added; valid to 2026-12-16) |
 | 2026-11-11 | #31 | Docs: all 24 node scripts listed, V8/V11 planning docs marked historical |
 | 2026-11-10 | #30 | Roster counters, browser validator gate in the roster sync, CI Playwright pin |
 | 2026-11-10 | #29 | Manual `main` to `gh-pages` deploy workflow and `docs/DEPLOY.md` |

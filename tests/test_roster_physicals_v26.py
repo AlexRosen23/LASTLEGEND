@@ -56,11 +56,15 @@ class TestRosterMeasurements(unittest.TestCase):
         self.assertEqual(base["jerseySource"],"ESPN matching-team athlete profile")
 
     def test_official_jersey_overrides_have_team_ids_and_expire(self):
-        current = sync.official_number_overrides("2026-10-23T23:00:00Z")
-        self.assertEqual(len(current), 7)
+        # Re-checked 2026-11-16 against the official team roster pages: the original 7 plus 27 more.
+        current = sync.official_number_overrides("2026-11-16T23:00:00Z")
+        self.assertEqual(len(current), 34)
         self.assertEqual(current[("NBA", "4703396", "9")]["jersey"], "45")
         self.assertEqual(current[("NFL", "14012", "1")]["jersey"], "13")
-        self.assertEqual(sync.official_number_overrides("2026-12-01T00:00:00Z"), {})
+        self.assertEqual(current[("NFL", "4685477", "1")]["jersey"], "38")
+        self.assertEqual(len(sync.official_number_overrides("2026-12-16T00:00:00Z")), 34)
+        self.assertEqual(sync.official_number_overrides("2026-12-17T00:00:00Z"), {})
+        self.assertEqual(sync.official_number_overrides("2026-11-15T00:00:00Z"), {})
 
     def test_missing_secondary_data_does_not_guess(self):
         base = {"id":"42","teamId":"7","jersey":None,

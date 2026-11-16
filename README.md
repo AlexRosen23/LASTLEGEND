@@ -333,8 +333,11 @@ different winners. It is a game-model output from a small sample, not a predicti
 - **The page is heavy.** `index.html` is 1.58 MB with the roster inlined, plus 29 scripts and 16 stylesheets.
 - **Captions are template text** and occasionally read awkwardly (one seen on 2026-11-09: "By the beside a
   river"). They stay tied to recorded events.
-- **Hand-verified jersey overrides expire.** The 7 entries in `data/verified_jersey_v26.json` were verified on
-  2026-10-23 with a 30-day limit, so from 2026-11-23 the sync stops applying them until they are re-checked.
+- **Hand-verified jersey overrides expire.** The 34 entries in `data/verified_jersey_v26.json` were last checked
+  against the teams' official roster pages on 2026-11-16 (the original 7 all confirmed, plus 27 practice-squad and
+  active NFL players ESPN listed without a number on the Falcons, Bengals, Dolphins, Jets and Seahawks pages). The
+  limit is 30 days, so from 2026-12-17 the sync stops applying them until they are re-checked. An override only
+  fills a number ESPN's team roster leaves blank, and only when ESPN's name and team match the entry exactly.
 - **Three browser tests are flaky under load** (see Testing and CI).
 - **Rights.** Names, team colours and mascot depictions are provisional. They would need a rights review before
   any commercial use ([docs/VALIDATION_AND_LIMITS.md](docs/VALIDATION_AND_LIMITS.md)).
@@ -342,7 +345,7 @@ different winners. It is a game-model output from a small sample, not a predicti
 
 ### Next steps, highest value first
 
-1. Re-check the 7 hand-verified jersey numbers against the teams' official roster pages before 2026-11-23, or
+1. Re-check the 34 hand-verified jersey numbers against the teams' official roster pages before 2026-12-17, or
    accept that ESPN's own numbers (or none) are shown after that.
 2. Run the planned balance study: at least 1,000 seeds per arena and mode across several lineups, with
    confidence intervals ([docs/VALIDATION_AND_LIMITS.md](docs/VALIDATION_AND_LIMITS.md)).
