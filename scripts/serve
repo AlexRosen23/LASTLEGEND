@@ -1,0 +1,4 @@
+#!/bin/sh
+# Serve the game folder as static files on 127.0.0.1 (no build step, no installs). PORT defaults to 8000.
+cd "$(dirname "$0")/.." || exit 1
+exec python3 -m http.server "${PORT:-8000}" --bind 127.0.0.1
