@@ -234,6 +234,7 @@ Recorded results (from the README):
 
 | Date | PR | Change |
 | --- | --- | --- |
+| 2026-11-16 | #34 | Jersey overrides re-checked against official rosters (7 confirmed, 27 added; valid to 2026-12-16) |
 | 2026-11-11 | #31 | Docs: all 24 node scripts listed, V8/V11 planning docs marked historical |
 | 2026-11-10 | #30 | Roster counters, browser validator gate in the roster sync, CI Playwright pin |
 | 2026-11-10 | #29 | Manual `main` to `gh-pages` deploy workflow and `docs/DEPLOY.md` |
