@@ -226,7 +226,7 @@ Recorded results (from the README):
 - **Two engines, no parity test.**
 - **Heavy first load**: 1.58 MB page plus about 45 requests. *Planned*: lazy-load the inline roster.
 - **Captions are template text** and sometimes read awkwardly.
-- **Hand-verified jersey overrides expire** on 2026-11-23 unless re-checked.
+- **Hand-verified jersey overrides expire** on 2026-12-17 unless re-checked (34 entries, last checked against the official team roster pages on 2026-11-16).
 - **Everything social is local**: no accounts, global leaderboards or multiplayer.
 - **Rights**: names, colours and mascots are provisional; a rights review is needed before commercial use.
 
