@@ -1,5 +1,7 @@
 # LAST LEGEND
 
+**Battle-royale browser simulator**
+
 LAST LEGEND is a free browser game where athletes, team mascots and other characters fight a storm-driven survival
 battle until one is left. You pick 2 to 100 contestants, an arena and a randomness level, then watch the match play
 out on a 2D map with commentary and a champion screen. It is a static site with no build step and no server.
