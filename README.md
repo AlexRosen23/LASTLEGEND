@@ -1,13 +1,28 @@
 # LAST LEGEND
 
-LAST LEGEND is a free browser game in which athletes, team mascots and other characters fight a storm-driven
-survival battle until one is left. You draft 2 to 100 contestants from a built-in library of 1,664
-entries, pick an arena and a randomness level, and watch a seeded match play out on a 2D map. Fights, alliances,
-supply runs and storm damage are decided by a deterministic simulation, then replayed with commentary, live
-leaderboards and a champion screen. The same seed and lineup always produce the same match, so a result can be
-replayed, shared as a link and tested. It is a static site with no build step and no server: everything runs in
-the visitor's browser. It is for anyone who wants to set up an impossible matchup and see who survives, and for
-engineers curious how far a single static page with a seed-keyed simulation can be pushed.
+LAST LEGEND is a free browser game where athletes, team mascots and other characters fight a storm-driven survival
+battle until one is left. You pick 2 to 100 contestants, an arena and a randomness level, then watch the match play
+out on a 2D map with commentary and a champion screen. It is a static site with no build step and no server.
+
+## What it does
+
+- **Draft a battle.** Choose 2 to 100 contestants from a built-in library of 1,664 entries (plus current NBA, NFL,
+  MLB and NHL team rosters) and pick one of 4 seeded arenas and 3 randomness modes.
+- **Deterministic simulation.** Fights, alliances, supply runs and a shrinking storm are decided by a seeded
+  simulation, so the same seed and lineup always give the same match and exactly one champion.
+- **Replay with a story.** The finished match is replayed with camera modes, live leaderboards and captions
+  generated from the recorded events, so the text always matches the scoreboard.
+- **Shareable and testable.** Results can be replayed, shared as a challenge link and covered by regression tests.
+- **Honest data.** Unknown facts are left blank rather than guessed (for example, jersey numbers need a source).
+
+**Who it is for:** anyone who wants to set up an impossible matchup and see who survives, and engineers curious how
+far a single static page with a seed-keyed simulation can be pushed.
+
+**How it works:** the whole match is simulated first (every event and a snapshot per tick), then the browser only
+replays recorded frames, so presentation can never change a result. Everything runs in the visitor's browser.
+
+**Try it:** open the live site below, press **Enter the Arena**, then **Fill Rest** and **Start the Battle**. Locally:
+`./scripts/serve`, then open http://127.0.0.1:8000.
 
 **[Play LAST LEGEND](https://alexrosen23.github.io/LASTLEGEND/)** (GitHub Pages)
 
